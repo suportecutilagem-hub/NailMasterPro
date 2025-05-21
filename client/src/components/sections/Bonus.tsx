@@ -159,7 +159,7 @@ export default function Bonus() {
   ];
 
   return (
-    <section className="pt-2 pb-10 bg-white">
+    <section className="pt-0 pb-6 lg:pb-10 bg-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
