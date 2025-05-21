@@ -13,7 +13,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <span className="text-[hsl(var(--rose-primary))] font-montserrat font-bold text-2xl">NailPro</span>
+            <span className="text-[hsl(var(--rose-primary))] font-montserrat font-bold text-2xl">Cutilagem Russa</span>
           </motion.div>
           
           <motion.div

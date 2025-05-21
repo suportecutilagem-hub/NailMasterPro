@@ -100,7 +100,7 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="https://pixabay.com/get/gc0cdce0e3c7653f3e0f27d123ff3af5099c030ab34dde93a69fe5dbcfac67a887dff449b551cf208f7e4dbd14d976461a57d173ea7cd3aa94e72a5fe54688e83_1280.jpg" 
+                src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
                 alt="Resultado profissional de cutilagem russa" 
                 className="rounded-xl shadow-xl mx-auto float-animation" 
               />
