@@ -179,7 +179,7 @@ export default function Bonus() {
       )
     },
     {
-      title: "💰 30% de Desconto em Materiais",
+      title: "30% de Desconto em Materiais",
       description: "Economize nos itens que você realmente vai usar no curso.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
