@@ -159,14 +159,14 @@ export default function Bonus() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="pt-6 pb-10 sm:py-16 bg-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-10"
         >
           <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">OFERTA EXCLUSIVA</h5>
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
@@ -177,7 +177,7 @@ export default function Bonus() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {bonuses.map((bonus, index) => (
             <BonusCard
               key={index}
@@ -196,12 +196,12 @@ export default function Bonus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-50 rounded-xl shadow-lg p-8 mb-8"
+          className="bg-gray-50 rounded-xl shadow-lg p-4 sm:p-8 mb-4 sm:mb-8"
         >
-          <h3 className="font-montserrat font-bold text-2xl mb-4 text-center">
+          <h3 className="font-montserrat font-bold text-xl sm:text-2xl mb-3 sm:mb-4 text-center">
             Bônus Adicionais: Cursos Exclusivos Completos com Certificado
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
