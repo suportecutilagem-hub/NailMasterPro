@@ -69,7 +69,20 @@ export default function Hero() {
             
             <motion.div
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ 
+                scale: [1, 1.03, 1],
+                boxShadow: [
+                  "0 5px 15px rgba(0, 0, 0, 0.1)",
+                  "0 10px 25px rgba(236, 72, 153, 0.3)",
+                  "0 5px 15px rgba(0, 0, 0, 0.1)"
+                ]
+              }}
+              transition={{ 
+                repeat: Infinity,
+                repeatType: "reverse",
+                duration: 2
+              }}
             >
               <a href="#checkout">
                 <Button 

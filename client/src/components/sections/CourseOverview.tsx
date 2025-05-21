@@ -81,7 +81,7 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="py-16 bg-white" id="checkout">
+    <section className="pt-4 pb-16 bg-white" id="checkout">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -160,8 +160,21 @@ export default function CourseOverview() {
                 </div>
                 
                 <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  animate={{ 
+                    scale: [1, 1.04, 1],
+                    boxShadow: [
+                      "0 5px 15px rgba(0, 0, 0, 0.1)",
+                      "0 10px 25px rgba(236, 72, 153, 0.3)",
+                      "0 5px 15px rgba(0, 0, 0, 0.1)"
+                    ]
+                  }}
+                  transition={{ 
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2
+                  }}
                 >
                   <a 
                     href="https://pay.cakto.com.br/uk8zdk5_340907" 

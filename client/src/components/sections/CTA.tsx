@@ -28,7 +28,20 @@ export default function CTA() {
           
           <motion.div
             whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{ 
+              scale: [1, 1.04, 1],
+              boxShadow: [
+                "0 5px 15px rgba(255, 255, 255, 0.2)",
+                "0 10px 25px rgba(255, 255, 255, 0.4)",
+                "0 5px 15px rgba(255, 255, 255, 0.2)"
+              ]
+            }}
+            transition={{ 
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 2
+            }}
           >
             <a href="https://pay.cakto.com.br/uk8zdk5_340907">
               <Button 
