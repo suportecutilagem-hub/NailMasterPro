@@ -27,9 +27,7 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
             BÔNUS {number}
           </div>
         </div>
-        <div className="mb-4 text-3xl text-[hsl(var(--rose-primary))]">
-          {icon}
-        </div>
+
         <h3 className="font-montserrat font-bold text-xl mb-3">{title}</h3>
         <p className="text-gray-600 mb-2">
           {description}
@@ -59,12 +57,9 @@ function BonusItem({ title, description, delay = 0, icon }: BonusItemProps) {
       transition={{ duration: 0.5, delay }}
       className="bg-white rounded-lg p-4 border-l-4 border-[hsl(var(--rose-primary))] shadow-sm hover:shadow-md transition-shadow duration-300"
     >
-      <div className="flex items-start">
-        {icon && <div className="mr-3 mt-1">{icon}</div>}
-        <div>
-          <h4 className="font-bold mb-1">{title}</h4>
-          <p className="text-gray-600 text-sm">{description}</p>
-        </div>
+      <div>
+        <h4 className="font-bold mb-1">{title}</h4>
+        <p className="text-gray-600 text-sm">{description}</p>
       </div>
     </motion.div>
   );
@@ -74,57 +69,30 @@ export default function Bonus() {
   const bonuses = [
     {
       number: 1,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        </svg>
-      ),
-      title: "SPA DOS PÉS",
+      title: "CURSO SPA DOS PÉS - COM CERTIFICADO",
       description: "Tratamento completo para relaxamento e beleza dos pés",
       originalPrice: "R$197"
     },
     {
       number: 2,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a2 2 0 014 0v6m-4 0h4m-4 0h0M9 11.5V14m0-2.5v-6a2 2 0 014 0v6m-4 0h4m-4 0h0M14 11.5V14m0-2.5v-6a2 2 0 014 0v6m-4 0h4m-4 0h0" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      ),
-      title: "MANICURE E PEDICURE",
+      title: "CURSO MANICURE E PEDICURE - COM CERTIFICADO",
       description: "Técnicas profissionais de cuidados para mãos e pés",
       originalPrice: "R$250"
     },
     {
       number: 3,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-        </svg>
-      ),
       title: "ALONGAMENTO NO MOLDE F1",
       description: "Método avançado para alongamento de unhas perfeitas",
       originalPrice: "R$197"
     },
     {
       number: 4,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-      ),
       title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos",
       originalPrice: "R$220"
     },
     {
       number: 5,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-        </svg>
-      ),
       title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art",
       originalPrice: "R$170"
@@ -134,58 +102,27 @@ export default function Bonus() {
   const additionalBonuses = [
     {
       title: "Curso Instagram de Sucesso",
-      description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      )
+      description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias."
     },
     {
       title: "Curso Manicure Agenda Cheia",
-      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      )
+      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes."
     },
     {
       title: "Divulgação no Instagram Oficial",
-      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente visibilidade.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
-      )
+      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente visibilidade."
     },
     {
       title: "Aula Exclusiva de Esmaltação em Gel",
-      description: "Domine essa técnica moderna e lucre mais com seus atendimentos.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      )
+      description: "Domine essa técnica moderna e lucre mais com seus atendimentos."
     },
     {
       title: "Modelos de Unhas Decoradas",
-      description: "Receba 5 inspirações de nail art para encantar suas clientes.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-      )
+      description: "Receba 5 inspirações de nail art para encantar suas clientes."
     },
     {
       title: "30% de Desconto em Materiais",
-      description: "Economize nos itens que você realmente vai usar no curso.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      description: "Economize nos itens que você realmente vai usar no curso."
     }
   ];
 
