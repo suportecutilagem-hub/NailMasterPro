@@ -62,8 +62,8 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <span className="text-gray-500 font-medium line-through text-xl">De R$197,00</span>
               <div className="flex items-center">
-                <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 79,90</span>
-                <span className="ml-2 bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">60% OFF</span>
+                <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 65,00</span>
+                <span className="ml-2 bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">67% OFF</span>
               </div>
             </div>
             

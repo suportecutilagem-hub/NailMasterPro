@@ -22,7 +22,7 @@ export default function CTA() {
           
           <div className="mb-8">
             <div className="inline-block bg-white/20 rounded-lg p-4 mb-4">
-              <p className="font-bold text-xl">De <span className="line-through">R$197,00</span> por apenas <span className="text-2xl">R$79,90</span></p>
+              <p className="font-bold text-xl">De <span className="line-through">R$197,00</span> por apenas <span className="text-2xl">R$65,00</span></p>
             </div>
           </div>
           
