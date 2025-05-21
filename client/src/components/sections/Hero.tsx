@@ -76,7 +76,7 @@ export default function Hero() {
                   variant="cta" 
                   roundedness="full" 
                   size="xl" 
-                  className="shadow-lg"
+                  className="shadow-lg w-full sm:w-auto"
                 >
                   QUERO GARANTIR MINHA VAGA
                 </Button>

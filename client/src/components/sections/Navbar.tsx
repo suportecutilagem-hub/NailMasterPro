@@ -27,6 +27,7 @@ export default function Navbar() {
                 variant="cta" 
                 roundedness="full" 
                 size="lg"
+                className="text-sm sm:text-base w-auto"
               >
                 Quero Começar Agora
               </Button>

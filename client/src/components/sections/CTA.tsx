@@ -35,7 +35,7 @@ export default function CTA() {
                 variant="white" 
                 roundedness="full" 
                 size="xl" 
-                className="shadow-lg"
+                className="shadow-lg w-full sm:w-auto"
               >
                 QUERO GARANTIR MINHA VAGA AGORA
               </Button>

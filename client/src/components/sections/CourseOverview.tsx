@@ -165,7 +165,8 @@ export default function CourseOverview() {
                 >
                   <a 
                     href="https://pay.cakto.com.br/uk8zdk5_340907" 
-                    className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow"
+                    className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-base sm:text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow"
+                    style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
                   >
                     GARANTIR MINHA VAGA AGORA
                   </a>
