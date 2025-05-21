@@ -69,31 +69,31 @@ export default function Bonus() {
   const bonuses = [
     {
       number: 1,
-      title: "CURSO SPA DOS PÉS - COM CERTIFICADO",
+      title: "SPA DOS PÉS",
       description: "Tratamento completo para relaxamento e beleza dos pés",
       originalPrice: "R$197"
     },
     {
       number: 2,
-      title: "CURSO MANICURE E PEDICURE - COM CERTIFICADO",
+      title: "MANICURE E PEDICURE",
       description: "Técnicas profissionais de cuidados para mãos e pés",
       originalPrice: "R$250"
     },
     {
       number: 3,
-      title: "CURSO ALONGAMENTO NO MOLDE F1 - COM CERTIFICADO",
+      title: "ALONGAMENTO NO MOLDE F1",
       description: "Método avançado para alongamento de unhas perfeitas",
       originalPrice: "R$197"
     },
     {
       number: 4,
-      title: "CURSO ALONGAMENTO DE FIBRA DE VIDRO - COM CERTIFICADO",
+      title: "ALONGAMENTO DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos",
       originalPrice: "R$220"
     },
     {
       number: 5,
-      title: "CURSO UNHAS DECORADAS - COM CERTIFICADO",
+      title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art",
       originalPrice: "R$170"
     }
