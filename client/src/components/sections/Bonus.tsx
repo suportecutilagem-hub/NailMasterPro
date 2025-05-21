@@ -196,12 +196,12 @@ export default function Bonus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-50 rounded-xl shadow-lg p-4 sm:p-8 mb-4 sm:mb-8"
+          className="bg-gray-50 rounded-xl shadow-lg p-8 mb-8"
         >
-          <h3 className="font-montserrat font-bold text-xl sm:text-2xl mb-3 sm:mb-4 text-center">
+          <h3 className="font-montserrat font-bold text-2xl mb-4 text-center">
             Bônus Adicionais: Cursos Exclusivos Completos com Certificado
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
