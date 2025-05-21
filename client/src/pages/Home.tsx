@@ -37,7 +37,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CourseContent />
-      <Results />
+      {/* Results removido conforme solicitado */}
       <Bonus />
       <Testimonials />
       <CourseOverview />
@@ -49,7 +49,8 @@ export default function Home() {
       <div className="md:hidden fixed bottom-4 left-0 right-0 px-4 z-40">
         <a 
           href="https://pay.cakto.com.br/uk8zdk5_340907" 
-          className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold py-3 rounded-full shadow-lg pink-shadow animate-pulse"
+          className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold py-4 text-lg rounded-full shadow-lg pink-shadow animate-pulse"
+          style={{ maxWidth: "100%", fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
         >
           QUERO COMEÇAR AGORA →
         </a>

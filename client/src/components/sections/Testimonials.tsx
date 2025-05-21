@@ -1,5 +1,6 @@
 import { Container } from "../ui/container";
 import { Card } from "../ui/card";
+import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
 interface TestimonialProps {
@@ -79,6 +80,24 @@ export default function Testimonials() {
       image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce",
       name: "Patrícia Oliveira",
       location: "Belo Horizonte, MG"
+    },
+    {
+      content: "Em apenas duas semanas após o curso, já estava aplicando todas as técnicas com segurança. Os vídeos são super detalhados e a explicação é clara. A técnica de cutilagem em 8 minutos mudou minha rotina completamente!",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      name: "Ana Carolina Mendes",
+      location: "Curitiba, PR"
+    },
+    {
+      content: "O curso de Cutilagem Russa foi um divisor de águas na minha carreira. Em apenas um mês, consegui triplicar minha renda. A explicação sobre posicionamento da tesoura foi o que mais me ajudou, pois tinha muita dificuldade nessa parte.",
+      image: "https://images.unsplash.com/photo-1558898479-33c0057a5d12",
+      name: "Fernanda Gomes",
+      location: "Salvador, BA"
+    },
+    {
+      content: "Os cursos bônus foram essenciais para ampliar meu atendimento. Hoje ofereço pacotes completos com todos os serviços que aprendi e minhas clientes amam! Vale muito a pena o investimento, recuperei o valor em apenas uma semana.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      name: "Camila Rocha",
+      location: "Recife, PE"
     }
   ];
 
@@ -112,6 +131,25 @@ export default function Testimonials() {
             />
           ))}
         </div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <a href="#checkout">
+            <Button 
+              variant="cta" 
+              roundedness="full" 
+              size="xl" 
+              className="shadow-lg"
+            >
+              QUERO COMEÇAR AGORA
+            </Button>
+          </a>
+        </motion.div>
       </Container>
     </section>
   );

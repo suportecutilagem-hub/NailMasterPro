@@ -188,28 +188,27 @@ export default function CourseContent() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.slice(0, 9).map((feature, index) => (
-            <CourseFeature
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              delay={index * 0.1}
-            />
-          ))}
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {features.slice(9).map((feature, index) => (
-            <CourseFeature
-              key={index + 9}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              delay={index * 0.1}
-            />
-          ))}
+        <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl p-6 shadow-lg">
+          <ul className="space-y-4">
+            {features.map((feature, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="flex-shrink-0 w-10 h-10 mr-4 bg-[hsl(var(--rose-light))] rounded-full flex items-center justify-center text-[hsl(var(--rose-primary))]">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
         
         <motion.div
