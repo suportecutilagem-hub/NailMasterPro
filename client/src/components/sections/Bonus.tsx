@@ -56,7 +56,7 @@ function BonusItem({ title, description, delay = 0 }: BonusItemProps) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-lg p-4 border-l-4 border-[hsl(var(--rose-primary))]"
+      className="bg-white rounded-lg p-4 border-l-4 border-[hsl(var(--rose-primary))] shadow-sm hover:shadow-md transition-shadow duration-300"
     >
       <h4 className="font-bold mb-1">{title}</h4>
       <p className="text-gray-600 text-sm">{description}</p>
@@ -70,34 +70,34 @@ export default function Bonus() {
       number: 1,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
         </svg>
       ),
-      title: "Curso Manicure Agenda Cheia",
-      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes.",
-      originalPrice: "R$97"
+      title: "SPA DOS PÉS",
+      description: "Tratamento completo para relaxamento e beleza dos pés",
+      originalPrice: "R$197"
     },
     {
       number: 2,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
         </svg>
       ),
-      title: "Divulgação no Instagram Oficial",
-      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente visibilidade.",
+      title: "MANICURE E PEDICURE",
+      description: "Técnicas profissionais de cuidados para mãos e pés",
       originalPrice: "R$250"
     },
     {
       number: 3,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
         </svg>
       ),
-      title: "Aula Exclusiva de Esmaltação em Gel",
-      description: "Domine essa técnica moderna e lucre mais com seus atendimentos.",
-      originalPrice: "R$147"
+      title: "ALONGAMENTO NO MOLDE F1",
+      description: "Método avançado para alongamento de unhas perfeitas",
+      originalPrice: "R$197"
     },
     {
       number: 4,
@@ -106,20 +106,20 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
         </svg>
       ),
-      title: "Modelos de Unhas Decoradas",
-      description: "Receba 5 inspirações de nail art para encantar suas clientes.",
-      originalPrice: "R$97"
+      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
+      description: "Técnica durável e natural para alongamentos",
+      originalPrice: "R$220"
     },
     {
       number: 5,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
         </svg>
       ),
-      title: "30% de Desconto em Materiais",
-      description: "Economize nos itens que você realmente vai usar no curso.",
-      originalPrice: "R$120"
+      title: "UNHAS DECORADAS",
+      description: "Designs criativos e tendências para nail art",
+      originalPrice: "R$170"
     },
     {
       number: 6,
@@ -129,7 +129,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: "Curso Instagram de Sucesso",
+      title: "CURSO INSTAGRAM DE SUCESSO",
       description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.",
       originalPrice: "R$197"
     }
@@ -137,24 +137,24 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
-      title: "SPA DOS PÉS",
-      description: "Tratamento completo para relaxamento e beleza dos pés"
+      title: "Curso Manicure Agenda Cheia",
+      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes."
     },
     {
-      title: "MANICURE E PEDICURE",
-      description: "Técnicas profissionais de cuidados para mãos e pés"
+      title: "Divulgação no Instagram Oficial",
+      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente visibilidade."
     },
     {
-      title: "ALONGAMENTO NO MOLDE F1",
-      description: "Método avançado para alongamento de unhas perfeitas"
+      title: "Aula Exclusiva de Esmaltação em Gel",
+      description: "Domine essa técnica moderna e lucre mais com seus atendimentos."
     },
     {
-      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
-      description: "Técnica durável e natural para alongamentos"
+      title: "Modelos de Unhas Decoradas",
+      description: "Receba 5 inspirações de nail art para encantar suas clientes."
     },
     {
-      title: "UNHAS DECORADAS",
-      description: "Designs criativos e tendências para nail art"
+      title: "30% de Desconto em Materiais",
+      description: "Economize nos itens que você realmente vai usar no curso."
     }
   ];
 
@@ -196,10 +196,10 @@ export default function Bonus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-50 rounded-xl shadow-lg p-8 mb-8"
+          className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] border-2 border-[hsl(var(--rose-primary))] rounded-xl shadow-lg p-8 mb-8"
         >
           <h3 className="font-montserrat font-bold text-2xl mb-4 text-center">
-            Bônus Adicionais: Cursos Exclusivos Completos com Certificado
+            <span className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">Bônus Adicionais: Cursos Exclusivos Completos com Certificado</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {additionalBonuses.map((bonus, index) => (
