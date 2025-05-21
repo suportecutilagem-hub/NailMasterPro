@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <header className="pt-16 sm:pt-20 lg:pt-24 pb-0 overflow-hidden">
+    <header className="pt-10 sm:pt-20 lg:pt-24 pb-0 overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="order-2 lg:order-1 mt-2 sm:mt-4 lg:mt-0"
+            className="order-2 lg:order-1 mt-0 lg:mt-0"
           >
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO COMPLETO DE</h5>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-montserrat mb-6 leading-tight">
@@ -59,7 +59,7 @@ export default function Hero() {
               </motion.div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-4 sm:mb-6">
               <span className="text-gray-500 font-medium line-through text-xl">De R$197,00</span>
               <div className="flex items-center">
                 <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 65,00</span>
