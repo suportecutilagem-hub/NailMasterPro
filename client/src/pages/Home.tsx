@@ -43,7 +43,6 @@ export default function Home() {
       <CourseOverview />
       <FAQ />
       <CTA />
-      <Footer />
       
       {/* Mobile fixed CTA */}
       <div className="md:hidden fixed bottom-4 left-0 right-0 px-4 z-40">
