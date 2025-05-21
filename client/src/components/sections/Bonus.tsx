@@ -12,7 +12,7 @@ interface BonusCardProps {
   delay?: number;
 }
 
-function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
+function BonusCard({ number, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -191,6 +191,9 @@ export default function Bonus() {
               <p className="font-bold text-[hsl(var(--rose-primary))] text-xl">
                 Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
+            </div>
+            <div className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-white px-4 py-2 rounded-lg mx-auto max-w-md mb-4 text-center font-bold">
+              Todos os cursos incluem certificado de conclusão
             </div>
             <p className="text-gray-700 text-lg mb-4">
               Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
