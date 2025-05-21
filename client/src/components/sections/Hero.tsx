@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <header className="pt-24 pb-16 lg:pb-24 overflow-hidden">
+    <header className="pt-24 pb-8 lg:pb-16 overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <motion.div 
