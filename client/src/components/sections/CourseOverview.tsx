@@ -81,7 +81,7 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="pt-0 sm:pt-2 pb-12 sm:pb-16 bg-white" id="checkout">
+    <section className="py-16 bg-white" id="checkout">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
