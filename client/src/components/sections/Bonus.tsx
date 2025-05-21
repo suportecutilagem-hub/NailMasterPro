@@ -80,7 +80,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg>
       ),
-      title: "💅 SPA DOS PÉS",
+      title: "SPA DOS PÉS",
       description: "Tratamento completo para relaxamento e beleza dos pés",
       originalPrice: "R$197"
     },
@@ -92,7 +92,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       ),
-      title: "💖 MANICURE E PEDICURE",
+      title: "MANICURE E PEDICURE",
       description: "Técnicas profissionais de cuidados para mãos e pés",
       originalPrice: "R$250"
     },
@@ -103,7 +103,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
         </svg>
       ),
-      title: "✨ ALONGAMENTO NO MOLDE F1",
+      title: "ALONGAMENTO NO MOLDE F1",
       description: "Método avançado para alongamento de unhas perfeitas",
       originalPrice: "R$197"
     },
@@ -114,7 +114,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       ),
-      title: "💎 ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
+      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos",
       originalPrice: "R$220"
     },
@@ -125,7 +125,7 @@ export default function Bonus() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
         </svg>
       ),
-      title: "🌸 UNHAS DECORADAS",
+      title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art",
       originalPrice: "R$170"
     }
@@ -133,7 +133,7 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
-      title: "📱 Curso Instagram de Sucesso",
+      title: "Curso Instagram de Sucesso",
       description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -143,7 +143,7 @@ export default function Bonus() {
       )
     },
     {
-      title: "📅 Curso Manicure Agenda Cheia",
+      title: "Curso Manicure Agenda Cheia",
       description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,7 +152,7 @@ export default function Bonus() {
       )
     },
     {
-      title: "🔍 Divulgação no Instagram Oficial",
+      title: "Divulgação no Instagram Oficial",
       description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente visibilidade.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -161,7 +161,7 @@ export default function Bonus() {
       )
     },
     {
-      title: "✨ Aula Exclusiva de Esmaltação em Gel",
+      title: "Aula Exclusiva de Esmaltação em Gel",
       description: "Domine essa técnica moderna e lucre mais com seus atendimentos.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,7 +170,7 @@ export default function Bonus() {
       )
     },
     {
-      title: "🎨 Modelos de Unhas Decoradas",
+      title: "Modelos de Unhas Decoradas",
       description: "Receba 5 inspirações de nail art para encantar suas clientes.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
