@@ -81,19 +81,19 @@ export default function Bonus() {
     },
     {
       number: 3,
-      title: "ALONGAMENTO NO MOLDE F1",
+      title: "CURSO ALONGAMENTO NO MOLDE F1 - COM CERTIFICADO",
       description: "Método avançado para alongamento de unhas perfeitas",
       originalPrice: "R$197"
     },
     {
       number: 4,
-      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
+      title: "CURSO ALONGAMENTO DE FIBRA DE VIDRO - COM CERTIFICADO",
       description: "Técnica durável e natural para alongamentos",
       originalPrice: "R$220"
     },
     {
       number: 5,
-      title: "UNHAS DECORADAS",
+      title: "CURSO UNHAS DECORADAS - COM CERTIFICADO",
       description: "Designs criativos e tendências para nail art",
       originalPrice: "R$170"
     }
