@@ -145,7 +145,7 @@ export default function Bonus() {
         <div className="text-center mb-8">
           <h5 className="text-[hsl(var(--rose-primary))] font-semibold mb-2 uppercase text-sm">OFERTA EXCLUSIVA</h5>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">
-            Adquira Hoje e <span className="text-[hsl(var(--rose-primary))]">Ganhe + 6 Bônus</span>
+            Adquira Hoje e <span className="text-[hsl(var(--rose-primary))]">Ganhe + 11 Bônus</span>
           </h2>
           <p className="text-gray-600 text-sm max-w-2xl mx-auto">
             Aproveite essa oportunidade única e receba estes bônus exclusivos que vão acelerar sua carreira
