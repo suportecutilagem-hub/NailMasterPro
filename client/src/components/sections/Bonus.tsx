@@ -22,7 +22,7 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay }}
-        className="bg-white rounded-lg shadow-md p-6 h-full border border-gray-200 relative"
+        className="bg-white rounded-lg shadow-md p-6 h-full border-2 border-[hsl(var(--rose-primary))] relative"
       >
         <div className="absolute top-0 right-0">
           <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
@@ -30,7 +30,7 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
           </div>
         </div>
 
-        <div className="mb-4 text-[hsl(var(--rose-primary))]">
+        <div className="mb-4 text-[hsl(var(--rose-primary))] bg-[#fff0f5] p-3 rounded-full inline-block">
           {icon}
         </div>
 
@@ -54,7 +54,7 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <div className="mb-3 border-l-4 border-[hsl(var(--rose-primary))] pl-3">
+    <div className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]">
       <h4 className="font-bold text-sm">{title}</h4>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
@@ -162,7 +162,7 @@ export default function Bonus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-50 rounded-lg p-8 mb-8"
+          className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg"
         >
           <h3 className="text-xl font-bold text-center mb-6">
             Bônus Adicionais: Cursos Exclusivos Completos com Certificado
@@ -179,8 +179,8 @@ export default function Bonus() {
           </div>
           
           <div className="mt-8 text-center">
-            <div className="inline-block bg-[#fff0f5] rounded-lg p-3 mb-4">
-              <p className="font-bold text-[hsl(var(--rose-primary))]">
+            <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
+              <p className="font-bold text-xl">
                 Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
             </div>
@@ -192,11 +192,11 @@ export default function Bonus() {
         </motion.div>
         
         <div className="text-center">
-          <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer">
+          <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
             <Button 
               variant="cta" 
               size="xl" 
-              className="animate-pulse shadow-glow-primary uppercase"
+              className="animate-pulse shadow-glow-primary uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300"
             >
               QUERO GARANTIR TODOS OS BÔNUS
             </Button>
