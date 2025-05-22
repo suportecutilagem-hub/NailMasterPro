@@ -23,11 +23,12 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
           </div>
         </div>
 
-        <div className="mb-4 text-[hsl(var(--rose-primary))] bg-[#fff0f5] p-3 rounded-full inline-block">
+        <h3 className="font-montserrat font-bold text-lg mb-3 pt-2">{title}</h3>
+
+        <div className="mb-3 text-[hsl(var(--rose-primary))] bg-[#fff0f5] p-3 rounded-full inline-block">
           {icon}
         </div>
 
-        <h3 className="font-montserrat font-bold text-lg mb-2">{title}</h3>
         <p className="text-gray-600 text-sm mb-3">
           {description}
         </p>
