@@ -10,7 +10,6 @@ import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -44,36 +43,20 @@ export default function Home() {
       <FAQ />
       <CTA />
       
-      {/* Mobile fixed CTA */}
-      <div className="md:hidden fixed bottom-4 left-0 right-0 px-4 z-40">
-        <a 
-          href="https://pay.cakto.com.br/uk8zdk5_340907" 
-          className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold py-4 text-lg rounded-full shadow-lg pink-shadow animate-pulse"
-          style={{ maxWidth: "100%", fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
-        >
-          QUERO COMEÇAR AGORA →
-        </a>
-      </div>
-      
-      {/* Back to Top Button */}
-      <AnimatePresence>
-        {showBackToTop && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed bottom-4 right-4 z-50"
+      {/* Back to Top Button - sem animação */}
+      {showBackToTop && (
+        <div className="fixed bottom-8 right-8 z-50">
+          <Button
+            onClick={handleBackToTop}
+            size="icon"
+            className="rounded-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white shadow-lg"
           >
-            <Button
-              size="icon"
-              onClick={handleBackToTop}
-              className="rounded-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] shadow-lg"
-            >
-              <ChevronUp className="h-5 w-5" />
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <ChevronUp className="h-5 w-5" />
+          </Button>
+        </div>
+      )}
+      
+      <Footer />
     </div>
   );
 }
