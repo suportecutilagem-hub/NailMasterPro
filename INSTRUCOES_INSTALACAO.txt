@@ -1,40 +1,57 @@
-🌟 INSTRUÇÕES DE INSTALAÇÃO - SITE CUTILAGEM RUSSA 🌟
+🎯 COMO INSTALAR A PASTA DIST NO CPANEL
+=========================================
 
-✅ ARQUIVOS INCLUSOS NO ZIP:
-- index.html (página principal)
-- assets/ (pasta com CSS e JavaScript otimizados)
-- .htaccess (configuração para funcionamento correto)
+✅ PASTA DIST CORRIGIDA E PRONTA PARA USAR!
 
-📋 COMO INSTALAR NA SUA HOSPEDAGEM:
+📋 PASSO A PASSO:
 
-1. BAIXE O ARQUIVO: cutilagem-russa-site.zip
+1. BAIXE O ARQUIVO:
+   - Baixe o arquivo "site-cutilagem-russa-cpanel.zip"
 
-2. FAÇA LOGIN NO SEU CPANEL ou painel da hospedagem
+2. ACESSE SEU CPANEL:
+   - Entre no seu painel de controle
+   - Vá em "Gerenciador de Arquivos"
 
-3. ACESSE O GERENCIADOR DE ARQUIVOS
+3. PREPARE A PASTA:
+   - Entre na pasta "public_html"
+   - Delete todos os arquivos existentes (se houver)
 
-4. NAVEGUE ATÉ A PASTA: public_html/
+4. FAÇA O UPLOAD:
+   - Clique em "Upload"
+   - Selecione o arquivo "site-cutilagem-russa-cpanel.zip"
+   - Aguarde o upload terminar
 
-5. EXTRAIA TODOS OS ARQUIVOS do ZIP diretamente na pasta public_html/
-   (ou na pasta onde você quer que o site fique)
+5. EXTRAIA OS ARQUIVOS:
+   - Clique com botão direito no arquivo ZIP
+   - Escolha "Extrair" ou "Extract"
+   - Confirme a extração
 
-6. CERTIFIQUE-SE que os arquivos estão assim:
-   ✓ public_html/index.html
-   ✓ public_html/assets/
-   ✓ public_html/.htaccess
+6. VERIFIQUE OS ARQUIVOS:
+   Depois da extração você deve ter:
+   ✓ index.html
+   ✓ .htaccess
+   ✓ pasta "assets/" com 2 arquivos dentro
 
-🎯 RECURSOS INCLUSOS:
-✅ Facebook Pixel (ID: 2332915346835348) - Rastreamento de conversões
-✅ UTMify Script - Rastreamento de parâmetros UTM
-✅ Design responsivo otimizado
-✅ +11 bônus destacados
-✅ Link de pagamento: https://pay.cakto.com.br/uk8zdk5_340907
-✅ Animações e efeitos visuais
+7. TESTE SEU SITE:
+   - Acesse seu domínio
+   - O site deve carregar perfeitamente!
 
-🔧 TESTANDO O SITE:
-Após fazer upload, acesse: seudominio.com
-Tudo deve funcionar perfeitamente!
+🚫 PROBLEMAS CORRIGIDOS:
+- ❌ Caminhos dos arquivos CSS/JS incorretos
+- ❌ Arquivo .htaccess ausente
+- ❌ Scripts do Replit removidos
+- ❌ Configurações de servidor inadequadas
 
-💡 DICA: Se tiver algum problema, verifique se o arquivo .htaccess foi carregado corretamente.
+✅ AGORA FUNCIONA:
+- ✓ Design rosa e branco completo
+- ✓ Facebook Pixel ativo
+- ✓ UTMify funcionando
+- ✓ +11 bônus visíveis
+- ✓ Animações e efeitos
+- ✓ Layout responsivo
+- ✓ Links de compra ativos
 
-🎉 SEU SITE ESTÁ PRONTO PARA RECEBER CLIENTES E GERAR CONVERSÕES!
+🎉 RESULTADO:
+Seu site ficará exatamente igual ao original, funcionando 100% no cPanel sem tela branca!
+
+Se tiver algum problema, verifique se todos os arquivos foram extraídos corretamente.
