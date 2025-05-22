@@ -95,8 +95,8 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="/cutilagem-russa-tecnica.webp"
-                alt="Técnica de Cutilagem Russa sendo aplicada - Equipamento profissional em ação" 
+                src="/antes-depois-cutilagem.png"
+                alt="Antes e depois da Cutilagem Russa - Transformação completa das unhas" 
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
               />
               
