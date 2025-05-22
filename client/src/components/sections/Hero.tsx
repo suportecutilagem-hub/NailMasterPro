@@ -94,11 +94,13 @@ export default function Hero() {
             className="order-1 lg:order-2 relative"
           >
             <div className="relative">
-              <img 
-                src="/unhas-cutilagem-russa.jpg"
-                alt="Resultado da Cutilagem Russa - Unhas perfeitas e profissionais" 
-                className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
-              />
+              <div className="w-full h-64 md:h-80 bg-gradient-to-br from-rose-100 via-pink-50 to-rose-200 rounded-2xl shadow-2xl border-2 border-[hsl(var(--rose-primary))] flex items-center justify-center">
+                <div className="text-center text-[hsl(var(--rose-primary))] p-8">
+                  <div className="text-4xl mb-4">💅</div>
+                  <div className="text-lg font-semibold">Resultado da Cutilagem Russa</div>
+                  <div className="text-sm opacity-75">Unhas perfeitas e profissionais</div>
+                </div>
+              </div>
               
               {/* Floating elements */}
               <motion.div 
