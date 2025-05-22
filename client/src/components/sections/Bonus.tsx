@@ -60,8 +60,7 @@ function BonusItem({ title, description }: BonusItemProps) {
       transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
       whileHover={{ 
         scale: 1.03, 
-        boxShadow: "0 10px 20px rgba(255, 77, 121, 0.1)",
-        borderLeftWidth: 8
+        boxShadow: "0 10px 20px rgba(255, 77, 121, 0.1)"
       }}
       className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]"
     >
@@ -174,9 +173,14 @@ export default function Bonus() {
           transition={{ duration: 0.5 }}
           className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg"
         >
-          <h3 className="text-xl font-bold text-center mb-6">
+          <motion.h3 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xl font-bold text-center mb-6 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text"
+          >
             Bônus Adicionais: Cursos Exclusivos Completos com Certificado
-          </h3>
+          </motion.h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalBonuses.map((bonus, index) => (
@@ -189,15 +193,46 @@ export default function Bonus() {
           </div>
           
           <div className="mt-8 text-center">
-            <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 300, 
+                damping: 15,
+                delay: 0.2
+              }}
+              whileHover={{ scale: 1.05 }}
+              className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md"
+            >
               <p className="font-bold text-xl">
                 Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
-            </div>
+            </motion.div>
             
-            <p className="text-gray-700 mb-4">
-              Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
-            </p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="text-gray-700 mb-4"
+            >
+              Aproveite agora e receba todos estes bônus <motion.span 
+                initial={{ color: "#333" }}
+                animate={{ 
+                  color: ["#333", "#e6224c", "#333"],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  repeatType: "reverse" 
+                }}
+                className="font-bold"
+                style={{ display: "inline-block" }}
+              >
+                GRATUITAMENTE
+              </motion.span> ao adquirir o curso!
+            </motion.p>
           </div>
         </motion.div>
         
