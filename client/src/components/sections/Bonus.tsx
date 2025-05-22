@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { motion } from "framer-motion";
 import { Calendar, Instagram, Palette, Percent, Book } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
 
@@ -16,14 +15,8 @@ interface BonusCardProps {
 
 function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay }}
-        className="bg-white rounded-lg shadow-md p-6 h-full border-2 border-[hsl(var(--rose-primary))] relative"
-      >
+    <div className="w-full sm:w-1/2 lg:w-1/3 p-1">
+      <div className="bg-white rounded-lg shadow-md p-4 h-full border-2 border-[hsl(var(--rose-primary))] relative">
         <div className="absolute top-0 right-0">
           <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
             Bônus {number}
@@ -42,7 +35,7 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
           <span className="text-gray-500 line-through mr-2 text-sm">{originalPrice}</span>
           <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">GRÁTIS</span>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -54,19 +47,10 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -30, scale: 0.9 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1 }}
-      transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
-      whileHover={{ 
-        scale: 1.03, 
-        boxShadow: "0 10px 20px rgba(255, 77, 121, 0.1)"
-      }}
-      className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]"
-    >
+    <div className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]">
       <h4 className="font-bold text-sm">{title}</h4>
       <p className="text-gray-600 text-sm">{description}</p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -152,7 +136,7 @@ export default function Bonus() {
           </p>
         </div>
 
-        <div className="flex flex-wrap -mx-3 mb-10">
+        <div className="flex flex-wrap -mx-1 mb-10">
           {bonuses.map((bonus, index) => (
             <BonusCard
               key={index}
@@ -161,26 +145,14 @@ export default function Bonus() {
               title={bonus.title}
               description={bonus.description}
               originalPrice={bonus.originalPrice}
-              delay={index * 0.1}
             />
           ))}
         </div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg"
-        >
-          <motion.h3 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-xl font-bold text-center mb-6 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text"
-          >
+        <div className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg">
+          <h3 className="text-xl font-bold text-center mb-6 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">
             Bônus Adicionais: Cursos Exclusivos Completos com Certificado
-          </motion.h3>
+          </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalBonuses.map((bonus, index) => (
@@ -193,58 +165,26 @@ export default function Bonus() {
           </div>
           
           <div className="mt-8 text-center">
-            <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 300, 
-                damping: 15,
-                delay: 0.2
-              }}
-              whileHover={{ scale: 1.05 }}
-              className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md"
-            >
+            <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
               <p className="font-bold text-xl">
                 Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
-            </motion.div>
+            </div>
             
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-gray-700 mb-4"
-            >
-              Aproveite agora e receba todos estes bônus <motion.span 
-                initial={{ color: "#333" }}
-                animate={{ 
-                  color: ["#333", "#e6224c", "#333"],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  repeatType: "reverse" 
-                }}
-                className="font-bold"
-                style={{ display: "inline-block" }}
-              >
-                GRATUITAMENTE
-              </motion.span> ao adquirir o curso!
-            </motion.p>
+            <p className="text-gray-700 mb-4">
+              Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
+            </p>
           </div>
-        </motion.div>
+        </div>
         
         <div className="text-center">
           <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
             <Button 
               variant="cta" 
               size="xl" 
-              className="uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300 shadow-lg animate-float"
+              className="uppercase font-bold tracking-wide shadow-lg"
               style={{ 
-                boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)",
-                transition: "all 0.3s ease-in-out"
+                boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)"
               }}
             >
               QUERO GARANTIR TODOS OS BÔNUS

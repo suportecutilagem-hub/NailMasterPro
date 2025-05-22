@@ -1,18 +1,12 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <header className="pt-6 pb-4 lg:pt-16 lg:pb-16 overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="order-2 lg:order-1 mt-2 lg:mt-0"
-          >
+          <div className="order-2 lg:order-1 mt-2 lg:mt-0">
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO COMPLETO DE</h5>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-montserrat mb-6 leading-tight">
               <span className="gradient-text">Cutilagem Russa</span> Profissional

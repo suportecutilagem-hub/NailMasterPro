@@ -103,7 +103,5 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  .float-animation-delay {
-    animation: float 3s ease-in-out 0.5s infinite;
-  }
+  /* Animações removidas */
 }
