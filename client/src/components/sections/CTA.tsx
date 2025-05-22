@@ -44,7 +44,7 @@ export default function CTA() {
                 size="xl" 
                 className="shadow-lg w-full sm:w-auto"
               >
-                QUERO GARANTIR MINHA VAGA AGORA
+                QUERO COMEÇAR AGORA
               </Button>
             </a>
           </motion.div>

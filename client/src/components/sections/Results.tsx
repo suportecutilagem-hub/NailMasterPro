@@ -84,7 +84,7 @@ export default function Results() {
                   size="xl" 
                   className="w-full uppercase font-bold tracking-wide"
                 >
-                  GARANTIR MINHA VAGA
+                  QUERO COMEÇAR AGORA
                 </Button>
               </a>
             </div>
