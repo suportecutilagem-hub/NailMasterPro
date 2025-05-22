@@ -118,16 +118,11 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
+                className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg"
               >
-                <div className="w-8 h-8 bg-[hsl(var(--teal))] rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500">Avaliação média</div>
-                  <div className="text-lg font-bold text-gray-800">4.9/5</div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[hsl(var(--rose-primary))]">16h</div>
+                  <div className="text-xs text-gray-600">Certificado</div>
                 </div>
               </motion.div>
               
@@ -135,16 +130,23 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
+                className="absolute -bottom-4 -right-4 bg-[hsl(var(--rose-primary))] text-white rounded-full p-4 shadow-lg"
               >
-                <div className="w-8 h-8 bg-[hsl(var(--rose-primary))] rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3h2l3 2 4-2v3h3v4H4z"/>
-                  </svg>
+                <div className="text-center">
+                  <div className="text-lg font-bold">100%</div>
+                  <div className="text-xs">Online</div>
                 </div>
-                <div>
-                  <div className="text-xs text-gray-500">Alunas satisfeitas</div>
-                  <div className="text-lg font-bold text-gray-800">1,500+</div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                className="absolute top-1/2 -left-8 bg-[hsl(var(--teal))] text-white rounded-lg p-3 shadow-lg hidden lg:block"
+              >
+                <div className="text-center">
+                  <div className="text-sm font-bold">+11</div>
+                  <div className="text-xs">Bônus</div>
                 </div>
               </motion.div>
             </div>
