@@ -187,11 +187,11 @@ export default function Bonus() {
                 boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)"
               }}
             >
-              QUERO GARANTIR TODOS OS BÔNUS
+              QUERO TODOS OS BÔNUS AGORA
             </Button>
           </a>
           <p className="text-sm text-gray-500 mt-3">
-            Pagamento único de R$65,00 • Acesso vitalício • Garantia de 7 dias
+            Pagamento único de R$65,00 • Acesso vitalício
           </p>
         </div>
       </Container>
