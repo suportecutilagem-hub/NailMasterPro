@@ -196,7 +196,7 @@ export default function Bonus() {
             <Button 
               variant="cta" 
               size="xl" 
-              className="uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300 shadow-lg"
+              className="uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300 shadow-lg animate-float"
               style={{ 
                 boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)",
                 transition: "all 0.3s ease-in-out"
