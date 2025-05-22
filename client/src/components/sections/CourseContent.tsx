@@ -188,8 +188,7 @@ export default function CourseContent() {
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                  <h3 className="font-bold text-lg">{feature.title}</h3>
                 </div>
               </div>
             ))}
