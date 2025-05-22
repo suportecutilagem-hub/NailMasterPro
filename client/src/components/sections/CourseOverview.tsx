@@ -52,7 +52,7 @@ export default function CourseOverview() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
-      title: "Certificado Incluso",
+      title: "6 Certificados Inclusos",
       description: "Receba seu certificado ao concluir o curso e agregue valor ao seu currículo profissional."
     },
     {
@@ -134,7 +134,7 @@ export default function CourseOverview() {
                   </div>
                   <div className="flex items-center">
                     <CheckIcon className="text-[hsl(var(--teal))] mr-2" />
-                    <span>Certificado de conclusão</span>
+                    <span>6 certificados de conclusão</span>
                   </div>
                   <div className="flex items-center">
                     <CheckIcon className="text-[hsl(var(--teal))] mr-2" />
@@ -154,7 +154,7 @@ export default function CourseOverview() {
                     className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-base sm:text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow"
                     style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
                   >
-                    GARANTIR MINHA VAGA AGORA
+                    QUERO COMEÇAR AGORA
                   </a>
                 </div>
                 
