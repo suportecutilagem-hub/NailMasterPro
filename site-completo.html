@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutilagem Russa - Curso Completo</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2332915346835348');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff4d6d 0%, #c73650 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .price {
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 20px 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+        }
+        
+        .new-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+        
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .cta-button:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Course Content */
+        .course-content {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #ff4d6d;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #ff4d6d;
+            margin-bottom: 20px;
+        }
+        
+        /* Bonus Section */
+        .bonus-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .bonus-card {
+            background: #fff0f5;
+            border: 2px solid #ff4d6d;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .bonus-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(255, 77, 121, 0.1);
+        }
+        
+        .bonus-number {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #ff4d6d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+        }
+        
+        .bonus-price {
+            color: #666;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        
+        .bonus-free {
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #ff4d6d;
+            margin-top: 15px;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #ff4d6d;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid,
+            .bonus-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Meta Pixel noscript -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2332915346835348&ev=PageView&noscript=1"
+    /></noscript>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cutilagem Russa Profissional</h1>
+            <p>Domine a técnica mais procurada do mercado e transforme sua carreira em 16 horas</p>
+            
+            <div class="price">
+                <div class="old-price">De R$ 79,90</div>
+                <div class="new-price">Por apenas R$ 65,00</div>
+            </div>
+            
+            <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" class="cta-button">
+                QUERO COMEÇAR AGORA
+            </a>
+            
+            <p>✅ Certificado Digital • ✅ Acesso Vitalício • ✅ Garantia de 7 dias</p>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="course-content">
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💅</div>
+                    <h3>Técnica Cutilagem Russa</h3>
+                    <p>Aprenda a técnica completa passo a passo, desde o básico até o avançado</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Módulos Práticos</h3>
+                    <p>16 horas de conteúdo prático com exercícios e demonstrações reais</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>Certificado Digital</h3>
+                    <p>Receba seu certificado reconhecido ao finalizar o curso</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Suporte Exclusivo</h3>
+                    <p>Tire suas dúvidas direto com profissionais especializados</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Acesse de Qualquer Lugar</h3>
+                    <p>Estude no seu tempo, pelo celular, tablet ou computador</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Acesso Vitalício</h3>
+                    <p>Uma vez matriculada, o curso é seu para sempre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+        <div class="container">
+            <h2 class="section-title">Adquira Hoje e Ganhe + 11 Bônus</h2>
+            
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 1</div>
+                    <h3>Curso Manicure Agenda Cheia</h3>
+                    <p>Aprenda a lotar sua agenda com clientes fiéis e recorrentes.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$97</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 2</div>
+                    <h3>Divulgação no Instagram Oficial</h3>
+                    <p>Seja vista por mais de 100 mil pessoas sem gastar nada e aumente a visibilidade.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$250</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 3</div>
+                    <h3>Aula Exclusiva de Esmaltação em Gel</h3>
+                    <p>Domine essa técnica moderna e lucre mais com seus atendimentos.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$147</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 4</div>
+                    <h3>Modelos de Unhas Decoradas</h3>
+                    <p>Receba 5 inspirações de nail art para encantar suas clientes.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$97</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 5</div>
+                    <h3>30% de desconto em materiais</h3>
+                    <p>Economize nos itens que você realmente vai usar no curso.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$120</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <div class="bonus-number">Bônus 6</div>
+                    <h3>Curso Instagram de Sucesso</h3>
+                    <p>Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="bonus-price">R$197</span>
+                        <span class="bonus-free">GRÁTIS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: #fff0f5; border-radius: 15px;">
+                <h3 style="color: #ff4d6d; margin-bottom: 20px;">Bônus Adicionais: Cursos Exclusivos Completos com Certificado</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div>• SPA DOS PÉS</div>
+                    <div>• MANICURE E PEDICURE</div>
+                    <div>• ALONGAMENTO NO MOLDE F1</div>
+                    <div>• ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO</div>
+                    <div>• UNHAS DECORADAS</div>
+                </div>
+                <p style="font-weight: bold; color: #ff4d6d; font-size: 1.2rem;">
+                    Valor Total dos Bônus: <span style="text-decoration: line-through;">R$997,00</span>
+                </p>
+                <p style="margin-top: 10px;">Aproveite agora e receba todos estes bônus <strong>GRATUITAMENTE</strong> ao adquirir o curso!</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" class="cta-button">
+                    QUERO GARANTIR TODOS OS BÔNUS
+                </a>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                    Pagamento único de R$65,00 • Acesso vitalício • Garantia de 7 dias
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que as alunas estão dizendo</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Curso incrível! Em apenas 2 semanas já estava atendendo clientes e ganhando dinheiro. A técnica da cutilagem russa realmente faz diferença!"</p>
+                    <div class="testimonial-author">- Maria Silva, São Paulo</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Nunca imaginei que poderia aprender tão rápido. O curso é muito didático e os bônus são incríveis. Já recuperei o investimento!"</p>
+                    <div class="testimonial-author">- Ana Santos, Rio de Janeiro</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Excelente qualidade! As aulas são claras e fáceis de seguir. Recomendo para quem quer trabalhar com unhas profissionalmente."</p>
+                    <div class="testimonial-author">- Carla Oliveira, Belo Horizonte</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"O melhor investimento que fiz! Hoje tenho minha agenda sempre cheia e ganho muito bem. Gratidão por esse curso maravilhoso!"</p>
+                    <div class="testimonial-author">- Juliana Costa, Porto Alegre</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Superou minhas expectativas! A técnica da cutilagem russa é realmente diferenciada. Curso completo e muito bem explicado."</p>
+                    <div class="testimonial-author">- Fernanda Lima, Brasília</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Fantástico! Em 1 mês já estava trabalhando e ganhando minha independência financeira. Vale cada centavo investido!"</p>
+                    <div class="testimonial-author">- Patrícia Rocha, Salvador</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    O curso tem certificado?
+                </div>
+                <div class="faq-answer">
+                    Sim! Ao concluir o curso você recebe um certificado digital que comprova sua qualificação em Cutilagem Russa.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Por quanto tempo tenho acesso?
+                </div>
+                <div class="faq-answer">
+                    O acesso é vitalício! Uma vez matriculada, você pode acessar o conteúdo sempre que quiser, para sempre.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Preciso ter experiência prévia?
+                </div>
+                <div class="faq-answer">
+                    Não! O curso foi desenvolvido do básico ao avançado, perfeito para iniciantes que querem aprender do zero.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Como funciona a garantia?
+                </div>
+                <div class="faq-answer">
+                    Você tem 7 dias de garantia incondicional. Se não ficar satisfeita, devolvemos 100% do seu dinheiro.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Posso acessar pelo celular?
+                </div>
+                <div class="faq-answer">
+                    Sim! O curso funciona perfeitamente em celulares, tablets e computadores. Estude onde e quando quiser.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="hero">
+        <div class="container">
+            <h2>Não perca esta oportunidade!</h2>
+            <p>Transforme sua paixão por unhas em uma profissão lucrativa</p>
+            
+            <div class="price">
+                <div class="old-price">De R$ 79,90</div>
+                <div class="new-price">Por apenas R$ 65,00</div>
+            </div>
+            
+            <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" class="cta-button">
+                GARANTIR MINHA VAGA AGORA
+            </a>
+            
+            <p>✅ +11 Bônus Grátis • ✅ Certificado Digital • ✅ Suporte Exclusivo</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cutilagem Russa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- UTMify Script -->
+    <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    data-utmify-ignore-iframe
+    data-utmify-ignore-retry
+    async
+    defer
+    ></script>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
