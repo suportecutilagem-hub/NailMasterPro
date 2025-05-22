@@ -54,10 +54,20 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <div className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]">
+    <motion.div
+      initial={{ opacity: 0, x: -30, scale: 0.9 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
+      whileHover={{ 
+        scale: 1.03, 
+        boxShadow: "0 10px 20px rgba(255, 77, 121, 0.1)",
+        borderLeftWidth: 8
+      }}
+      className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]"
+    >
       <h4 className="font-bold text-sm">{title}</h4>
       <p className="text-gray-600 text-sm">{description}</p>
-    </div>
+    </motion.div>
   );
 }
 
