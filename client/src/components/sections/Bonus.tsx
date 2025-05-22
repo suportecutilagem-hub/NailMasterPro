@@ -16,27 +16,27 @@ interface BonusCardProps {
 function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
     <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
-      <div className="bg-white rounded-xl shadow-lg p-6 h-full border-2 border-[hsl(var(--rose-primary))] relative hover:shadow-xl transition-shadow duration-300">
-        <div className="absolute -top-3 -right-3">
-          <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-2 px-4 rounded-full shadow-lg">
+      <div className="bg-white rounded-lg shadow-md p-4 h-full border-2 border-[hsl(var(--rose-primary))] relative hover:shadow-lg transition-shadow duration-300">
+        <div className="absolute -top-2 -right-2">
+          <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-full shadow-md">
             Bônus {number}
           </div>
         </div>
 
-        <div className="text-center mb-4">
-          <div className="w-16 h-16 mx-auto mb-4 text-[hsl(var(--rose-primary))] bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] rounded-xl flex items-center justify-center shadow-md">
+        <div className="flex items-center mb-3 pt-1">
+          <div className="w-10 h-10 mr-3 text-[hsl(var(--rose-primary))] bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] rounded-lg flex items-center justify-center flex-shrink-0">
             {icon}
           </div>
-          <h3 className="font-montserrat font-bold text-lg mb-3 text-gray-800">{title}</h3>
+          <h3 className="font-montserrat font-bold text-base text-gray-800 leading-tight">{title}</h3>
         </div>
 
-        <p className="text-gray-600 text-sm text-center mb-4 leading-relaxed">
+        <p className="text-gray-600 text-sm mb-3 leading-relaxed">
           {description}
         </p>
         
-        <div className="flex items-center justify-center mt-auto pt-3 border-t border-gray-100">
-          <span className="text-gray-500 line-through mr-3 text-sm">{originalPrice}</span>
-          <span className="bg-gradient-to-r from-[hsl(var(--teal))] to-[#20b2aa] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+        <div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
+          <span className="text-gray-500 line-through text-sm">{originalPrice}</span>
+          <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">
             GRÁTIS
           </span>
         </div>
