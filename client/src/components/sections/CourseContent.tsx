@@ -12,7 +12,7 @@ interface CourseFeatureProps {
 
 function CourseFeature({ icon, title, description, delay = 0 }: CourseFeatureProps) {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -26,7 +26,7 @@ function CourseFeature({ icon, title, description, delay = 0 }: CourseFeaturePro
         <h3 className="font-montserrat font-bold text-xl mb-3">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </Card>
-    </motion.div>
+    </div>
   );
 }
 
@@ -173,7 +173,7 @@ export default function CourseContent() {
   return (
     <section className="pt-0 pb-6 lg:pb-10 bg-white">
       <Container>
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -186,7 +186,7 @@ export default function CourseContent() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Um programa completo e prático para você se tornar uma profissional de cutilagem russa em tempo recorde
           </p>
-        </motion.div>
+        </div>
         
         <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl p-6 shadow-lg">
           <ul className="space-y-4">
@@ -211,7 +211,7 @@ export default function CourseContent() {
           </ul>
         </div>
         
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -228,7 +228,7 @@ export default function CourseContent() {
               QUERO DOMINAR A CUTILAGEM RUSSA
             </Button>
           </a>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

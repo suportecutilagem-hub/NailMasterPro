@@ -13,7 +13,7 @@ interface FeatureItemProps {
 
 function FeatureItem({ icon, title, description, delay = 0 }: FeatureItemProps) {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -27,7 +27,7 @@ function FeatureItem({ icon, title, description, delay = 0 }: FeatureItemProps) 
         <h3 className="font-bold text-xl mb-1">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -84,7 +84,7 @@ export default function CourseOverview() {
     <section className="py-16 bg-white" id="checkout">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
+          <div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -106,10 +106,10 @@ export default function CourseOverview() {
                 />
               ))}
             </div>
-          </motion.div>
+          </div>
           
           {/* Course Card */}
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -159,7 +159,7 @@ export default function CourseOverview() {
                   </div>
                 </div>
                 
-                <motion.div
+                <div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   animate={{ 
@@ -183,7 +183,7 @@ export default function CourseOverview() {
                   >
                     GARANTIR MINHA VAGA AGORA
                   </a>
-                </motion.div>
+                </div>
                 
                 <div className="text-center">
                   <p className="text-gray-500 text-sm">
@@ -195,7 +195,7 @@ export default function CourseOverview() {
                 </div>
               </div>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>

@@ -12,7 +12,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -40,7 +40,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
           <p>{answer}</p>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
 
@@ -75,7 +75,7 @@ export default function FAQ() {
   return (
     <section className="py-16 bg-gray-50">
       <Container>
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -88,7 +88,7 @@ export default function FAQ() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Tire suas dúvidas sobre o curso e a técnica de cutilagem russa
           </p>
-        </motion.div>
+        </div>
         
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (

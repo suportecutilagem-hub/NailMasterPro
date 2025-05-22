@@ -13,7 +13,7 @@ interface TestimonialProps {
 
 function Testimonial({ content, image, name, location, delay = 0 }: TestimonialProps) {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -57,7 +57,7 @@ function Testimonial({ content, image, name, location, delay = 0 }: TestimonialP
           </div>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }
 
@@ -104,7 +104,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 bg-gray-50">
       <Container>
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -117,7 +117,7 @@ export default function Testimonials() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Veja os resultados e a transformação na carreira de quem já participou do curso
           </p>
-        </motion.div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
@@ -132,7 +132,7 @@ export default function Testimonials() {
           ))}
         </div>
         
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -149,7 +149,7 @@ export default function Testimonials() {
               QUERO COMEÇAR AGORA
             </Button>
           </a>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

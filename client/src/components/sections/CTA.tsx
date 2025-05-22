@@ -6,7 +6,7 @@ export default function CTA() {
   return (
     <section className="py-16 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-white">
       <Container>
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -26,7 +26,7 @@ export default function CTA() {
             </div>
           </div>
           
-          <motion.div
+          <div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={{ 
@@ -53,7 +53,7 @@ export default function CTA() {
                 QUERO GARANTIR MINHA VAGA AGORA
               </Button>
             </a>
-          </motion.div>
+          </div>
           
           <p className="text-white/80 text-sm mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +61,7 @@ export default function CTA() {
             </svg>
             Pagamento 100% seguro via PIX e Cartão | Acesso Imediato
           </p>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

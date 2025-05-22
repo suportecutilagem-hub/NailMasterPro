@@ -1,6 +1,5 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 
 interface ResultCardProps {
   image: string;
@@ -11,13 +10,7 @@ interface ResultCardProps {
 
 function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
-      className="relative group overflow-hidden rounded-xl shadow-lg"
-    >
+    <div className="relative group overflow-hidden rounded-xl shadow-lg">
       <img 
         src={image} 
         alt={title} 
@@ -29,7 +22,7 @@ function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
           <p className="text-sm">{description}</p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -55,7 +48,7 @@ export default function Results() {
   return (
     <section className="py-16 bg-gray-50">
       <Container>
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,7 +61,7 @@ export default function Results() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Veja a qualidade dos resultados que você vai conseguir após dominar as técnicas do curso
           </p>
-        </motion.div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {results.map((result, index) => (
@@ -82,7 +75,7 @@ export default function Results() {
           ))}
         </div>
         
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -99,7 +92,7 @@ export default function Results() {
               QUERO RESULTADOS PROFISSIONAIS
             </Button>
           </a>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
