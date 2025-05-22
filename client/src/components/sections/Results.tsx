@@ -17,9 +17,9 @@ function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
         className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-        <div className="p-4 text-white">
-          <h3 className="font-bold font-montserrat">{title}</h3>
-          <p className="text-sm">{description}</p>
+        <div className="p-6 text-white">
+          <h3 className="font-montserrat font-bold text-xl mb-2">{title}</h3>
+          <p className="text-gray-200">{description}</p>
         </div>
       </div>
     </div>
@@ -29,69 +29,66 @@ function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
 export default function Results() {
   const results = [
     {
-      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=800",
-      title: "Técnica Precisa",
-      description: "Remoção cuidadosa com ferramentas profissionais"
+      image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
+      title: "Técnica Profissional",
+      description: "Aprenda a técnica que os salões mais procuram"
     },
     {
-      image: "https://pixabay.com/get/g00d34730d96629f27c192c9e98eea002e593c51a43092b6e5ae0ccbcf3d179de98411851399392f3c20961ae389a4ed206ad2a097d15f6958331cf14b01760d8_1280.jpg",
-      title: "Acabamento Impecável",
-      description: "Cutículas perfeitamente aparadas"
+      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
+      title: "Resultados Incríveis",
+      description: "Resultados duradouros e naturais"
     },
     {
-      image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=800",
-      title: "Transformação Visível",
-      description: "Compare a diferença dos resultados"
+      image: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800",
+      title: "Clientes Satisfeitas",
+      description: "Fidelize suas clientes com a melhor técnica"
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 lg:py-24 bg-gray-50">
       <Container>
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
-            Resultados <span className="text-[hsl(var(--rose-primary))]">Profissionais</span>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-6">
+            Resultados que <span className="gradient-text">Impressionam</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Veja a qualidade dos resultados que você vai conseguir após dominar as técnicas do curso
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Veja a transformação que a técnica de Cutilagem Russa pode proporcionar às suas clientes
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {results.map((result, index) => (
             <ResultCard
               key={index}
-              image={result.image}
-              title={result.title}
-              description={result.description}
+              {...result}
               delay={index * 0.1}
             />
           ))}
         </div>
         
-        <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 text-center"
-        >
-          <a href="#checkout">
-            <Button 
-              variant="cta" 
-              roundedness="full" 
-              size="xl" 
-              className="shadow-lg"
-            >
-              QUERO RESULTADOS PROFISSIONAIS
-            </Button>
-          </a>
+        <div className="text-center">
+          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 max-w-md mx-auto">
+            <div className="text-center">
+              <p className="text-gray-500 text-sm mb-2">Oferta especial</p>
+              <div className="text-3xl font-bold text-[hsl(var(--rose-primary))] mb-4">
+                R$65<span className="text-lg">,00</span>
+              </div>
+              <p className="text-gray-600 text-sm mb-6">
+                Pagamento único • Acesso vitalício
+              </p>
+              
+              <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
+                <Button 
+                  variant="cta" 
+                  size="xl" 
+                  className="w-full uppercase font-bold tracking-wide"
+                >
+                  GARANTIR MINHA VAGA
+                </Button>
+              </a>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

@@ -11,13 +11,7 @@ interface CourseFeatureProps {
 
 function CourseFeature({ icon, title, description, delay = 0 }: CourseFeatureProps) {
   return (
-    <div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -5 }}
-    >
+    <div className="transform transition-transform hover:-translate-y-1">
       <Card className="p-6 hover:shadow-xl">
         <div className="w-12 h-12 bg-[hsl(var(--rose-light))] rounded-full flex items-center justify-center mb-4">
           {icon}
@@ -173,10 +167,6 @@ export default function CourseContent() {
     <section className="pt-0 pb-6 lg:pb-10 bg-white">
       <Container>
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-6"
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
@@ -192,10 +182,6 @@ export default function CourseContent() {
             {features.map((feature, index) => (
               <motion.li
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex-shrink-0 w-10 h-10 mr-4 bg-[hsl(var(--rose-light))] rounded-full flex items-center justify-center text-[hsl(var(--rose-primary))]">
@@ -211,10 +197,6 @@ export default function CourseContent() {
         </div>
         
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 text-center"
         >
           <a href="#checkout">

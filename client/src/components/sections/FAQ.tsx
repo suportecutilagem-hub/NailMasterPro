@@ -12,10 +12,6 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
   
   return (
     <div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-white rounded-lg shadow-md overflow-hidden"
     >
       <button 
@@ -75,10 +71,6 @@ export default function FAQ() {
     <section className="py-16 bg-gray-50">
       <Container>
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">

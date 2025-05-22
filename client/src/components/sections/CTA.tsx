@@ -6,10 +6,6 @@ export default function CTA() {
     <section className="py-16 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-white">
       <Container>
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center"
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-6">
@@ -26,7 +22,6 @@ export default function CTA() {
           </div>
           
           <div
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={{ 
               scale: [1, 1.04, 1],
@@ -36,7 +31,6 @@ export default function CTA() {
                 "0 5px 15px rgba(255, 255, 255, 0.2)"
               ]
             }}
-            transition={{ 
               repeat: Infinity,
               repeatType: "reverse",
               duration: 2

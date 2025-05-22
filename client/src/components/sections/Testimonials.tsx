@@ -13,10 +13,6 @@ interface TestimonialProps {
 function Testimonial({ content, image, name, location, delay = 0 }: TestimonialProps) {
   return (
     <div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
     >
       <Card className="p-6">
         <div className="flex items-center mb-4">
@@ -104,10 +100,6 @@ export default function Testimonials() {
     <section className="py-16 bg-gray-50">
       <Container>
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
@@ -132,10 +124,6 @@ export default function Testimonials() {
         </div>
         
         <div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-12 text-center"
         >
           <a href="#checkout">
