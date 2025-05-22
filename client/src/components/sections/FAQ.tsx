@@ -1,5 +1,4 @@
 import { Container } from "../ui/container";
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 interface FAQItemProps {

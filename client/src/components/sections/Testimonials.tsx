@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 
 interface TestimonialProps {
   content: string;

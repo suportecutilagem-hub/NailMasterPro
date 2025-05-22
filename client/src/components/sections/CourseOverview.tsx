@@ -2,7 +2,6 @@ import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { CheckIcon } from "../ui/check-icon";
-import { motion } from "framer-motion";
 
 interface FeatureItemProps {
   icon: React.ReactNode;

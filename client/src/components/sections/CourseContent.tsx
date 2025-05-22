@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { motion } from "framer-motion";
 
 interface CourseFeatureProps {
   icon: React.ReactNode;
