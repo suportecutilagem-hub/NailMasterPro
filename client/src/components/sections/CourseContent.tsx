@@ -180,7 +180,7 @@ export default function CourseContent() {
         <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl p-6 shadow-lg">
           <ul className="space-y-4">
             {features.map((feature, index) => (
-              <motion.li
+              <div
                 key={index}
                 className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
               >
@@ -191,7 +191,7 @@ export default function CourseContent() {
                   <h3 className="font-bold text-lg mb-1">{feature.title}</h3>
                   <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
-              </motion.li>
+              </div>
             ))}
           </ul>
         </div>

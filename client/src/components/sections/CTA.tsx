@@ -31,10 +31,6 @@ export default function CTA() {
                 "0 5px 15px rgba(255, 255, 255, 0.2)"
               ]
             }}
-              repeat: Infinity,
-              repeatType: "reverse",
-              duration: 2
-            }}
           >
             <a href="https://pay.cakto.com.br/uk8zdk5_340907">
               <Button 

@@ -147,19 +147,7 @@ export default function CourseOverview() {
                 </div>
                 
                 <div
-                  whileTap={{ scale: 0.98 }}
-                  animate={{ 
-                    scale: [1, 1.04, 1],
-                    boxShadow: [
-                      "0 5px 15px rgba(0, 0, 0, 0.1)",
-                      "0 10px 25px rgba(236, 72, 153, 0.3)",
-                      "0 5px 15px rgba(0, 0, 0, 0.1)"
-                    ]
-                  }}
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    duration: 2
-                  }}
+                  className="transform transition-transform hover:scale-105 active:scale-95"
                 >
                   <a 
                     href="https://pay.cakto.com.br/uk8zdk5_340907" 
