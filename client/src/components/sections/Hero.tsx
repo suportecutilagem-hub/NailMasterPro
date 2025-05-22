@@ -6,75 +6,25 @@ export default function Hero() {
   return (
     <header className="pt-6 pb-8 lg:pt-16 lg:pb-16">
       <Container>
-        <div className="max-w-md mx-auto">
-          {/* Hero Image with floating elements */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative mb-8"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
-              alt="Técnica de Cutilagem Russa" 
-              className="rounded-2xl shadow-2xl w-full h-auto"
-            />
-            
-            {/* Floating elements - Avaliação */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
-            >
-              <div className="w-8 h-8 bg-[hsl(var(--teal))] rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              </div>
-              <div>
-                <div className="text-xs text-gray-500">Avaliação média</div>
-                <div className="text-lg font-bold text-gray-800">4.9/5</div>
-              </div>
-            </motion.div>
-            
-            {/* Floating elements - Alunas */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
-            >
-              <div className="w-8 h-8 bg-[hsl(var(--rose-primary))] rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3h2l3 2 4-2v3h3v4H4z"/>
-                </svg>
-              </div>
-              <div>
-                <div className="text-xs text-gray-500">Alunas satisfeitas</div>
-                <div className="text-lg font-bold text-gray-800">1,500+</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="order-2 lg:order-1"
           >
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO COMPLETO DE</h5>
-            <h1 className="text-3xl sm:text-4xl font-bold font-montserrat mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold font-montserrat mb-6 leading-tight">
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
-            <p className="text-gray-700 text-base mb-6">
+            <p className="text-gray-700 text-lg mb-6">
               Domine a técnica que mais cresce no mercado de manicure e transforme sua carreira em apenas <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span> com acesso vitalício.
             </p>
             
             {/* Feature badges */}
-            <div className="flex flex-wrap gap-3 justify-center mb-8">
+            <div className="flex flex-wrap gap-3 mb-8">
               <div className="bg-[hsl(var(--rose-light))] rounded-lg px-4 py-3 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -100,8 +50,8 @@ export default function Hero() {
             {/* Price */}
             <div className="mb-8">
               <p className="text-gray-500 text-sm mb-2">De <span className="line-through">R$197,00</span></p>
-              <div className="flex items-baseline justify-center gap-2 mb-4">
-                <div className="text-4xl font-bold text-[hsl(var(--rose-primary))]">
+              <div className="flex items-baseline gap-2 mb-4">
+                <div className="text-5xl font-bold text-[hsl(var(--rose-primary))]">
                   R$ 65,00
                 </div>
                 <div className="bg-[hsl(var(--teal))] text-white px-2 py-1 rounded text-sm font-bold">
@@ -120,7 +70,7 @@ export default function Hero() {
                 <Button 
                   variant="cta" 
                   size="xl" 
-                  className="w-full uppercase font-bold tracking-wide shadow-lg"
+                  className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg"
                 >
                   QUERO COMEÇAR AGORA
                 </Button>
@@ -133,6 +83,57 @@ export default function Hero() {
               </svg>
               Pagamento 100% seguro
             </p>
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="order-1 lg:order-2 relative"
+          >
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+                alt="Técnica de Cutilagem Russa" 
+                className="rounded-2xl shadow-2xl w-full h-auto"
+              />
+              
+              {/* Floating elements */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
+              >
+                <div className="w-8 h-8 bg-[hsl(var(--teal))] rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500">Avaliação média</div>
+                  <div className="text-lg font-bold text-gray-800">4.9/5</div>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-lg flex items-center gap-2"
+              >
+                <div className="w-8 h-8 bg-[hsl(var(--rose-primary))] rounded-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-3h2l3 2 4-2v3h3v4H4z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500">Alunas satisfeitas</div>
+                  <div className="text-lg font-bold text-gray-800">1,500+</div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </Container>
