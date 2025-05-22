@@ -1,0 +1,40 @@
+🌟 INSTRUÇÕES DE INSTALAÇÃO - SITE CUTILAGEM RUSSA 🌟
+
+✅ ARQUIVOS INCLUSOS NO ZIP:
+- index.html (página principal)
+- assets/ (pasta com CSS e JavaScript otimizados)
+- .htaccess (configuração para funcionamento correto)
+
+📋 COMO INSTALAR NA SUA HOSPEDAGEM:
+
+1. BAIXE O ARQUIVO: cutilagem-russa-site.zip
+
+2. FAÇA LOGIN NO SEU CPANEL ou painel da hospedagem
+
+3. ACESSE O GERENCIADOR DE ARQUIVOS
+
+4. NAVEGUE ATÉ A PASTA: public_html/
+
+5. EXTRAIA TODOS OS ARQUIVOS do ZIP diretamente na pasta public_html/
+   (ou na pasta onde você quer que o site fique)
+
+6. CERTIFIQUE-SE que os arquivos estão assim:
+   ✓ public_html/index.html
+   ✓ public_html/assets/
+   ✓ public_html/.htaccess
+
+🎯 RECURSOS INCLUSOS:
+✅ Facebook Pixel (ID: 2332915346835348) - Rastreamento de conversões
+✅ UTMify Script - Rastreamento de parâmetros UTM
+✅ Design responsivo otimizado
+✅ +11 bônus destacados
+✅ Link de pagamento: https://pay.cakto.com.br/uk8zdk5_340907
+✅ Animações e efeitos visuais
+
+🔧 TESTANDO O SITE:
+Após fazer upload, acesse: seudominio.com
+Tudo deve funcionar perfeitamente!
+
+💡 DICA: Se tiver algum problema, verifique se o arquivo .htaccess foi carregado corretamente.
+
+🎉 SEU SITE ESTÁ PRONTO PARA RECEBER CLIENTES E GERAR CONVERSÕES!
