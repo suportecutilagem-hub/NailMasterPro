@@ -1,6 +1,7 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import antesDepoisImage from "../../assets/antes-depois-cutilagem.png";
 
 export default function Hero() {
   return (
@@ -94,22 +95,11 @@ export default function Hero() {
             className="order-1 lg:order-2 relative"
           >
             <div className="relative">
-              <div className="w-full h-64 md:h-80 bg-gradient-to-r from-rose-100 via-pink-50 to-rose-200 rounded-2xl shadow-2xl border-2 border-[hsl(var(--rose-primary))] flex items-center justify-center overflow-hidden">
-                <div className="grid grid-cols-2 w-full h-full">
-                  {/* Lado Esquerdo - Antes */}
-                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center text-center p-4 border-r border-gray-300">
-                    <div className="text-2xl mb-2">👆</div>
-                    <div className="text-sm font-semibold text-gray-700">ANTES</div>
-                    <div className="text-xs text-gray-600 mt-1">Unhas sem técnica</div>
-                  </div>
-                  {/* Lado Direito - Depois */}
-                  <div className="bg-gradient-to-br from-rose-100 to-pink-100 flex flex-col items-center justify-center text-center p-4">
-                    <div className="text-2xl mb-2">💅</div>
-                    <div className="text-sm font-semibold text-[hsl(var(--rose-primary))]">DEPOIS</div>
-                    <div className="text-xs text-[hsl(var(--rose-primary))] mt-1">Cutilagem Russa</div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={antesDepoisImage}
+                alt="Antes e depois da Cutilagem Russa - Transformação completa das unhas" 
+                className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
+              />
               
               {/* Floating elements */}
               <motion.div 
