@@ -95,8 +95,8 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1592053390073-75d8ebaec888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
-                alt="Técnica profissional de manicure - Cutilagem Russa" 
+                src="https://images.unsplash.com/photo-1583147487792-a7516e08e3f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
+                alt="Técnica de Cutilagem Russa - Profissional trabalhando nas unhas" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
               
