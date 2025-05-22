@@ -196,7 +196,11 @@ export default function Bonus() {
             <Button 
               variant="cta" 
               size="xl" 
-              className="animate-pulse shadow-glow-primary uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300"
+              className="uppercase font-bold tracking-wide transform hover:scale-105 transition-transform duration-300 shadow-lg"
+              style={{ 
+                boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)",
+                transition: "all 0.3s ease-in-out"
+              }}
             >
               QUERO GARANTIR TODOS OS BÔNUS
             </Button>
