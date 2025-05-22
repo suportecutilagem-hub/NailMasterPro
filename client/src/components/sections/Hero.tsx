@@ -95,7 +95,7 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="/cutilagem_russa_curso1 (1).jpg"
+                src="/cutilagem-russa-curso.jpg"
                 alt="Técnica de Cutilagem Russa - Trabalho detalhado nas unhas" 
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
               />
