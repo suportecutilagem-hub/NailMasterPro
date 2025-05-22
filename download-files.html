@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Site Cutilagem Russa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .download-section {
+            background: #fff0f5;
+            border: 2px solid #e6224c;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        .file-content {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: left;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .copy-btn {
+            background: #e6224c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: bold;
+        }
+        .copy-btn:hover {
+            background: #d01d43;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Download Site Cutilagem Russa</h1>
+        <p>Aqui estão todos os arquivos que você precisa para colocar no seu cPanel:</p>
+        
+        <div class="download-section">
+            <h3>📄 ARQUIVO 1: index.html</h3>
+            <p>Copie este conteúdo e salve como <strong>index.html</strong></p>
+            <div class="file-content" id="indexHtml">Carregando conteúdo...</div>
+            <button class="copy-btn" onclick="copyToClipboard('indexHtml')">📋 Copiar index.html</button>
+        </div>
+        
+        <div class="download-section">
+            <h3>⚙️ ARQUIVO 2: .htaccess</h3>
+            <p>Copie este conteúdo e salve como <strong>.htaccess</strong></p>
+            <div class="file-content" id="htaccess">Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QR,L]
+
+# Configurações de cache para otimizar performance
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+# Compressão GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule></div>
+            <button class="copy-btn" onclick="copyToClipboard('htaccess')">📋 Copiar .htaccess</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Instruções de Instalação:</h3>
+            <ol>
+                <li><strong>Acesse seu cPanel</strong></li>
+                <li><strong>Vá em "Gerenciador de Arquivos"</strong></li>
+                <li><strong>Entre na pasta "public_html"</strong></li>
+                <li><strong>Crie o arquivo "index.html":</strong>
+                    <ul>
+                        <li>Clique em "+ Arquivo"</li>
+                        <li>Nomeie como "index.html"</li>
+                        <li>Cole o conteúdo do ARQUIVO 1</li>
+                        <li>Salve</li>
+                    </ul>
+                </li>
+                <li><strong>Crie o arquivo ".htaccess":</strong>
+                    <ul>
+                        <li>Clique em "+ Arquivo"</li>
+                        <li>Nomeie como ".htaccess"</li>
+                        <li>Cole o conteúdo do ARQUIVO 2</li>
+                        <li>Salve</li>
+                    </ul>
+                </li>
+                <li><strong>Pronto! Acesse seu domínio</strong></li>
+            </ol>
+        </div>
+        
+        <div style="background: #d4edda; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <h3>✅ Resultado:</h3>
+            <p>Seu site ficará exatamente como o original, com:</p>
+            <ul style="text-align: left;">
+                <li>Design rosa e branco profissional</li>
+                <li>Facebook Pixel funcionando</li>
+                <li>UTMify para rastreamento</li>
+                <li>+11 bônus em destaque</li>
+                <li>Animações e efeitos visuais</li>
+                <li>Layout responsivo</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Carregar o conteúdo do index.html
+        fetch('/dist-cpanel/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('indexHtml').textContent = data;
+            })
+            .catch(error => {
+                document.getElementById('indexHtml').textContent = 'Erro ao carregar arquivo. Use o conteúdo do site-design-original.html';
+            });
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Conteúdo copiado! Cole no seu cPanel.');
+            }).catch(() => {
+                // Fallback para navegadores mais antigos
+                element.select();
+                document.execCommand('copy');
+                alert('Conteúdo copiado! Cole no seu cPanel.');
+            });
+        }
+    </script>
+</body>
+</html>
