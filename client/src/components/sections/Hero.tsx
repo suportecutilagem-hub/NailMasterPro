@@ -1,7 +1,7 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-import cutilagemTecnicaImage from "../../assets/cutilagem-tecnica.png";
+import manicureProfissionalImage from "../../assets/manicure-profissional.png";
 
 export default function Hero() {
   return (
@@ -96,8 +96,8 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src={cutilagemTecnicaImage}
-                alt="Técnica de Cutilagem Russa sendo aplicada com equipamento profissional" 
+                src={manicureProfissionalImage}
+                alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada" 
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
               />
               
