@@ -1,7 +1,7 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-import antesDepoisImage from "../../assets/antes-depois-cutilagem.png";
+import cutilagemTecnicaImage from "../../assets/cutilagem-tecnica.png";
 
 export default function Hero() {
   return (
@@ -96,8 +96,8 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src={antesDepoisImage}
-                alt="Antes e depois da Cutilagem Russa - Transformação completa das unhas" 
+                src={cutilagemTecnicaImage}
+                alt="Técnica de Cutilagem Russa sendo aplicada com equipamento profissional" 
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
               />
               
