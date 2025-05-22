@@ -2,7 +2,7 @@ import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { motion } from "framer-motion";
-import { Gift, Crown, Sparkles, Star, Award } from "lucide-react";
+import { Calendar, Instagram, Palette, Percent, Book } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
 
 interface BonusCardProps {
@@ -16,63 +16,48 @@ interface BonusCardProps {
 
 function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ y: -5 }}
-      className="w-full sm:w-1/2 lg:w-1/3 p-3"
-    >
-      <Card className="h-full border-2 border-[hsl(var(--rose-primary))] p-6 relative overflow-hidden">
+    <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay }}
+        className="bg-white rounded-lg shadow-md p-6 h-full border border-gray-200 relative"
+      >
         <div className="absolute top-0 right-0">
           <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
-            BÔNUS {number}
+            Bônus {number}
           </div>
         </div>
 
-        <div className="mb-4 text-3xl text-[hsl(var(--rose-primary))]">
+        <div className="mb-4 text-[hsl(var(--rose-primary))]">
           {icon}
         </div>
 
-        <h3 className="font-montserrat font-bold text-xl mb-3">{title}</h3>
-        <p className="text-gray-600 mb-2">
+        <h3 className="font-montserrat font-bold text-lg mb-2">{title}</h3>
+        <p className="text-gray-600 text-sm mb-3">
           {description}
         </p>
-        <div className="flex items-center mt-4">
-          <span className="text-gray-500 line-through mr-2">{originalPrice}</span>
+        <div className="flex items-center mt-auto pt-2">
+          <span className="text-gray-500 line-through mr-2 text-sm">{originalPrice}</span>
           <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">GRÁTIS</span>
         </div>
-      </Card>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
 interface BonusItemProps {
   title: string;
   description: string;
-  delay?: number;
 }
 
-function BonusItem({ title, description, delay = 0 }: BonusItemProps) {
+function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-lg p-4 border-l-4 border-[hsl(var(--rose-primary))] shadow-sm hover:shadow-md transition-shadow duration-300"
-    >
-      <div className="flex items-start">
-        <div className="flex-shrink-0 bg-[hsl(var(--rose-primary))] rounded-full p-1 mr-3">
-          <CheckIcon className="w-4 h-4 text-white" />
-        </div>
-        <div>
-          <h4 className="font-bold mb-1">{title}</h4>
-          <p className="text-gray-600 text-sm">{description}</p>
-        </div>
-      </div>
-    </motion.div>
+    <div className="mb-3 border-l-4 border-[hsl(var(--rose-primary))] pl-3">
+      <h4 className="font-bold text-sm">{title}</h4>
+      <p className="text-gray-600 text-sm">{description}</p>
+    </div>
   );
 }
 
@@ -80,38 +65,45 @@ export default function Bonus() {
   const bonuses = [
     {
       number: 1,
-      icon: <Gift className="w-10 h-10" />,
-      title: "SPA DOS PÉS",
-      description: "Tratamento completo para relaxamento e beleza dos pés",
-      originalPrice: "R$197"
+      icon: <Calendar className="w-8 h-8" />,
+      title: "Curso Manicure Agenda Cheia",
+      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes.",
+      originalPrice: "R$97"
     },
     {
       number: 2,
-      icon: <Crown className="w-10 h-10" />,
-      title: "MANICURE E PEDICURE",
-      description: "Técnicas profissionais de cuidados para mãos e pés",
+      icon: <Instagram className="w-8 h-8" />,
+      title: "Divulgação no Instagram Oficial",
+      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente a visibilidade.",
       originalPrice: "R$250"
     },
     {
       number: 3,
-      icon: <Sparkles className="w-10 h-10" />,
-      title: "ALONGAMENTO NO MOLDE F1",
-      description: "Método avançado para alongamento de unhas perfeitas",
-      originalPrice: "R$197"
+      icon: <Palette className="w-8 h-8" />,
+      title: "Aula Exclusiva de Esmaltação em Gel",
+      description: "Domine essa técnica moderna e lucre mais com seus atendimentos.",
+      originalPrice: "R$147"
     },
     {
       number: 4,
-      icon: <Star className="w-10 h-10" />,
-      title: "ALONGAMENTO DE FIBRA DE VIDRO",
-      description: "Técnica durável e natural para alongamentos",
-      originalPrice: "R$220"
+      icon: <Book className="w-8 h-8" />,
+      title: "Modelos de Unhas Decoradas",
+      description: "Receba 5 inspirações de nail art para encantar suas clientes.",
+      originalPrice: "R$97"
     },
     {
       number: 5,
-      icon: <Award className="w-10 h-10" />,
-      title: "UNHAS DECORADAS",
-      description: "Designs criativos e tendências para nail art",
-      originalPrice: "R$170"
+      icon: <Percent className="w-8 h-8" />,
+      title: "30% de desconto em materiais",
+      description: "Economize nos itens que você realmente vai usar no curso.",
+      originalPrice: "R$120"
+    },
+    {
+      number: 6,
+      icon: <Instagram className="w-8 h-8" />,
+      title: "Curso Instagram de Sucesso",
+      description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.",
+      originalPrice: "R$197"
     }
   ];
 
@@ -129,39 +121,29 @@ export default function Bonus() {
       description: "Método avançado para alongamento de unhas perfeitas"
     },
     {
-      title: "ALONGAMENTO DE FIBRA DE VIDRO",
+      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos"
     },
     {
       title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art"
-    },
-    {
-      title: "CERTIFICADO RECONHECIDO",
-      description: "Documento oficial que comprova sua formação profissional"
     }
   ];
 
   return (
-    <section className="pt-0 pb-6 lg:pb-10 bg-white">
+    <section className="pt-8 pb-12 bg-white">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-6"
-        >
-          <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">OFERTA EXCLUSIVA</h5>
-          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
-            Adquira Hoje e <span className="text-[hsl(var(--rose-primary))]">Ganhe + 11 Bônus</span>
+        <div className="text-center mb-8">
+          <h5 className="text-[hsl(var(--rose-primary))] font-semibold mb-2 uppercase text-sm">OFERTA EXCLUSIVA</h5>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+            Adquira Hoje e <span className="text-[hsl(var(--rose-primary))]">Ganhe + 6 Bônus</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm max-w-2xl mx-auto">
             Aproveite essa oportunidade única e receba estes bônus exclusivos que vão acelerar sua carreira
           </p>
-        </motion.div>
-        
-        <div className="flex flex-wrap -mx-3 mb-8">
+        </div>
+
+        <div className="flex flex-wrap -mx-3 mb-10">
           {bonuses.map((bonus, index) => (
             <BonusCard
               key={index}
@@ -180,63 +162,49 @@ export default function Bonus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] border-2 border-[hsl(var(--rose-primary))] rounded-xl shadow-lg p-8 mb-8"
+          className="bg-gray-50 rounded-lg p-8 mb-8"
         >
-          <h3 className="font-montserrat font-bold text-2xl mb-4 text-center">
-            <span className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">Bônus Adicionais</span>
+          <h3 className="text-xl font-bold text-center mb-6">
+            Bônus Adicionais: Cursos Exclusivos Completos com Certificado
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
                 title={bonus.title}
                 description={bonus.description}
-                delay={index * 0.1}
               />
             ))}
           </div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-8 text-center"
-          >
-            <div className="bg-[hsl(var(--rose-light))] inline-block rounded-lg p-4 mb-4">
-              <p className="font-bold text-[hsl(var(--rose-primary))] text-xl">
+          <div className="mt-8 text-center">
+            <div className="inline-block bg-[#fff0f5] rounded-lg p-3 mb-4">
+              <p className="font-bold text-[hsl(var(--rose-primary))]">
                 Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
             </div>
-            <div className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-white px-4 py-2 rounded-lg mx-auto max-w-md mb-4 text-center font-bold">
-              Todos os cursos incluem certificado de conclusão
-            </div>
-            <p className="text-gray-700 text-lg mb-4">
+            
+            <p className="text-gray-700 mb-4">
               Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
             </p>
-          </motion.div>
+          </div>
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer">
             <Button 
               variant="cta" 
               size="xl" 
-              className="animate-pulse shadow-glow-primary"
+              className="animate-pulse shadow-glow-primary uppercase"
             >
               QUERO GARANTIR TODOS OS BÔNUS
             </Button>
           </a>
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-gray-500 mt-3">
             Pagamento único de R$65,00 • Acesso vitalício • Garantia de 7 dias
           </p>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
