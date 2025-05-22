@@ -1,0 +1,27 @@
+🎯 PASTA DIST PRONTA PARA CPANEL
+================================
+
+✅ Esta pasta contém tudo que você precisa!
+
+📁 ARQUIVOS INCLUSOS:
+- index.html (corrigido para cPanel)
+- .htaccess (configurado)
+- assets/ (pasta com CSS e JS)
+
+🚀 COMO USAR NO CPANEL:
+
+1. Selecione TODOS os arquivos desta pasta
+2. Copie os arquivos
+3. Vá no seu cPanel → Gerenciador de Arquivos
+4. Entre na pasta "public_html"
+5. Cole todos os arquivos
+6. Pronto! Seu site estará funcionando!
+
+✨ SEM TELA BRANCA GARANTIDO!
+
+O site ficará exatamente igual ao original com:
+- Design rosa e branco
+- Facebook Pixel funcionando
+- +11 bônus destacados
+- Animações e efeitos
+- Layout responsivo
