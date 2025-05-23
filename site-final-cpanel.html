@@ -346,8 +346,13 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         .additional-bonus {
@@ -356,14 +361,41 @@
             border-radius: 10px;
             border-left: 4px solid var(--rose-primary);
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            transform: translateY(0);
+            transition: all 0.2s ease;
+            transform: translate3d(0, 0, 0);
+            will-change: transform, box-shadow;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .additional-bonus::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 34, 76, 0.1), transparent);
+            transition: left 0.5s ease;
         }
 
         .additional-bonus:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(230, 34, 76, 0.12);
+            transform: translate3d(0, -6px, 0) scale(1.02);
+            box-shadow: 0 15px 30px rgba(230, 34, 76, 0.15);
             border-left-width: 6px;
+        }
+
+        .additional-bonus:hover::before {
+            left: 100%;
+        }
+
+        .bonus-icon-large {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .additional-bonus:hover .bonus-icon-large {
+            transform: rotate(10deg) scale(1.1);
         }
 
         .additional-bonus h4 {
@@ -637,50 +669,63 @@
             </div>
             
             <!-- Bônus Adicionais -->
-            <div style="background: linear-gradient(135deg, #fff5f7, #fff0f5); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid var(--rose-primary);">
-                <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 30px; background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Bônus Adicionais: Cursos Exclusivos Completos
+            <div class="animate-fade-in delay-100" style="background: linear-gradient(135deg, #fff5f7, #fff0f5); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid var(--rose-primary); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(230, 34, 76, 0.05) 0%, transparent 70%); animation: pulse 4s ease-in-out infinite;"></div>
+                <h3 class="animate-slide-up delay-200" style="text-align: center; font-size: 1.5rem; margin-bottom: 30px; background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; z-index: 1;">
+                    🎁 Bônus Adicionais: Cursos Exclusivos Completos
                 </h3>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
                     <div class="additional-bonus animate-slide-left delay-100">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span style="font-size: 1.5rem; margin-right: 10px;">📖</span>
-                            <h4 style="margin: 0;">MANICURE E PEDICURE</h4>
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <span class="bonus-icon-large" style="font-size: 2rem; margin-right: 12px; background: var(--rose-light); padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;">📖</span>
+                            <div>
+                                <h4 style="margin: 0; color: var(--gray-900);">MANICURE E PEDICURE</h4>
+                                <span style="font-size: 0.75rem; color: var(--rose-primary); font-weight: 600;">Curso Completo</span>
+                            </div>
                         </div>
-                        <p>Técnicas profissionais de cuidados completos para mãos e pés</p>
-                        <div style="margin-top: 10px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600;">
-                            🎥 8 vídeo-aulas • 2h de conteúdo
+                        <p style="color: var(--gray-600); line-height: 1.5;">Técnicas profissionais de cuidados completos para mãos e pés com métodos modernos</p>
+                        <div style="margin-top: 15px; padding: 8px 12px; background: linear-gradient(135deg, var(--rose-light), #fff0f5); border-radius: 8px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600; border: 1px solid rgba(230, 34, 76, 0.2);">
+                            🎥 8 vídeo-aulas • 2h de conteúdo • Certificado
                         </div>
                     </div>
+                    
                     <div class="additional-bonus animate-scale-in delay-200">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span style="font-size: 1.5rem; margin-right: 10px;">💎</span>
-                            <h4 style="margin: 0;">ALONGAMENTO NO MOLDE F1</h4>
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <span class="bonus-icon-large" style="font-size: 2rem; margin-right: 12px; background: var(--rose-light); padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;">💎</span>
+                            <div>
+                                <h4 style="margin: 0; color: var(--gray-900);">ALONGAMENTO NO MOLDE F1</h4>
+                                <span style="font-size: 0.75rem; color: var(--rose-primary); font-weight: 600;">Técnica Exclusiva</span>
+                            </div>
                         </div>
-                        <p>Método avançado para alongamento de unhas perfeitas e duradouras</p>
-                        <div style="margin-top: 10px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600;">
-                            🎯 Técnica exclusiva • Passo a passo
+                        <p style="color: var(--gray-600); line-height: 1.5;">Método avançado para alongamento de unhas perfeitas, duradouras e com acabamento profissional</p>
+                        <div style="margin-top: 15px; padding: 8px 12px; background: linear-gradient(135deg, var(--rose-light), #fff0f5); border-radius: 8px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600; border: 1px solid rgba(230, 34, 76, 0.2);">
+                            🎯 Técnica exclusiva • Passo a passo • Material incluso
                         </div>
                     </div>
+                    
                     <div class="additional-bonus animate-slide-right delay-300">
-                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <span style="font-size: 1.5rem; margin-right: 10px;">🌟</span>
-                            <h4 style="margin: 0;">TÉCNICAS AVANÇADAS</h4>
+                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                            <span class="bonus-icon-large" style="font-size: 2rem; margin-right: 12px; background: var(--rose-light); padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px;">🌟</span>
+                            <div>
+                                <h4 style="margin: 0; color: var(--gray-900);">TÉCNICAS AVANÇADAS</h4>
+                                <span style="font-size: 0.75rem; color: var(--rose-primary); font-weight: 600;">Nível Profissional</span>
+                            </div>
                         </div>
-                        <p>Métodos profissionais para resultados excepcionais e diferenciados</p>
-                        <div style="margin-top: 10px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600;">
-                            ⭐ Nível profissional • Certificado
+                        <p style="color: var(--gray-600); line-height: 1.5;">Métodos profissionais para resultados excepcionais e diferenciados no mercado</p>
+                        <div style="margin-top: 15px; padding: 8px 12px; background: linear-gradient(135deg, var(--rose-light), #fff0f5); border-radius: 8px; font-size: 0.8rem; color: var(--rose-primary); font-weight: 600; border: 1px solid rgba(230, 34, 76, 0.2);">
+                            ⭐ Nível profissional • Certificado • Suporte
                         </div>
                     </div>
                 </div>
                 
-                <div class="animate-fade-in delay-400" style="text-align: center; margin-top: 30px; padding: 25px; background: var(--rose-primary); color: white; border-radius: 15px;">
-                    <p style="font-size: 1.3rem; font-weight: 700;">
+                <div class="animate-scale-in delay-400" style="text-align: center; margin-top: 30px; padding: 25px; background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary)); color: white; border-radius: 15px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(230, 34, 76, 0.3);">
+                    <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: shine 3s ease-in-out infinite;"></div>
+                    <p style="font-size: 1.3rem; font-weight: 700; position: relative; z-index: 1;">
                         🎁 Valor Total dos Bônus: <span style="text-decoration: line-through; opacity: 0.8;">R$997,00</span>
                     </p>
-                    <p style="font-size: 1.5rem; font-weight: 800; margin-top: 10px;">
-                        HOJE: <span style="color: #fbbf24;">100% GRÁTIS!</span>
+                    <p style="font-size: 1.5rem; font-weight: 800; margin-top: 10px; position: relative; z-index: 1;">
+                        HOJE: <span style="color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);">100% GRÁTIS!</span>
                     </p>
                 </div>
             </div>
