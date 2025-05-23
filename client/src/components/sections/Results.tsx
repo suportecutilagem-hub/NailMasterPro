@@ -1,5 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 interface ResultCardProps {
   image: string;
@@ -10,7 +11,14 @@ interface ResultCardProps {
 
 function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
   return (
-    <div className="relative group overflow-hidden rounded-xl shadow-lg">
+    <motion.div 
+      className="relative group overflow-hidden rounded-xl shadow-lg"
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+    >
       <img 
         src={image} 
         alt={title} 

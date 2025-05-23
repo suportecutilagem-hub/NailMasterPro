@@ -165,9 +165,15 @@ export default function CourseContent() {
   ];
 
   return (
-    <section className="pt-0 pb-6 lg:pb-10 bg-white">
+    <motion.section 
+      className="pt-0 pb-6 lg:pb-10 bg-white"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <Container>
-        <div
+        <motion.div
           className="text-center mb-6"
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">

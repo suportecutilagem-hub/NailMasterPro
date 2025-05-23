@@ -77,10 +77,21 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="py-16 bg-white" id="checkout">
+    <motion.section 
+      className="py-16 bg-white" 
+      id="checkout"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">DETALHES DO CURSO</h5>
             <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-6">
@@ -98,10 +109,14 @@ export default function CourseOverview() {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
           
           {/* Course Card */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
             <Card className="shadow-2xl overflow-hidden">
               <div className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] p-6 text-white">

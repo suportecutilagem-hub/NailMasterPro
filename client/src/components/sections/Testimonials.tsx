@@ -1,6 +1,7 @@
 import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 interface TestimonialProps {
   content: string;
@@ -12,7 +13,12 @@ interface TestimonialProps {
 
 function Testimonial({ content, image, name, location, delay = 0 }: TestimonialProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <Card className="p-6">
         <div className="flex items-center mb-4">

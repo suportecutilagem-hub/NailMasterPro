@@ -103,5 +103,58 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  /* Animações removidas */
+  /* Animações leves automáticas para toda a página */
+  section {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  .scale-in-gentle {
+    animation: scaleInGentle 0.5s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleInGentle {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Delays automáticos para seções */
+  section:nth-child(1) { animation-delay: 0.1s; }
+  section:nth-child(2) { animation-delay: 0.2s; }
+  section:nth-child(3) { animation-delay: 0.3s; }
+  section:nth-child(4) { animation-delay: 0.4s; }
+  section:nth-child(5) { animation-delay: 0.5s; }
+  section:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Hover suave para todos os cards */
+  .card, .bg-white {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover, .bg-white:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Animação suave para todos os elementos interativos */
+  button, a, .cursor-pointer {
+    transition: all 0.2s ease;
+  }
 }
