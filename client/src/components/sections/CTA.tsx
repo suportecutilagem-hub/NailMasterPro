@@ -22,29 +22,43 @@ export default function CTA() {
           </div>
           
           <motion.div
+            whileHover={{ 
+              scale: 1.08,
+              rotate: [0, -1, 1, 0],
+              transition: { duration: 0.3 }
+            }}
             whileTap={{ scale: 0.95 }}
             animate={{ 
-              scale: [1, 1.04, 1],
+              scale: [1, 1.06, 1],
               boxShadow: [
-                "0 5px 15px rgba(255, 255, 255, 0.2)",
-                "0 10px 25px rgba(255, 255, 255, 0.4)",
-                "0 5px 15px rgba(255, 255, 255, 0.2)"
-              ]
+                "0 8px 20px rgba(255, 255, 255, 0.3)",
+                "0 15px 35px rgba(255, 255, 255, 0.6)",
+                "0 8px 20px rgba(255, 255, 255, 0.3)"
+              ],
+              y: [0, -3, 0]
             }}
             transition={{ 
-              duration: 2,
+              duration: 1.5,
               repeat: Infinity,
               ease: "easeInOut"
             }}
+            className="relative"
           >
+            {/* Efeito de brilho */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-pulse"></div>
+            
             <a href="https://pay.cakto.com.br/uk8zdk5_340907">
               <Button 
                 variant="white" 
                 roundedness="full" 
                 size="xl" 
-                className="shadow-lg w-full sm:w-auto"
+                className="shadow-lg w-full sm:w-auto relative overflow-hidden group bg-white hover:bg-gray-50 transition-all duration-300 font-bold text-lg px-8 py-4 border-2 border-white hover:border-yellow-300"
               >
-                QUERO COMEÇAR AGORA
+                <span className="relative z-10 group-hover:text-[hsl(var(--rose-primary))] transition-colors duration-300">
+                  ✨ QUERO COMEÇAR AGORA ✨
+                </span>
+                {/* Efeito shimmer */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               </Button>
             </a>
           </motion.div>

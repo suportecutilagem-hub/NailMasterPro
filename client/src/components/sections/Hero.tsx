@@ -64,17 +64,37 @@ export default function Hero() {
             
             {/* CTA Button */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.08,
+                transition: { duration: 0.2 }
+              }}
               whileTap={{ scale: 0.95 }}
-              className="mb-4"
+              animate={{ 
+                y: [0, -2, 0],
+                boxShadow: [
+                  "0 4px 15px rgba(236, 72, 153, 0.3)",
+                  "0 8px 25px rgba(236, 72, 153, 0.5)",
+                  "0 4px 15px rgba(236, 72, 153, 0.3)"
+                ]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="mb-4 relative"
             >
               <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
                 <Button 
                   variant="cta" 
                   size="xl" 
-                  className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg"
+                  className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
                 >
-                  QUERO COMEÇAR AGORA
+                  <span className="relative z-10">
+                    🚀 QUERO COMEÇAR AGORA 🚀
+                  </span>
+                  {/* Efeito shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 </Button>
               </a>
             </motion.div>
