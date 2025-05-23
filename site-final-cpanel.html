@@ -47,39 +47,62 @@
             background: #ffffff;
         }
         
-        /* Animações otimizadas para máximo desempenho */
-        .animate-fade-in {
+        /* Animações apenas para seções específicas (NÃO bônus) */
+        .hero .animate-fade-in,
+        .feature-card.animate-slide-up,
+        .feature-card.animate-slide-left,
+        .feature-card.animate-slide-right,
+        .feature-card.animate-scale-in,
+        .testimonial-card.animate-slide-left,
+        .testimonial-card.animate-slide-right,
+        .testimonial-card.animate-scale-in {
             animation: fadeIn 0.6s ease-out forwards;
             opacity: 0;
             will-change: opacity;
         }
 
-        .animate-slide-up {
+        .feature-card.animate-slide-up {
             animation: slideUp 0.5s ease-out forwards;
             opacity: 0;
             transform: translate3d(0, 20px, 0);
             will-change: transform, opacity;
         }
 
-        .animate-slide-left {
+        .feature-card.animate-slide-left,
+        .testimonial-card.animate-slide-left {
             animation: slideLeft 0.5s ease-out forwards;
             opacity: 0;
             transform: translate3d(20px, 0, 0);
             will-change: transform, opacity;
         }
 
-        .animate-slide-right {
+        .feature-card.animate-slide-right,
+        .testimonial-card.animate-slide-right {
             animation: slideRight 0.5s ease-out forwards;
             opacity: 0;
             transform: translate3d(-20px, 0, 0);
             will-change: transform, opacity;
         }
 
-        .animate-scale-in {
+        .feature-card.animate-scale-in,
+        .testimonial-card.animate-scale-in {
             animation: scaleIn 0.4s ease-out forwards;
             opacity: 0;
             transform: scale3d(0.95, 0.95, 1);
             will-change: transform, opacity;
+        }
+
+        /* DESABILITAR completamente animações para bônus */
+        .bonus-card,
+        .bonus-card *,
+        .additional-bonus,
+        .additional-bonus *,
+        .bonus-grid,
+        .bonus-grid * {
+            animation: none !important;
+            transform: none !important;
+            transition: none !important;
+            opacity: 1 !important;
         }
 
         .hover-float {
@@ -789,21 +812,23 @@
             });
         }, observerOptions);
 
-        // Inicialização otimizada - excluindo elementos dentro da seção de bônus
+        // Inicialização apenas para elementos permitidos (excluindo TODOS os bônus)
         document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-scale-in');
+            // Remover TODAS as classes de animação dos bônus PRIMEIRO
+            const bonusElements = document.querySelectorAll('.bonus-card, .additional-bonus, .bonus-grid *, [class*="bonus"]');
+            bonusElements.forEach(el => {
+                el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in');
+                el.style.animation = 'none';
+                el.style.transform = 'none';
+                el.style.opacity = '1';
+            });
             
-            animatedElements.forEach(el => {
-                // Verificar se o elemento não está dentro de uma seção de bônus
-                const isInBonusSection = el.closest('.bonus-grid') || el.closest('[style*="bonus"]') || el.classList.contains('bonus-card');
-                
-                if (!isInBonusSection) {
-                    el.style.animationPlayState = 'paused';
-                    observer.observe(el);
-                } else {
-                    // Remover classes de animação dos elementos de bônus
-                    el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in');
-                }
+            // Aplicar animações APENAS para elementos específicos (hero, features, testimonials)
+            const allowedElements = document.querySelectorAll('.hero .animate-fade-in, .feature-card[class*="animate"], .testimonial-card[class*="animate"]');
+            
+            allowedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
             });
         });
 
