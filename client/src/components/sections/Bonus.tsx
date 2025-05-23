@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { Calendar, Instagram, Palette, Percent, Book } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
+import { motion } from "framer-motion";
 
 interface BonusCardProps {
   number: number;
@@ -182,23 +183,49 @@ export default function Bonus() {
           </div>
         </div>
         
-        <div className="text-center">
+        <motion.div 
+          className="text-center"
+          whileHover={{ 
+            scale: 1.08,
+            rotate: [0, -1, 1, 0],
+            transition: { duration: 0.3 }
+          }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ 
+            scale: [1, 1.06, 1],
+            boxShadow: [
+              "0 8px 20px rgba(236, 72, 153, 0.3)",
+              "0 15px 35px rgba(236, 72, 153, 0.6)",
+              "0 8px 20px rgba(236, 72, 153, 0.3)"
+            ],
+            y: [0, -3, 0]
+          }}
+          transition={{ 
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
           <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
             <Button 
               variant="cta" 
               size="xl" 
-              className="uppercase font-bold tracking-wide shadow-lg"
+              className="uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
               style={{ 
                 boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)"
               }}
             >
-              QUERO TODOS OS BÔNUS AGORA
+              <span className="relative z-10">
+                QUERO TODOS OS BÔNUS AGORA
+              </span>
+              {/* Efeito shimmer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             </Button>
           </a>
           <p className="text-sm text-gray-500 mt-3">
             Pagamento único de R$65,00 • Acesso vitalício
           </p>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
