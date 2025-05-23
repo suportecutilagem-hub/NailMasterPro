@@ -242,6 +242,52 @@
             border-radius: 15px;
             padding: 25px;
             position: relative;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(230, 34, 76, 0.15);
+        }
+
+        .bonus-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .bonus-card:hover .bonus-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .pulsing {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .additional-bonus {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--rose-primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .additional-bonus h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+
+        .additional-bonus p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
         }
 
         .bonus-number {
@@ -381,32 +427,96 @@
             <div class="bonus-grid">
                 <div class="bonus-card hover-float animate-slide-up delay-100">
                     <div class="bonus-number">1</div>
-                    <h3>📅 Curso Manicure Agenda Cheia</h3>
+                    <div class="bonus-icon">📅</div>
+                    <h3>Curso Manicure Agenda Cheia</h3>
                     <p>Aprenda a lotar sua agenda com clientes fiéis e recorrentes.</p>
                     <div style="margin-top: 15px;">
                         <span style="text-decoration: line-through; color: var(--gray-600);">R$97</span>
-                        <span class="discount-badge">GRÁTIS</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
                     </div>
                 </div>
                 
                 <div class="bonus-card hover-float animate-slide-up delay-200">
                     <div class="bonus-number">2</div>
-                    <h3>📱 Divulgação no Instagram Oficial</h3>
+                    <div class="bonus-icon">📱</div>
+                    <h3>Divulgação no Instagram Oficial</h3>
                     <p>Seja vista por mais de 100 mil pessoas sem gastar nada e aumente a visibilidade.</p>
                     <div style="margin-top: 15px;">
                         <span style="text-decoration: line-through; color: var(--gray-600);">R$250</span>
-                        <span class="discount-badge">GRÁTIS</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
                     </div>
                 </div>
                 
                 <div class="bonus-card hover-float animate-slide-up delay-300">
                     <div class="bonus-number">3</div>
-                    <h3>🎨 5 Inspirações de Nail Art</h3>
+                    <div class="bonus-icon">🎨</div>
+                    <h3>5 Inspirações de Nail Art</h3>
                     <p>Receba 5 inspirações de nail art para encantar suas clientes.</p>
                     <div style="margin-top: 15px;">
                         <span style="text-decoration: line-through; color: var(--gray-600);">R$97</span>
-                        <span class="discount-badge">GRÁTIS</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
                     </div>
+                </div>
+                
+                <div class="bonus-card hover-float animate-slide-up delay-400">
+                    <div class="bonus-number">4</div>
+                    <div class="bonus-icon">💰</div>
+                    <h3>30% de desconto em materiais</h3>
+                    <p>Economize nos itens que você realmente vai usar no curso.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$120</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card hover-float animate-slide-up delay-100">
+                    <div class="bonus-number">5</div>
+                    <div class="bonus-icon">📚</div>
+                    <h3>Curso Instagram de Sucesso</h3>
+                    <p>Aprenda a transformar seu perfil em uma vitrine profissional que atrai clientes.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$197</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card hover-float animate-slide-up delay-200">
+                    <div class="bonus-number">6</div>
+                    <div class="bonus-icon">💅</div>
+                    <h3>SPA DOS PÉS</h3>
+                    <p>Tratamento completo para relaxamento e beleza dos pés.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$97</span>
+                        <span class="discount-badge pulsing">GRÁTIS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bônus Adicionais -->
+            <div style="background: linear-gradient(135deg, #fff5f7, #fff0f5); border-radius: 20px; padding: 40px; margin: 40px 0; border: 2px solid var(--rose-primary);">
+                <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 30px; background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Bônus Adicionais: Cursos Exclusivos Completos
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div class="additional-bonus animate-slide-up delay-100">
+                        <h4>📖 MANICURE E PEDICURE</h4>
+                        <p>Técnicas profissionais de cuidados para mãos e pés</p>
+                    </div>
+                    <div class="additional-bonus animate-slide-up delay-200">
+                        <h4>💎 ALONGAMENTO NO MOLDE F1</h4>
+                        <p>Método avançado para alongamento de unhas perfeitas</p>
+                    </div>
+                    <div class="additional-bonus animate-slide-up delay-300">
+                        <h4>🌟 TÉCNICAS AVANÇADAS</h4>
+                        <p>Métodos profissionais para resultados excepcionais</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: var(--rose-primary); color: white; border-radius: 15px;">
+                    <p style="font-size: 1.2rem; font-weight: 700;">
+                        Valor Total dos Bônus: <span style="text-decoration: line-through;">R$997,00</span>
+                    </p>
                 </div>
             </div>
             
