@@ -17,7 +17,7 @@ export default function CTA() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-md mx-auto">
             <div className="text-center">
               <p className="text-white/80 text-sm mb-2">Oferta especial por tempo limitado</p>
-              <p className="font-bold text-xl">De <span className="line-through">R$197,00</span> por apenas <span className="text-2xl">R$49,90</span></p>
+              <p className="font-bold text-xl">De <span className="line-through">R$197,00</span> por apenas <span className="text-2xl">R$19,90</span></p>
             </div>
           </div>
           

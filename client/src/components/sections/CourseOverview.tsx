@@ -112,7 +112,7 @@ export default function CourseOverview() {
                   <div>
                     <span className="text-gray-500 font-medium line-through text-lg">De R$197,00</span>
                     <div className="flex items-center">
-                      <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 49,90</span>
+                      <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 19,90</span>
                       <span className="ml-2 bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">67% OFF</span>
                     </div>
                   </div>
