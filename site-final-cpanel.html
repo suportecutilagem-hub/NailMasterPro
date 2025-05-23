@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutilagem Russa - Curso Profissional Completo</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2332915346835348');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --rose-primary: #e6224c;
+            --rose-secondary: #ff4d6d;
+            --rose-light: #fff0f5;
+            --teal: #10b981;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: #ffffff;
+        }
+        
+        /* Animações leves */
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hover-float {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-float:hover {
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Botões animados */
+        .cta-button {
+            background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary));
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(230, 34, 76, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(230, 34, 76, 0.4);
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+        }
+
+        .hero .highlight {
+            color: var(--rose-primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray-600);
+            font-size: 1.2rem;
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--rose-primary);
+            margin: 10px 0;
+        }
+
+        .discount-badge {
+            background: var(--teal);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--rose-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--rose-primary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-600);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .bonus-card {
+            background: white;
+            border: 2px solid var(--rose-primary);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .bonus-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--rose-primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .container { padding: 0 15px; }
+            .cta-button { padding: 15px 30px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h1>Domine a <span class="highlight">Cutilagem Russa</span> em 16 Horas</h1>
+                <p>O método mais eficaz para você se tornar uma especialista e aumentar sua renda como manicure profissional</p>
+                
+                <div class="price-box animate-slide-up delay-200">
+                    <div class="old-price">De R$ 197,00</div>
+                    <div class="new-price">R$ 65,00</div>
+                    <span class="discount-badge">67% OFF</span>
+                </div>
+                
+                <div class="float-animation">
+                    <a href="https://pay.cakto.com.br/uk8zdk5_340907" class="cta-button">
+                        QUERO COMEÇAR AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="section">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h2 class="section-title">O que você vai <span class="highlight">aprender</span> no curso?</h2>
+                <p class="section-subtitle">Um programa completo e prático para você se tornar uma profissional de cutilagem russa em tempo recorde</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card hover-float animate-slide-up delay-100">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Técnica Cutilagem Russa Completa</h3>
+                </div>
+                <div class="feature-card hover-float animate-slide-up delay-200">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Cutilagem russa em 8 minutos</h3>
+                </div>
+                <div class="feature-card hover-float animate-slide-up delay-300">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Para que serve as brocas e como usá-las</h3>
+                </div>
+                <div class="feature-card hover-float animate-slide-up delay-400">
+                    <div class="feature-icon">💰</div>
+                    <h3>Como estipular um preço para sua cliente</h3>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <div class="float-animation">
+                    <a href="https://pay.cakto.com.br/uk8zdk5_340907" class="cta-button">
+                        QUERO DOMINAR A CUTILAGEM RUSSA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h2 class="section-title">Adquira Hoje e <span class="highlight">Ganhe + 11 Bônus</span></h2>
+                <p class="section-subtitle">Aproveite essa oportunidade única e receba estes bônus exclusivos que vão acelerar sua carreira</p>
+            </div>
+            
+            <div class="bonus-grid">
+                <div class="bonus-card hover-float animate-slide-up delay-100">
+                    <div class="bonus-number">1</div>
+                    <h3>📅 Curso Manicure Agenda Cheia</h3>
+                    <p>Aprenda a lotar sua agenda com clientes fiéis e recorrentes.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$97</span>
+                        <span class="discount-badge">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card hover-float animate-slide-up delay-200">
+                    <div class="bonus-number">2</div>
+                    <h3>📱 Divulgação no Instagram Oficial</h3>
+                    <p>Seja vista por mais de 100 mil pessoas sem gastar nada e aumente a visibilidade.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$250</span>
+                        <span class="discount-badge">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card hover-float animate-slide-up delay-300">
+                    <div class="bonus-number">3</div>
+                    <h3>🎨 5 Inspirações de Nail Art</h3>
+                    <p>Receba 5 inspirações de nail art para encantar suas clientes.</p>
+                    <div style="margin-top: 15px;">
+                        <span style="text-decoration: line-through; color: var(--gray-600);">R$97</span>
+                        <span class="discount-badge">GRÁTIS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <div class="float-animation">
+                    <a href="https://pay.cakto.com.br/uk8zdk5_340907" class="cta-button">
+                        QUERO TODOS OS BÔNUS AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h2 class="section-title">O Que Nossas <span class="highlight">Alunas</span> Dizem</h2>
+                <p class="section-subtitle">Veja os resultados e a transformação na carreira de quem já participou do curso</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card hover-float animate-slide-up delay-100">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Simplesmente incrível! Em apenas 2 semanas consegui dominar a técnica e hoje sou referência na minha cidade. O investimento se pagou em menos de 1 mês!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" class="author-avatar" alt="Mariana Silva">
+                        <div class="author-info">
+                            <h4>Mariana Silva</h4>
+                            <p>São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card hover-float animate-slide-up delay-200">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"O curso de Cutilagem Russa foi um divisor de águas na minha carreira. Em apenas um mês, consegui triplicar minha renda. A explicação sobre posicionamento da tesoura foi o que mais me ajudou."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1558898479-33c0057a5d12" class="author-avatar" alt="Fernanda Gomes">
+                        <div class="author-info">
+                            <h4>Fernanda Gomes</h4>
+                            <p>Salvador, BA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card hover-float animate-slide-up delay-300">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Os cursos bônus foram essenciais para ampliar meu atendimento. Hoje ofereço pacotes completos com todos os serviços que aprendi e minhas clientes amam!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="author-avatar" alt="Camila Rocha">
+                        <div class="author-info">
+                            <h4>Camila Rocha</h4>
+                            <p>Recife, PE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 60px;">
+                <div class="float-animation">
+                    <a href="https://pay.cakto.com.br/uk8zdk5_340907" class="cta-button" style="font-size: 1.25rem; padding: 24px 48px;">
+                        QUERO COMEÇAR AGORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary)); color: white; text-align: center;">
+        <div class="container">
+            <div class="animate-fade-in">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Não perca esta oportunidade única!</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Transforme sua carreira hoje mesmo e comece a ganhar mais como manicure especialista</p>
+                
+                <div class="float-animation">
+                    <a href="https://pay.cakto.com.br/uk8zdk5_340907" class="cta-button" style="background: white; color: var(--rose-primary); font-size: 1.3rem; padding: 25px 50px;">
+                        GARANTIR MINHA VAGA AGORA
+                    </a>
+                </div>
+                
+                <p style="margin-top: 30px; font-size: 1rem; opacity: 0.8;">
+                    💳 Pagamento 100% seguro • 🔒 Acesso vitalício • 📱 Suporte completo
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Ativar animações quando elementos entram na tela
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos animados
+        document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // UTMify tracking script
+        !function(e,t,a,n,c,s,u){e.utmy||(c=e.utmy=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},c.queue=[],s=t.createElement(a),s.async=!0,s.src="https://cdn.utmify.com.br/scripts/utmy.js",u=t.getElementsByTagName(a)[0],u.parentNode.insertBefore(s,u))}(window,document,"script"),utmy("create","9e4ac390-7c56-4a00-9e6e-e3e2b56b5996");
+    </script>
+</body>
+</html>
