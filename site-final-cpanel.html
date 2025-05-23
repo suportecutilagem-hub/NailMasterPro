@@ -812,15 +812,30 @@
             });
         }, observerOptions);
 
-        // Inicialização apenas para elementos permitidos (excluindo TODOS os bônus)
+        // Forçar remoção completa de animações dos bônus
         document.addEventListener('DOMContentLoaded', () => {
-            // Remover TODAS as classes de animação dos bônus PRIMEIRO
-            const bonusElements = document.querySelectorAll('.bonus-card, .additional-bonus, .bonus-grid *, [class*="bonus"]');
-            bonusElements.forEach(el => {
+            // FORÇAR remoção de animações nos 6 cards de bônus principais
+            const bonusSection = document.querySelector('.bonus-grid');
+            if (bonusSection) {
+                const allBonusCards = bonusSection.querySelectorAll('*');
+                allBonusCards.forEach(el => {
+                    // Remover todas as classes de animação
+                    el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in', 'hover-float', 'pulsing');
+                    // Forçar estilos estáticos
+                    el.style.animation = 'none !important';
+                    el.style.transform = 'none !important';
+                    el.style.transition = 'none !important';
+                    el.style.opacity = '1 !important';
+                });
+            }
+            
+            // Remover animações dos bônus adicionais também
+            const additionalBonusElements = document.querySelectorAll('.additional-bonus, .additional-bonus *');
+            additionalBonusElements.forEach(el => {
                 el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in');
-                el.style.animation = 'none';
-                el.style.transform = 'none';
-                el.style.opacity = '1';
+                el.style.animation = 'none !important';
+                el.style.transform = 'none !important';
+                el.style.opacity = '1 !important';
             });
             
             // Aplicar animações APENAS para elementos específicos (hero, features, testimonials)
@@ -829,6 +844,17 @@
             allowedElements.forEach(el => {
                 el.style.animationPlayState = 'paused';
                 observer.observe(el);
+            });
+        });
+        
+        // Verificação adicional após carregamento completo
+        window.addEventListener('load', () => {
+            const allBonusElements = document.querySelectorAll('.bonus-card, .bonus-card *, .additional-bonus, .additional-bonus *, .bonus-grid, .bonus-grid *');
+            allBonusElements.forEach(el => {
+                el.style.setProperty('animation', 'none', 'important');
+                el.style.setProperty('transform', 'none', 'important');
+                el.style.setProperty('transition', 'none', 'important');
+                el.style.setProperty('opacity', '1', 'important');
             });
         });
 
