@@ -2,6 +2,7 @@ import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { CheckIcon } from "../ui/check-icon";
+import { motion } from "framer-motion";
 
 interface FeatureItemProps {
   icon: React.ReactNode;
@@ -146,17 +147,40 @@ export default function CourseOverview() {
                   </div>
                 </div>
                 
-                <div
-                  className="transform transition-transform hover:scale-105 active:scale-95"
+                <motion.div
+                  whileHover={{ 
+                    scale: 1.08,
+                    rotate: [0, -1, 1, 0],
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  animate={{ 
+                    scale: [1, 1.06, 1],
+                    boxShadow: [
+                      "0 8px 20px rgba(236, 72, 153, 0.3)",
+                      "0 15px 35px rgba(236, 72, 153, 0.6)",
+                      "0 8px 20px rgba(236, 72, 153, 0.3)"
+                    ],
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
                   <a 
                     href="https://pay.cakto.com.br/uk8zdk5_340907" 
-                    className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-base sm:text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow"
+                    className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-base sm:text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow relative overflow-hidden group"
                     style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
                   >
-                    QUERO COMEÇAR AGORA
+                    <span className="relative z-10">
+                      QUERO COMEÇAR AGORA
+                    </span>
+                    {/* Efeito shimmer */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   </a>
-                </div>
+                </motion.div>
                 
                 <div className="text-center">
                   <p className="text-gray-500 text-sm">
