@@ -47,16 +47,34 @@
             background: #ffffff;
         }
         
-        /* Animações leves */
+        /* Animações elegantes para todo o site */
         .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+            animation: fadeIn 1s ease-out forwards;
             opacity: 0;
         }
 
         .animate-slide-up {
-            animation: slideUp 0.6s ease-out forwards;
+            animation: slideUp 0.8s ease-out forwards;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
+        }
+
+        .animate-slide-left {
+            animation: slideLeft 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .animate-slide-right {
+            animation: slideRight 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.7s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.9);
         }
 
         .hover-float {
@@ -64,7 +82,16 @@
         }
         
         .hover-float:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+        }
+
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 15px 35px rgba(230, 34, 76, 0.2);
+            transform: translateY(-2px);
         }
 
         @keyframes fadeIn {
@@ -78,13 +105,45 @@
             }
         }
 
+        @keyframes slideLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
         }
 
         .float-animation {
             animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .shimmer-effect {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
         }
 
         /* Botões animados */
@@ -114,6 +173,22 @@
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+
+        /* Animações especiais para títulos */
+        .title-glow {
+            background: linear-gradient(135deg, var(--rose-primary), var(--rose-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titlePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
 
         .container {
             max-width: 1200px;
@@ -198,6 +273,14 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(230, 34, 76, 0.15);
+            border-color: var(--rose-primary);
         }
 
         .feature-icon {
@@ -210,6 +293,14 @@
             justify-content: center;
             margin: 0 auto 20px;
             color: var(--rose-primary);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--rose-primary);
+            color: white;
+            transform: rotate(360deg) scale(1.1);
         }
 
         .section-title {
@@ -318,6 +409,14 @@
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-left-color: var(--rose-primary);
         }
 
         .testimonial-stars {
@@ -391,18 +490,22 @@
                 <div class="feature-card hover-float animate-slide-up delay-100">
                     <div class="feature-icon">🎯</div>
                     <h3>Técnica Cutilagem Russa Completa</h3>
+                    <p>Domine todos os segredos da técnica mais procurada do mercado</p>
                 </div>
-                <div class="feature-card hover-float animate-slide-up delay-200">
+                <div class="feature-card hover-float animate-slide-right delay-200">
                     <div class="feature-icon">⏱️</div>
                     <h3>Cutilagem russa em 8 minutos</h3>
+                    <p>Aprenda a fazer o procedimento com agilidade e perfeição</p>
                 </div>
-                <div class="feature-card hover-float animate-slide-up delay-300">
+                <div class="feature-card hover-float animate-slide-left delay-300">
                     <div class="feature-icon">🔧</div>
                     <h3>Para que serve as brocas e como usá-las</h3>
+                    <p>Conheça cada ferramenta e sua aplicação específica</p>
                 </div>
-                <div class="feature-card hover-float animate-slide-up delay-400">
+                <div class="feature-card hover-float animate-scale-in delay-400">
                     <div class="feature-icon">💰</div>
                     <h3>Como estipular um preço para sua cliente</h3>
+                    <p>Estratégias para valorizar seu trabalho e aumentar a renda</p>
                 </div>
             </div>
             
@@ -539,7 +642,7 @@
             </div>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card hover-float animate-slide-up delay-100">
+                <div class="testimonial-card hover-float animate-slide-left delay-100">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p>"Simplesmente incrível! Em apenas 2 semanas consegui dominar a técnica e hoje sou referência na minha cidade. O investimento se pagou em menos de 1 mês!"</p>
                     <div class="testimonial-author">
@@ -551,7 +654,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card hover-float animate-slide-up delay-200">
+                <div class="testimonial-card hover-float animate-scale-in delay-200">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p>"O curso de Cutilagem Russa foi um divisor de águas na minha carreira. Em apenas um mês, consegui triplicar minha renda. A explicação sobre posicionamento da tesoura foi o que mais me ajudou."</p>
                     <div class="testimonial-author">
@@ -563,7 +666,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card hover-float animate-slide-up delay-300">
+                <div class="testimonial-card hover-float animate-slide-right delay-300">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p>"Os cursos bônus foram essenciais para ampliar meu atendimento. Hoje ofereço pacotes completos com todos os serviços que aprendi e minhas clientes amam!"</p>
                     <div class="testimonial-author">
@@ -622,9 +725,28 @@
         }, observerOptions);
 
         // Observar todos os elementos animados
-        document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+        document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-scale-in').forEach(el => {
             el.style.animationPlayState = 'paused';
             observer.observe(el);
+        });
+
+        // Adicionar efeito de brilho nos títulos
+        document.querySelectorAll('.section-title .highlight').forEach(el => {
+            el.classList.add('title-glow');
+        });
+
+        // Efeito de aparição suave na rolagem
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.hover-glow');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.style.transform = 'translateY(0)';
+                    el.style.opacity = '1';
+                }
+            });
         });
 
         // UTMify tracking script
