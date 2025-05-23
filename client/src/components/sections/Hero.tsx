@@ -78,7 +78,7 @@ export default function Hero() {
                 ]
               }}
               transition={{ 
-                duration: 2,
+                duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}

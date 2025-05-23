@@ -164,7 +164,7 @@ export default function CourseOverview() {
                     y: [0, -3, 0]
                   }}
                   transition={{ 
-                    duration: 1.5,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
