@@ -462,6 +462,16 @@
             .section-title { font-size: 2rem; }
             .container { padding: 0 15px; }
             .cta-button { padding: 15px 30px; font-size: 1rem; }
+            
+            /* Desabilitar todas as animações no mobile para melhor performance */
+            .bonus-card,
+            .additional-bonus,
+            .bonus-grid > *,
+            [class*="bonus"] {
+                animation: none !important;
+                transform: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
@@ -764,7 +774,7 @@
     </section>
 
     <script>
-        // Performance otimizada - animações com Intersection Observer
+        // Performance otimizada - animações apenas para seções específicas (excluindo bônus)
         const observerOptions = {
             threshold: 0.15,
             rootMargin: '0px 0px -30px 0px'
@@ -779,13 +789,21 @@
             });
         }, observerOptions);
 
-        // Inicialização otimizada
+        // Inicialização otimizada - excluindo elementos dentro da seção de bônus
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-scale-in');
             
             animatedElements.forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
+                // Verificar se o elemento não está dentro de uma seção de bônus
+                const isInBonusSection = el.closest('.bonus-grid') || el.closest('[style*="bonus"]') || el.classList.contains('bonus-card');
+                
+                if (!isInBonusSection) {
+                    el.style.animationPlayState = 'paused';
+                    observer.observe(el);
+                } else {
+                    // Remover classes de animação dos elementos de bônus
+                    el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in');
+                }
             });
         });
 
