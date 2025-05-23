@@ -92,17 +92,29 @@
             will-change: transform, opacity;
         }
 
-        /* DESABILITAR completamente animações para bônus */
+        /* FORÇA TOTAL: Sem animações nos bônus */
         .bonus-card,
         .bonus-card *,
         .additional-bonus,
         .additional-bonus *,
         .bonus-grid,
-        .bonus-grid * {
+        .bonus-grid *,
+        .bonus-icon,
+        .discount-badge {
             animation: none !important;
             transform: none !important;
             transition: none !important;
             opacity: 1 !important;
+        }
+        
+        /* Desabilitar qualquer animação que possa ter sobrado */
+        .bonus-grid .animate-slide-up,
+        .bonus-grid .animate-fade-in,
+        .bonus-grid .hover-float,
+        .bonus-grid .pulsing {
+            animation: none !important;
+            transform: none !important;
+            transition: none !important;
         }
 
         .hover-float {
@@ -812,31 +824,41 @@
             });
         }, observerOptions);
 
-        // Forçar remoção completa de animações dos bônus
-        document.addEventListener('DOMContentLoaded', () => {
-            // FORÇAR remoção de animações nos 6 cards de bônus principais
+        // REMOÇÃO TOTAL E DEFINITIVA das animações dos 6 bônus
+        function removeBonusAnimations() {
+            // Pegar TODOS os elementos da seção de bônus
             const bonusSection = document.querySelector('.bonus-grid');
             if (bonusSection) {
-                const allBonusCards = bonusSection.querySelectorAll('*');
-                allBonusCards.forEach(el => {
-                    // Remover todas as classes de animação
-                    el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in', 'hover-float', 'pulsing');
+                bonusSection.style.setProperty('animation', 'none', 'important');
+                bonusSection.style.setProperty('transform', 'none', 'important');
+                
+                // Cada card de bônus individualmente
+                const bonusCards = bonusSection.querySelectorAll('.bonus-card');
+                bonusCards.forEach((card, index) => {
+                    // Remover TODAS as classes
+                    card.className = 'bonus-card';
+                    
                     // Forçar estilos estáticos
-                    el.style.animation = 'none !important';
-                    el.style.transform = 'none !important';
-                    el.style.transition = 'none !important';
-                    el.style.opacity = '1 !important';
+                    card.style.setProperty('animation', 'none', 'important');
+                    card.style.setProperty('transform', 'none', 'important');
+                    card.style.setProperty('transition', 'none', 'important');
+                    card.style.setProperty('opacity', '1', 'important');
+                    
+                    // Todos os filhos também
+                    const children = card.querySelectorAll('*');
+                    children.forEach(child => {
+                        child.style.setProperty('animation', 'none', 'important');
+                        child.style.setProperty('transform', 'none', 'important');
+                        child.style.setProperty('transition', 'none', 'important');
+                        child.style.setProperty('opacity', '1', 'important');
+                    });
                 });
             }
-            
-            // Remover animações dos bônus adicionais também
-            const additionalBonusElements = document.querySelectorAll('.additional-bonus, .additional-bonus *');
-            additionalBonusElements.forEach(el => {
-                el.classList.remove('animate-fade-in', 'animate-slide-up', 'animate-slide-left', 'animate-slide-right', 'animate-scale-in');
-                el.style.animation = 'none !important';
-                el.style.transform = 'none !important';
-                el.style.opacity = '1 !important';
-            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Executar remoção imediatamente
+            removeBonusAnimations();
             
             // Aplicar animações APENAS para elementos específicos (hero, features, testimonials)
             const allowedElements = document.querySelectorAll('.hero .animate-fade-in, .feature-card[class*="animate"], .testimonial-card[class*="animate"]');
@@ -847,16 +869,15 @@
             });
         });
         
-        // Verificação adicional após carregamento completo
+        // Verificação tripla para garantir que não há animações
         window.addEventListener('load', () => {
-            const allBonusElements = document.querySelectorAll('.bonus-card, .bonus-card *, .additional-bonus, .additional-bonus *, .bonus-grid, .bonus-grid *');
-            allBonusElements.forEach(el => {
-                el.style.setProperty('animation', 'none', 'important');
-                el.style.setProperty('transform', 'none', 'important');
-                el.style.setProperty('transition', 'none', 'important');
-                el.style.setProperty('opacity', '1', 'important');
-            });
+            removeBonusAnimations();
         });
+        
+        // Uma última verificação após 1 segundo
+        setTimeout(() => {
+            removeBonusAnimations();
+        }, 1000);
 
         // UTMify tracking script
         !function(e,t,a,n,c,s,u){e.utmy||(c=e.utmy=function(){c.callMethod?c.callMethod.apply(c,arguments):c.queue.push(arguments)},c.queue=[],s=t.createElement(a),s.async=!0,s.src="https://cdn.utmify.com.br/scripts/utmy.js",u=t.getElementsByTagName(a)[0],u.parentNode.insertBefore(s,u))}(window,document,"script"),utmy("create","9e4ac390-7c56-4a00-9e6e-e3e2b56b5996");
