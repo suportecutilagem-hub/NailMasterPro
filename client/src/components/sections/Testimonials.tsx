@@ -1,6 +1,7 @@
 import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 interface TestimonialProps {
   content: string;
@@ -122,20 +123,47 @@ export default function Testimonials() {
           ))}
         </div>
         
-        <div
-          className="mt-12 text-center"
+        <motion.div
+          className="mt-16 text-center"
+          whileHover={{ 
+            scale: 1.08,
+            rotate: [0, -1, 1, 0],
+            transition: { duration: 0.3 }
+          }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ 
+            scale: [1, 1.06, 1],
+            boxShadow: [
+              "0 8px 20px rgba(236, 72, 153, 0.3)",
+              "0 15px 35px rgba(236, 72, 153, 0.6)",
+              "0 8px 20px rgba(236, 72, 153, 0.3)"
+            ],
+            y: [0, -3, 0]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         >
           <a href="#checkout">
             <Button 
               variant="cta" 
               roundedness="full" 
               size="xl" 
-              className="shadow-lg"
+              className="shadow-lg relative overflow-hidden group transition-all duration-300 text-xl py-6 px-12"
+              style={{ 
+                fontSize: "1.25rem",
+                padding: "1.5rem 3rem"
+              }}
             >
-              QUERO COMEÇAR AGORA
+              <span className="relative z-10 font-bold">
+                QUERO COMEÇAR AGORA
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             </Button>
           </a>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
