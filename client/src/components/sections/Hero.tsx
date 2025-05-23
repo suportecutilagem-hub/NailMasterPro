@@ -91,7 +91,7 @@ export default function Hero() {
                   className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
                 >
                   <span className="relative z-10">
-                    🚀 QUERO COMEÇAR AGORA 🚀
+                    QUERO COMEÇAR AGORA
                   </span>
                   {/* Efeito shimmer */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>

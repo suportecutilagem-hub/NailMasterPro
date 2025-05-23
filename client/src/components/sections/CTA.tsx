@@ -55,7 +55,7 @@ export default function CTA() {
                 className="shadow-lg w-full sm:w-auto relative overflow-hidden group bg-white hover:bg-gray-50 transition-all duration-300 font-bold text-lg px-8 py-4 border-2 border-white hover:border-yellow-300"
               >
                 <span className="relative z-10 group-hover:text-[hsl(var(--rose-primary))] transition-colors duration-300">
-                  ✨ QUERO COMEÇAR AGORA ✨
+                  QUERO COMEÇAR AGORA
                 </span>
                 {/* Efeito shimmer */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
