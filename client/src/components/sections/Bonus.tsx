@@ -3,7 +3,6 @@ import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { Calendar, Instagram, Palette, Percent, Book } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
-import { motion } from "framer-motion";
 
 interface BonusCardProps {
   number: number;
@@ -16,26 +15,8 @@ interface BonusCardProps {
 
 function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
-    <motion.div 
-      className="w-full sm:w-1/2 lg:w-1/3 p-2"
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: delay,
-        ease: "easeOut"
-      }}
-      viewport={{ once: true }}
-    >
-      <motion.div 
-        className="bg-white rounded-lg shadow-md p-4 h-full border-2 border-[hsl(var(--rose-primary))] relative hover:shadow-lg transition-shadow duration-300"
-        whileHover={{ 
-          y: -8,
-          scale: 1.02,
-          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          transition: { duration: 0.3 }
-        }}
-      >
+    <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
+      <div className="bg-white rounded-lg shadow-md p-4 h-full border-2 border-[hsl(var(--rose-primary))] relative hover:shadow-lg transition-shadow duration-300">
         <div className="absolute -top-2 -right-2">
           <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-full shadow-md">
             Bônus {number}
@@ -43,16 +24,9 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
         </div>
 
         <div className="flex items-center mb-3 pt-1">
-          <motion.div 
-            className="w-10 h-10 mr-3 text-[hsl(var(--rose-primary))] bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] rounded-lg flex items-center justify-center flex-shrink-0"
-            whileHover={{ 
-              rotate: 360,
-              scale: 1.1,
-              transition: { duration: 0.5 }
-            }}
-          >
+          <div className="w-10 h-10 mr-3 text-[hsl(var(--rose-primary))] bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] rounded-lg flex items-center justify-center flex-shrink-0">
             {icon}
-          </motion.div>
+          </div>
           <h3 className="font-montserrat font-bold text-base text-gray-800 leading-tight">{title}</h3>
         </div>
 
@@ -62,27 +36,12 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
         
         <div className="flex items-center mt-auto pt-2 border-t border-gray-100">
           <span className="text-gray-500 line-through text-sm mr-2">{originalPrice}</span>
-          <motion.span 
-            className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full"
-            whileHover={{ 
-              scale: 1.1,
-              boxShadow: "0 4px 8px rgba(45, 212, 191, 0.3)",
-              transition: { duration: 0.2 }
-            }}
-            animate={{ 
-              scale: [1, 1.05, 1],
-              transition: { 
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
-          >
+          <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">
             GRÁTIS
-          </motion.span>
+          </span>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
 
