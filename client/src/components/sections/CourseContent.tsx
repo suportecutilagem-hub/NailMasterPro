@@ -1,6 +1,7 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
+import { motion } from "framer-motion";
 
 interface CourseFeatureProps {
   icon: React.ReactNode;
@@ -193,18 +194,43 @@ export default function CourseContent() {
           </ul>
         </div>
         
-        <div className="mt-12 text-center">
+        <motion.div
+          className="mt-12 text-center"
+          whileHover={{ 
+            scale: 1.08,
+            rotate: [0, -1, 1, 0],
+            transition: { duration: 0.3 }
+          }}
+          whileTap={{ scale: 0.95 }}
+          animate={{ 
+            scale: [1, 1.06, 1],
+            boxShadow: [
+              "0 8px 20px rgba(236, 72, 153, 0.3)",
+              "0 15px 35px rgba(236, 72, 153, 0.6)",
+              "0 8px 20px rgba(236, 72, 153, 0.3)"
+            ],
+            y: [0, -3, 0]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
           <a href="#checkout">
             <Button 
               variant="cta" 
               roundedness="full" 
               size="xl" 
-              className="shadow-lg"
+              className="shadow-lg relative overflow-hidden group transition-all duration-300"
             >
-              QUERO DOMINAR A CUTILAGEM RUSSA
+              <span className="relative z-10">
+                QUERO DOMINAR A CUTILAGEM RUSSA
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             </Button>
           </a>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
