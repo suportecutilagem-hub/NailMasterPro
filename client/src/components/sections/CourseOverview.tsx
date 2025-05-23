@@ -2,7 +2,6 @@ import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { CheckIcon } from "../ui/check-icon";
-import { motion } from "framer-motion";
 
 interface FeatureItemProps {
   icon: React.ReactNode;
@@ -77,22 +76,10 @@ export default function CourseOverview() {
   ];
 
   return (
-    <motion.section 
-      className="py-16 bg-white" 
-      id="checkout"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
+    <section className="py-16 bg-white" id="checkout">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">DETALHES DO CURSO</h5>
             <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-6">
               Tudo o Que Você <span className="text-[hsl(var(--rose-primary))]">Precisa Saber</span>
@@ -109,15 +96,10 @@ export default function CourseOverview() {
                 />
               ))}
             </div>
-          </motion.div>
+          </div>
           
           {/* Course Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <Card className="shadow-2xl overflow-hidden">
               <div className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] p-6 text-white">
                 <h3 className="text-2xl font-bold font-montserrat">Curso de Cutilagem Russa</h3>
