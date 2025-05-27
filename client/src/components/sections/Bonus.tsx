@@ -53,12 +53,9 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <div className="mb-4 bg-white shadow-lg rounded-lg p-4 border-l-4 border-[hsl(var(--rose-primary))] transform hover:scale-105 transition-transform duration-200">
-      <h4 className="font-bold text-base text-[hsl(var(--rose-primary))] mb-2">{title}</h4>
-      <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
-      <div className="mt-2 inline-block bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">
-        INCLUÍDO GRÁTIS
-      </div>
+    <div className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]">
+      <h4 className="font-bold text-sm">{title}</h4>
+      <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
 }
@@ -111,24 +108,24 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
-      title: "🌟 SPA DOS PÉS PROFISSIONAL",
-      description: "💰 VALOR: R$147 - Tratamento completo VIP para relaxamento e beleza dos pés que suas clientes vão AMAR!"
+      title: "SPA DOS PÉS",
+      description: "Tratamento completo para relaxamento e beleza dos pés"
     },
     {
-      title: "💅 MANICURE E PEDICURE COMPLETA",
-      description: "💰 VALOR: R$197 - Técnicas profissionais secretas de cuidados para mãos e pés com acabamento de salão!"
+      title: "MANICURE E PEDICURE",
+      description: "Técnicas profissionais de cuidados para mãos e pés"
     },
     {
-      title: "💎 ALONGAMENTO NO MOLDE F1",
-      description: "💰 VALOR: R$247 - Método EXCLUSIVO e avançado para alongamento de unhas perfeitas que duram semanas!"
+      title: "ALONGAMENTO NO MOLDE F1",
+      description: "Método avançado para alongamento de unhas perfeitas"
     },
     {
-      title: "✨ ALONGAMENTO DE FIBRA DE VIDRO",
-      description: "💰 VALOR: R$197 - Técnica PREMIUM durável e natural para alongamentos que parecem unhas naturais!"
+      title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
+      description: "Técnica durável e natural para alongamentos"
     },
     {
-      title: "🎨 NAIL ART E UNHAS DECORADAS",
-      description: "💰 VALOR: R$147 - + de 50 designs criativos e tendências para nail art que vão impressionar suas clientes!"
+      title: "UNHAS DECORADAS",
+      description: "Designs criativos e tendências para nail art"
     }
   ];
 
@@ -159,16 +156,10 @@ export default function Bonus() {
           ))}
         </div>
         
-        <div className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-[hsl(var(--rose-primary))] text-white px-4 py-2 text-sm font-bold transform rotate-12 translate-x-6 -translate-y-2">
-            GRÁTIS!
-          </div>
-          <h3 className="text-2xl font-bold text-center mb-2 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">
-            🎁 BÔNUS ADICIONAIS EXCLUSIVOS
+        <div className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg">
+          <h3 className="text-xl font-bold text-center mb-6 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">
+            Bônus Adicionais: Cursos Exclusivos Completos com Certificado
           </h3>
-          <p className="text-center text-gray-600 mb-6 font-medium">
-            5 Cursos Completos com Certificado • Valor Total: R$935,00
-          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalBonuses.map((bonus, index) => (
@@ -181,18 +172,14 @@ export default function Bonus() {
           </div>
           
           <div className="mt-8 text-center">
-            <div className="inline-block bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-white rounded-lg p-6 mb-4 shadow-xl">
-              <p className="font-bold text-sm mb-2">VALOR TOTAL DE TODOS OS BÔNUS:</p>
-              <p className="font-bold text-3xl">
-                <span className="line-through opacity-70">R$1.932,00</span>
-              </p>
-              <p className="font-bold text-2xl text-yellow-300 mt-2">
-                HOJE: 100% GRÁTIS! 🎉
+            <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
+              <p className="font-bold text-xl">
+                Valor Total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
             </div>
             
-            <p className="text-gray-700 mb-4 text-lg font-medium">
-              Aproveite esta <span className="font-bold text-[hsl(var(--rose-primary))] text-xl">OPORTUNIDADE ÚNICA</span> e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))] bg-yellow-100 px-2 py-1 rounded">GRATUITAMENTE</span> ao adquirir o curso!
+            <p className="text-gray-700 mb-4">
+              Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
             </p>
           </div>
         </div>
