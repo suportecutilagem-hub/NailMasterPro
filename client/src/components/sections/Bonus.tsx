@@ -223,7 +223,7 @@ export default function Bonus() {
             </Button>
           </a>
           <p className="text-sm text-gray-500 mt-3">
-            Pagamento único de R$27,00 • Acesso vitalício
+            Pagamento único de R$35,00 • Acesso vitalício
           </p>
         </motion.div>
       </Container>
