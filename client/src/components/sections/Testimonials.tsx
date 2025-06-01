@@ -146,7 +146,7 @@ export default function Testimonials() {
             ease: "easeInOut"
           }}
         >
-          <a href="#checkout">
+          <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880">
             <Button 
               variant="cta" 
               roundedness="full" 

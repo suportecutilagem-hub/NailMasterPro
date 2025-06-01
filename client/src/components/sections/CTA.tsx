@@ -47,7 +47,7 @@ export default function CTA() {
             {/* Efeito de brilho */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-pulse"></div>
             
-            <a href="https://pay.cakto.com.br/uk8zdk5_340907">
+            <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880">
               <Button 
                 variant="white" 
                 roundedness="full" 

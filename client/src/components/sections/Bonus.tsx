@@ -207,7 +207,7 @@ export default function Bonus() {
             ease: "easeInOut"
           }}
         >
-          <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
+          <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" target="_blank" rel="noopener noreferrer" className="block">
             <Button 
               variant="cta" 
               size="xl" 
