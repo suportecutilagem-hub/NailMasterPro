@@ -112,8 +112,8 @@ export default function CourseOverview() {
                   <div>
                     <span className="text-gray-500 font-medium line-through text-lg">De R$197,00</span>
                     <div className="flex items-center">
-                      <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 10,00</span>
-                      <span className="ml-2 bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">95% OFF</span>
+                      <span className="text-[hsl(var(--rose-primary))] font-bold text-3xl">R$ 35,00</span>
+                      <span className="ml-2 bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">82% OFF</span>
                     </div>
                   </div>
                   <div className="bg-[hsl(var(--rose-light))] rounded-lg p-2 text-[hsl(var(--rose-primary))] text-center">
@@ -173,7 +173,7 @@ export default function CourseOverview() {
                     style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
                   >
                     <span className="relative z-10">
-                      GARANTIR VAGA POR R$10,00
+                      QUERO COMEÇAR AGORA
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   </a>

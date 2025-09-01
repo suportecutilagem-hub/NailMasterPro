@@ -7,37 +7,12 @@ export default function CTA() {
     <section className="py-16 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))]">
       <Container>
         <div className="text-center text-white">
-          <div className="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block animate-bounce">
-            ⚡ OFERTA RELÂMPAGO - APENAS HOJE!
-          </div>
-          
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            Não perca a chance de ganhar até R$200 por procedimento
+            Transforme sua carreira hoje mesmo
           </h2>
-          <p className="text-lg mb-6 opacity-90">
-            Seja uma das últimas pessoas a garantir essa técnica revolucionária por apenas R$10,00. <span className="font-bold underline">Amanhã volta para R$197,00!</span>
+          <p className="text-lg mb-8 opacity-90">
+            Aproveite esta oportunidade única e comece a dominar a técnica mais desejada do mercado
           </p>
-          
-          {/* Contador de urgência */}
-          <div className="bg-white/20 rounded-lg p-4 mb-6 border border-white/30">
-            <div className="text-center">
-              <p className="text-sm mb-2 opacity-90">Restam apenas:</p>
-              <div className="flex justify-center gap-4">
-                <div className="bg-white/30 rounded-lg px-3 py-2">
-                  <div className="text-2xl font-bold">23</div>
-                  <div className="text-xs opacity-80">HORAS</div>
-                </div>
-                <div className="bg-white/30 rounded-lg px-3 py-2">
-                  <div className="text-2xl font-bold">47</div>
-                  <div className="text-xs opacity-80">MIN</div>
-                </div>
-                <div className="bg-white/30 rounded-lg px-3 py-2">
-                  <div className="text-2xl font-bold">12</div>
-                  <div className="text-xs opacity-80">SEG</div>
-                </div>
-              </div>
-            </div>
-          </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-md mx-auto">
             <div className="text-center">
@@ -80,7 +55,7 @@ export default function CTA() {
                 className="shadow-lg w-full sm:w-auto relative overflow-hidden group bg-white hover:bg-gray-50 transition-all duration-300 font-bold text-lg px-8 py-4 border-2 border-white hover:border-yellow-300"
               >
                 <span className="relative z-10 group-hover:text-[hsl(var(--rose-primary))] transition-colors duration-300">
-                  GARANTIR ACESSO POR R$10,00 - ÚLTIMA CHANCE
+                  QUERO COMEÇAR AGORA
                 </span>
                 {/* Efeito shimmer */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>

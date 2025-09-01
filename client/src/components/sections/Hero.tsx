@@ -15,10 +15,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            {/* Urgência Badge */}
-            <div className="inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-4 animate-pulse">
-              🔥 ÚLTIMAS 24 HORAS - Oferta Histórica!
-            </div>
+
             
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO MAIS VENDIDO DO BRASIL</h5>
             <h1 className="text-4xl lg:text-5xl font-bold font-montserrat mb-6 leading-tight">
@@ -26,27 +23,10 @@ export default function Hero() {
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-lg mb-4">
-              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$200 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">3.847 alunas</span> já transformaram suas carreiras.
+              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$85 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
             </p>
             
-            {/* Prova Social */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <div className="flex items-center mb-2">
-                <div className="flex -space-x-1">
-                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">A</div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">M</div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
-                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
-                </div>
-                <span className="ml-3 text-sm font-medium text-green-800">127 pessoas compraram nas últimas 24h</span>
-              </div>
-              <div className="flex items-center">
-                <div className="flex text-yellow-400">
-                  {"★".repeat(5)}
-                </div>
-                <span className="ml-2 text-sm font-medium text-gray-700">4.9/5 • Avaliação média das alunas</span>
-              </div>
-            </div>
+
             
             {/* Feature badges */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -75,22 +55,13 @@ export default function Hero() {
 
             {/* Price */}
             <div className="mb-8">
-              <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg mb-3 text-sm font-bold">
-                🚨 ATENÇÃO: Apenas 73 vagas restantes neste preço!
-              </div>
               <p className="text-gray-500 text-sm mb-2">De <span className="line-through text-lg">R$197,00</span> • Valor normal do curso</p>
               <div className="flex items-baseline gap-2 mb-4">
                 <div className="text-4xl font-bold text-[hsl(var(--rose-primary))]">
-                  R$ 10,00
+                  R$ 35,00
                 </div>
-                <div className="bg-[hsl(var(--teal))] text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
-                  95% OFF
-                </div>
-              </div>
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                <div className="flex items-center text-sm">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-pulse"></div>
-                  <span className="font-medium text-gray-800">Essa oferta expira em 24h • Depois volta para R$197,00</span>
+                <div className="bg-[hsl(var(--teal))] text-white px-3 py-1 rounded-full text-sm font-bold">
+                  82% OFF
                 </div>
               </div>
             </div>
