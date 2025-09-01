@@ -72,7 +72,7 @@ export default function Results() {
             <div className="text-center">
               <p className="text-gray-500 text-sm mb-2">Oferta especial</p>
               <div className="text-3xl font-bold text-[hsl(var(--rose-primary))] mb-4">
-                R$65<span className="text-lg">,00</span>
+                R$35<span className="text-lg">,00</span>
               </div>
               <p className="text-gray-600 text-sm mb-6">
                 Pagamento único • Acesso vitalício
