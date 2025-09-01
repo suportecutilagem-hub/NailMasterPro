@@ -78,7 +78,7 @@ export default function Results() {
                 Pagamento único • Acesso vitalício
               </p>
               
-              <a href="https://pay.cakto.com.br/uk8zdk5_340907" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" className="block">
                 <Button 
                   variant="cta" 
                   size="xl" 
