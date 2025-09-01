@@ -142,23 +142,7 @@ export default function Hero() {
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"
               />
               
-              {/* Floating element */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="absolute -bottom-3 -left-3 bg-white rounded-lg p-2 shadow-lg flex items-center gap-1.5"
-              >
-                <div className="w-6 h-6 bg-[hsl(var(--teal))] rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500">Avaliação média</div>
-                  <div className="text-sm font-bold text-gray-800">4.9/5</div>
-                </div>
-              </motion.div>
+
             </div>
           </motion.div>
         </div>
