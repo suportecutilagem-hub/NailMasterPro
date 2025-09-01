@@ -106,7 +106,7 @@ export default function Hero() {
                   R$ 35,00
                 </div>
                 <div className="bg-[hsl(var(--teal))] text-white px-3 py-1 rounded-full text-sm font-bold">
-                  82% OFF
+                  82% DE DESCONTO
                 </div>
               </div>
             </div>
