@@ -1,5 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
+import { LazyImage } from "../ui/lazy-image";
 
 interface ResultCardProps {
   image: string;
@@ -11,7 +12,7 @@ interface ResultCardProps {
 function ResultCard({ image, title, description, delay = 0 }: ResultCardProps) {
   return (
     <div className="relative group overflow-hidden rounded-xl shadow-lg">
-      <img 
+      <LazyImage 
         src={image} 
         alt={title} 
         className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" 

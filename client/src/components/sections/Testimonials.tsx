@@ -2,6 +2,7 @@ import { Container } from "../ui/container";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { LazyImage } from "../ui/lazy-image";
 
 interface TestimonialProps {
   content: string;
@@ -44,7 +45,7 @@ function Testimonial({ content, image, name, location, delay = 0 }: TestimonialP
         </p>
         <div className="flex items-center">
           <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
-            <img src={image} alt={`Depoimento de ${name}`} className="w-full h-full object-cover" />
+            <LazyImage src={image} alt={`Depoimento de ${name}`} className="w-full h-full object-cover" />
           </div>
           <div>
             <h4 className="font-bold">{name}</h4>

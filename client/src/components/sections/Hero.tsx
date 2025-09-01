@@ -1,21 +1,27 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { LazyImage } from "../ui/lazy-image";
+import { useMobileOptimization } from "../../hooks/use-mobile-optimization";
 import manicureProfissionalImage from "../../assets/manicure-profissional.png";
 import avatar1 from "@assets/generated_images/Real_Brazilian_woman_headshot_4edea942.png";
 import avatar2 from "@assets/generated_images/Black_Brazilian_woman_headshot_03b6eac4.png";
 import avatar3 from "@assets/generated_images/Real_Brazilian_woman_headshot_3_d49f0507.png";
 
 export default function Hero() {
+  const { getMotionConfig } = useMobileOptimization();
+  const motionConfig = getMotionConfig();
+  
   return (
     <header className="pt-6 pb-8 lg:pt-16 lg:pb-16">
       <Container>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            {...motionConfig}
+            initial={motionConfig.initial !== false ? { opacity: 0, x: -20 } : false}
+            animate={motionConfig.animate !== false ? { opacity: 1, x: 0 } : false}
+            transition={motionConfig.transition || { duration: 0.5 }}
             className="order-2 lg:order-1"
           >
 
@@ -35,17 +41,17 @@ export default function Hero() {
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
               <div className="flex items-center mb-2">
                 <div className="flex -space-x-1">
-                  <img 
+                  <LazyImage 
                     src={avatar1} 
                     alt="Aluna satisfeita" 
                     className="w-8 h-8 rounded-full border-2 border-white object-cover"
                   />
-                  <img 
+                  <LazyImage 
                     src={avatar2} 
                     alt="Aluna satisfeita" 
                     className="w-8 h-8 rounded-full border-2 border-white object-cover"
                   />
-                  <img 
+                  <LazyImage 
                     src={avatar3} 
                     alt="Aluna satisfeita" 
                     className="w-8 h-8 rounded-full border-2 border-white object-cover"
@@ -165,7 +171,7 @@ export default function Hero() {
             className="order-1 lg:order-2 relative"
           >
             <div className="relative">
-              <img 
+              <LazyImage 
                 src={manicureProfissionalImage}
                 alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada" 
                 className="rounded-2xl shadow-2xl w-full h-auto border-2 border-[hsl(var(--rose-primary))]"

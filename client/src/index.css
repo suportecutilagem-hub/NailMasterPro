@@ -1,5 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap');
 
+/* Critical CSS para mobile - carregamento prioritário */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: auto !important;
+  }
+  
+  body {
+    overscroll-behavior: contain;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: optimizeSpeed;
+    content-visibility: auto;
+  }
+  
+  /* Otimização para animações em mobile */
+  .motion-reduce,
+  [data-motion="reduced"] {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Otimização de layers para mobile */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-auto {
+    will-change: auto;
+  }
+  
+  /* Melhora rendering de texto */
+  .optimize-text {
+    text-rendering: optimizeSpeed;
+    font-smooth: never;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -67,6 +117,7 @@
   
   body {
     @apply font-roboto antialiased bg-background text-foreground;
+    font-display: swap;
   }
 
   h1, h2, h3, h4, h5, h6 {
