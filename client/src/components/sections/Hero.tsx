@@ -29,36 +29,7 @@ export default function Hero() {
               Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$85 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
             </p>
             
-            {/* Prova Social com Fotos */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-              <div className="flex items-center mb-2">
-                <div className="flex -space-x-1">
-                  <img 
-                    src={avatar1} 
-                    alt="Aluna satisfeita" 
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                  />
-                  <img 
-                    src={avatar2} 
-                    alt="Aluna satisfeita" 
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                  />
-                  <img 
-                    src={avatar3} 
-                    alt="Aluna satisfeita" 
-                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                  />
-                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
-                </div>
-                <span className="ml-3 text-sm font-medium text-green-800">127 pessoas compraram nas últimas 24h</span>
-              </div>
-              <div className="flex items-center">
-                <div className="flex text-yellow-400">
-                  {"★".repeat(5)}
-                </div>
-                <span className="ml-2 text-sm font-medium text-gray-700">4,9/5 • Avaliação média das alunas</span>
-              </div>
-            </div>
+
             
 
             
