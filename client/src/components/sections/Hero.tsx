@@ -2,6 +2,9 @@ import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import manicureProfissionalImage from "../../assets/manicure-profissional.png";
+import avatar1 from "@assets/generated_images/Professional_woman_headshot_avatar_4642d962.png";
+import avatar2 from "@assets/generated_images/Professional_woman_headshot_avatar_2_80dfd9a6.png";
+import avatar3 from "@assets/generated_images/Professional_woman_headshot_avatar_3_dcce8fd9.png";
 
 export default function Hero() {
   return (
@@ -22,9 +25,40 @@ export default function Hero() {
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
-            <p className="text-gray-700 text-lg mb-4">
+            <p className="text-gray-700 text-lg mb-6">
               Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$85 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
             </p>
+            
+            {/* Prova Social com Fotos */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+              <div className="flex items-center mb-2">
+                <div className="flex -space-x-1">
+                  <img 
+                    src={avatar1} 
+                    alt="Aluna satisfeita" 
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                  />
+                  <img 
+                    src={avatar2} 
+                    alt="Aluna satisfeita" 
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                  />
+                  <img 
+                    src={avatar3} 
+                    alt="Aluna satisfeita" 
+                    className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                  />
+                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
+                </div>
+                <span className="ml-3 text-sm font-medium text-green-800">127 pessoas compraram nas últimas 24h</span>
+              </div>
+              <div className="flex items-center">
+                <div className="flex text-yellow-400">
+                  {"★".repeat(5)}
+                </div>
+                <span className="ml-2 text-sm font-medium text-gray-700">4,9/5 • Avaliação média das alunas</span>
+              </div>
+            </div>
             
 
             
