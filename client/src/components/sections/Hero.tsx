@@ -32,7 +32,7 @@ export default function Hero() {
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-lg mb-6">
-              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$85 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
+              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$75,00 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
             </p>
             
 
@@ -58,7 +58,7 @@ export default function Hero() {
                   />
                   <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
                 </div>
-                <span className="ml-3 text-sm font-medium text-green-800">127 pessoas compraram nas últimas 24h</span>
+                <span className="ml-3 text-sm font-medium text-green-800">327 pessoas compraram nas últimas 24h</span>
               </div>
               <div className="flex items-center">
                 <div className="flex text-yellow-400">
