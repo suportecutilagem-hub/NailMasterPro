@@ -31,8 +31,9 @@ export default function Hero() {
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
-            <p className="text-gray-700 text-lg mb-6">
-              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$75,00 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
+            <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
+              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$75,00 por procedimento</span>.<br className="sm:hidden" /> 
+              Mais de <span className="font-bold text-[hsl(var(--teal))]">23.897 mil alunas</span> já transformaram suas carreiras.
             </p>
             
 
