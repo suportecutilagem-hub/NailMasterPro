@@ -158,7 +158,7 @@ export default function Testimonials() {
               }}
             >
               <span className="relative z-10 font-bold">
-                QUERO COMEÇAR AGORA
+                QUERO APRENDER CUTILAGEM RUSSA
               </span>
 
             </Button>

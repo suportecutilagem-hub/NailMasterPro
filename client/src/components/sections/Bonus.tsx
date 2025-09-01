@@ -217,7 +217,7 @@ export default function Bonus() {
               }}
             >
               <span className="relative z-10">
-                QUERO TODOS OS BÔNUS AGORA
+                QUERO ACESSO COMPLETO + BÔNUS
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             </Button>

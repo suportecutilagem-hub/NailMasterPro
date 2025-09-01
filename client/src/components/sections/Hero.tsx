@@ -15,14 +15,38 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO COMPLETO DE</h5>
+            {/* Urgência Badge */}
+            <div className="inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-4 animate-pulse">
+              🔥 ÚLTIMAS 24 HORAS - Oferta Histórica!
+            </div>
+            
+            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2">CURSO MAIS VENDIDO DO BRASIL</h5>
             <h1 className="text-4xl lg:text-5xl font-bold font-montserrat mb-6 leading-tight">
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
-            <p className="text-gray-700 text-lg mb-6">
-              Domine a técnica que mais cresce no mercado de manicure e transforme sua carreira em apenas <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span> com acesso vitalício.
+            <p className="text-gray-700 text-lg mb-4">
+              Domine a técnica que mais cresce no mercado e <span className="font-bold text-[hsl(var(--rose-primary))]">ganhe até R$200 por procedimento</span>. Mais de <span className="font-bold text-[hsl(var(--teal))]">3.847 alunas</span> já transformaram suas carreiras.
             </p>
+            
+            {/* Prova Social */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+              <div className="flex items-center mb-2">
+                <div className="flex -space-x-1">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">A</div>
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">M</div>
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
+                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
+                </div>
+                <span className="ml-3 text-sm font-medium text-green-800">127 pessoas compraram nas últimas 24h</span>
+              </div>
+              <div className="flex items-center">
+                <div className="flex text-yellow-400">
+                  {"★".repeat(5)}
+                </div>
+                <span className="ml-2 text-sm font-medium text-gray-700">4.9/5 • Avaliação média das alunas</span>
+              </div>
+            </div>
             
             {/* Feature badges */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -51,13 +75,22 @@ export default function Hero() {
 
             {/* Price */}
             <div className="mb-8">
-              <p className="text-gray-500 text-sm mb-2">De <span className="line-through">R$197,00</span></p>
+              <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg mb-3 text-sm font-bold">
+                🚨 ATENÇÃO: Apenas 73 vagas restantes neste preço!
+              </div>
+              <p className="text-gray-500 text-sm mb-2">De <span className="line-through text-lg">R$197,00</span> • Valor normal do curso</p>
               <div className="flex items-baseline gap-2 mb-4">
                 <div className="text-4xl font-bold text-[hsl(var(--rose-primary))]">
                   R$ 10,00
                 </div>
-                <div className="bg-[hsl(var(--teal))] text-white px-2 py-1 rounded text-sm font-bold">
+                <div className="bg-[hsl(var(--teal))] text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
                   95% OFF
+                </div>
+              </div>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                <div className="flex items-center text-sm">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-pulse"></div>
+                  <span className="font-medium text-gray-800">Essa oferta expira em 24h • Depois volta para R$197,00</span>
                 </div>
               </div>
             </div>
@@ -91,7 +124,7 @@ export default function Hero() {
                   className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
                 >
                   <span className="relative z-10">
-                    QUERO COMEÇAR AGORA
+                    SIM, QUERO GARANTIR MINHA VAGA AGORA
                   </span>
                   {/* Efeito shimmer */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
@@ -99,12 +132,24 @@ export default function Hero() {
               </a>
             </motion.div>
             
-            <p className="text-gray-500 text-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              Pagamento 100% seguro
-            </p>
+            <div className="flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-600">
+              <div className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Pagamento 100% seguro
+              </div>
+              <div className="flex items-center">
+                <svg className="h-4 w-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                PIX • Cartão
+              </div>
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></div>
+                Acesso imediato
+              </div>
+            </div>
           </motion.div>
 
           {/* Hero Image */}
