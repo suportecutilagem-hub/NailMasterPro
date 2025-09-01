@@ -152,11 +152,7 @@ export default function Testimonials() {
               variant="cta" 
               roundedness="full" 
               size="xl" 
-              className="shadow-lg relative overflow-hidden group transition-all duration-300 text-xl py-6 px-12"
-              style={{ 
-                fontSize: "1.25rem",
-                padding: "1.5rem 3rem"
-              }}
+              className="shadow-lg relative overflow-hidden group transition-all duration-300 w-full sm:w-auto text-base sm:text-xl py-4 px-6 sm:py-6 sm:px-12 font-bold"
             >
               <span className="relative z-10 font-bold">
                 QUERO APRENDER CUTILAGEM RUSSA
