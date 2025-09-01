@@ -2,9 +2,9 @@ import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import manicureProfissionalImage from "../../assets/manicure-profissional.png";
-import avatar1 from "@assets/generated_images/Professional_woman_headshot_avatar_4642d962.png";
-import avatar2 from "@assets/generated_images/Professional_woman_headshot_avatar_2_80dfd9a6.png";
-import avatar3 from "@assets/generated_images/Professional_woman_headshot_avatar_3_dcce8fd9.png";
+import avatar1 from "@assets/generated_images/Real_Brazilian_woman_headshot_4edea942.png";
+import avatar2 from "@assets/generated_images/Real_Brazilian_woman_headshot_2_b1035442.png";
+import avatar3 from "@assets/generated_images/Real_Brazilian_woman_headshot_3_d49f0507.png";
 
 export default function Hero() {
   return (
