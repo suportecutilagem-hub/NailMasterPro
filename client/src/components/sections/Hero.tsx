@@ -133,10 +133,10 @@ export default function Hero() {
                 <Button 
                   variant="cta" 
                   size="xl" 
-                  className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
+                  className="w-full lg:w-auto uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300 text-sm sm:text-base py-3 sm:py-4 px-4 sm:px-6"
                 >
-                  <span className="relative z-10">
-                    SIM, QUERO GARANTIR MINHA VAGA AGORA
+                  <span className="relative z-10 leading-tight">
+                    SIM, QUERO GARANTIR<br className="sm:hidden" /> MINHA VAGA AGORA
                   </span>
                   {/* Efeito shimmer */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
