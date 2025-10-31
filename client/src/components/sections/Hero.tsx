@@ -23,7 +23,8 @@ export default function Hero() {
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-base sm:text-lg lg:text-xl mb-5 leading-relaxed">
-              Aprenda a técnica mais procurada pelas clientes e multiplique seus ganhos com o método profissional completo — curso de <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span>.
+              A técnica que mais gera lucro nos salões — agora ao seu alcance!<br />
+              Domine a cutilagem russa e multiplique seus ganhos oferecendo um serviço premium que suas clientes vão amar.
             </p>
             
             {/* Feature badges */}
