@@ -56,18 +56,18 @@ export default function Hero() {
                   90% OFF
                 </div>
               </div>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
+              <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600">
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap">Pagamento único</span>
+                  <span className="whitespace-nowrap text-[11px] sm:text-xs">Pagamento único</span>
                 </div>
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap">Sem mensalidade</span>
+                  <span className="whitespace-nowrap text-[11px] sm:text-xs">Sem mensalidade</span>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function Hero() {
                 <Button 
                   variant="cta" 
                   size="xl" 
-                  className="w-full uppercase font-bold tracking-wide shadow-xl relative overflow-hidden group transition-all duration-300 text-sm sm:text-base lg:text-lg py-4 sm:py-5 px-6"
+                  className="w-full uppercase font-bold tracking-wide shadow-xl relative overflow-hidden group transition-all duration-300 text-base sm:text-lg lg:text-xl py-4 sm:py-5 px-6"
                 >
                   <span className="relative z-10">
                     QUERO COMEÇAR AGORA
