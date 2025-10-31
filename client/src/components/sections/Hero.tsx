@@ -17,22 +17,13 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            {/* Urgency Banner */}
-            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 px-4 py-2 rounded-lg mb-4 text-xs sm:text-sm font-semibold">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
-              </span>
-              ✅ 23.897 alunas já transformaram suas carreiras
-            </div>
-            
             <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2 text-xs sm:text-sm uppercase tracking-wide">CURSO COMPLETO DE</h5>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-4 leading-tight">
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-5 leading-relaxed">
-              Domine a técnica que mais cresce no mercado de manicure e transforme sua carreira em apenas <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span> com acesso vitalício.
+              Aprenda a técnica mais procurada pelas clientes e multiplique seus ganhos com o método profissional completo — curso de <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span> com acesso vitalício.
             </p>
             
             {/* Feature badges */}
@@ -143,25 +134,6 @@ export default function Hero() {
                 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              {/* Badge de Avaliação */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-[hsl(var(--teal))] text-white rounded-full px-3 py-2 sm:px-4 sm:py-2.5 flex items-center gap-2 shadow-xl backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-                </svg>
-                <div className="text-xs sm:text-sm">
-                  <div className="font-bold">4,0/5</div>
-                  <div className="text-[10px] sm:text-xs opacity-90">Avaliação média</div>
-                </div>
-              </div>
-              
-              {/* Selo de Qualidade */}
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white text-[hsl(var(--rose-primary))] rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-1.5 shadow-lg text-xs sm:text-sm font-bold">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>Certificado</span>
               </div>
             </div>
           </motion.div>
