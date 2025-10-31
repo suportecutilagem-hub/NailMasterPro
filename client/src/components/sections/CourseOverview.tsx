@@ -41,15 +41,6 @@ export default function CourseOverview() {
     {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-        </svg>
-      ),
-      title: "Acesso Vitalício",
-      description: "Assista e reveja as aulas quantas vezes quiser, para sempre, sem mensalidades."
-    },
-    {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
@@ -126,10 +117,6 @@ export default function CourseOverview() {
                   <div className="flex items-center">
                     <CheckIcon className="text-[hsl(var(--teal))] mr-2" />
                     <span>16 horas de conteúdo exclusivo</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckIcon className="text-[hsl(var(--teal))] mr-2" />
-                    <span>Acesso vitalício às aulas</span>
                   </div>
                   <div className="flex items-center">
                     <CheckIcon className="text-[hsl(var(--teal))] mr-2" />

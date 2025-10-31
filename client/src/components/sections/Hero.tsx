@@ -23,7 +23,7 @@ export default function Hero() {
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-5 leading-relaxed">
-              Aprenda a técnica mais procurada pelas clientes e multiplique seus ganhos com o método profissional completo — curso de <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span> com acesso vitalício.
+              Aprenda a técnica mais procurada pelas clientes e multiplique seus ganhos com o método profissional completo — curso de <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span>.
             </p>
             
             {/* Feature badges */}
@@ -38,17 +38,10 @@ export default function Hero() {
                 
                 <div className="bg-white border border-[hsl(var(--rose-primary))]/20 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-800">Acesso Vitalício</span>
+                  <span className="text-sm font-medium text-gray-800">+11 Bônus Exclusivos</span>
                 </div>
-              </div>
-              
-              <div className="bg-white border border-[hsl(var(--rose-primary))]/20 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                </svg>
-                <span className="text-sm font-medium text-gray-800">+11 Bônus Exclusivos</span>
               </div>
             </div>
 
@@ -63,18 +56,18 @@ export default function Hero() {
                   90% OFF
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-xs sm:text-sm text-gray-600">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Pagamento único</span>
+                  <span className="whitespace-nowrap">Pagamento único</span>
                 </div>
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Sem mensalidade</span>
+                  <span className="whitespace-nowrap">Sem mensalidade</span>
                 </div>
               </div>
             </div>

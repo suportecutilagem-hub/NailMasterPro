@@ -76,7 +76,7 @@ export default function Results() {
                 R$19<span className="text-lg">,90</span>
               </div>
               <p className="text-gray-600 text-sm mb-6">
-                Pagamento único • Acesso vitalício
+                Pagamento único
               </p>
               
               <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" className="block">
