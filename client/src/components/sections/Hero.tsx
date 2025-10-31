@@ -132,7 +132,7 @@ export default function Hero() {
           >
             <div className="relative group">
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-rose-300">
                 <LazyImage 
                   src={manicureProfissionalImage}
                   alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada" 
