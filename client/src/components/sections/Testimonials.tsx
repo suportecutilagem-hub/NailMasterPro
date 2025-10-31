@@ -44,7 +44,7 @@ function Testimonial({ content, image, name, location, delay = 0 }: TestimonialP
           "{content}"
         </p>
         <div className="flex items-center">
-          <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
+          <div className="w-12 h-12 rounded-full overflow-hidden mr-3 flex-shrink-0 bg-gray-200">
             <LazyImage src={image} alt={`Depoimento de ${name}`} className="w-full h-full object-cover" />
           </div>
           <div>
@@ -61,37 +61,37 @@ export default function Testimonials() {
   const testimonials = [
     {
       content: "Eu tinha muito medo de trabalhar com cutilagem russa e machucar minhas clientes. Com esse curso, perdi o medo e agora consigo fazer um trabalho perfeito em menos de 10 minutos! Minhas clientes estão encantadas e minha agenda está lotada!",
-      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604",
+      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Mariana Silva",
       location: "São Paulo, SP"
     },
     {
       content: "Consegui aumentar o valor do meu atendimento em mais de 50% depois que dominei a cutilagem russa. As dicas de como precificar meu trabalho foram fundamentais. Agora trabalho menos e ganho mais!",
-      image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f",
+      image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Juliana Costa",
       location: "Rio de Janeiro, RJ"
     },
     {
       content: "Os bônus do curso foram um diferencial incrível! Aprendi a usar o Instagram para divulgar meu trabalho e hoje tenho clientes que vêm de cidades vizinhas para fazer cutilagem russa comigo. O investimento valeu cada centavo!",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce",
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Patrícia Oliveira",
       location: "Belo Horizonte, MG"
     },
     {
       content: "Em apenas duas semanas após o curso, já estava aplicando todas as técnicas com segurança. Os vídeos são super detalhados e a explicação é clara. A técnica de cutilagem em 8 minutos mudou minha rotina completamente!",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Ana Carolina Mendes",
       location: "Curitiba, PR"
     },
     {
       content: "O curso de Cutilagem Russa foi um divisor de águas na minha carreira. Em apenas um mês, consegui triplicar minha renda. A explicação sobre posicionamento da tesoura foi o que mais me ajudou, pois tinha muita dificuldade nessa parte.",
-      image: "https://images.unsplash.com/photo-1558898479-33c0057a5d12",
+      image: "https://images.unsplash.com/photo-1558898479-33c0057a5d12?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Fernanda Gomes",
       location: "Salvador, BA"
     },
     {
       content: "Os cursos bônus foram essenciais para ampliar meu atendimento. Hoje ofereço pacotes completos com todos os serviços que aprendi e minhas clientes amam! Vale muito a pena o investimento, recuperei o valor em apenas uma semana.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=96&h=96&fit=crop&q=80&fm=webp",
       name: "Camila Rocha",
       location: "Recife, PE"
     }

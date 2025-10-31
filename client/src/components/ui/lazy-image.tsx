@@ -22,8 +22,8 @@ export function LazyImage({ src, alt, className = '', style, placeholder }: Lazy
         }
       },
       { 
-        threshold: 0.1,
-        rootMargin: '50px'
+        threshold: 0.01,
+        rootMargin: '200px'
       }
     );
 
@@ -39,32 +39,29 @@ export function LazyImage({ src, alt, className = '', style, placeholder }: Lazy
   };
 
   return (
-    <div ref={imgRef} className={`relative overflow-hidden ${className}`} style={style}>
-      {!isLoaded && (
+    <div ref={imgRef} className={`relative ${className}`} style={style}>
+      {!isLoaded && isInView && (
         <div 
-          className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center"
+          className="absolute inset-0 bg-gray-200 animate-pulse"
           style={{ 
             backgroundImage: placeholder ? `url(${placeholder})` : undefined,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
-        >
-          {!placeholder && (
-            <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
-          )}
-        </div>
+        />
       )}
       {isInView && (
         <img
           src={src}
           alt={alt}
           onLoad={handleLoad}
-          className={`transition-opacity duration-300 ${
+          className={`transition-opacity duration-500 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           } ${className}`}
           style={style}
           loading="lazy"
           decoding="async"
+          fetchPriority="low"
         />
       )}
     </div>
