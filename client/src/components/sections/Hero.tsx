@@ -35,14 +35,14 @@ export default function Hero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
-                  <span className="text-sm sm:text-base text-black whitespace-nowrap">6 Certificados Inclusos</span>
+                  <span className="text-sm sm:text-base text-gray-900 whitespace-nowrap">6 Certificados Inclusos</span>
                 </div>
                 
                 <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-[hsl(var(--rose-primary))] mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
-                  <span className="text-sm sm:text-base text-black whitespace-nowrap">+11 Bônus Exclusivos</span>
+                  <span className="text-sm sm:text-base text-gray-900 whitespace-nowrap">+11 Bônus Exclusivos</span>
                 </div>
               </div>
             </div>
