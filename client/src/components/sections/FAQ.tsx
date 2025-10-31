@@ -50,10 +50,6 @@ export default function FAQ() {
       answer: "No início do curso você receberá uma lista completa de materiais necessários, com indicações de onde comprar por preços acessíveis. Além disso, com o bônus de 30% de desconto em materiais, você poderá economizar na aquisição dos itens essenciais."
     },
     {
-      question: "Quanto tempo tenho para assistir o curso?",
-      answer: "O acesso ao curso é vitalício! Você poderá assistir as aulas quantas vezes quiser, para sempre, sem pagar mensalidades ou renovações. Isso permite que você estude no seu próprio ritmo e reveja o conteúdo sempre que precisar."
-    },
-    {
       question: "Como recebo o certificado?",
       answer: "Ao concluir o curso, você terá acesso a uma aula específica que explica como solicitar seu certificado. Após seguir as instruções, você receberá o certificado digital que pode ser impresso ou compartilhado online, agregando valor ao seu currículo profissional."
     },
