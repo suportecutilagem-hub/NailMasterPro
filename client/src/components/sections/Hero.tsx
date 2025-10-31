@@ -29,18 +29,18 @@ export default function Hero() {
             {/* Feature badges */}
             <div className="space-y-2 mb-5">
               <div className="grid grid-cols-2 gap-2">
-                <div className="bg-pink-50 border border-[hsl(var(--rose-primary))]/20 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-amber-600 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-800">6 Certificados Inclusos</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-800 whitespace-nowrap">6 Certificados Inclusos</span>
                 </div>
                 
-                <div className="bg-pink-50 border border-[hsl(var(--rose-primary))]/20 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[hsl(var(--rose-primary))] mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-amber-600 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
-                  <span className="text-sm font-medium text-gray-800">+11 Bônus Exclusivos</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-800 whitespace-nowrap">+11 Bônus Exclusivos</span>
                 </div>
               </div>
             </div>
