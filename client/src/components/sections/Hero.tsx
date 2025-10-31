@@ -23,7 +23,7 @@ export default function Hero() {
               <span className="text-gray-900">Profissional</span>
             </h1>
             <p className="text-gray-700 text-base sm:text-lg lg:text-xl mb-5 leading-relaxed">
-              A técnica que <span className="font-bold text-[hsl(var(--rose-primary))]">mais gera lucro</span> nos salões — agora ao seu alcance! Domine a cutilagem russa e <span className="font-bold text-[hsl(var(--rose-primary))]">multiplique seus ganhos</span> oferecendo um serviço premium que suas clientes vão amar.
+              A técnica que mais gera lucro nos salões — agora ao seu alcance! Domine a cutilagem russa e <span className="font-bold text-[hsl(var(--rose-primary))]">multiplique seus ganhos</span> oferecendo um serviço premium que suas clientes vão amar.
             </p>
             
             {/* Feature badges */}
