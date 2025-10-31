@@ -22,7 +22,7 @@ export default function Hero() {
               <span className="gradient-text">Cutilagem Russa</span><br />
               <span className="text-gray-900">Profissional</span>
             </h1>
-            <p className="text-gray-700 text-sm sm:text-base lg:text-lg mb-5 leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg lg:text-xl mb-5 leading-relaxed">
               Aprenda a técnica mais procurada pelas clientes e multiplique seus ganhos com o método profissional completo — curso de <span className="font-bold text-[hsl(var(--rose-primary))]">16 horas</span>.
             </p>
             
@@ -79,6 +79,14 @@ export default function Hero() {
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.98 }}
+              animate={{
+                scale: [1, 1.015, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
               className="mb-4"
             >
               <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" className="block" data-testid="cta-button-hero">
@@ -87,10 +95,7 @@ export default function Hero() {
                   size="xl" 
                   className="w-full uppercase font-bold tracking-wide shadow-xl relative overflow-hidden group transition-all duration-300 text-sm sm:text-base lg:text-lg py-4 sm:py-5 px-6"
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                  <span className="relative z-10">
                     QUERO COMEÇAR AGORA
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
@@ -99,12 +104,19 @@ export default function Hero() {
             </motion.div>
             
             {/* Trust Badges */}
-            <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
               <div className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
                 <span className="font-medium">Pagamento 100% seguro</span>
+              </div>
+              <div className="flex items-center">
+                <span className="relative flex h-2 w-2 mr-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="font-medium">Acesso imediato</span>
               </div>
             </div>
           </motion.div>
