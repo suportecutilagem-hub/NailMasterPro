@@ -58,16 +58,16 @@ export default function Hero() {
               </div>
               <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600">
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap text-[11px] sm:text-xs">Pagamento único</span>
+                  <span className="whitespace-nowrap text-sm sm:text-base font-semibold">Pagamento único</span>
                 </div>
                 <div className="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap text-[11px] sm:text-xs">Sem mensalidade</span>
+                  <span className="whitespace-nowrap text-sm sm:text-base font-semibold">Sem mensalidade</span>
                 </div>
               </div>
             </div>
