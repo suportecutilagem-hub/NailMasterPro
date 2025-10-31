@@ -52,7 +52,7 @@ export default function Hero() {
                 <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--rose-primary))]">
                   R$ 19,90
                 </div>
-                <div className="bg-[hsl(var(--teal))] text-white px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold shadow-md">
+                <div className="bg-green-500 text-white px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold shadow-md">
                   90% OFF
                 </div>
               </div>
