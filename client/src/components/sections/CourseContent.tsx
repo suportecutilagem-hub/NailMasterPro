@@ -217,7 +217,7 @@ export default function CourseContent() {
             ease: "easeInOut"
           }}
         >
-          <a href="#checkout">
+          <a href="https://checkout.cutilagemrussa.com/c/3orijyx">
             <Button 
               variant="cta" 
               roundedness="full" 

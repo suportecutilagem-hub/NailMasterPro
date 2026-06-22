@@ -23,7 +23,7 @@ const CTA_URL = "https://checkout.cutilagemrussa.com/c/3orijyx";
 
 export default function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", slidesToScroll: 1 },
+    { loop: true, align: "center", slidesToScroll: 1, dragFree: false },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
 
@@ -67,14 +67,15 @@ export default function Testimonials() {
             {images.map((src, i) => (
               <div
                 key={i}
-                className="flex-none w-[94vw] sm:w-[320px]"
+                className="flex-none w-[228px] sm:w-[280px]"
               >
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
                   <img
                     src={src}
                     alt={`Depoimento real ${i + 1}`}
+                    width={456}
+                    height={800}
                     className="w-full h-auto block"
-                    style={{ imageRendering: "auto" }}
                     loading={i < 3 ? "eager" : "lazy"}
                     decoding="async"
                   />
