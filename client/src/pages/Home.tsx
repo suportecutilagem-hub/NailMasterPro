@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import CourseContent from "@/components/sections/CourseContent";
 import Results from "@/components/sections/Results";
 import Bonus from "@/components/sections/Bonus";
+import Certificate from "@/components/sections/Certificate";
 import Testimonials from "@/components/sections/Testimonials";
 import CourseOverview from "@/components/sections/CourseOverview";
 import FAQ from "@/components/sections/FAQ";
@@ -15,6 +16,7 @@ export default function Home() {
       <CourseContent />
       {/* Results removido conforme solicitado */}
       <Bonus />
+      <Certificate />
       <Testimonials />
       <CourseOverview />
       <FAQ />
