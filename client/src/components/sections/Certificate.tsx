@@ -11,17 +11,6 @@ export default function Certificate() {
 
       <Container>
         <div className="flex flex-col items-center text-center">
-          {/* tag */}
-          <motion.span
-            className="inline-block bg-[hsl(var(--rose-primary))]/10 text-[hsl(var(--rose-primary))] text-sm font-semibold px-4 py-1.5 rounded-full mb-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            Incluído no curso
-          </motion.span>
-
           {/* title */}
           <motion.h2
             className="font-montserrat font-extrabold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-5 leading-tight"
@@ -33,20 +22,6 @@ export default function Certificate() {
             Obtenha seu{" "}
             <span className="text-[hsl(var(--rose-primary))]">Certificado PREMIUM</span>
           </motion.h2>
-
-          {/* description */}
-          <motion.p
-            className="text-gray-500 text-lg max-w-xl mb-12 leading-relaxed"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.12 }}
-          >
-            Ao concluir o curso você recebe um certificado digital de conclusão
-            com <strong className="text-gray-700">16 horas de carga horária</strong>,
-            assinado pela professora Paula Eduarda — reconhecido em salões e spas
-            de todo o Brasil.
-          </motion.p>
 
           {/* certificate image */}
           <motion.div
