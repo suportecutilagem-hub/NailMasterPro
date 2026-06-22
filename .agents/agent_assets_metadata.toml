@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "u4IsRSSkg2D_mERVkFlL7"
+uri = "file://dist.zip"
+type = "unspecified"
+title = "dist.zip — Build de produção completo (5 MB)"
