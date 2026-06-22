@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-import { LazyImage } from "../ui/lazy-image";
 import manicureProfissionalImage from "../../assets/manicure-profissional.png";
 
 export default function Hero() {
@@ -133,10 +132,13 @@ export default function Hero() {
             <div className="relative group">
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-rose-600">
-                <LazyImage 
+                <img
                   src={manicureProfissionalImage}
-                  alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada" 
+                  alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
                   className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                 />
                 
                 {/* Gradient Overlay */}

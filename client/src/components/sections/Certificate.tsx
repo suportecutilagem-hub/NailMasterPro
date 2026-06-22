@@ -57,6 +57,8 @@ export default function Certificate() {
               src={certificateImg}
               alt="Certificado Premium de Cutilagem Russa"
               className="w-full max-w-lg drop-shadow-2xl"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 

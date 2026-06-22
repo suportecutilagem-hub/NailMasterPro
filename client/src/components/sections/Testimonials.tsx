@@ -73,6 +73,8 @@ export default function Testimonials() {
                       src={src}
                       alt={`Depoimento real ${i + 1}`}
                       className="w-full h-full object-cover object-top"
+                      loading={i < 3 ? "eager" : "lazy"}
+                      decoding="async"
                     />
                   </div>
                 </div>
