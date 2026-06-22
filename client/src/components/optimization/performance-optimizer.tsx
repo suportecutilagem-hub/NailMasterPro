@@ -7,7 +7,7 @@ export function PerformanceOptimizer() {
       // Prefetch checkout page
       const link = document.createElement('link');
       link.rel = 'prefetch';
-      link.href = 'https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880';
+      link.href = 'https://checkout.cutilagemrussa.com/c/3orijyx';
       document.head.appendChild(link);
 
       // Preload critical fonts
@@ -70,8 +70,7 @@ export function PerformanceOptimizer() {
         }
         
         img {
-          image-rendering: -webkit-optimize-contrast;
-          image-rendering: crisp-edges;
+          image-rendering: auto;
         }
         
         * {

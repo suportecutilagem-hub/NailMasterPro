@@ -29,9 +29,7 @@ export function MobilePerformance() {
       const optimizeImages = () => {
         const images = document.querySelectorAll('img');
         images.forEach(img => {
-          img.style.imageRendering = 'optimizeSpeed';
           img.setAttribute('decoding', 'async');
-          img.setAttribute('importance', 'auto');
         });
       };
 
@@ -54,7 +52,7 @@ export function MobilePerformance() {
         // Preconnect para checkout
         const preconnect = document.createElement('link');
         preconnect.rel = 'preconnect';
-        preconnect.href = 'https://pay.cutilagemrussa.com';
+        preconnect.href = 'https://checkout.cutilagemrussa.com';
         document.head.appendChild(preconnect);
 
         // DNS prefetch para fonts

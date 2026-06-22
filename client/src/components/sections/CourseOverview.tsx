@@ -155,7 +155,7 @@ export default function CourseOverview() {
                   }}
                 >
                   <a 
-                    href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" 
+                    href="https://checkout.cutilagemrussa.com/c/3orijyx" 
                     className="block w-full bg-[hsl(var(--rose-primary))] hover:bg-[hsl(var(--rose-secondary))] text-white text-center font-bold text-base sm:text-lg py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 mb-4 pink-shadow relative overflow-hidden group"
                     style={{ fontSize: "clamp(1rem, 4vw, 1.25rem)" }}
                   >

@@ -79,7 +79,7 @@ export default function Results() {
                 Pagamento único
               </p>
               
-              <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" className="block">
+              <a href="https://checkout.cutilagemrussa.com/c/3orijyx" className="block">
                 <Button 
                   variant="cta" 
                   size="xl" 

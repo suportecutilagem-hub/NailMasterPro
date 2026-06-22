@@ -19,14 +19,15 @@ import t11 from "@assets/image_1782162017129.png";
 
 const images = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11];
 
+const CTA_URL = "https://checkout.cutilagemrussa.com/c/3orijyx";
+
 export default function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", slidesToScroll: 1, containScroll: "trimSnaps" },
+    { loop: true, align: "center", slidesToScroll: 1 },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -43,7 +44,6 @@ export default function Testimonials() {
       <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <Container>
-        {/* header */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -58,32 +58,34 @@ export default function Testimonials() {
             Depoimentos reais de alunas que transformaram sua carreira com o curso
           </p>
         </motion.div>
+      </Container>
 
-        {/* carousel */}
-        <div className="relative">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4">
-              {images.map((src, i) => (
-                <div
-                  key={i}
-                  className="flex-none w-[82vw] sm:w-[300px]"
-                >
-                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-                    <img
-                      src={src}
-                      alt={`Depoimento real ${i + 1}`}
-                      className="w-full h-auto object-contain"
-                      loading={i < 3 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
-                  </div>
+      {/* carousel — full-bleed fora do Container para aproveitar 100% da tela no mobile */}
+      <div className="relative">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-3 sm:gap-4">
+            {images.map((src, i) => (
+              <div
+                key={i}
+                className="flex-none w-[94vw] sm:w-[320px]"
+              >
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+                  <img
+                    src={src}
+                    alt={`Depoimento real ${i + 1}`}
+                    className="w-full h-auto block"
+                    style={{ imageRendering: "auto" }}
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
         </div>
+      </div>
 
+      <Container>
         {/* dots */}
         <div className="flex justify-center gap-2 mt-8">
           {images.map((_, i) => (
@@ -100,18 +102,15 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* CTA button */}
+        {/* CTA */}
         <motion.div
           className="mt-16 text-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          animate={{
-            scale: [1, 1.06, 1],
-            y: [0, -3, 0],
-          }}
+          animate={{ scale: [1, 1.06, 1], y: [0, -3, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         >
-          <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880">
+          <a href={CTA_URL}>
             <Button
               variant="cta"
               roundedness="full"

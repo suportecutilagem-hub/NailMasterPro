@@ -90,7 +90,7 @@ export default function Hero() {
               }}
               className="mb-4"
             >
-              <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880" className="block" data-testid="cta-button-hero">
+              <a href="https://checkout.cutilagemrussa.com/c/3orijyx" className="block" data-testid="cta-button-hero">
                 <Button 
                   variant="cta" 
                   size="xl" 
