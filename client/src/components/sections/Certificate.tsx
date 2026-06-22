@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Container } from "../ui/container";
-import { Award, BadgeCheck, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import certificateImg from "@assets/certificate_nobg.png";
 
 export default function Certificate() {
@@ -12,28 +12,13 @@ export default function Certificate() {
       <Container>
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
 
-          {/* left: certificate image */}
+          {/* left: text */}
           <motion.div
-            className="w-full lg:w-1/2 flex justify-center"
+            className="w-full lg:w-1/2 flex flex-col items-start text-left"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            <img
-              src={certificateImg}
-              alt="Certificado Premium de Cutilagem Russa"
-              className="w-full max-w-lg drop-shadow-2xl"
-            />
-          </motion.div>
-
-          {/* right: text */}
-          <motion.div
-            className="w-full lg:w-1/2 flex flex-col items-start text-left"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
           >
             {/* premium badge */}
             <div className="flex items-center gap-2 mb-5">
@@ -52,35 +37,27 @@ export default function Certificate() {
               <span className="text-[hsl(var(--rose-primary))]">Certificado<br />PREMIUM</span>
             </h2>
 
-            <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-md">
               Ao concluir o curso você recebe{" "}
               <strong className="text-gray-800">6 certificados exclusivos</strong> de
               conclusão, com validade nacional — assine seus serviços com autoridade
               e mostre aos seus clientes que você é uma profissional de elite.
             </p>
+          </motion.div>
 
-            {/* features */}
-            <ul className="space-y-4 w-full max-w-md">
-              {[
-                { icon: Award,       text: "6 certificados digitais exclusivos inclusos" },
-                { icon: BadgeCheck,  text: "16 horas de carga horária reconhecida" },
-                { icon: BadgeCheck,  text: "Assinado pela professora Paula Eduarda" },
-              ].map(({ icon: Icon, text }, i) => (
-                <motion.li
-                  key={i}
-                  className="flex items-center gap-3 bg-white border border-[hsl(var(--rose-primary))]/20 rounded-xl px-4 py-3 shadow-sm"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-[hsl(var(--rose-primary))]/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={16} className="text-[hsl(var(--rose-primary))]" />
-                  </div>
-                  <span className="text-gray-700 text-sm font-medium">{text}</span>
-                </motion.li>
-              ))}
-            </ul>
+          {/* right: certificate image */}
+          <motion.div
+            className="w-full lg:w-1/2 flex justify-center"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <img
+              src={certificateImg}
+              alt="Certificado Premium de Cutilagem Russa"
+              className="w-full max-w-lg drop-shadow-2xl"
+            />
           </motion.div>
 
         </div>
