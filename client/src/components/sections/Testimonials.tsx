@@ -1,163 +1,139 @@
+import { useCallback, useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { Container } from "../ui/container";
-import { Card } from "../ui/card";
-import { Button } from "../ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { LazyImage } from "../ui/lazy-image";
+import { Button } from "../ui/button";
 
-interface TestimonialProps {
-  content: string;
-  image: string;
-  name: string;
-  location: string;
-  delay?: number;
-}
+import t1 from "@assets/image_1782161912299.png";
+import t2 from "@assets/image_1782161926989.png";
+import t3 from "@assets/image_1782161934895.png";
+import t4 from "@assets/image_1782161941264.png";
+import t5 from "@assets/image_1782161957357.png";
+import t6 from "@assets/image_1782161965579.png";
+import t7 from "@assets/image_1782161984636.png";
+import t8 from "@assets/image_1782161990013.png";
+import t9 from "@assets/image_1782162002086.png";
+import t10 from "@assets/image_1782162006780.png";
+import t11 from "@assets/image_1782162017129.png";
 
-function Testimonial({ content, image, name, location, delay = 0 }: TestimonialProps) {
-  return (
-    <div>
-      <Card className="p-6">
-        <div className="flex items-center mb-4">
-          <div className="text-[hsl(var(--rose-primary))] text-2xl mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-          </div>
-          <div className="text-yellow-400">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
-            </svg>
-          </div>
-        </div>
-        <p className="text-gray-600 italic mb-4">
-          "{content}"
-        </p>
-        <div className="flex items-center">
-          <div className="w-12 h-12 rounded-full overflow-hidden mr-3 flex-shrink-0 bg-gray-200">
-            <LazyImage src={image} alt={`Depoimento de ${name}`} className="w-full h-full object-cover" />
-          </div>
-          <div>
-            <h4 className="font-bold">{name}</h4>
-            <p className="text-gray-500 text-sm">{location}</p>
-          </div>
-        </div>
-      </Card>
-    </div>
-  );
-}
+const images = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11];
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      content: "Eu tinha muito medo de trabalhar com cutilagem russa e machucar minhas clientes. Com esse curso, perdi o medo e agora consigo fazer um trabalho perfeito em menos de 10 minutos! Minhas clientes estão encantadas e minha agenda está lotada!",
-      image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Mariana Silva",
-      location: "São Paulo, SP"
-    },
-    {
-      content: "Consegui aumentar o valor do meu atendimento em mais de 50% depois que dominei a cutilagem russa. As dicas de como precificar meu trabalho foram fundamentais. Agora trabalho menos e ganho mais!",
-      image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Juliana Costa",
-      location: "Rio de Janeiro, RJ"
-    },
-    {
-      content: "Os bônus do curso foram um diferencial incrível! Aprendi a usar o Instagram para divulgar meu trabalho e hoje tenho clientes que vêm de cidades vizinhas para fazer cutilagem russa comigo. O investimento valeu cada centavo!",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Patrícia Oliveira",
-      location: "Belo Horizonte, MG"
-    },
-    {
-      content: "Em apenas duas semanas após o curso, já estava aplicando todas as técnicas com segurança. Os vídeos são super detalhados e a explicação é clara. A técnica de cutilagem em 8 minutos mudou minha rotina completamente!",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Ana Carolina Mendes",
-      location: "Curitiba, PR"
-    },
-    {
-      content: "O curso de Cutilagem Russa foi um divisor de águas na minha carreira. Em apenas um mês, consegui triplicar minha renda. A explicação sobre posicionamento da tesoura foi o que mais me ajudou, pois tinha muita dificuldade nessa parte.",
-      image: "https://images.unsplash.com/photo-1558898479-33c0057a5d12?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Fernanda Gomes",
-      location: "Salvador, BA"
-    },
-    {
-      content: "Os cursos bônus foram essenciais para ampliar meu atendimento. Hoje ofereço pacotes completos com todos os serviços que aprendi e minhas clientes amam! Vale muito a pena o investimento, recuperei o valor em apenas uma semana.",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=96&h=96&fit=crop&q=80&fm=webp",
-      name: "Camila Rocha",
-      location: "Recife, PE"
-    }
-  ];
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center", slidesToScroll: 1 },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gray-50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
       <Container>
-        <div
+        {/* header */}
+        <motion.div
           className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
             O Que Nossas <span className="text-[hsl(var(--rose-primary))]">Alunas</span> Dizem
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Veja os resultados e a transformação na carreira de quem já participou do curso
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Depoimentos reais de alunas que transformaram sua carreira com o curso
           </p>
+        </motion.div>
+
+        {/* carousel */}
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
+              {images.map((src, i) => (
+                <div
+                  key={i}
+                  className="flex-none w-[260px] sm:w-[300px]"
+                >
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white h-[460px] sm:h-[520px]">
+                    <img
+                      src={src}
+                      alt={`Depoimento real ${i + 1}`}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* prev / next buttons */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[hsl(var(--rose-primary))] hover:border-[hsl(var(--rose-primary))] transition-colors"
+            aria-label="Anterior"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[hsl(var(--rose-primary))] hover:border-[hsl(var(--rose-primary))] transition-colors"
+            aria-label="Próximo"
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial
-              key={index}
-              content={testimonial.content}
-              image={testimonial.image}
-              name={testimonial.name}
-              location={testimonial.location}
-              delay={index * 0.1}
+
+        {/* dots */}
+        <div className="flex justify-center gap-2 mt-8">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => emblaApi?.scrollTo(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === selectedIndex
+                  ? "w-6 bg-[hsl(var(--rose-primary))]"
+                  : "w-2 bg-gray-300"
+              }`}
+              aria-label={`Ir para slide ${i + 1}`}
             />
           ))}
         </div>
-        
+
+        {/* CTA button */}
         <motion.div
           className="mt-16 text-center"
-          whileHover={{ 
-            scale: 1.08,
-            rotate: [0, -1, 1, 0],
-            transition: { duration: 0.3 }
-          }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          animate={{ 
+          animate={{
             scale: [1, 1.06, 1],
-            boxShadow: [
-              "0 8px 20px rgba(236, 72, 153, 0.3)",
-              "0 15px 35px rgba(236, 72, 153, 0.6)",
-              "0 8px 20px rgba(236, 72, 153, 0.3)"
-            ],
-            y: [0, -3, 0]
+            y: [0, -3, 0],
           }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         >
           <a href="https://pay.cutilagemrussa.com/checkout-6880/?add-to-cart=6880">
-            <Button 
-              variant="cta" 
-              roundedness="full" 
-              size="xl" 
-              className="shadow-lg relative overflow-hidden group transition-all duration-300 w-full sm:w-auto text-base sm:text-xl py-4 px-6 sm:py-6 sm:px-12 font-bold"
+            <Button
+              variant="cta"
+              roundedness="full"
+              size="xl"
+              className="shadow-lg w-full sm:w-auto text-base sm:text-xl py-4 px-6 sm:py-6 sm:px-12 font-bold"
             >
-              <span className="relative z-10 font-bold">
-                QUERO APRENDER CUTILAGEM RUSSA
-              </span>
-
+              QUERO APRENDER CUTILAGEM RUSSA
             </Button>
           </a>
         </motion.div>
