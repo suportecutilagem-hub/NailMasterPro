@@ -21,7 +21,7 @@ const images = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11];
 
 export default function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", slidesToScroll: 1 },
+    { loop: true, align: "center", slidesToScroll: 1, containScroll: "trimSnaps" },
     [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
 
@@ -66,13 +66,13 @@ export default function Testimonials() {
               {images.map((src, i) => (
                 <div
                   key={i}
-                  className="flex-none w-[260px] sm:w-[300px]"
+                  className="flex-none w-[82vw] sm:w-[300px]"
                 >
-                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white h-[460px] sm:h-[520px]">
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
                     <img
                       src={src}
                       alt={`Depoimento real ${i + 1}`}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-auto object-contain"
                       loading={i < 3 ? "eager" : "lazy"}
                       decoding="async"
                     />
