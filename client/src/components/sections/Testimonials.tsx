@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Container } from "../ui/container";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 
@@ -28,8 +27,6 @@ export default function Testimonials() {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -40,9 +37,10 @@ export default function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 bg-gray-50 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
+    <section className="py-20 bg-gradient-to-b from-[#fff5f8] via-white to-[#fff5f8] relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[hsl(var(--rose-primary))]/10 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[hsl(var(--rose-primary))]/10 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <Container>
         {/* header */}
@@ -82,21 +80,6 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* prev / next buttons */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[hsl(var(--rose-primary))] hover:border-[hsl(var(--rose-primary))] transition-colors"
-            aria-label="Anterior"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[hsl(var(--rose-primary))] hover:border-[hsl(var(--rose-primary))] transition-colors"
-            aria-label="Próximo"
-          >
-            <ChevronRight size={20} />
-          </button>
         </div>
 
         {/* dots */}
