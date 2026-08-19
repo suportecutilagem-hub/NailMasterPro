@@ -5,7 +5,7 @@ import { Container } from "../ui/container";
 const benefits = [
   {
     icon: MonitorPlay,
-    title: "Videoaulas passo a passo",
+    title: "Vídeo aulas passo a passo",
     description: "Veja cada detalhe da técnica demonstrado de forma clara e prática.",
   },
   {
@@ -36,7 +36,7 @@ export default function VideoCourse() {
           </div>
           <h2 className="font-montserrat text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl">
             Aprenda com{" "}
-            <span className="text-[hsl(var(--rose-primary))]">videoaulas práticas</span>
+            <span className="text-[hsl(var(--rose-primary))]">vídeo aulas práticas</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
             O curso é 100% online e em vídeo, com explicações didáticas para você
