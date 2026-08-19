@@ -176,7 +176,7 @@ export default function Bonus() {
           <div className="mt-8 text-center">
             <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
               <p className="font-bold text-xl">
-                <span className="line-through">R$997,00</span>
+                Valor total dos Bônus: <span className="line-through">R$997,00</span>
               </p>
             </div>
             
