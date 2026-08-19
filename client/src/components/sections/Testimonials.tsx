@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { Container } from "../ui/container";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
@@ -22,7 +23,8 @@ const CTA_URL = "https://checkout.cutilagemrussa.com/c/3orijyx";
 
 export default function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "center", slidesToScroll: 1, dragFree: false }
+    { loop: true, align: "center", slidesToScroll: 1, dragFree: false },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -74,7 +76,7 @@ export default function Testimonials() {
                     width={456}
                     height={800}
                     className="w-full h-auto block"
-                    loading="lazy"
+                    loading={i < 3 ? "eager" : "lazy"}
                     decoding="async"
                   />
                 </div>
@@ -106,6 +108,8 @@ export default function Testimonials() {
           className="mt-16 text-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          animate={{ scale: [1, 1.06, 1], y: [0, -3, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         >
           <a href={CTA_URL}>
             <Button

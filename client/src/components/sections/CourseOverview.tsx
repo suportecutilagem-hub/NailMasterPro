@@ -139,6 +139,20 @@ export default function CourseOverview() {
                     transition: { duration: 0.3 }
                   }}
                   whileTap={{ scale: 0.95 }}
+                   animate={{ 
+                     scale: [1, 1.06, 1],
+                     boxShadow: [
+                       "0 8px 20px rgba(236, 72, 153, 0.3)",
+                       "0 15px 35px rgba(236, 72, 153, 0.6)",
+                       "0 8px 20px rgba(236, 72, 153, 0.3)"
+                     ],
+                     y: [0, -3, 0]
+                   }}
+                   transition={{ 
+                     duration: 3,
+                     repeat: Infinity,
+                     ease: "easeInOut"
+                   }}
                 >
                   <a 
                     href="https://checkout.cutilagemrussa.com/c/3orijyx" 
