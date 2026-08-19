@@ -61,7 +61,7 @@ export function LazyImage({ src, alt, className = '', style, placeholder }: Lazy
           style={style}
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
+          fetchpriority="low"
         />
       )}
     </div>
