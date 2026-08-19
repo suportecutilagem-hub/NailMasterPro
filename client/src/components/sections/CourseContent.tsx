@@ -1,28 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { Card } from "../ui/card";
 import { motion } from "framer-motion";
-
-interface CourseFeatureProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  delay?: number;
-}
-
-function CourseFeature({ icon, title, description, delay = 0 }: CourseFeatureProps) {
-  return (
-    <div className="transform transition-transform hover:-translate-y-1">
-      <Card className="p-6 hover:shadow-xl">
-        <div className="w-12 h-12 bg-[hsl(var(--rose-light))] rounded-full flex items-center justify-center mb-4">
-          {icon}
-        </div>
-        <h3 className="font-montserrat font-bold text-xl mb-3">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-      </Card>
-    </div>
-  );
-}
 
 export default function CourseContent() {
   const features = [
@@ -165,64 +143,70 @@ export default function CourseContent() {
   ];
 
   return (
-    <section className="pt-0 pb-6 lg:pb-10 bg-white">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+      <div className="pointer-events-none absolute -right-32 top-24 h-72 w-72 rounded-full bg-[hsl(var(--rose-light))]/60 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 bottom-16 h-80 w-80 rounded-full bg-pink-50 blur-3xl" />
       <Container>
-        <div className="text-center mb-6">
-          <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
-            O que você vai <span className="text-[hsl(var(--rose-primary))]">aprender</span> no curso?
+        <div className="relative mx-auto mb-12 max-w-3xl text-center sm:mb-14">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))]">
+            <span className="h-2 w-2 rounded-full bg-[hsl(var(--rose-primary))] shadow-[0_0_0_4px_hsl(var(--rose-light))]" />
+            Conteúdo completo e prático
+          </div>
+          <h2 className="mb-5 text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            O que você vai <span className="gradient-text">aprender</span> no curso?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Um programa completo e prático para você se tornar uma profissional de cutilagem russa em tempo recorde
+          <p className="mx-auto max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+            Um método completo, direto ao ponto e pensado para levar você do primeiro passo a um atendimento profissional e valorizado.
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl p-6 shadow-lg">
-          <ul className="space-y-4">
+        <div className="relative mx-auto max-w-6xl rounded-[2rem] border border-pink-100 bg-gradient-to-br from-pink-50/80 via-white to-white p-3 shadow-[0_24px_70px_rgba(190,24,93,0.10)] sm:p-5 lg:p-6">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <div
+              <motion.article
                 key={index}
-                className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.35) }}
+                className="group relative flex min-h-[188px] flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-pink-200 hover:shadow-[0_16px_30px_rgba(190,24,93,0.13)] sm:p-6"
               >
-                <div className="flex-shrink-0 w-10 h-10 mr-4 bg-[hsl(var(--rose-light))] rounded-full flex items-center justify-center text-[hsl(var(--rose-primary))]">
+                <span className="absolute right-4 top-4 font-montserrat text-xs font-bold text-slate-300 transition-colors group-hover:text-pink-300">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-pink-50 text-[hsl(var(--rose-primary))] shadow-inner transition-all duration-300 group-hover:from-[hsl(var(--rose-primary))] group-hover:to-pink-500 group-hover:text-white">
                   {feature.icon}
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg">{feature.title}</h3>
+                <div className="mt-auto">
+                  <h3 className="mb-2 pr-5 font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-slate-500">{feature.description}</p>
                 </div>
-              </div>
+              </motion.article>
             ))}
-          </ul>
+          </div>
         </div>
         
         <motion.div
-          className="mt-12 text-center"
+          className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl bg-slate-950 px-6 py-8 text-center shadow-[0_18px_45px_rgba(15,23,42,0.20)] sm:mt-14 sm:px-10 sm:py-9"
           whileHover={{ 
-            scale: 1.08,
-            rotate: [0, -1, 1, 0],
-            transition: { duration: 0.3 }
+            y: -3,
+            transition: { duration: 0.25 }
           }}
-          whileTap={{ scale: 0.95 }}
-           animate={{ 
-             scale: [1, 1.06, 1],
-             boxShadow: [
-               "0 8px 20px rgba(236, 72, 153, 0.3)",
-               "0 15px 35px rgba(236, 72, 153, 0.6)",
-               "0 8px 20px rgba(236, 72, 153, 0.3)"
-             ],
-             y: [0, -3, 0]
-           }}
-           transition={{ 
-             duration: 3,
-             repeat: Infinity,
-             ease: "easeInOut"
-           }}
         >
+          <div className="pointer-events-none absolute -right-16 -top-24 h-48 w-48 rounded-full bg-pink-500/20 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-28 -left-16 h-48 w-48 rounded-full bg-pink-500/10 blur-2xl" />
+          <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.18em] text-pink-300">Pronta para começar?</p>
+          <h3 className="relative mb-6 text-xl font-extrabold text-white sm:text-2xl">
+            Transforme conhecimento em resultados
+          </h3>
           <a href="https://checkout.cutilagemrussa.com/c/3orijyx">
             <Button 
               variant="cta" 
               roundedness="full" 
-              size="xl" 
-              className="shadow-lg relative overflow-hidden group transition-all duration-300"
+              size="xl"
+              className="relative overflow-hidden shadow-[0_10px_25px_rgba(236,72,153,0.32)] transition-all duration-300 hover:scale-[1.03]"
             >
               <span className="relative z-10">
                 QUERO DOMINAR A CUTILAGEM RUSSA
