@@ -160,28 +160,31 @@ export default function CourseContent() {
           </p>
         </div>
         
-        <div className="relative mx-auto max-w-6xl rounded-[2rem] border border-pink-100 bg-gradient-to-br from-pink-50/80 via-white to-white p-3 shadow-[0_24px_70px_rgba(190,24,93,0.10)] sm:p-5 lg:p-6">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto max-w-4xl rounded-[2rem] border border-pink-100 bg-gradient-to-br from-pink-50/70 via-white to-white px-4 py-7 shadow-[0_24px_70px_rgba(190,24,93,0.10)] sm:px-8 sm:py-10 lg:px-12">
+          <div className="absolute bottom-12 left-[2.05rem] top-12 w-px bg-gradient-to-b from-pink-200 via-pink-300 to-transparent sm:left-[3.55rem]" />
+          <div className="relative space-y-2">
             {features.map((feature, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.35) }}
-                className="group relative flex min-h-[188px] flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-pink-200 hover:shadow-[0_16px_30px_rgba(190,24,93,0.13)] sm:p-6"
+                transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.3) }}
+                className="group relative flex items-start gap-4 rounded-2xl p-2 transition-colors duration-300 hover:bg-white/80 sm:gap-6 sm:p-3"
               >
-                <span className="absolute right-4 top-4 font-montserrat text-xs font-bold text-slate-300 transition-colors group-hover:text-pink-300">
+                <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-[0_4px_12px_rgba(190,24,93,0.25)] transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                   {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-pink-50 text-[hsl(var(--rose-primary))] shadow-inner transition-all duration-300 group-hover:from-[hsl(var(--rose-primary))] group-hover:to-pink-500 group-hover:text-white">
-                  {feature.icon}
                 </div>
-                <div className="mt-auto">
-                  <h3 className="mb-2 pr-5 font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm leading-6 text-slate-500">{feature.description}</p>
+                <div className="min-w-0 flex-1 rounded-xl border border-transparent py-2 transition-all duration-300 group-hover:border-pink-100 group-hover:bg-white group-hover:px-4 group-hover:shadow-sm sm:py-3">
+                  <div className="mb-2 flex items-center gap-3">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-pink-50 text-[hsl(var(--rose-primary))] transition-colors group-hover:bg-pink-100">
+                      {feature.icon}
+                    </span>
+                    <h3 className="font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="pl-11 text-sm leading-6 text-slate-500 sm:text-[15px]">{feature.description}</p>
                 </div>
               </motion.article>
             ))}
