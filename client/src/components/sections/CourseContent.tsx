@@ -1,6 +1,21 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import {
+  Award,
+  BadgeCheck,
+  CircleHelp,
+  ClipboardList,
+  DollarSign,
+  FlaskConical,
+  HeartHandshake,
+  Map,
+  Scissors,
+  ShieldCheck,
+  ShoppingCart,
+  Timer,
+  type LucideIcon,
+} from "lucide-react";
 
 export default function CourseContent() {
   const features = [
