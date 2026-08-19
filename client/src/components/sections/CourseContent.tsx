@@ -172,19 +172,14 @@ export default function CourseContent() {
                 transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.3) }}
                 className="group relative flex items-start gap-4 rounded-2xl p-2 transition-colors duration-300 hover:bg-white/80 sm:gap-6 sm:p-3"
               >
-                <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-[0_4px_12px_rgba(190,24,93,0.25)] transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-[hsl(var(--rose-primary))] text-white shadow-[0_4px_12px_rgba(190,24,93,0.25)] transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                  <span className="scale-[0.72] [&>svg]:h-6 [&>svg]:w-6 sm:scale-90">{feature.icon}</span>
                 </div>
                 <div className="min-w-0 flex-1 rounded-xl border border-transparent py-2 transition-all duration-300 group-hover:border-pink-100 group-hover:bg-white group-hover:px-4 group-hover:shadow-sm sm:py-3">
-                  <div className="mb-2 flex items-center gap-3">
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-pink-50 text-[hsl(var(--rose-primary))] transition-colors group-hover:bg-pink-100">
-                      {feature.icon}
-                    </span>
-                    <h3 className="font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
-                      {feature.title}
-                    </h3>
-                  </div>
-                  <p className="pl-11 text-sm leading-6 text-slate-500 sm:text-[15px]">{feature.description}</p>
+                  <h3 className="mb-2 font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-slate-500 sm:text-[15px]">{feature.description}</p>
                 </div>
               </motion.article>
             ))}
