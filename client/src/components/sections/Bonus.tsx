@@ -1,7 +1,7 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { Calendar, Instagram, Palette, Percent, Book, Gift, Sparkles } from "lucide-react";
+import { Calendar, Instagram, Palette, Percent, Book } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
 import { motion } from "framer-motion";
 
@@ -16,43 +16,33 @@ interface BonusCardProps {
 
 function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
   return (
-    <motion.div
-      className="w-full p-2 sm:w-1/2 lg:w-1/3"
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.45, delay }}
-    >
-      <div className="group relative h-full overflow-hidden rounded-2xl border border-pink-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[hsl(var(--rose-primary))] hover:shadow-xl">
-        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))]" />
-        <div className="absolute -right-2 -top-2">
-          <div className="rounded-full bg-[hsl(var(--rose-primary))] px-3 py-1 text-xs font-bold text-white shadow-md">
+    <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
+      <div className="bg-white rounded-lg shadow-md p-4 h-full border-2 border-[hsl(var(--rose-primary))] relative">
+        <div className="absolute -top-2 -right-2">
+          <div className="bg-[hsl(var(--rose-primary))] text-white text-xs font-bold py-1 px-3 rounded-full shadow-md">
             Bônus {number}
           </div>
         </div>
 
-        <div className="mb-4 flex items-center pt-1">
-          <div className="mr-3 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] text-[hsl(var(--rose-primary))] transition-transform duration-300 group-hover:scale-110">
+        <div className="flex items-center mb-3 pt-1">
+          <div className="w-10 h-10 mr-3 text-[hsl(var(--rose-primary))] bg-gradient-to-br from-[#fff0f5] to-[#ffe4e9] rounded-lg flex items-center justify-center flex-shrink-0">
             {icon}
           </div>
-          <h3 className="font-montserrat text-base font-bold leading-tight text-gray-800">{title}</h3>
+          <h3 className="font-montserrat font-bold text-base text-gray-800 leading-tight">{title}</h3>
         </div>
 
-        <p className="mb-5 text-sm leading-relaxed text-gray-600">
+        <p className="text-gray-600 text-sm mb-3 leading-relaxed">
           {description}
         </p>
         
-        <div className="mt-auto flex items-center justify-between border-t border-dashed border-pink-200 pt-3">
-          <div>
-            <span className="block text-[10px] font-semibold uppercase tracking-wider text-gray-400">Valor</span>
-            <span className="text-sm text-gray-500 line-through">{originalPrice}</span>
-          </div>
-          <span className="rounded-full bg-emerald-500 px-3 py-1.5 text-xs font-extrabold tracking-wide text-white shadow-sm">
+        <div className="flex items-center mt-auto pt-2 border-t border-gray-100">
+          <span className="text-gray-500 line-through text-sm mr-2">{originalPrice}</span>
+          <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">
             GRÁTIS
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -63,14 +53,9 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <div className="group flex h-full items-start gap-3 rounded-2xl border border-pink-100 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-md">
-      <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[hsl(var(--rose-light))] text-[hsl(var(--rose-primary))]">
-        <CheckIcon className="h-4 w-4" />
-      </div>
-      <div>
-        <h4 className="font-montserrat text-sm font-extrabold tracking-wide text-gray-900">{title}</h4>
-        <p className="mt-1 text-sm leading-relaxed text-gray-600">{description}</p>
-      </div>
+    <div className="mb-3 bg-white shadow-md rounded-md p-3 border-l-4 border-[hsl(var(--rose-primary))]">
+      <h4 className="font-bold text-sm">{title}</h4>
+      <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
 }
@@ -145,17 +130,14 @@ export default function Bonus() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-white via-[#fff9fb] to-white pb-14 pt-10">
+    <section className="pt-8 pb-12 bg-white">
       <Container>
-        <div className="mb-9 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-pink-100 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[hsl(var(--rose-primary))]">
-            <Gift size={14} />
-            Oferta exclusiva
-          </div>
-          <h2 className="mb-3 text-2xl font-bold sm:text-3xl">
+        <div className="text-center mb-8">
+          <h5 className="text-[hsl(var(--rose-primary))] font-semibold mb-2 uppercase text-sm">OFERTA EXCLUSIVA</h5>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">
             Adquira Hoje e <span className="text-[hsl(var(--rose-primary))]">Ganhe + 11 Bônus</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-gray-600">
+          <p className="text-gray-600 text-sm max-w-2xl mx-auto">
             Aproveite essa oportunidade única e receba estes bônus exclusivos que vão acelerar sua carreira
           </p>
         </div>
@@ -174,25 +156,12 @@ export default function Bonus() {
           ))}
         </div>
         
-        <div className="relative mb-8 overflow-hidden rounded-3xl border-2 border-pink-200 bg-gradient-to-br from-[#fff5f7] via-white to-[#fff0f5] p-5 shadow-lg sm:p-8">
-          <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-pink-200/40 blur-3xl" />
-          <div className="relative mb-7 text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-lg shadow-pink-200">
-              <Sparkles size={24} />
-            </div>
-            <h3 className="bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] bg-clip-text text-xl font-extrabold text-transparent sm:text-2xl">
-              Bônus adicionais
+        <div className="bg-gradient-to-r from-[#fff5f7] to-[#fff0f5] rounded-lg p-8 mb-8 border-2 border-[hsl(var(--rose-primary))] shadow-lg">
+          <h3 className="text-xl font-bold text-center mb-6 bg-gradient-to-r from-[hsl(var(--rose-primary))] to-[hsl(var(--rose-secondary))] text-transparent bg-clip-text">
+            Bônus Adicionais: Cursos Exclusivos Completos com Certificado
             </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Cursos completos extras para ampliar ainda mais os seus serviços
-            </p>
-            <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-bold text-[hsl(var(--rose-primary))] shadow-sm">
-              <CheckIcon className="h-3.5 w-3.5" />
-              Todos com certificado
-            </span>
-          </div>
           
-          <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
@@ -202,10 +171,9 @@ export default function Bonus() {
             ))}
           </div>
           
-          <div className="relative mt-8 text-center">
-            <div className="mb-4 inline-block rounded-2xl bg-[hsl(var(--rose-primary))] px-5 py-3 text-white shadow-md">
-              <p className="text-sm font-semibold uppercase tracking-wide opacity-90">Valor total dos bônus</p>
-              <p className="text-xl font-extrabold">
+          <div className="mt-8 text-center">
+            <div className="inline-block bg-[hsl(var(--rose-primary))] text-white rounded-lg p-4 mb-4 shadow-md">
+              <p className="font-bold text-xl">
                 <span className="line-through">R$997,00</span>
               </p>
             </div>
