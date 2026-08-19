@@ -173,7 +173,7 @@ export default function CourseContent() {
                 className="group relative flex items-start gap-4 rounded-2xl p-2 transition-colors duration-300 hover:bg-white/80 sm:gap-6 sm:p-3"
               >
                 <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-[hsl(var(--rose-primary))] text-white shadow-[0_4px_12px_rgba(190,24,93,0.25)] transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
-                  <span className="scale-[0.72] [&>svg]:h-6 [&>svg]:w-6 sm:scale-90">{feature.icon}</span>
+                  <span className="scale-[0.72] [&>svg]:h-6 [&>svg]:w-6 [&>svg]:!text-white sm:scale-90">{feature.icon}</span>
                 </div>
                 <div className="min-w-0 flex-1 rounded-xl border border-transparent py-2 transition-all duration-300 group-hover:border-pink-100 group-hover:bg-white group-hover:px-4 group-hover:shadow-sm sm:py-3">
                   <h3 className="mb-2 font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
