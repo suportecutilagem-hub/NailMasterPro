@@ -186,40 +186,42 @@ export default function CourseContent() {
           </div>
         </div>
         
-        <motion.div
-          className="relative mx-auto mt-10 text-center sm:mt-14"
-          whileHover={{ 
-            y: -3,
-            transition: { duration: 0.25 }
-          }}
-          animate={{
-            scale: [1, 1.025, 1],
-            boxShadow: [
-              "0 18px 45px rgba(15,23,42,0.20)",
-              "0 22px 52px rgba(236,72,153,0.28)",
-              "0 18px 45px rgba(15,23,42,0.20)"
-            ]
-          }}
-          transition={{
-            duration: 2.8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+        <div className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl bg-slate-950 px-6 py-8 text-center shadow-[0_18px_45px_rgba(15,23,42,0.20)] sm:mt-14 sm:px-10 sm:py-9"
         >
-          <a href="https://checkout.cutilagemrussa.com/c/3orijyx">
-            <Button 
-              variant="cta" 
-              roundedness="full" 
-              size="xl"
-              className="relative overflow-hidden shadow-[0_10px_25px_rgba(236,72,153,0.32)] transition-all duration-300 hover:scale-[1.03]"
-            >
-              <span className="relative z-10">
-                QUERO DOMINAR A CUTILAGEM RUSSA
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-            </Button>
-          </a>
-        </motion.div>
+          <div className="pointer-events-none absolute -right-16 -top-24 h-48 w-48 rounded-full bg-pink-500/20 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-28 -left-16 h-48 w-48 rounded-full bg-pink-500/10 blur-2xl" />
+          <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.18em] text-pink-300">Pronta para começar?</p>
+          <h3 className="relative mb-6 text-xl font-extrabold text-white sm:text-2xl">
+            Transforme conhecimento em resultados
+          </h3>
+          <motion.div
+            className="relative inline-block"
+            whileHover={{ y: -3, transition: { duration: 0.25 } }}
+            animate={{
+              scale: [1, 1.025, 1],
+              boxShadow: [
+                "0 8px 20px rgba(236,72,153,0.24)",
+                "0 12px 28px rgba(236,72,153,0.42)",
+                "0 8px 20px rgba(236,72,153,0.24)"
+              ]
+            }}
+            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <a href="https://checkout.cutilagemrussa.com/c/3orijyx">
+              <Button 
+                variant="cta" 
+                roundedness="full" 
+                size="xl"
+                className="relative overflow-hidden shadow-[0_10px_25px_rgba(236,72,153,0.32)] transition-all duration-300 hover:scale-[1.03]"
+              >
+                <span className="relative z-10">
+                  QUERO DOMINAR A CUTILAGEM RUSSA
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              </Button>
+            </a>
+          </motion.div>
+        </div>
       </Container>
     </section>
   );
