@@ -36,7 +36,9 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
         </p>
         
         <div className="flex items-center mt-auto pt-2 border-t border-gray-100">
-          <span className="text-gray-500 line-through text-sm mr-2">{originalPrice}</span>
+          <span className="text-gray-500 text-sm mr-2">
+            Valor total dos Bônus: <span className="line-through">{originalPrice}</span>
+          </span>
           <span className="bg-[hsl(var(--teal))] text-white text-xs font-bold px-2 py-1 rounded-full">
             GRÁTIS
           </span>
