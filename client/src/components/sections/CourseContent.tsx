@@ -187,7 +187,7 @@ export default function CourseContent() {
         </div>
         
         <motion.div
-          className="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl bg-slate-950 px-6 py-8 text-center shadow-[0_18px_45px_rgba(15,23,42,0.20)] sm:mt-14 sm:px-10 sm:py-9"
+          className="relative mx-auto mt-10 text-center sm:mt-14"
           whileHover={{ 
             y: -3,
             transition: { duration: 0.25 }
@@ -206,12 +206,6 @@ export default function CourseContent() {
             ease: "easeInOut"
           }}
         >
-          <div className="pointer-events-none absolute -right-16 -top-24 h-48 w-48 rounded-full bg-pink-500/20 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-28 -left-16 h-48 w-48 rounded-full bg-pink-500/10 blur-2xl" />
-          <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.18em] text-pink-300">Pronta para começar?</p>
-          <h3 className="relative mb-6 text-xl font-extrabold text-white sm:text-2xl">
-            Transforme conhecimento em resultados
-          </h3>
           <a href="https://checkout.cutilagemrussa.com/c/3orijyx">
             <Button 
               variant="cta" 
