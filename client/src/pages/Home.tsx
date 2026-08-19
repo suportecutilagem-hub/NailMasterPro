@@ -8,7 +8,6 @@ const Certificate    = lazy(() => import("@/components/sections/Certificate"));
 const Testimonials   = lazy(() => import("@/components/sections/Testimonials"));
 const CourseOverview = lazy(() => import("@/components/sections/CourseOverview"));
 const FAQ            = lazy(() => import("@/components/sections/FAQ"));
-const CTA            = lazy(() => import("@/components/sections/CTA"));
 
 function SectionFallback() {
   return <div className="h-32 bg-white" />;
@@ -36,9 +35,6 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <FAQ />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <CTA />
       </Suspense>
     </div>
   );
