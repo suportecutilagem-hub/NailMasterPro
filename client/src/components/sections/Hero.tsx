@@ -27,7 +27,7 @@ export default function Hero() {
             
             {/* Feature badges */}
             <div className="space-y-2 mb-5">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-[hsl(var(--rose-primary))] mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -80,14 +80,6 @@ export default function Hero() {
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.98 }}
-              animate={{
-                scale: [1, 1.015, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
               className="mb-4"
             >
               <a href="https://checkout.cutilagemrussa.com/c/3orijyx" className="block" data-testid="cta-button-hero">
@@ -137,8 +129,7 @@ export default function Hero() {
                   alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
                   className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
+                  decoding="async"
                 />
                 
                 {/* Gradient Overlay */}
