@@ -3,6 +3,7 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 
 const CourseContent  = lazy(() => import("@/components/sections/CourseContent"));
+const VideoCourse    = lazy(() => import("@/components/sections/VideoCourse"));
 const Bonus          = lazy(() => import("@/components/sections/Bonus"));
 const Certificate    = lazy(() => import("@/components/sections/Certificate"));
 const Testimonials   = lazy(() => import("@/components/sections/Testimonials"));
@@ -18,6 +19,9 @@ export default function Home() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Suspense fallback={<SectionFallback />}>
+        <VideoCourse />
+      </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <CourseContent />
       </Suspense>
