@@ -37,12 +37,6 @@ export default function Certificate() {
               <span className="text-[hsl(var(--rose-primary))]">Certificado<br />PREMIUM</span>
             </h2>
 
-            <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-md">
-              Ao concluir o curso você recebe{" "}
-              <strong className="text-gray-800">6 certificados exclusivos</strong> de
-              conclusão, com validade nacional — assine seus serviços com autoridade
-              e mostre aos seus clientes que você é uma profissional de elite.
-            </p>
           </motion.div>
 
           {/* right: certificate image */}
