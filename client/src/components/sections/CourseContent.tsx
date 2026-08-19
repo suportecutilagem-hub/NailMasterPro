@@ -192,6 +192,19 @@ export default function CourseContent() {
             y: -3,
             transition: { duration: 0.25 }
           }}
+          animate={{
+            scale: [1, 1.025, 1],
+            boxShadow: [
+              "0 18px 45px rgba(15,23,42,0.20)",
+              "0 22px 52px rgba(236,72,153,0.28)",
+              "0 18px 45px rgba(15,23,42,0.20)"
+            ]
+          }}
+          transition={{
+            duration: 2.8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         >
           <div className="pointer-events-none absolute -right-16 -top-24 h-48 w-48 rounded-full bg-pink-500/20 blur-2xl" />
           <div className="pointer-events-none absolute -bottom-28 -left-16 h-48 w-48 rounded-full bg-pink-500/10 blur-2xl" />
