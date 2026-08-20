@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { Calendar, Instagram, Palette, Percent, Book, Gift } from "lucide-react";
-import { CheckIcon } from "../ui/check-icon";
 import { motion } from "framer-motion";
 
 interface BonusCardProps {
@@ -63,19 +62,12 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
 
 interface BonusItemProps {
   title: string;
-  description: string;
 }
 
-function BonusItem({ title, description }: BonusItemProps) {
+function BonusItem({ title }: BonusItemProps) {
   return (
-    <div className="group flex gap-3 rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
-      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffe1eb] text-[hsl(var(--rose-primary))]">
-        <CheckIcon className="h-4 w-4" />
-      </div>
-      <div>
-        <h4 className="font-montserrat text-sm font-extrabold text-slate-800">{title}</h4>
-        <p className="mt-1 text-xs leading-relaxed text-slate-500">{description}</p>
-      </div>
+    <div className="group rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+      <h4 className="font-montserrat text-sm font-extrabold text-slate-800">{title}</h4>
     </div>
   );
 }
@@ -201,7 +193,6 @@ export default function Bonus() {
               <BonusItem
                 key={index}
                 title={bonus.title}
-                description={bonus.description}
               />
             ))}
           </div>
