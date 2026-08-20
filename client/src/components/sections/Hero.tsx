@@ -137,8 +137,8 @@ export default function Hero() {
                   alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
                   className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
-                  fetchpriority="high"
                   decoding="sync"
+                  ref={(image) => image?.setAttribute("fetchpriority", "high")}
                 />
                 
                 {/* Gradient Overlay */}
