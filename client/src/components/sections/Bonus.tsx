@@ -1,7 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { Calendar, Instagram, Palette, Percent, Book, Gift, Sparkles } from "lucide-react";
-import { CheckIcon } from "../ui/check-icon";
+import { Calendar, Instagram, Palette, Percent, Book, Gift, Sparkles, Footprints, Hand, Layers3, Brush } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface BonusCardProps {
@@ -62,15 +61,16 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
 }
 
 interface BonusItemProps {
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
 
-function BonusItem({ title, description }: BonusItemProps) {
+function BonusItem({ icon, title, description }: BonusItemProps) {
   return (
     <div className="group flex gap-3 rounded-xl border border-white/80 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
       <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffe1eb] text-[hsl(var(--rose-primary))]">
-        <CheckIcon className="h-4 w-4" />
+        {icon}
       </div>
       <div>
         <h4 className="font-montserrat text-sm font-extrabold text-slate-800">{title}</h4>
@@ -128,22 +128,27 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
+      icon: <Footprints className="h-4 w-4" />,
       title: "SPA DOS PÉS",
       description: "Tratamento completo para relaxamento e beleza dos pés"
     },
     {
+      icon: <Hand className="h-4 w-4" />,
       title: "MANICURE E PEDICURE",
       description: "Técnicas profissionais de cuidados para mãos e pés"
     },
     {
+      icon: <Layers3 className="h-4 w-4" />,
       title: "ALONGAMENTO NO MOLDE F1",
       description: "Método avançado para alongamento de unhas perfeitas"
     },
     {
+      icon: <Layers3 className="h-4 w-4" />,
       title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos"
     },
     {
+      icon: <Brush className="h-4 w-4" />,
       title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art"
     }
@@ -201,6 +206,7 @@ export default function Bonus() {
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
+                icon={bonus.icon}
                 title={bonus.title}
                 description={bonus.description}
               />
