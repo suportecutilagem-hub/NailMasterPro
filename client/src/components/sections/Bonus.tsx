@@ -184,7 +184,7 @@ export default function Bonus() {
             </div>
             <div className="flex shrink-0 items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-bold text-[hsl(var(--rose-primary))] shadow-sm">
               <Gift className="h-4 w-4" />
-              +5 cursos inclusos
+              +5 Cursos inclusos
             </div>
           </div>
           
