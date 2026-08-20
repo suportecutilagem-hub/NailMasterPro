@@ -23,7 +23,7 @@ export function LazyImage({ src, alt, className = '', style, placeholder }: Lazy
       },
       { 
         threshold: 0.01,
-        rootMargin: '200px'
+        rootMargin: '450px 0px'
       }
     );
 
@@ -61,7 +61,7 @@ export function LazyImage({ src, alt, className = '', style, placeholder }: Lazy
           style={style}
           loading="lazy"
           decoding="async"
-          fetchpriority="low"
+          ref={(image) => image?.setAttribute("fetchpriority", "low")}
         />
       )}
     </div>

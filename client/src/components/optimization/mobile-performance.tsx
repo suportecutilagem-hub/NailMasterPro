@@ -7,7 +7,9 @@ export function MobilePerformance() {
                     /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobile) {
-      // Reduzir animações em dispositivos móveis
+      // Respeitar apenas a preferência explícita do usuário.
+      // Não desligar animações automaticamente: isso prejudica a experiência
+      // visual e não é necessário para melhorar o carregamento.
       const reduceMotion = () => {
         const style = document.createElement('style');
         style.textContent = `
@@ -90,8 +92,10 @@ export function MobilePerformance() {
         }
       };
 
-      // Executar otimizações
-      reduceMotion();
+      // Executar otimizações de imagem e rede sem remover efeitos visuais.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        reduceMotion();
+      }
       optimizeImages();
       addResourceHints();
       optimizeViewport();
