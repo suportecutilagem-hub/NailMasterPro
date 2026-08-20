@@ -66,7 +66,7 @@ interface BonusItemProps {
 
 function BonusItem({ title }: BonusItemProps) {
   return (
-    <div className="group rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+    <div className="rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm">
       <h4 className="font-montserrat text-sm font-extrabold text-slate-800">{title}</h4>
     </div>
   );
