@@ -46,10 +46,6 @@ export default function Testimonials() {
       <Container>
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold font-montserrat mb-4">
             O Que Nossas <span className="text-[hsl(var(--rose-primary))]">Alunas</span> Dizem

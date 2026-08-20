@@ -181,10 +181,6 @@ export default function CourseContent() {
             {features.map((feature, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.3) }}
                 className="relative flex items-start gap-4 rounded-2xl p-2 sm:gap-6 sm:p-3"
               >
                 <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-4 border-white bg-[hsl(var(--rose-primary))] text-white shadow-[0_4px_12px_rgba(190,24,93,0.25)] sm:h-12 sm:w-12">

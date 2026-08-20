@@ -15,10 +15,6 @@ export default function Certificate() {
           {/* left: text */}
           <motion.div
             className="w-full lg:w-1/2 flex flex-col items-start text-left"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
             {/* premium badge */}
             <div className="flex items-center gap-2 mb-5">
@@ -42,10 +38,6 @@ export default function Certificate() {
           {/* right: certificate image */}
           <motion.div
             className="w-full lg:w-1/2 flex justify-center"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
           >
             <img
               src={certificateImg}

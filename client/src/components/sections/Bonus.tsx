@@ -16,10 +16,6 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
   return (
     <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
       <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.45, delay }}
         whileHover={{ y: -6 }}
         className="h-full"
       >

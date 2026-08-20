@@ -26,10 +26,6 @@ export default function VideoCourse() {
       <Container>
         <motion.div
           className="max-w-3xl mx-auto text-center"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] text-white shadow-lg shadow-pink-200">
             <MonitorPlay size={32} strokeWidth={1.8} />
@@ -49,10 +45,6 @@ export default function VideoCourse() {
             <motion.div
               key={title}
               className="rounded-2xl border border-pink-100 bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[hsl(var(--rose-light))] text-[hsl(var(--rose-primary))]">
                 <Icon size={22} />
