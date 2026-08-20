@@ -1,6 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { Calendar, Instagram, Palette, Percent, Book, Gift, Sparkles } from "lucide-react";
+import { Calendar, Instagram, Palette, Percent, Book, Gift } from "lucide-react";
 import { CheckIcon } from "../ui/check-icon";
 import { motion } from "framer-motion";
 
@@ -155,8 +155,7 @@ export default function Bonus() {
       <div className="pointer-events-none absolute -right-24 bottom-40 h-72 w-72 rounded-full bg-[#fce7f3] opacity-60 blur-3xl" />
       <Container>
         <div className="relative z-10 mx-auto mb-10 max-w-3xl text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#f7bfd2] bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))] shadow-sm">
-            <Sparkles className="h-3.5 w-3.5" />
+          <div className="mb-3 inline-flex rounded-full border border-[#f7bfd2] bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))] shadow-sm">
             Oferta exclusiva
           </div>
           <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
