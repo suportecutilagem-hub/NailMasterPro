@@ -68,7 +68,7 @@ interface BonusItemProps {
 
 function BonusItem({ title, description }: BonusItemProps) {
   return (
-    <div className="group flex gap-3 rounded-xl border border-white/80 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
+    <div className="group flex gap-3 rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md">
       <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffe1eb] text-[hsl(var(--rose-primary))]">
         <CheckIcon className="h-4 w-4" />
       </div>
