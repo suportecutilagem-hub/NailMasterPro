@@ -1,24 +1,6 @@
 import { motion } from "framer-motion";
-import { Clock3, MonitorPlay, Smartphone } from "lucide-react";
+import { MonitorPlay } from "lucide-react";
 import { Container } from "../ui/container";
-
-const benefits = [
-  {
-    icon: MonitorPlay,
-    title: "Vídeo aulas passo a passo",
-    description: "Veja cada detalhe da técnica demonstrado de forma clara e prática.",
-  },
-  {
-    icon: Clock3,
-    title: "Aprenda no seu ritmo",
-    description: "Assista às aulas com calma e reveja os conteúdos sempre que precisar.",
-  },
-  {
-    icon: Smartphone,
-    title: "Acesse de onde estiver",
-    description: "Estude pelo celular, tablet ou computador, onde for mais conveniente.",
-  },
-];
 
 export default function VideoCourse() {
   return (
@@ -40,20 +22,6 @@ export default function VideoCourse() {
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-3">
-          {benefits.map(({ icon: Icon, title, description }, index) => (
-            <motion.div
-              key={title}
-              className="rounded-2xl border border-pink-100 bg-white p-5 text-center shadow-sm transition-shadow hover:shadow-md"
-            >
-              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[hsl(var(--rose-light))] text-[hsl(var(--rose-primary))]">
-                <Icon size={22} />
-              </div>
-              <h3 className="font-montserrat text-base font-bold text-gray-900">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">{description}</p>
-            </motion.div>
-          ))}
-        </div>
       </Container>
     </section>
   );
