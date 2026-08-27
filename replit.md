@@ -34,6 +34,10 @@ Preferred communication style: Simple, everyday language.
 - **Deployment**: Replit-specific configuration for easy deployment
 - **Type Checking**: TypeScript throughout the codebase
 
+### Como executar no Replit
+
+O workflow **Start application** executa `npm run dev`. O servidor Express/Vite fica disponível na porta 5000 e alimenta o preview da aplicação.
+
 ## Key Components
 
 ### Frontend Components
