@@ -2,12 +2,6 @@ import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import {
   Gift,
-  Footprints,
-  Hand,
-  Ruler,
-  Layers,
-  Sparkles,
-  Check,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -49,34 +43,21 @@ function BonusCard({ number, title }: BonusCardProps) {
 
 interface BonusItemProps {
   number: number;
-  icon: React.ReactNode;
   title: string;
-  description: string;
 }
 
-function BonusItem({ number, icon, title, description }: BonusItemProps) {
+function BonusItem({ number, title }: BonusItemProps) {
   return (
     <li
       className="group relative h-full"
     >
       <div className="relative flex min-h-[82px] gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/85 p-3.5 shadow-[0_8px_20px_rgba(190,24,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f0a9c1] hover:shadow-[0_14px_28px_rgba(190,24,93,0.12)] sm:p-4">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] to-[#f9a8d4]" />
-        <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#fff0f5] to-[#ffdce9] text-[hsl(var(--rose-primary))]">
-          {icon}
-          <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] text-[9px] font-extrabold text-white shadow-sm">
-            {number}
-          </span>
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--rose-primary))] font-montserrat text-sm font-extrabold text-white shadow-md shadow-pink-200">
+          {number}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="mb-1 flex items-start gap-2">
-            <h4 className="font-montserrat text-sm font-extrabold leading-tight text-slate-800">{title}</h4>
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" strokeWidth={3} />
-          </div>
-          <p className="text-xs leading-relaxed text-slate-500">{description}</p>
-          <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-[#fff0f5] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-[hsl(var(--rose-primary))]">
-            <Gift className="h-3 w-3" />
-            Incluso grátis
-          </span>
+          <h4 className="font-montserrat text-sm font-extrabold leading-tight text-slate-800">{title}</h4>
         </div>
       </div>
     </li>
@@ -113,34 +94,24 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
-      number: 1,
-      icon: <Footprints className="h-5 w-5" />,
+      number: 7,
       title: "SPA DOS PÉS",
-      description: "Tratamento completo para relaxamento e beleza dos pés"
     },
     {
-      number: 2,
-      icon: <Hand className="h-5 w-5" />,
+      number: 8,
       title: "MANICURE E PEDICURE",
-      description: "Técnicas profissionais de cuidados para mãos e pés"
     },
     {
-      number: 3,
-      icon: <Ruler className="h-5 w-5" />,
+      number: 9,
       title: "ALONGAMENTO NO MOLDE F1",
-      description: "Método avançado para alongamento de unhas perfeitas"
     },
     {
-      number: 4,
-      icon: <Layers className="h-5 w-5" />,
+      number: 10,
       title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
-      description: "Técnica durável e natural para alongamentos"
     },
     {
-      number: 5,
-      icon: <Sparkles className="h-5 w-5" />,
+      number: 11,
       title: "UNHAS DECORADAS",
-      description: "Designs criativos e tendências para nail art"
     }
   ];
 
@@ -205,10 +176,6 @@ export default function Bonus() {
                 <p className="mt-1 text-sm text-slate-500">Cursos completos para você ampliar seus serviços.</p>
               </div>
             </div>
-            <div className="ml-[3.75rem] flex shrink-0 items-center gap-2 rounded-full border border-[#f5c8d8] bg-white/85 px-4 py-2 text-xs font-bold text-[hsl(var(--rose-primary))] shadow-sm sm:ml-0">
-              <Sparkles className="h-4 w-4" />
-              +5 inclusos
-            </div>
           </div>
           
           <ul className="relative z-10 space-y-3">
@@ -216,9 +183,7 @@ export default function Bonus() {
               <BonusItem
                 key={index}
                 number={bonus.number}
-                icon={bonus.icon}
                 title={bonus.title}
-                description={bonus.description}
               />
             ))}
           </ul>
