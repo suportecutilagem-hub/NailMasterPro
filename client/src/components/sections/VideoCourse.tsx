@@ -23,7 +23,7 @@ export default function VideoCourse() {
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-8 max-w-2xl rounded-[1.75rem] bg-gradient-to-br from-[hsl(var(--rose-primary))] via-[#f4729a] to-[#fbcfe8] p-1.5 shadow-[0_18px_45px_rgba(190,24,93,0.18)] sm:mt-10 sm:p-2"
+          className="mx-auto mt-8 max-w-sm rounded-[1.75rem] bg-gradient-to-br from-[hsl(var(--rose-primary))] via-[#f4729a] to-[#fbcfe8] p-1.5 shadow-[0_18px_45px_rgba(190,24,93,0.18)] sm:mt-10 sm:p-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -31,12 +31,11 @@ export default function VideoCourse() {
         >
           <div className="overflow-hidden rounded-[1.35rem] bg-white p-1 shadow-inner sm:p-1.5">
             <video
-              className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+              className="pointer-events-none aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
               src="/video-aulas-praticas.mp4"
               autoPlay
               muted
               playsInline
-              controls
               loop
               preload="auto"
               aria-label="Aula prática de cutilagem russa"
