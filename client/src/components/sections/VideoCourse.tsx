@@ -47,7 +47,7 @@ function LocalCourseVideo() {
     <div className="relative">
       <video
         ref={videoRef}
-        className="hidden aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover sm:block"
+        className="block aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
         autoPlay
         muted
         playsInline
@@ -61,13 +61,6 @@ function LocalCourseVideo() {
           type="video/mp4"
         />
       </video>
-
-      {/* Em celulares, a animação local não pode ser bloqueada por autoplay. */}
-      <img
-        className="block aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover sm:hidden"
-        src={`${import.meta.env.BASE_URL}video-aulas-praticas-mobile.webp`}
-        alt="Aula prática de cutilagem russa"
-      />
     </div>
   );
 }
