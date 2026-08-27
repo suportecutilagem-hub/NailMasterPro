@@ -26,7 +26,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Lista de materiais completa",
-      description: "Acesso a todos os materiais necessários para iniciar sua jornada na cutilagem russa sem surpresas."
     },
     {
       icon: (
@@ -35,7 +34,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Onde comprar os materiais",
-      description: "Indicações exclusivas de fornecedores confiáveis com os melhores preços do mercado."
     },
     {
       icon: (
@@ -44,7 +42,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Posicionamento com a tesoura",
-      description: "Aprenda a técnica correta para manusear a tesoura com segurança e precisão desde o primeiro dia."
     },
     {
       icon: (
@@ -53,7 +50,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Perder o medo",
-      description: "Estratégias psicológicas para superar a insegurança inicial e ganhar confiança na técnica."
     },
     {
       icon: (
@@ -62,7 +58,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Por onde começar",
-      description: "Guia passo a passo desde o básico até as técnicas avançadas para sua evolução gradual."
     },
     {
       icon: (
@@ -71,7 +66,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Não machucar a cliente",
-      description: "Técnicas seguras que preservam a integridade da unha natural sem causar desconforto."
     },
     {
       icon: (
@@ -80,7 +74,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Remoção de esmalte em gel + Cutilagem Russa",
-      description: "Procedimentos combinados que aumentam o valor do seu serviço e a satisfação das clientes."
     },
     {
       icon: (
@@ -89,7 +82,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Blindagem",
-      description: "Método eficaz para fortalecer as unhas naturais e prevenir quebras e danos."
     },
     {
       icon: (
@@ -98,7 +90,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Esterilização",
-      description: "Protocolos profissionais de biossegurança para garantir a saúde e segurança de suas clientes."
     },
     {
       icon: (
@@ -107,7 +98,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Cutilagem russa com tesoura",
-      description: "Técnica refinada para resultados perfeitos e acabamento impecável usando tesoura profissional."
     },
     {
       icon: (
@@ -117,7 +107,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Cutilagem russa com brocas",
-      description: "Domínio completo da técnica utilizando micromotores e brocas para maior eficiência."
     },
     {
       icon: (
@@ -126,7 +115,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Cutilagem russa em 8 minutos",
-      description: "Estratégias para otimizar seu tempo e atender mais clientes sem perder a qualidade."
     },
     {
       icon: (
@@ -135,7 +123,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Para que serve as brocas e como usá-las",
-      description: "Guia completo sobre os diferentes tipos de brocas e suas aplicações específicas."
     },
     {
       icon: (
@@ -144,7 +131,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Como estipular um preço para sua cliente",
-      description: "Estratégias de precificação para valorizar seu trabalho e maximizar seus lucros."
     },
     {
       icon: (
@@ -153,7 +139,6 @@ export default function CourseContent() {
         </svg>
       ),
       title: "Como obter o certificado no final do curso",
-      description: "Passo a passo para receber sua certificação e agregar valor ao seu currículo profissional."
     }
   ];
 
@@ -187,10 +172,9 @@ export default function CourseContent() {
                   <span className="scale-[0.72] [&>svg]:h-6 [&>svg]:w-6 [&>svg]:!text-white sm:scale-90">{feature.icon}</span>
                 </div>
                 <div className="min-w-0 flex-1 rounded-xl border border-transparent py-2 sm:py-3">
-                  <h3 className="mb-2 font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
+                   <h3 className="font-montserrat text-base font-bold leading-snug text-slate-900 sm:text-lg">
                     {feature.title}
                   </h3>
-                  <p className="text-sm leading-6 text-slate-500 sm:text-[15px]">{feature.description}</p>
                 </div>
               </motion.article>
             ))}
