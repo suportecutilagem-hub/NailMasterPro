@@ -7,48 +7,32 @@ interface BonusCardProps {
   number: number;
   icon: React.ReactNode;
   title: string;
-  description: string;
-  originalPrice: string;
   delay?: number;
 }
 
-function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
+function BonusCard({ number, icon, title, delay = 0 }: BonusCardProps) {
   return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
+    <div className="w-full">
       <motion.div
-        whileHover={{ y: -6 }}
+        whileHover={{ y: -2, scale: 1.01 }}
         className="h-full"
       >
-        <div className="group bg-white rounded-2xl shadow-[0_10px_30px_rgba(190,24,93,0.08)] p-5 h-full border border-[#f5c4d4] relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(190,24,93,0.16)]">
+        <div className="group relative flex min-h-[76px] items-center overflow-hidden rounded-2xl border border-[#f1cada] bg-white px-4 py-3 shadow-[0_6px_18px_rgba(190,24,93,0.08)] transition-all duration-300 hover:border-[#eb8faf] hover:shadow-[0_12px_28px_rgba(190,24,93,0.14)] sm:px-5">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[hsl(var(--rose-primary))] via-[#fb7185] to-[#f9a8d4]" />
-          <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#fff1f5] transition-transform duration-300 group-hover:scale-125" />
+          <div className="absolute -right-8 -top-12 h-28 w-28 rounded-full bg-[#fff1f5] transition-transform duration-300 group-hover:scale-125" />
 
-          <div className="absolute right-4 top-4 z-10">
-            <div className="flex items-center gap-1 rounded-full bg-[hsl(var(--rose-primary))] px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md">
-              <Gift className="h-3 w-3" />
-              Bônus {number}
+          <div className="relative z-10 flex min-w-0 flex-1 items-center gap-3">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#fff0f5] to-[#ffe0ea] text-[hsl(var(--rose-primary))] shadow-inner">
+              {icon}
             </div>
+            <h3 className="min-w-0 pr-2 font-montserrat text-[15px] font-extrabold leading-[1.15] text-slate-800 sm:text-base">
+              {title}
+            </h3>
           </div>
 
-          <div className="relative z-10 flex min-h-[13rem] flex-col">
-            <div className="mb-5 flex items-center gap-3 pr-20">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#fff0f5] to-[#ffe0ea] text-[hsl(var(--rose-primary))] shadow-inner">
-                {icon}
-              </div>
-              <h3 className="font-montserrat text-base font-extrabold leading-tight text-slate-800">{title}</h3>
-            </div>
-
-            <p className="mb-5 text-sm leading-relaxed text-slate-500">{description}</p>
-
-            <div className="mt-auto flex items-end justify-between gap-2 border-t border-dashed border-[#f0c8d5] pt-4">
-              <div>
-                <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-400">Valor do bônus</p>
-                <span className="text-sm text-slate-400 line-through">{originalPrice}</span>
-              </div>
-              <span className="rounded-full bg-emerald-500 px-3 py-1.5 text-xs font-extrabold tracking-wide text-white shadow-sm">
-                GRÁTIS
-              </span>
-            </div>
+          <div className="relative z-10 ml-2 shrink-0 rounded-full bg-[hsl(var(--rose-primary))] px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-white shadow-md sm:px-4">
+            Bônus{" "}
+            {number}
           </div>
         </div>
       </motion.div>
@@ -154,15 +138,13 @@ export default function Bonus() {
           </p>
         </div>
 
-        <div className="relative z-10 -mx-1 mb-14 flex flex-wrap">
+        <div className="relative z-10 mx-auto mb-14 grid max-w-[360px] grid-cols-1 gap-3">
           {bonuses.map((bonus, index) => (
             <BonusCard
               key={index}
               number={bonus.number}
               icon={bonus.icon}
               title={bonus.title}
-              description={bonus.description}
-              originalPrice={bonus.originalPrice}
               delay={index * 0.2}
             />
           ))}
