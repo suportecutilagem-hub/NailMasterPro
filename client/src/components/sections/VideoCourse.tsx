@@ -31,14 +31,41 @@ function LazyCourseVideo() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+
+    // Alguns navegadores móveis só permitem autoplay quando essas
+    // propriedades são definidas também via JavaScript.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+
+    const tryToPlay = () => {
+      void video.play().catch(() => {
+        // Se o navegador bloquear o autoplay, os controles permitem
+        // que a pessoa inicie o vídeo manualmente.
+      });
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      tryToPlay();
+      return;
+    }
+
+    video.addEventListener("canplay", tryToPlay, { once: true });
+    return () => video.removeEventListener("canplay", tryToPlay);
+  }, [shouldLoad]);
+
   return (
     <video
       ref={videoRef}
-      className="pointer-events-none aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
       autoPlay
       muted
       playsInline
       loop
+      controls
       preload={shouldLoad ? "auto" : "none"}
       aria-label="Aula prática de cutilagem russa"
     >
