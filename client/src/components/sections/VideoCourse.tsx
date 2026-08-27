@@ -1,49 +1,86 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
-  useEffect(() => {
+  const attemptToPlay = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // O autoplay em celulares exige que o vídeo comece sem áudio.
+    // Estas propriedades precisam estar definidas antes de chamar play().
     video.muted = true;
     video.defaultMuted = true;
     video.setAttribute("muted", "");
     video.setAttribute("autoplay", "");
     video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "true");
 
-    const tryToPlay = () => {
-      void video.play().catch(() => {
-        // O navegador pode bloquear autoplay em modo de economia de dados/bateria.
-      });
-    };
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => setAutoplayBlocked(false))
+        .catch(() => {
+          // Economia de dados/bateria e políticas do navegador podem bloquear
+          // autoplay. Nesse caso, mostramos uma ação de toque como fallback.
+          setAutoplayBlocked(true);
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const tryToPlay = () => attemptToPlay();
 
     if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
       tryToPlay();
-      return;
     }
 
     video.addEventListener("canplay", tryToPlay, { once: true });
-    return () => video.removeEventListener("canplay", tryToPlay);
-  }, []);
+    video.addEventListener("loadeddata", tryToPlay, { once: true });
+
+    return () => {
+      video.removeEventListener("canplay", tryToPlay);
+      video.removeEventListener("loadeddata", tryToPlay);
+    };
+  }, [attemptToPlay]);
 
   return (
-    <video
-      ref={videoRef}
-      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
-      src={`${import.meta.env.BASE_URL}video-aulas-praticas.mp4`}
-      autoPlay
-      muted
-      playsInline
-      loop
-      preload="auto"
-      aria-label="Aula prática de cutilagem russa"
-    />
+    <div className="relative">
+      <video
+        ref={videoRef}
+        className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+        autoPlay
+        muted
+        playsInline
+        loop
+        preload="auto"
+        poster={`${import.meta.env.BASE_URL}cutilagem_russa_curso1.jpg`}
+        aria-label="Aula prática de cutilagem russa"
+      >
+        {/* Arquivo local: o Vite o copia para a pasta final do cPanel. */}
+        <source
+          src={`${import.meta.env.BASE_URL}video-aulas-praticas.mp4`}
+          type="video/mp4"
+        />
+      </video>
+
+      {autoplayBlocked && (
+        <button
+          type="button"
+          onClick={attemptToPlay}
+          className="absolute inset-x-5 bottom-5 rounded-full bg-[hsl(var(--rose-primary))] px-5 py-3 font-montserrat text-sm font-extrabold text-white shadow-lg transition-transform active:scale-95"
+          aria-label="Toque para iniciar o vídeo"
+        >
+          Toque para assistir
+        </button>
+      )}
+    </div>
   );
 }
 
