@@ -7,7 +7,6 @@ const loadVideoCourse = () => import("@/components/sections/VideoCourse");
 const loadBonus = () => import("@/components/sections/Bonus");
 const loadCertificate = () => import("@/components/sections/Certificate");
 const loadTestimonials = () => import("@/components/sections/Testimonials");
-const loadCourseOverview = () => import("@/components/sections/CourseOverview");
 const loadFAQ = () => import("@/components/sections/FAQ");
 
 const CourseContent = lazy(loadCourseContent);
@@ -15,7 +14,6 @@ const VideoCourse = lazy(loadVideoCourse);
 const Bonus = lazy(loadBonus);
 const Certificate = lazy(loadCertificate);
 const Testimonials = lazy(loadTestimonials);
-const CourseOverview = lazy(loadCourseOverview);
 const FAQ = lazy(loadFAQ);
 
 function SectionFallback() {
@@ -33,7 +31,6 @@ export default function Home() {
         loadBonus(),
         loadCertificate(),
         loadTestimonials(),
-        loadCourseOverview(),
         loadFAQ(),
       ]);
     }, 900);
@@ -59,9 +56,6 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <Testimonials />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <CourseOverview />
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <FAQ />
