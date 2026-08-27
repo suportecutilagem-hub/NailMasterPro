@@ -5,7 +5,7 @@ import certificateImg from "@assets/certificate_nobg.png";
 
 export default function Certificate() {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#fff5f8] to-white relative overflow-hidden">
+    <section className="content-auto py-20 bg-gradient-to-b from-[#fff5f8] to-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/8 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-[hsl(var(--rose-primary))]/8 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
@@ -42,6 +42,8 @@ export default function Certificate() {
             <img
               src={certificateImg}
               alt="Certificado Premium de Cutilagem Russa"
+                width={1536}
+                height={1024}
               className="w-full max-w-lg drop-shadow-2xl"
               loading="lazy"
               decoding="async"

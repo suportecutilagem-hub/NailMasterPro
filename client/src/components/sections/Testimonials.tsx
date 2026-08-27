@@ -38,7 +38,7 @@ export default function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#fff5f8] via-white to-[#fff5f8] relative overflow-hidden">
+      <section className="content-auto py-20 bg-gradient-to-b from-[#fff5f8] via-white to-[#fff5f8] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[hsl(var(--rose-primary))]/10 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[hsl(var(--rose-primary))]/10 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-[hsl(var(--rose-primary))]/5 blur-2xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />

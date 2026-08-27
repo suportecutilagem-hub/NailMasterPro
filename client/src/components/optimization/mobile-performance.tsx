@@ -96,12 +96,20 @@ export function MobilePerformance() {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         reduceMotion();
       }
-      optimizeImages();
-      addResourceHints();
       optimizeViewport();
-      setupCaching();
       
-      setTimeout(lazyLoadScripts, 2000);
+      const runAfterFirstPaint = () => {
+        optimizeImages();
+        addResourceHints();
+        setupCaching();
+        lazyLoadScripts();
+      };
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(runAfterFirstPaint, { timeout: 2000 });
+      } else {
+        setTimeout(runAfterFirstPaint, 1000);
+      }
 
       // Monitorar performance
       if ('web-vitals' in window || true) {

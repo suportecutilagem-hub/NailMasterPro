@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 
@@ -23,24 +23,6 @@ function SectionFallback() {
 }
 
 export default function Home() {
-  useEffect(() => {
-    // Carrega os chunks depois do primeiro paint para a rolagem não esperar
-    // por cada seção, mantendo os efeitos e animações quando elas aparecem.
-    const preloadSections = window.setTimeout(() => {
-      void Promise.all([
-        loadVideoCourse(),
-        loadCourseContent(),
-        loadBonus(),
-        loadCertificate(),
-        loadTestimonials(),
-        loadCourseOverview(),
-        loadFAQ(),
-      ]);
-    }, 900);
-
-    return () => window.clearTimeout(preloadSections);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />

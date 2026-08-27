@@ -111,7 +111,7 @@ export default function Bonus() {
   ];
 
   return (
-    <section id="bonus" className="relative overflow-hidden bg-gradient-to-b from-white via-[#fffafd] to-[#fff4f7] py-14 sm:py-20">
+    <section id="bonus" className="content-auto relative overflow-hidden bg-gradient-to-b from-white via-[#fffafd] to-[#fff4f7] py-14 sm:py-20">
       <div className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#ffe8f0] opacity-60 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-40 h-72 w-72 rounded-full bg-[#fce7f3] opacity-60 blur-3xl" />
       <Container>

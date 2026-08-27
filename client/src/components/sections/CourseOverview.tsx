@@ -68,7 +68,7 @@ export default function CourseOverview() {
   ];
 
   return (
-    <section className="py-16 bg-white" id="checkout">
+    <section className="content-auto py-16 bg-white" id="checkout">
       <Container>
         <div className="grid grid-cols-1 gap-12 items-center max-w-3xl mx-auto">
           <div>

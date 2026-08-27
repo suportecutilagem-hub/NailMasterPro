@@ -143,7 +143,7 @@ export default function CourseContent() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+    <section className="content-auto relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute -right-32 top-24 h-72 w-72 rounded-full bg-[hsl(var(--rose-light))]/60 blur-3xl" />
       <div className="pointer-events-none absolute -left-40 bottom-16 h-80 w-80 rounded-full bg-pink-50 blur-3xl" />
       <Container>

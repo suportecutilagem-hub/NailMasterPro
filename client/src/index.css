@@ -142,6 +142,11 @@
 }
 
 @layer utilities {
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+  }
+
   @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }

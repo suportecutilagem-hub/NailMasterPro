@@ -68,7 +68,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="content-auto py-16 bg-gray-50">
       <Container>
         <div
           className="text-center mb-12"
