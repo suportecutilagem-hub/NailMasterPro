@@ -1,49 +1,16 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
-function LazyCourseVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const videoUrl = `${import.meta.env.BASE_URL}video-aulas-praticas.mp4`;
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // O autoplay mobile exige silêncio e reprodução dentro da página.
-    video.muted = true;
-    video.defaultMuted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("playsinline", "");
-
-    const tryToPlay = () => {
-      void video.play().catch(() => {
-        // Alguns celulares bloqueiam autoplay por economia de bateria/dados.
-      });
-    };
-
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-      tryToPlay();
-      return;
-    }
-
-    video.addEventListener("canplay", tryToPlay, { once: true });
-    return () => video.removeEventListener("canplay", tryToPlay);
-  }, []);
-
+function YouTubeCourseVideo() {
   return (
-    <video
-      ref={videoRef}
-      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
-      src={videoUrl}
-      autoPlay
-      muted
-      playsInline
-      loop
-      preload="auto"
-      aria-label="Aula prática de cutilagem russa"
+    <iframe
+      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8]"
+      src="https://www.youtube-nocookie.com/embed/SdRpE7yJCjY?autoplay=1&mute=1&controls=0&loop=1&playlist=SdRpE7yJCjY&playsinline=1&rel=0&modestbranding=1"
+      title="Aula prática de cutilagem russa"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowFullScreen
+      loading="eager"
     />
   );
 }
@@ -76,7 +43,7 @@ export default function VideoCourse() {
           transition={{ duration: 0.6 }}
         >
           <div className="overflow-hidden rounded-[1.35rem] bg-white p-1 shadow-inner sm:p-1.5">
-            <LazyCourseVideo />
+            <YouTubeCourseVideo />
           </div>
         </motion.div>
 
