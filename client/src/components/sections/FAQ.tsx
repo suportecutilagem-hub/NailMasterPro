@@ -54,6 +54,10 @@ export default function FAQ() {
       answer: "Ao concluir o curso, você terá acesso a uma aula específica que explica como solicitar seu certificado. Após seguir as instruções, você receberá o certificado digital que pode ser impresso ou compartilhado online, agregando valor ao seu currículo profissional."
     },
     {
+      question: "Como recebo meu acesso?",
+      answer: "Após a confirmação do pagamento, seus dados de acesso são enviados automaticamente para o seu e-mail."
+    },
+    {
       question: "Como acesso os bônus do curso?",
       answer: "Todos os bônus estarão disponíveis na mesma plataforma do curso principal, logo após a sua compra. Você terá acesso imediato a todo o conteúdo extra, incluindo os cursos complementares com certificado."
     },
