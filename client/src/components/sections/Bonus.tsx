@@ -169,7 +169,7 @@ export default function Bonus() {
                 <h3 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
                    5 CURSOS COMPLETOS COM CERTIFICADO
                 </h3>
-                 <p className="mt-1 text-sm text-slate-500">Todos os bônus adicionais são entregues em videoaulas práticas para você assistir quando quiser.</p>
+                  <p className="mt-1 text-sm text-slate-500">Além do curso de Cutilagem Russa, você recebe mais 5 cursos completos em videoaulas, com certificado incluso.</p>
               </div>
             </div>
           </div>
