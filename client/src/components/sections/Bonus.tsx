@@ -31,11 +31,6 @@ function BonusCard({ number, title }: BonusCardProps) {
           </div>
         </div>
 
-        <div className="shrink-0">
-          <span className="inline-flex rounded-full bg-emerald-500 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm">
-            Grátis
-          </span>
-        </div>
       </div>
     </li>
   );
