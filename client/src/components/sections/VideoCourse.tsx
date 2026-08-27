@@ -107,8 +107,8 @@ export default function VideoCourse() {
             </div>
 
             <div className="flex items-center justify-center gap-1.5 border-l border-pink-200 px-2 py-4 sm:gap-3 sm:px-8 sm:py-6">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-[hsl(var(--rose-primary))] text-[hsl(var(--rose-primary))]">
-                <X className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
+              <span className="box-border flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-[hsl(var(--rose-primary))] text-[hsl(var(--rose-primary))] leading-none">
+                <X className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />
               </span>
               <h3 className="font-montserrat text-xs font-extrabold leading-tight text-[hsl(var(--rose-primary))] sm:text-xl">
                 Sem uso de alicates
