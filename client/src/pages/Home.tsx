@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
+import VideoCourse from "@/components/sections/VideoCourse";
 
 const loadCourseContent = () => import("@/components/sections/CourseContent");
-const loadVideoCourse = () => import("@/components/sections/VideoCourse");
 const loadBonus = () => import("@/components/sections/Bonus");
 const loadCertificate = () => import("@/components/sections/Certificate");
 const loadTestimonials = () => import("@/components/sections/Testimonials");
@@ -11,7 +11,6 @@ const loadCourseOverview = () => import("@/components/sections/CourseOverview");
 const loadFAQ = () => import("@/components/sections/FAQ");
 
 const CourseContent = lazy(loadCourseContent);
-const VideoCourse = lazy(loadVideoCourse);
 const Bonus = lazy(loadBonus);
 const Certificate = lazy(loadCertificate);
 const Testimonials = lazy(loadTestimonials);
