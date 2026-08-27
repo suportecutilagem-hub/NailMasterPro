@@ -21,7 +21,7 @@ export default function Hero() {
               APRENDA CUTILAGEM RUSSA DO ZERO
             </h1>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mb-5 leading-relaxed">
-              Domine a técnica, faça um acabamento profissional e comece a oferecer um serviço mais valorizado às suas clientes.
+              Domine a técnica, faça um acabamento profissional e ofereça um serviço mais valorizado às suas clientes.
             </p>
             
             {/* Feature badges */}
