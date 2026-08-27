@@ -51,13 +51,13 @@ function BonusItem({ number, title }: BonusItemProps) {
     <li
       className="group relative h-full"
     >
-      <div className="relative flex min-h-[82px] gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/85 p-3.5 shadow-[0_8px_20px_rgba(190,24,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f0a9c1] hover:shadow-[0_14px_28px_rgba(190,24,93,0.12)] sm:p-4">
+      <div className="relative flex min-h-[82px] items-center gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/85 px-4 py-4 shadow-[0_8px_20px_rgba(190,24,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f0a9c1] hover:shadow-[0_14px_28px_rgba(190,24,93,0.12)] sm:gap-5 sm:px-5">
         <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] to-[#f9a8d4]" />
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--rose-primary))] font-montserrat text-sm font-extrabold text-white shadow-md shadow-pink-200">
-          {number}
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-md shadow-pink-200">
+          {String(number).padStart(2, "0")}
         </div>
         <div className="min-w-0 flex-1">
-          <h4 className="font-montserrat text-sm font-extrabold leading-tight text-slate-800">{title}</h4>
+          <h3 className="font-montserrat text-[15px] font-extrabold leading-tight text-slate-800 sm:text-base">{title}</h3>
         </div>
       </div>
     </li>
