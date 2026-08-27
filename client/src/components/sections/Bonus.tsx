@@ -13,10 +13,10 @@ interface BonusCardProps {
 function BonusCard({ number, title }: BonusCardProps) {
   return (
     <li
-      className="group relative overflow-hidden rounded-2xl border border-[#f1cada] bg-white shadow-[0_7px_22px_rgba(190,24,93,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#eb8faf] hover:shadow-[0_14px_30px_rgba(190,24,93,0.14)]"
+      className="relative overflow-hidden rounded-2xl border border-[#f1cada] bg-white shadow-[0_7px_22px_rgba(190,24,93,0.07)]"
     >
       <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] via-[#fb7185] to-[#f9a8d4]" />
-      <div className="absolute -right-10 -top-12 h-32 w-32 rounded-full bg-[#fff1f5] transition-transform duration-500 group-hover:scale-125" />
+      <div className="absolute -right-10 -top-12 h-32 w-32 rounded-full bg-[#fff1f5]" />
 
       <div className="relative z-10 flex items-center gap-3 px-4 py-4 sm:gap-5 sm:px-5">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-md shadow-pink-200">
