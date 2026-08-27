@@ -16,13 +16,12 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2 text-xs sm:text-sm uppercase tracking-wide">CURSO COMPLETO DE</h5>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-4 leading-tight">
-              <span className="gradient-text">Cutilagem Russa</span><br />
-              <span className="text-gray-900">Profissional</span>
+            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2 text-xs sm:text-sm uppercase tracking-wide">CURSO COMPLETO DE CUTILAGEM RUSSA PROFISSIONAL</h5>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-4 leading-tight text-gray-900">
+              APRENDA CUTILAGEM RUSSA DO ZERO
             </h1>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mb-5 leading-relaxed">
-              A técnica que mais gera lucro nos salões agora ao seu alcance! Domine a cutilagem russa e <span className="font-bold text-[hsl(var(--rose-primary))]">multiplique seus ganhos</span> oferecendo um serviço premium que suas clientes vão amar.
+              Domine a técnica, faça um acabamento profissional e comece a oferecer um serviço mais valorizado às suas clientes.
             </p>
             
             {/* Feature badges */}
