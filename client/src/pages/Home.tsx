@@ -52,13 +52,13 @@ export default function Home() {
         <CourseContent />
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
+        <Testimonials />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
         <Bonus />
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <Certificate />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <Testimonials />
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <CourseOverview />
