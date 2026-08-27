@@ -1,6 +1,19 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
-import { Calendar, Instagram, Palette, Percent, Book, Gift } from "lucide-react";
+import {
+  Calendar,
+  Instagram,
+  Palette,
+  Percent,
+  Book,
+  Gift,
+  Footprints,
+  Hand,
+  Ruler,
+  Layers,
+  Sparkles,
+  Check,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 interface BonusCardProps {
@@ -14,15 +27,20 @@ function BonusCard({ number, icon, title, delay = 0 }: BonusCardProps) {
   return (
     <div className="w-full">
       <motion.div
+        initial={{ opacity: 0, x: -14 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.45, delay }}
         whileHover={{ y: -2, scale: 1.01 }}
         className="h-full"
       >
-        <div className="group relative flex min-h-[76px] items-center overflow-hidden rounded-2xl border border-[#f1cada] bg-white px-4 py-3 shadow-[0_6px_18px_rgba(190,24,93,0.08)] transition-all duration-300 hover:border-[#eb8faf] hover:shadow-[0_12px_28px_rgba(190,24,93,0.14)] sm:px-5">
+        <div className="group relative flex min-h-[82px] items-center overflow-hidden rounded-2xl border border-[#f1cada] bg-white px-4 py-3 shadow-[0_7px_22px_rgba(190,24,93,0.07)] transition-all duration-300 hover:border-[#eb8faf] hover:shadow-[0_14px_30px_rgba(190,24,93,0.14)] sm:px-5">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[hsl(var(--rose-primary))] via-[#fb7185] to-[#f9a8d4]" />
           <div className="absolute -right-8 -top-12 h-28 w-28 rounded-full bg-[#fff1f5] transition-transform duration-300 group-hover:scale-125" />
+          <div className="absolute bottom-0 left-0 h-1 w-0 bg-[hsl(var(--rose-primary))] transition-all duration-500 group-hover:w-full" />
 
           <div className="relative z-10 flex min-w-0 flex-1 items-center gap-3">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#fff0f5] to-[#ffe0ea] text-[hsl(var(--rose-primary))] shadow-inner">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#f8d5e1] bg-gradient-to-br from-[#fff0f5] to-[#ffe0ea] text-[hsl(var(--rose-primary))] shadow-inner transition-transform duration-300 group-hover:scale-105">
               {icon}
             </div>
             <h3 className="min-w-0 pr-2 font-montserrat text-[15px] font-extrabold leading-[1.15] text-slate-800 sm:text-base">
@@ -41,14 +59,41 @@ function BonusCard({ number, icon, title, delay = 0 }: BonusCardProps) {
 }
 
 interface BonusItemProps {
+  number: number;
+  icon: React.ReactNode;
   title: string;
+  description: string;
 }
 
-function BonusItem({ title }: BonusItemProps) {
+function BonusItem({ number, icon, title, description }: BonusItemProps) {
   return (
-    <div className="rounded-xl border border-white/80 border-l-4 border-l-[hsl(var(--rose-primary))] bg-white/80 p-4 shadow-sm">
-      <h4 className="font-montserrat text-sm font-extrabold text-slate-800">{title}</h4>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.4 }}
+      className="group relative h-full"
+    >
+      <div className="relative flex h-full min-h-[118px] gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/85 p-4 shadow-[0_8px_20px_rgba(190,24,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f0a9c1] hover:shadow-[0_14px_28px_rgba(190,24,93,0.12)]">
+        <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] to-[#f9a8d4]" />
+        <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#fff0f5] to-[#ffdce9] text-[hsl(var(--rose-primary))]">
+          {icon}
+          <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] text-[9px] font-extrabold text-white shadow-sm">
+            {number}
+          </span>
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="mb-1 flex items-start justify-between gap-2">
+            <h4 className="font-montserrat text-sm font-extrabold leading-tight text-slate-800">{title}</h4>
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" strokeWidth={3} />
+          </div>
+          <p className="text-xs leading-relaxed text-slate-500">{description}</p>
+          <span className="mt-2 inline-flex rounded-full bg-[#fff0f5] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-[hsl(var(--rose-primary))]">
+            Incluso grátis
+          </span>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -100,34 +145,45 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
+      number: 1,
+      icon: <Footprints className="h-5 w-5" />,
       title: "SPA DOS PÉS",
       description: "Tratamento completo para relaxamento e beleza dos pés"
     },
     {
+      number: 2,
+      icon: <Hand className="h-5 w-5" />,
       title: "MANICURE E PEDICURE",
       description: "Técnicas profissionais de cuidados para mãos e pés"
     },
     {
+      number: 3,
+      icon: <Ruler className="h-5 w-5" />,
       title: "ALONGAMENTO NO MOLDE F1",
       description: "Método avançado para alongamento de unhas perfeitas"
     },
     {
+      number: 4,
+      icon: <Layers className="h-5 w-5" />,
       title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
       description: "Técnica durável e natural para alongamentos"
     },
     {
+      number: 5,
+      icon: <Sparkles className="h-5 w-5" />,
       title: "UNHAS DECORADAS",
       description: "Designs criativos e tendências para nail art"
     }
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fffafd] to-[#fff4f7] py-14">
+    <section id="bonus" className="relative overflow-hidden bg-gradient-to-b from-white via-[#fffafd] to-[#fff4f7] py-14 sm:py-20">
       <div className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-[#ffe8f0] opacity-60 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-40 h-72 w-72 rounded-full bg-[#fce7f3] opacity-60 blur-3xl" />
       <Container>
-        <div className="relative z-10 mx-auto mb-10 max-w-3xl text-center">
-          <div className="mb-3 inline-flex rounded-full border border-[#f7bfd2] bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))] shadow-sm">
+        <div className="relative z-10 mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#f7bfd2] bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))] shadow-sm">
+            <Gift className="h-3.5 w-3.5" />
             Oferta exclusiva
           </div>
           <h2 className="mb-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
@@ -138,52 +194,83 @@ export default function Bonus() {
           </p>
         </div>
 
-        <div className="relative z-10 mx-auto mb-14 grid max-w-[360px] grid-cols-1 gap-3">
-          {bonuses.map((bonus, index) => (
-            <BonusCard
-              key={index}
-              number={bonus.number}
-              icon={bonus.icon}
-              title={bonus.title}
-              delay={index * 0.2}
-            />
-          ))}
+        <div className="relative z-10 mx-auto mb-14 max-w-2xl rounded-[2rem] border border-[#f2bfd0] bg-white/80 p-3 shadow-[0_18px_45px_rgba(190,24,93,0.1)] backdrop-blur-sm sm:p-5">
+          <div className="mb-4 flex items-center justify-between gap-3 rounded-2xl bg-gradient-to-r from-[#fff0f5] to-white px-4 py-3 sm:px-5">
+            <div>
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[hsl(var(--rose-primary))]">
+                Seus presentes
+              </p>
+              <h3 className="mt-1 font-montserrat text-base font-extrabold text-slate-900 sm:text-lg">
+                6 bônus para acelerar sua carreira
+              </h3>
+            </div>
+            <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-md">
+              <span className="font-montserrat text-lg font-extrabold leading-none">06</span>
+              <span className="mt-0.5 text-[8px] font-bold uppercase tracking-wider text-white/80">itens</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3">
+            {bonuses.map((bonus, index) => (
+              <BonusCard
+                key={index}
+                number={bonus.number}
+                icon={bonus.icon}
+                title={bonus.title}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
         </div>
         
-        <div className="relative z-10 mb-10 overflow-hidden rounded-3xl border border-[#f2bfd0] bg-gradient-to-br from-[#fff8fa] via-[#fff1f6] to-[#ffe7ef] p-5 shadow-[0_20px_55px_rgba(190,24,93,0.12)] sm:p-8">
+        <div className="relative z-10 mb-10 overflow-hidden rounded-[2rem] border border-[#f2bfd0] bg-gradient-to-br from-[#fff8fa] via-[#fff1f6] to-[#ffe7ef] p-5 shadow-[0_20px_55px_rgba(190,24,93,0.12)] sm:p-8">
           <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full border-[18px] border-white/40" />
-          <div className="relative z-10 mb-7 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-            <div>
-              <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[hsl(var(--rose-primary))]">E ainda tem mais</p>
-              <h3 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
-                Bônus adicionais com certificado
-              </h3>
-              <p className="mt-1 text-sm text-slate-500">Cursos completos para você ampliar seus serviços.</p>
+          <div className="absolute bottom-0 left-1/4 h-1 w-1/2 rounded-full bg-white/70" />
+          <div className="relative z-10 mb-7 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-lg shadow-pink-200">
+                <Gift className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[hsl(var(--rose-primary))]">E ainda tem mais</p>
+                <h3 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
+                  Bônus adicionais com certificado
+                </h3>
+                <p className="mt-1 text-sm text-slate-500">Cursos completos para você ampliar seus serviços.</p>
+              </div>
             </div>
-            <div className="flex shrink-0 items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-bold text-[hsl(var(--rose-primary))] shadow-sm">
-              <Gift className="h-4 w-4" />
-              +5 Cursos inclusos
+            <div className="ml-[3.75rem] flex shrink-0 items-center gap-2 rounded-full border border-[#f5c8d8] bg-white/85 px-4 py-2 text-xs font-bold text-[hsl(var(--rose-primary))] shadow-sm sm:ml-0">
+              <Sparkles className="h-4 w-4" />
+              +5 inclusos
             </div>
           </div>
           
-          <div className="relative z-10 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div className="relative z-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {additionalBonuses.map((bonus, index) => (
               <BonusItem
                 key={index}
+                number={bonus.number}
+                icon={bonus.icon}
                 title={bonus.title}
+                description={bonus.description}
               />
             ))}
           </div>
           
-          <div className="relative z-10 mt-8 flex flex-col items-center text-center">
-            <div className="mb-3 inline-block rounded-2xl bg-[hsl(var(--rose-primary))] px-6 py-4 text-white shadow-lg">
-              <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-white/75">Valor total dos Bônus</p>
-              <p className="font-montserrat text-2xl font-extrabold">
-                <span className="line-through">R$997,00</span>
-              </p>
+          <div className="relative z-10 mt-8 flex flex-col gap-4 rounded-2xl border border-white/90 bg-white/75 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5">
+            <div>
+              <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-[hsl(var(--rose-primary))]">Valor total dos bônus</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="font-montserrat text-2xl font-extrabold text-slate-800">
+                  <span className="line-through">R$997,00</span>
+                </p>
+                <span className="rounded-full bg-emerald-500 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm">
+                  100% grátis
+                </span>
+              </div>
             </div>
             
-            <p className="mb-4 max-w-xl text-sm text-slate-600">
+            <p className="max-w-md text-sm leading-relaxed text-slate-600 sm:text-right">
               Aproveite agora e receba todos estes bônus <span className="font-bold text-[hsl(var(--rose-primary))]">GRATUITAMENTE</span> ao adquirir o curso!
             </p>
           </div>
