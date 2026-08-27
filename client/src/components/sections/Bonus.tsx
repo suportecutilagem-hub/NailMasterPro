@@ -1,11 +1,6 @@
 import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import {
-  Calendar,
-  Instagram,
-  Palette,
-  Percent,
-  Book,
   Gift,
   Footprints,
   Hand,
@@ -18,14 +13,11 @@ import { motion } from "framer-motion";
 
 interface BonusCardProps {
   number: number;
-  icon: React.ReactNode;
   title: string;
-  description: string;
-  originalPrice: string;
   delay?: number;
 }
 
-function BonusCard({ number, icon, title, description, originalPrice, delay = 0 }: BonusCardProps) {
+function BonusCard({ number, title, delay = 0 }: BonusCardProps) {
   return (
     <motion.li
       initial={{ opacity: 0, x: -14 }}
@@ -37,33 +29,21 @@ function BonusCard({ number, icon, title, description, originalPrice, delay = 0 
       <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] via-[#fb7185] to-[#f9a8d4]" />
       <div className="absolute -right-10 -top-12 h-32 w-32 rounded-full bg-[#fff1f5] transition-transform duration-500 group-hover:scale-125" />
 
-      <div className="relative z-10 flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:gap-5 sm:px-5">
-        <div className="flex shrink-0 items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-md shadow-pink-200">
-            {String(number).padStart(2, "0")}
-          </div>
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#f8d5e1] bg-gradient-to-br from-[#fff0f5] to-[#ffe0ea] text-[hsl(var(--rose-primary))] shadow-inner transition-transform duration-300 group-hover:scale-105">
-            {icon}
-          </div>
+      <div className="relative z-10 flex items-center gap-3 px-4 py-4 sm:gap-5 sm:px-5">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[hsl(var(--rose-primary))] font-montserrat text-xs font-extrabold text-white shadow-md shadow-pink-200">
+          {String(number).padStart(2, "0")}
         </div>
 
         <div className="min-w-0 flex-1">
-          <div className="mb-1 flex items-start gap-2">
+          <div className="flex items-center gap-2">
             <h3 className="font-montserrat text-[15px] font-extrabold leading-tight text-slate-800 sm:text-base">
               {title}
             </h3>
-            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" strokeWidth={3} />
           </div>
-          <p className="text-xs leading-relaxed text-slate-500 sm:text-sm">{description}</p>
         </div>
 
-        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-[#f8e4eb] pt-3 sm:min-w-[112px] sm:flex-col sm:items-end sm:border-t-0 sm:pt-0">
-          <div className="text-left sm:text-right">
-            <span className="block text-[9px] font-bold uppercase tracking-wider text-slate-400">Valor</span>
-            <span className="font-montserrat text-sm font-extrabold text-slate-700 line-through">{originalPrice}</span>
-          </div>
-          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-emerald-600">
-            <Gift className="h-3 w-3" />
+        <div className="shrink-0">
+          <span className="inline-flex rounded-full bg-emerald-500 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm">
             Grátis
           </span>
         </div>
@@ -116,45 +96,27 @@ export default function Bonus() {
   const bonuses = [
     {
       number: 1,
-      icon: <Calendar className="w-8 h-8" />,
       title: "Curso Manicure Agenda Cheia",
-      description: "Aprenda a lotar sua agenda com clientes fiéis e recorrentes.",
-      originalPrice: "R$97"
     },
     {
       number: 2,
-      icon: <Instagram className="w-8 h-8" />,
       title: "Divulgação no Instagram Oficial",
-      description: "Seja vista por mais de 100 mil pessoas sem gastar nada e aumente a visibilidade.",
-      originalPrice: "R$250"
     },
     {
       number: 3,
-      icon: <Palette className="w-8 h-8" />,
       title: "Aula Exclusiva de Esmaltação em Gel",
-      description: "Domine essa técnica moderna e lucre mais com seus atendimentos.",
-      originalPrice: "R$147"
     },
     {
       number: 4,
-      icon: <Book className="w-8 h-8" />,
       title: "Modelos de Unhas Decoradas",
-      description: "Receba 5 inspirações de nail art para encantar suas clientes.",
-      originalPrice: "R$97"
     },
     {
       number: 5,
-      icon: <Percent className="w-8 h-8" />,
       title: "30% de desconto em materiais",
-      description: "Economize nos itens que você realmente vai usar no curso.",
-      originalPrice: "R$120"
     },
     {
       number: 6,
-      icon: <Instagram className="w-8 h-8" />,
       title: "Curso Instagram de Sucesso",
-      description: "Aprenda a transformar seu perfil em uma vitrine profissional que atrai e conquista clientes todos os dias.",
-      originalPrice: "R$197"
     }
   ];
 
@@ -230,10 +192,7 @@ export default function Bonus() {
               <BonusCard
                 key={index}
                 number={bonus.number}
-                icon={bonus.icon}
                 title={bonus.title}
-                 description={bonus.description}
-                 originalPrice={bonus.originalPrice}
                 delay={index * 0.1}
               />
             ))}
