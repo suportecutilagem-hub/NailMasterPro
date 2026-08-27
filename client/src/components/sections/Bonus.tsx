@@ -94,23 +94,23 @@ export default function Bonus() {
 
   const additionalBonuses = [
     {
-      number: 7,
+      number: 1,
       title: "SPA DOS PÉS",
     },
     {
-      number: 8,
+      number: 2,
       title: "MANICURE E PEDICURE",
     },
     {
-      number: 9,
+      number: 3,
       title: "ALONGAMENTO NO MOLDE F1",
     },
     {
-      number: 10,
+      number: 4,
       title: "ALONGAMENTO DE UNHAS DE FIBRA DE VIDRO",
     },
     {
-      number: 11,
+      number: 5,
       title: "UNHAS DECORADAS",
     }
   ];
@@ -142,10 +142,6 @@ export default function Bonus() {
               <h3 className="mt-1 font-montserrat text-base font-extrabold text-slate-900 sm:text-lg">
                  Bônus para acelerar sua carreira
               </h3>
-            </div>
-            <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-md">
-              <span className="font-montserrat text-lg font-extrabold leading-none">06</span>
-              <span className="mt-0.5 text-[8px] font-bold uppercase tracking-wider text-white/80">itens</span>
             </div>
           </div>
 
