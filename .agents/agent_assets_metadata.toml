@@ -35,3 +35,17 @@ mtime_ms = 1787872849958
 storage_uri = "gcs://replit-rams-assets-reed/rams/assets/repl:803c89ff-026b-4418-bafc-52dc670ae03f/b99e7b10-a774-4c3b-b099-99193cf1812e/c334aa22-e680-45ff-9bc1-8dafb4da5ae9"
 storage_version_token = "1787872866234728"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "I1I0gWwt8Ikhd96t3rVzv"
+uri = "file://downloads/cutilagem-russa-site-final.zip"
+type = "unspecified"
+title = "Site final da Cutilagem Russa"
+description = "Pacote pronto para download e hospedagem no cPanel, com o player de vídeo corrigido, vídeo MP4 local, assets e .htaccess."
+logical_id = "099e8f25-fa67-4da5-a061-a885e2967d6c"
+content_hash = "sha256:4c3922bae6486a7043c575975ec0e6097bf5653accac27adef75638ee1ae1c6d"
+size = 7914984
+mtime_ms = 1787874324695
+storage_uri = "gcs://replit-rams-assets-reed/rams/assets/repl:d8c27854-de83-48f4-9308-49b601e345ee/099e8f25-fa67-4da5-a061-a885e2967d6c/ca95a0d2-985c-45b4-a089-69517de6dd0a"
+storage_version_token = "1787874332537278"
+content_type = "application/octet-stream"
