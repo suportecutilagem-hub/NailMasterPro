@@ -47,7 +47,7 @@ function LazyCourseVideo() {
 
 export default function VideoCourse() {
   return (
-    <section id="video-course" className="py-14 sm:py-20 bg-[#fff5f8]">
+    <section id="video-course" className="bg-[#fff5f8] pb-8 pt-14 sm:pb-12 sm:pt-20">
       <Container>
         <motion.div
           className="max-w-3xl mx-auto text-center"
