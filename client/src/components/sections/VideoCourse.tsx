@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef } from "react";
-import { MonitorPlay, ShieldCheck, X } from "lucide-react";
+import { MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/container";
+
+const featureIconSize = "h-6 w-6 sm:h-8 sm:w-8";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -13,6 +15,9 @@ function LocalCourseVideo() {
     // Estas propriedades precisam estar definidas antes de chamar play().
     video.muted = true;
     video.defaultMuted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
     video.volume = 0;
     video.setAttribute("muted", "");
     video.setAttribute("autoplay", "");
@@ -51,6 +56,7 @@ function LocalCourseVideo() {
         autoPlay
         muted
         playsInline
+        webkit-playsinline="true"
         loop
         preload="auto"
         aria-label="Aula prática de cutilagem russa"
@@ -100,15 +106,25 @@ export default function VideoCourse() {
         <div className="mx-auto mt-8 max-w-3xl rounded-[2rem] bg-[#fff5f8] p-2 sm:mt-10 sm:p-4">
           <div className="grid grid-cols-2 overflow-hidden rounded-[1.75rem] bg-white shadow-[0_12px_30px_rgba(190,24,93,0.12)]">
             <div className="flex items-center justify-center gap-1.5 px-2 py-4 sm:gap-3 sm:px-8 sm:py-6">
-              <ShieldCheck className="h-6 w-6 shrink-0 text-[hsl(var(--rose-primary))] sm:h-8 sm:w-8" strokeWidth={1.8} />
+              <ShieldCheck className={`${featureIconSize} shrink-0 text-[hsl(var(--rose-primary))]`} strokeWidth={1.8} />
               <h3 className="font-montserrat text-xs font-extrabold leading-tight text-[hsl(var(--rose-primary))] sm:text-xl">
                 Sem risco de cortes
               </h3>
             </div>
 
             <div className="flex items-center justify-center gap-1.5 border-l border-pink-200 px-2 py-4 sm:gap-3 sm:px-8 sm:py-6">
-              <span className="box-border flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[hsl(var(--rose-primary))] text-[hsl(var(--rose-primary))] leading-none sm:h-8 sm:w-8">
-                <X className="h-10 w-10 shrink-0 sm:h-14 sm:w-14" strokeWidth={2} aria-hidden="true" />
+              <span className={`box-border flex ${featureIconSize} shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-[hsl(var(--rose-primary))] text-[hsl(var(--rose-primary))] leading-none`}>
+                <svg
+                  viewBox="4 4 16 16"
+                  className="h-4 w-4 sm:h-5 sm:w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5.5 5.5l13 13M18.5 5.5l-13 13" />
+                </svg>
               </span>
               <h3 className="font-montserrat text-xs font-extrabold leading-tight text-[hsl(var(--rose-primary))] sm:text-xl">
                 Sem uso de alicates

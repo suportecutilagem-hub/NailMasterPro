@@ -1,0 +1,98 @@
+Preciso ajustar o player de vídeo da minha página de vendas.
+
+O arquivo do vídeo já está dentro da pasta dist do projeto. NÃO faça upload para nenhuma plataforma externa e NÃO altere o arquivo. Use diretamente o arquivo local que já está no projeto.
+
+OBJETIVO:
+Quero que o vídeo de demonstração da Cutilagem Russa seja reproduzido automaticamente assim que a página carregar, principalmente no celular (iPhone/iOS e Android).
+
+REGRAS DO VÍDEO:
+
+1. O vídeo deve iniciar automaticamente ao carregar a página.
+2. Deve iniciar SEM SOM (muted), pois navegadores bloqueiam autoplay com áudio.
+3. Deve ficar em LOOP contínuo.
+4. Deve usar playsinline para funcionar corretamente no iPhone sem abrir o vídeo em tela cheia.
+5. Deve usar preload="auto".
+6. Não deve exigir nenhum clique ou interação do usuário para começar.
+7. Não deve aparecer tela preta antes de carregar se for possível evitar.
+8. Não mostrar controles nativos do navegador.
+9. Não mostrar botão de play obrigatório antes do início.
+10. Não pausar o vídeo automaticamente por causa de scripts do player.
+11. O vídeo deve continuar funcionando normalmente depois de iniciado.
+12. Não adicionar áudio automaticamente.
+13. Não abrir o vídeo em tela cheia no celular.
+14. O vídeo deve ser responsivo e ocupar exatamente o espaço definido pelo design atual do player.
+15. NÃO altere o restante da página, textos, cores, layout, fontes, botões ou seções.
+
+ARQUIVO:
+O vídeo já está dentro da pasta dist. Localize automaticamente o arquivo MP4 existente dentro de dist e use esse arquivo como source.
+
+IMPORTANTE SOBRE O CAMINHO:
+Como o projeto será publicado, use um caminho relativo/absoluto compatível com a estrutura final de build. Não coloque um caminho específico do meu computador.
+Certifique-se de que o arquivo seja realmente copiado/disponibilizado no build final.
+
+IMPLEMENTAÇÃO:
+
+Use um elemento HTML5 <video> semelhante a:
+
+<video
+  autoplay
+  muted
+  loop
+  playsinline
+  webkit-playsinline
+  preload="auto"
+>
+  <source src="CAMINHO_DO_VIDEO" type="video/mp4">
+</video>
+
+Também garanta via JavaScript que:
+
+video.muted = true;
+video.autoplay = true;
+video.loop = true;
+video.playsInline = true;
+
+E tente iniciar a reprodução quando o DOM estiver carregado:
+
+video.play().catch(() => {});
+
+IMPORTANTE:
+Não quero que o vídeo dependa de touchstart, click ou qualquer interação para começar. O autoplay deve ser a primeira tentativa ao carregar a página.
+
+Se o navegador bloquear o autoplay por alguma razão, NÃO altere o comportamento para exigir clique como comportamento principal. Apenas mantenha o vídeo preparado para iniciar automaticamente quando permitido pelo navegador.
+
+COMPATIBILIDADE:
+Teste/garanta compatibilidade com:
+- iPhone Safari
+- Chrome no Android
+- Chrome desktop
+- Safari desktop
+
+PERFORMANCE:
+O vídeo é curto, aproximadamente 30 segundos, e já está otimizado para aproximadamente 3 MB.
+
+Não converta novamente o vídeo.
+Não aumente o tamanho do arquivo.
+Não utilize YouTube, Vimeo, Cloudinary ou qualquer serviço externo.
+
+MIME TYPE:
+Certifique-se de que o arquivo .mp4 seja servido como:
+Content-Type: video/mp4
+
+PLAYER:
+Mantenha o player visual que já existe na página. Apenas corrija o funcionamento do vídeo para autoplay, muted, loop e playsinline.
+
+ANTES DE FINALIZAR:
+1. Verifique onde o arquivo MP4 está dentro de dist.
+2. Verifique se o caminho usado no <source> realmente funciona depois do build.
+3. Verifique se não existe outro JavaScript pausando o vídeo.
+4. Verifique se não existe lazy loading impedindo o carregamento inicial.
+5. Verifique se algum overlay está impedindo a reprodução.
+6. Verifique se o CSS não está escondendo o vídeo.
+7. Não altere outras partes da página.
+
+Depois de fazer a alteração, me informe:
+- qual arquivo MP4 foi encontrado;
+- qual caminho foi usado no source;
+- quais arquivos do projeto foram alterados;
+- e confirme que o autoplay está configurado com muted + playsinline + loop + preload="auto".
