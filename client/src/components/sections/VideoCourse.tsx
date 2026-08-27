@@ -33,10 +33,12 @@ function LocalCourseVideo() {
     // Tenta imediatamente e novamente quando o arquivo local estiver pronto.
     tryToPlay();
     video.addEventListener("loadedmetadata", tryToPlay, { once: true });
+    video.addEventListener("loadeddata", tryToPlay, { once: true });
     video.addEventListener("canplay", tryToPlay, { once: true });
 
     return () => {
       video.removeEventListener("loadedmetadata", tryToPlay);
+      video.removeEventListener("loadeddata", tryToPlay);
       video.removeEventListener("canplay", tryToPlay);
     };
   }, [attemptToPlay]);
@@ -51,7 +53,6 @@ function LocalCourseVideo() {
         playsInline
         loop
         preload="auto"
-        poster={`${import.meta.env.BASE_URL}cutilagem_russa_curso1.jpg`}
         aria-label="Aula prática de cutilagem russa"
       >
         {/* Arquivo local: o Vite o copia para a pasta final do cPanel. */}
