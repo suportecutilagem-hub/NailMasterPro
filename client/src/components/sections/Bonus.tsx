@@ -159,9 +159,9 @@ export default function Bonus() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-lg shadow-pink-200">
                 <Gift className="h-6 w-6" />
               </div>
-              <div className="min-w-0">
+              <div>
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[hsl(var(--rose-primary))]">E ainda tem mais</p>
-                <h3 className="break-words text-lg font-extrabold leading-tight text-slate-900 sm:text-2xl">
+                <h3 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
                    5 CURSOS COMPLETOS COM CERTIFICADO
                 </h3>
                   <p className="mt-1 text-sm text-slate-500">Além do curso de Cutilagem Russa, você recebe mais 5 cursos completos em videoaulas, com certificado incluso.</p>
@@ -225,7 +225,7 @@ export default function Bonus() {
             <Button 
               variant="cta" 
               size="xl" 
-               className="h-auto min-h-12 w-full whitespace-normal px-4 uppercase font-bold leading-snug tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300 sm:w-auto sm:px-8"
+               className="uppercase font-bold tracking-wide shadow-lg relative overflow-hidden group transition-all duration-300"
               style={{ 
                 boxShadow: "0 4px 14px rgba(255, 77, 121, 0.3)"
               }}
