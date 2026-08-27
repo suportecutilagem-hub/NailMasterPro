@@ -1,16 +1,48 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
-function YouTubeCourseVideo() {
+function LocalCourseVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // O autoplay em celulares exige que o vídeo comece sem áudio.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("playsinline", "");
+
+    const tryToPlay = () => {
+      void video.play().catch(() => {
+        // O navegador pode bloquear autoplay em modo de economia de dados/bateria.
+      });
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      tryToPlay();
+      return;
+    }
+
+    video.addEventListener("canplay", tryToPlay, { once: true });
+    return () => video.removeEventListener("canplay", tryToPlay);
+  }, []);
+
   return (
-    <iframe
-      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8]"
-      src="https://www.youtube-nocookie.com/embed/SdRpE7yJCjY?autoplay=1&mute=1&controls=0&loop=1&playlist=SdRpE7yJCjY&playsinline=1&rel=0&modestbranding=1"
-      title="Aula prática de cutilagem russa"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowFullScreen
-      loading="eager"
+    <video
+      ref={videoRef}
+      className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+      src={`${import.meta.env.BASE_URL}video-aulas-praticas.mp4`}
+      autoPlay
+      muted
+      playsInline
+      loop
+      preload="auto"
+      aria-label="Aula prática de cutilagem russa"
     />
   );
 }
@@ -43,7 +75,7 @@ export default function VideoCourse() {
           transition={{ duration: 0.6 }}
         >
           <div className="overflow-hidden rounded-[1.35rem] bg-white p-1 shadow-inner sm:p-1.5">
-            <YouTubeCourseVideo />
+            <LocalCourseVideo />
           </div>
         </motion.div>
 
