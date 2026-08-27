@@ -1,50 +1,26 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
 function LazyCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
   const videoUrl = `${import.meta.env.BASE_URL}video-aulas-praticas.mp4`;
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (!("IntersectionObserver" in window)) {
-      setShouldLoad(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "400px 0px" }
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !shouldLoad) return;
-
-    // Alguns navegadores móveis só permitem autoplay quando essas
-    // propriedades são definidas também via JavaScript.
+    // O autoplay mobile exige silêncio e reprodução dentro da página.
     video.muted = true;
     video.defaultMuted = true;
     video.setAttribute("muted", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("playsinline", "");
 
     const tryToPlay = () => {
       void video.play().catch(() => {
-        // Se o navegador bloquear o autoplay, os controles permitem
-        // que a pessoa inicie o vídeo manualmente.
+        // Alguns celulares bloqueiam autoplay por economia de bateria/dados.
       });
     };
 
@@ -55,22 +31,20 @@ function LazyCourseVideo() {
 
     video.addEventListener("canplay", tryToPlay, { once: true });
     return () => video.removeEventListener("canplay", tryToPlay);
-  }, [shouldLoad]);
+  }, []);
 
   return (
     <video
       ref={videoRef}
       className="aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+      src={videoUrl}
       autoPlay
       muted
       playsInline
       loop
-      controls
-      preload={shouldLoad ? "auto" : "none"}
+      preload="auto"
       aria-label="Aula prática de cutilagem russa"
-    >
-      {shouldLoad && <source src={videoUrl} type="video/mp4" />}
-    </video>
+    />
   );
 }
 
