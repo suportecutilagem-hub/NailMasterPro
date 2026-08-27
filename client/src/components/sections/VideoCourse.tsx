@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
   const attemptToPlay = useCallback(() => {
     const video = videoRef.current;
@@ -14,21 +13,15 @@ function LocalCourseVideo() {
     // Estas propriedades precisam estar definidas antes de chamar play().
     video.muted = true;
     video.defaultMuted = true;
+    video.volume = 0;
     video.setAttribute("muted", "");
     video.setAttribute("autoplay", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "true");
 
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => setAutoplayBlocked(false))
-        .catch(() => {
-          // Economia de dados/bateria e políticas do navegador podem bloquear
-          // autoplay. Nesse caso, mostramos uma ação de toque como fallback.
-          setAutoplayBlocked(true);
-        });
-    }
+    // O vídeo não tem faixa de áudio e começa silencioso, o cenário mais
+    // compatível com autoplay em navegadores móveis.
+    void video.play().catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -37,16 +30,14 @@ function LocalCourseVideo() {
 
     const tryToPlay = () => attemptToPlay();
 
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-      tryToPlay();
-    }
-
+    // Tenta imediatamente e novamente quando o arquivo local estiver pronto.
+    tryToPlay();
+    video.addEventListener("loadedmetadata", tryToPlay, { once: true });
     video.addEventListener("canplay", tryToPlay, { once: true });
-    video.addEventListener("loadeddata", tryToPlay, { once: true });
 
     return () => {
+      video.removeEventListener("loadedmetadata", tryToPlay);
       video.removeEventListener("canplay", tryToPlay);
-      video.removeEventListener("loadeddata", tryToPlay);
     };
   }, [attemptToPlay]);
 
@@ -69,17 +60,6 @@ function LocalCourseVideo() {
           type="video/mp4"
         />
       </video>
-
-      {autoplayBlocked && (
-        <button
-          type="button"
-          onClick={attemptToPlay}
-          className="absolute inset-x-5 bottom-5 rounded-full bg-[hsl(var(--rose-primary))] px-5 py-3 font-montserrat text-sm font-extrabold text-white shadow-lg transition-transform active:scale-95"
-          aria-label="Toque para iniciar o vídeo"
-        >
-          Toque para assistir
-        </button>
-      )}
     </div>
   );
 }
