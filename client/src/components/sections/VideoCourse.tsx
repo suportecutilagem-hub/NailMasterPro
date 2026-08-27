@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { MonitorPlay, ShieldCheck } from "lucide-react";
+import { MonitorPlay, ShieldCheck, X } from "lucide-react";
 import { Container } from "../ui/container";
 
 function LazyCourseVideo() {
@@ -42,29 +42,6 @@ function LazyCourseVideo() {
       preload={shouldLoad ? "auto" : "none"}
       aria-label="Aula prática de cutilagem russa"
     />
-  );
-}
-
-function NoPliersIcon() {
-  return (
-    <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-[hsl(var(--rose-primary))] text-[hsl(var(--rose-primary))]">
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-4 w-4"
-        aria-hidden="true"
-      >
-        <path d="m8.5 10.5-4-4a2.12 2.12 0 0 1 3-3l4 4" />
-        <path d="m15.5 10.5 4-4a2.12 2.12 0 0 0-3-3l-4 4" />
-        <path d="m12 8-2 2 4 4 2-2-4-4Z" />
-        <path d="m10 14-4 4m8-4 4 4" />
-      </svg>
-      <span className="absolute left-[-3px] top-1/2 h-[2px] w-[calc(100%+6px)] -rotate-45 bg-[hsl(var(--rose-primary))]" />
-    </span>
   );
 }
 
@@ -110,7 +87,11 @@ export default function VideoCourse() {
             </div>
 
             <div className="flex items-center justify-center gap-1.5 border-l border-pink-200 px-2 py-4 sm:gap-3 sm:px-8 sm:py-6">
-              <NoPliersIcon />
+              <X
+                className="h-7 w-7 shrink-0 text-[hsl(var(--rose-primary))]"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              />
               <h3 className="font-montserrat text-xs font-extrabold leading-tight text-[hsl(var(--rose-primary))] sm:text-xl">
                 Sem uso de alicates
               </h3>
