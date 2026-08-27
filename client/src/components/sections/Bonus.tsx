@@ -171,7 +171,7 @@ export default function Bonus() {
               <div>
                 <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[hsl(var(--rose-primary))]">E ainda tem mais</p>
                 <h3 className="text-xl font-extrabold text-slate-900 sm:text-2xl">
-                  Bônus adicionais com certificado
+                   5 CURSOS COMPLETOS COM CERTIFICADO
                 </h3>
                  <p className="mt-1 text-sm text-slate-500">Todos os bônus adicionais são entregues em videoaulas práticas para você assistir quando quiser.</p>
               </div>
