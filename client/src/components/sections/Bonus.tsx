@@ -129,7 +129,7 @@ export default function Bonus() {
             Adquira hoje e <span className="text-[hsl(var(--rose-primary))]">ganhe +11 bônus</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
-            Aproveite essa oportunidade única e receba estes bônus exclusivos que vão acelerar sua carreira
+            Todos os bônus são entregues em videoaulas práticas para você assistir quando quiser e acelerar sua carreira.
           </p>
         </div>
 
