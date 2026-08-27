@@ -1,6 +1,49 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MonitorPlay } from "lucide-react";
 import { Container } from "../ui/container";
+
+function LazyCourseVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px" }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      className="pointer-events-none aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+      src={shouldLoad ? "/video-aulas-praticas.mp4" : undefined}
+      autoPlay
+      muted
+      playsInline
+      loop
+      preload={shouldLoad ? "auto" : "none"}
+      aria-label="Aula prática de cutilagem russa"
+    />
+  );
+}
 
 export default function VideoCourse() {
   return (
@@ -30,16 +73,7 @@ export default function VideoCourse() {
           transition={{ duration: 0.6 }}
         >
           <div className="overflow-hidden rounded-[1.35rem] bg-white p-1 shadow-inner sm:p-1.5">
-            <video
-              className="pointer-events-none aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
-              src="/video-aulas-praticas.mp4"
-              autoPlay
-              muted
-              playsInline
-              loop
-              preload="auto"
-              aria-label="Aula prática de cutilagem russa"
-            />
+            <LazyCourseVideo />
           </div>
         </motion.div>
 

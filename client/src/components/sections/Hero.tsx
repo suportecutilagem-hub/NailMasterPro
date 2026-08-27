@@ -134,9 +134,11 @@ export default function Hero() {
                 <img
                   src={manicureProfissionalImage}
                   alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
+                  width={800}
+                  height={450}
                   className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
-                  decoding="sync"
+                  decoding="async"
                   ref={(image) => image?.setAttribute("fetchpriority", "high")}
                 />
                 

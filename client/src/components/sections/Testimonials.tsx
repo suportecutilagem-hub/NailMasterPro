@@ -72,7 +72,7 @@ export default function Testimonials() {
                     width={456}
                     height={800}
                     className="w-full h-auto block"
-                    loading={i < 3 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                   />
                 </div>

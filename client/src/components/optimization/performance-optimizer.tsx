@@ -4,18 +4,8 @@ export function PerformanceOptimizer() {
   useEffect(() => {
     // Prefetch critical resources
     const prefetchResources = () => {
-      // Prefetch checkout page
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = 'https://checkout.cutilagemrussa.com/c/3orijyx';
-      document.head.appendChild(link);
-
-      // Preload critical fonts
-      const fontLink = document.createElement('link');
-      fontLink.rel = 'preload';
-      fontLink.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap';
-      fontLink.as = 'style';
-      document.head.appendChild(fontLink);
+      // Fontes e conexão do checkout já são declaradas no HTML inicial.
+      // Evita disputar banda com os recursos críticos depois do primeiro paint.
     };
 
     // Optimize images loading
