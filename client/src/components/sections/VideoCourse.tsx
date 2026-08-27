@@ -6,6 +6,7 @@ import { Container } from "../ui/container";
 function LazyCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
+  const videoUrl = `${import.meta.env.BASE_URL}video-aulas-praticas.mp4`;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -34,14 +35,15 @@ function LazyCourseVideo() {
     <video
       ref={videoRef}
       className="pointer-events-none aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
-      src={shouldLoad ? "/video-aulas-praticas.mp4" : undefined}
       autoPlay
       muted
       playsInline
       loop
       preload={shouldLoad ? "auto" : "none"}
       aria-label="Aula prática de cutilagem russa"
-    />
+    >
+      {shouldLoad && <source src={videoUrl} type="video/mp4" />}
+    </video>
   );
 }
 

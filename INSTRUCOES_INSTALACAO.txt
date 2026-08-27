@@ -30,7 +30,8 @@
    Depois da extração você deve ter:
    ✓ index.html
    ✓ .htaccess
-   ✓ pasta "assets/" com 2 arquivos dentro
+    ✓ arquivo "video-aulas-praticas.mp4"
+    ✓ pasta "assets/" com os arquivos do site
 
 7. TESTE SEU SITE:
    - Acesse seu domínio
@@ -41,6 +42,7 @@
 - ❌ Arquivo .htaccess ausente
 - ❌ Scripts do Replit removidos
 - ❌ Configurações de servidor inadequadas
+- ❌ Vídeo MP4 ausente ou entregue com tipo MIME incorreto
 
 ✅ AGORA FUNCIONA:
 - ✓ Design rosa e branco completo
@@ -49,6 +51,7 @@
 - ✓ +11 bônus visíveis
 - ✓ Animações e efeitos
 - ✓ Layout responsivo
+- ✓ Vídeo com carregamento por partes no cPanel
 - ✓ Links de compra ativos
 
 🎉 RESULTADO:
