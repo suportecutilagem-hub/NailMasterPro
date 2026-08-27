@@ -14,16 +14,11 @@ import { motion } from "framer-motion";
 interface BonusCardProps {
   number: number;
   title: string;
-  delay?: number;
 }
 
-function BonusCard({ number, title, delay = 0 }: BonusCardProps) {
+function BonusCard({ number, title }: BonusCardProps) {
   return (
-    <motion.li
-      initial={{ opacity: 0, x: -14 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.45, delay }}
+    <li
       className="group relative overflow-hidden rounded-2xl border border-[#f1cada] bg-white shadow-[0_7px_22px_rgba(190,24,93,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#eb8faf] hover:shadow-[0_14px_30px_rgba(190,24,93,0.14)]"
     >
       <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[hsl(var(--rose-primary))] via-[#fb7185] to-[#f9a8d4]" />
@@ -48,7 +43,7 @@ function BonusCard({ number, title, delay = 0 }: BonusCardProps) {
           </span>
         </div>
       </div>
-    </motion.li>
+    </li>
   );
 }
 
@@ -61,11 +56,7 @@ interface BonusItemProps {
 
 function BonusItem({ number, icon, title, description }: BonusItemProps) {
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.4 }}
+    <li
       className="group relative h-full"
     >
       <div className="relative flex min-h-[82px] gap-3 overflow-hidden rounded-2xl border border-white/90 bg-white/85 p-3.5 shadow-[0_8px_20px_rgba(190,24,93,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f0a9c1] hover:shadow-[0_14px_28px_rgba(190,24,93,0.12)] sm:p-4">
@@ -88,7 +79,7 @@ function BonusItem({ number, icon, title, description }: BonusItemProps) {
           </span>
         </div>
       </div>
-    </motion.li>
+    </li>
   );
 }
 
@@ -178,7 +169,7 @@ export default function Bonus() {
                 Seus presentes
               </p>
               <h3 className="mt-1 font-montserrat text-base font-extrabold text-slate-900 sm:text-lg">
-                6 bônus para acelerar sua carreira
+                 Bônus para acelerar sua carreira
               </h3>
             </div>
             <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-2xl bg-[hsl(var(--rose-primary))] text-white shadow-md">
@@ -193,7 +184,6 @@ export default function Bonus() {
                 key={index}
                 number={bonus.number}
                 title={bonus.title}
-                delay={index * 0.1}
               />
             ))}
            </ul>
