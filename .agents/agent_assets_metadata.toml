@@ -21,3 +21,17 @@ mtime_ms = 1787869941068
 storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:90ce367a-0a36-4357-b87e-240824577ca0/e509ee83-cfcd-43c2-9dac-c0c15cd7491e/344eea24-690b-4052-8709-36f0666dcb05"
 storage_version_token = "1787869982946451"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "1h4CmnIrTKfSF2C6mcsX0"
+uri = "file://site-cutilagem-russa-cpanel-autoplay.zip"
+type = "unspecified"
+title = "Site Cutilagem Russa — pacote cPanel com autoplay"
+description = "ZIP pronto para extrair dentro da pasta public_html. Inclui index.html, .htaccess, assets e o vídeo MP4 hospedado localmente."
+logical_id = "b99e7b10-a774-4c3b-b099-99193cf1812e"
+content_hash = "sha256:06f3f071cced7c9c5488d2eab08e657bf6739b09ec7b30f84a8f5a129240765e"
+size = 8071452
+mtime_ms = 1787871964141
+storage_uri = "gcs://replit-rams-assets-reed/rams/assets/repl:803c89ff-026b-4418-bafc-52dc670ae03f/b99e7b10-a774-4c3b-b099-99193cf1812e/401ab06f-6b60-4ff9-8733-77854b712a01"
+storage_version_token = "1787871982472222"
+content_type = "application/octet-stream"
