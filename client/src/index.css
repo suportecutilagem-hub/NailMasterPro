@@ -15,6 +15,7 @@
     overscroll-behavior: contain;
     touch-action: manipulation;
     -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
   }
   
   img {

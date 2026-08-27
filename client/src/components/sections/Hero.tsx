@@ -16,8 +16,8 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="order-2 lg:order-1"
           >
-            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2 text-xs sm:text-sm uppercase tracking-wide">CURSO COMPLETO DE CUTILAGEM RUSSA PROFISSIONAL</h5>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-4 leading-tight text-gray-900">
+            <h5 className="text-[hsl(var(--rose-primary))] font-semibold font-montserrat mb-2 text-xs sm:text-sm uppercase tracking-wide leading-snug">CURSO COMPLETO DE CUTILAGEM RUSSA PROFISSIONAL</h5>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-montserrat mb-4 leading-tight text-gray-900 break-words">
               APRENDA CUTILAGEM RUSSA DO ZERO
             </h1>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mb-5 leading-relaxed">
@@ -26,21 +26,21 @@ export default function Hero() {
             
             {/* Feature badges */}
             <div className="space-y-2 mb-5">
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex min-w-0 items-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-[hsl(var(--rose-primary))] mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
-                  <span className="text-sm sm:text-base text-gray-900 font-medium whitespace-nowrap">6 Certificados Inclusos</span>
+                  <span className="min-w-0 text-xs leading-snug sm:text-base text-gray-900 font-medium">6 Certificados Inclusos</span>
                 </div>
                 
-                <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex items-center shadow-sm">
+                <div className="bg-rose-100 border border-rose-200 rounded-lg px-3 py-2.5 flex min-w-0 items-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-[hsl(var(--rose-primary))] mr-1.5 sm:mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
-                  <span className="text-sm sm:text-base text-gray-900 font-medium whitespace-nowrap">+11 Bônus Exclusivos</span>
+                  <span className="min-w-0 text-xs leading-snug sm:text-base text-gray-900 font-medium">+11 Bônus Exclusivos</span>
                 </div>
               </div>
             </div>
@@ -48,26 +48,26 @@ export default function Hero() {
             {/* Price */}
             <div className="bg-white rounded-xl p-4 sm:p-5 shadow-lg border-2 border-[hsl(var(--rose-primary))]/20 mb-5">
               <p className="text-gray-500 text-xs sm:text-sm mb-2">De <span className="line-through text-base">R$197,00</span> por apenas:</p>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--rose-primary))]">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--rose-primary))] leading-none">
                   R$ 19,90
                 </div>
                 <div className="bg-green-500 text-white px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold shadow-md">
                   90% OFF
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600">
+              <div className="grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm text-gray-600">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap text-sm sm:text-base font-semibold">Pagamento único</span>
+                   <span className="text-sm sm:text-base font-semibold">Pagamento único</span>
                 </div>
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="whitespace-nowrap text-sm sm:text-base font-semibold">Sem mensalidade</span>
+                   <span className="text-sm sm:text-base font-semibold">Sem mensalidade</span>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function Hero() {
                 <Button 
                   variant="cta" 
                   size="xl" 
-                  className="w-full uppercase font-bold tracking-wide shadow-xl relative overflow-hidden group transition-all duration-300 text-base sm:text-lg lg:text-xl py-4 sm:py-5 px-6"
+                  className="h-auto min-h-12 w-full whitespace-normal uppercase font-bold leading-snug tracking-wide shadow-xl relative overflow-hidden group transition-all duration-300 text-base sm:text-lg lg:text-xl py-4 sm:py-5 px-4 sm:px-6"
                 >
                   <span className="relative z-10">
                     QUERO COMEÇAR AGORA

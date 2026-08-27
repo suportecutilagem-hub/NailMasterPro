@@ -15,13 +15,13 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
       className="bg-white rounded-lg shadow-md overflow-hidden"
     >
       <button 
-        className="w-full flex justify-between items-center p-4 text-left font-bold hover:bg-gray-50 transition-colors duration-200"
+         className="w-full flex justify-between items-center p-4 text-left font-bold hover:bg-gray-50 transition-colors duration-200"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{question}</span>
+         <span className="min-w-0 pr-3">{question}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-5 w-5 text-[hsl(var(--rose-primary))] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+           className={`h-5 w-5 shrink-0 text-[hsl(var(--rose-primary))] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -31,8 +31,8 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
       </button>
       
       {isOpen && (
-        <div className="p-4 pt-0 text-gray-600">
-          <p>{answer}</p>
+         <div className="break-words p-4 pt-0 text-gray-600">
+           <p>{answer}</p>
         </div>
       )}
     </div>
