@@ -1,0 +1,84 @@
+Pode aplicar a correção recomendada, mas faça da seguinte forma:
+
+Arquivo:
+client/src/components/sections/VideoCourse.tsx
+
+OBJETIVO:
+Corrigir o autoplay do vídeo no Safari do iPhone sem alterar o design da página.
+
+O vídeo deve continuar usando:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+IMPLEMENTAÇÃO:
+
+1. Mantenha:
+- autoplay
+- muted
+- loop
+- playsInline
+- webkit-playsinline
+- preload="auto"
+
+2. Crie um IntersectionObserver EXCLUSIVO para o elemento <video>.
+
+3. Quando o próprio vídeo entrar na viewport, faça uma nova tentativa de:
+
+video.play()
+
+4. Se o vídeo já estiver visível no carregamento inicial, faça a tentativa imediatamente.
+
+5. Não use clique, toque, touchstart, pointerdown ou qualquer interação do usuário.
+
+6. NÃO adicione botão de Play.
+
+7. NÃO adicione controles nativos.
+
+8. NÃO pause o vídeo quando ele sair da viewport.
+
+9. O IntersectionObserver deve apenas servir para fazer uma nova tentativa de autoplay quando o vídeo ficar visível.
+
+10. Remova/ajuste a lógica atual que chama play() apenas no mount e que não tenta novamente depois que o vídeo fica visível.
+
+11. Não dependa do:
+whileInView={{ opacity: 1, y: 0 }}
+
+para controlar o autoplay.
+
+12. O Framer Motion pode continuar sendo utilizado apenas para a animação visual.
+
+13. Mantenha exatamente o design atual do player:
+- tamanho
+- bordas
+- arredondamento
+- espaçamento
+- posição
+- animações
+- textos
+- layout
+- cores
+
+NÃO altere nenhuma outra seção da página.
+
+IMPORTANTE:
+Depois de implementar, verifique se o IntersectionObserver está observando diretamente o elemento HTMLVideoElement e não apenas o motion.div.
+
+Também garanta que, antes de chamar play(), o vídeo esteja:
+
+video.muted = true;
+video.defaultMuted = true;
+video.playsInline = true;
+
+E mantenha:
+
+video.setAttribute("muted", "");
+video.setAttribute("playsinline", "");
+video.setAttribute("webkit-playsinline", "");
+
+Quando o vídeo entrar na viewport, execute:
+
+video.play().catch(() => {});
+
+Não mostre nenhum erro para o usuário caso o Safari rejeite a tentativa.
+
+Depois da alteração, me informe exatamente o que foi modificado.

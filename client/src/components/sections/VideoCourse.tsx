@@ -27,9 +27,7 @@ function LocalCourseVideo() {
 
     // O vídeo não tem faixa de áudio e começa silencioso, o cenário mais
     // compatível com autoplay em navegadores móveis.
-    void video.play().catch((error) => {
-      console.log("Autoplay não iniciado:", error);
-    });
+    void video.play().catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -37,14 +35,38 @@ function LocalCourseVideo() {
     if (!video) return;
 
     const tryToPlay = () => attemptToPlay();
+    const isInitiallyVisible = () => {
+      const rect = video.getBoundingClientRect();
+      return (
+        rect.bottom > 0 &&
+        rect.right > 0 &&
+        rect.top < window.innerHeight &&
+        rect.left < window.innerWidth
+      );
+    };
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tryToPlay();
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
-    // Tenta imediatamente e novamente quando o arquivo local estiver pronto.
-    tryToPlay();
+    // Se já estiver na viewport, tenta imediatamente; caso contrário, o
+    // observer fará a primeira tentativa quando o vídeo ficar visível.
+    if (isInitiallyVisible()) {
+      tryToPlay();
+    }
+    visibilityObserver.observe(video);
     video.addEventListener("loadedmetadata", tryToPlay, { once: true });
     video.addEventListener("loadeddata", tryToPlay, { once: true });
     video.addEventListener("canplay", tryToPlay, { once: true });
 
     return () => {
+      visibilityObserver.disconnect();
       video.removeEventListener("loadedmetadata", tryToPlay);
       video.removeEventListener("loadeddata", tryToPlay);
       video.removeEventListener("canplay", tryToPlay);
