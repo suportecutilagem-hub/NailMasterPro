@@ -1,0 +1,177 @@
+Quero implementar um FALLBACK elegante para o vídeo de demonstração da minha página de vendas.
+
+IMPORTANTE:
+O autoplay já funciona normalmente no Safari quando o iPhone NÃO está no Modo de Pouca Energia.
+
+Não quero alterar essa funcionalidade.
+
+VÍDEO:
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+ARQUIVO:
+client/src/components/sections/VideoCourse.tsx
+
+OBJETIVO:
+
+Cenário 1 — Autoplay permitido:
+O vídeo deve:
+- iniciar automaticamente;
+- iniciar sem áudio;
+- ficar em loop;
+- permanecer inline no celular;
+- não mostrar controles;
+- não mostrar botão Play;
+- manter o design atual.
+
+Cenário 2 — Autoplay bloqueado pelo navegador:
+Se video.play() for rejeitado pelo navegador, NÃO deixe o vídeo simplesmente parado parecendo quebrado.
+
+Nesse caso, mostre uma THUMBNAIL/FALLBACK elegante sobre o vídeo com:
+
+🎥
+"VEJA UMA DEMONSTRAÇÃO DA TÉCNICA"
+
+e um botão:
+
+▶ ASSISTIR VÍDEO
+
+Ao clicar no botão, o vídeo deve iniciar normalmente.
+
+IMPORTANTE:
+O fallback só deve aparecer se o autoplay realmente falhar.
+
+Não mostre o botão Play para usuários nos quais o autoplay está funcionando.
+
+IMPLEMENTAÇÃO:
+
+Use um estado React:
+
+const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+
+Ao tentar o autoplay:
+
+video.play()
+  .then(() => {
+    setAutoplayBlocked(false);
+  })
+  .catch(() => {
+    setAutoplayBlocked(true);
+  });
+
+Quando autoplayBlocked for true:
+
+- mostrar a thumbnail;
+- mostrar o texto;
+- mostrar o botão "▶ ASSISTIR VÍDEO".
+
+Quando o usuário clicar:
+
+video.muted = true;
+
+video.play()
+  .then(() => {
+    setAutoplayBlocked(false);
+  });
+
+Depois que o vídeo começar, o fallback deve desaparecer completamente.
+
+IMPORTANTE SOBRE O BOTÃO:
+
+O botão NÃO deve existir visualmente quando o autoplay funcionar.
+
+Ele só deve aparecer quando o autoplay for bloqueado.
+
+DESIGN DO FALLBACK:
+
+Não use um botão genérico do navegador.
+
+Crie um overlay visual integrado ao design atual da página.
+
+Use:
+- fundo escuro/transparente sobre a thumbnail;
+- botão circular de Play no centro;
+- texto branco;
+- identidade rosa da página;
+- bordas arredondadas iguais às atuais;
+- aparência profissional e premium.
+
+O fallback deve parecer proposital e bonito, NÃO parecer um erro.
+
+THUMBNAIL:
+
+Use o próprio primeiro frame do vídeo ou uma imagem/thumbnail apropriada do vídeo.
+
+Não faça uma requisição para serviço externo.
+
+Se for tecnicamente mais simples, mantenha o próprio vídeo como fundo/thumbnail e coloque o overlay sobre ele quando o autoplay estiver bloqueado.
+
+COMPORTAMENTO:
+
+Autoplay funciona:
+→ vídeo aparece
+→ começa sozinho
+→ sem botão
+→ sem controles
+
+Autoplay bloqueado:
+→ thumbnail/fallback aparece
+→ botão "▶ ASSISTIR VÍDEO"
+→ usuário toca
+→ vídeo começa
+→ fallback desaparece
+
+IMPORTANTE:
+
+Não tente contornar as políticas do Safari.
+
+Não use:
+- setInterval
+- loops de video.play()
+- dezenas de tentativas
+- touchstart automático
+- hacks de autoplay
+- alteração das configurações do navegador
+
+Apenas detecte a rejeição da Promise de video.play() e mostre o fallback.
+
+Mantenha:
+
+autoplay
+muted
+loop
+playsInline
+preload="auto"
+
+Não use controls.
+
+NÃO ALTERE:
+- título da seção;
+- textos existentes;
+- cores da página;
+- tamanho do player;
+- espaçamento;
+- layout;
+- outras seções;
+- hospedagem do vídeo.
+
+Altere somente o comportamento do vídeo e adicione o fallback.
+
+IMPORTANTE:
+O vídeo deve continuar usando diretamente:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+Depois de implementar, verifique se:
+
+1. Com autoplay permitido, o botão não aparece.
+2. Com autoplay bloqueado, o fallback aparece.
+3. Ao clicar em "ASSISTIR VÍDEO", o vídeo inicia.
+4. Depois que o vídeo inicia, o fallback desaparece.
+5. O vídeo continua em loop.
+6. O vídeo continua sem áudio.
+7. Funciona em iPhone Safari.
+8. Funciona em Android Chrome.
+9. Funciona em desktop.
+10. Não existe nenhum botão de Play duplicado pelo player/navegador.
+
+Faça a implementação agora e não altere nenhuma outra parte da página.

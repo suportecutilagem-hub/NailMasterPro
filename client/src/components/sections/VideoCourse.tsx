@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/container";
 
@@ -8,6 +8,7 @@ const courseVideoUrl = "https://cutilagemrussa.com/video-aulas-praticas.mp4";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -22,8 +23,30 @@ function LocalCourseVideo() {
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
 
-    void video.play().catch(() => {});
+    video
+      .play()
+      .then(() => {
+        setAutoplayBlocked(false);
+      })
+      .catch(() => {
+        setAutoplayBlocked(true);
+      });
   }, []);
+
+  const handleManualPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video
+      .play()
+      .then(() => {
+        setAutoplayBlocked(false);
+      })
+      .catch(() => {
+        setAutoplayBlocked(true);
+      });
+  };
 
   return (
     <div className="relative">
@@ -41,6 +64,26 @@ function LocalCourseVideo() {
         aria-label="Aula prática de cutilagem russa"
       >
       </video>
+      {autoplayBlocked && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center rounded-[1rem] bg-slate-950/65 px-4 text-center">
+          <span className="text-4xl" aria-hidden="true">
+            🎥
+          </span>
+          <p className="mt-3 font-montserrat text-sm font-extrabold tracking-wide text-white sm:text-base">
+            VEJA UMA DEMONSTRAÇÃO DA TÉCNICA
+          </p>
+          <button
+            type="button"
+            onClick={handleManualPlay}
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-[hsl(var(--rose-primary))] px-5 py-3 font-montserrat text-sm font-extrabold text-white shadow-lg shadow-pink-950/25 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[hsl(var(--rose-primary))]" aria-hidden="true">
+              ▶
+            </span>
+            ASSISTIR VÍDEO
+          </button>
+        </div>
+      )}
     </div>
   );
 }
