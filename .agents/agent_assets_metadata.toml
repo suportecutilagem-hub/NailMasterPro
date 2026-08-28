@@ -49,3 +49,17 @@ mtime_ms = 1787877102435
 storage_uri = "gcs://replit-rams-assets-reed/rams/assets/repl:d8c27854-de83-48f4-9308-49b601e345ee/099e8f25-fa67-4da5-a061-a885e2967d6c/2c336899-d170-40e2-9c1b-490da8646b5d"
 storage_version_token = "1787877106543638"
 content_type = "application/octet-stream"
+
+[[outputs]]
+id = "0w8hD2CFikEMOlP7ZX2g7"
+uri = "file://downloads/dist-cutilagem-russa-otimizada.zip"
+type = "unspecified"
+title = "Download da pasta dist"
+description = "Pasta dist compilada com as alterações de performance."
+logical_id = "fb511cc0-3067-41c4-b4ad-b92bc107ed87"
+content_hash = "sha256:f118f8fcfa8be567d7de7e15a6a61de20a65dc5e1705c178e3f65940513b8ced"
+size = 4553715
+mtime_ms = 1787878678659
+storage_uri = "gcs://replit-rams-assets-reed/rams/assets/repl:9b5379be-29c4-4def-b602-8ec2e4d79453/fb511cc0-3067-41c4-b4ad-b92bc107ed87/9bcf8d95-e8a3-4fe4-bb6e-6de6f5048921"
+storage_version_token = "1787878697488377"
+content_type = "application/octet-stream"
