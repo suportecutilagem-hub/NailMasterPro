@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/container";
 
@@ -9,69 +9,21 @@ const courseVideoUrl = "https://cutilagemrussa.com/video-aulas-praticas.mp4";
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const attemptToPlay = useCallback(() => {
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Estas propriedades precisam estar definidas antes de chamar play().
     video.muted = true;
     video.defaultMuted = true;
     video.autoplay = true;
     video.loop = true;
     video.playsInline = true;
-    video.volume = 0;
     video.setAttribute("muted", "");
-    video.setAttribute("autoplay", "");
     video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "true");
+    video.setAttribute("webkit-playsinline", "");
 
-    // O vídeo não tem faixa de áudio e começa silencioso, o cenário mais
-    // compatível com autoplay em navegadores móveis.
     void video.play().catch(() => {});
   }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const tryToPlay = () => attemptToPlay();
-    const isInitiallyVisible = () => {
-      const rect = video.getBoundingClientRect();
-      return (
-        rect.bottom > 0 &&
-        rect.right > 0 &&
-        rect.top < window.innerHeight &&
-        rect.left < window.innerWidth
-      );
-    };
-    const visibilityObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            tryToPlay();
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-
-    // Se já estiver na viewport, tenta imediatamente; caso contrário, o
-    // observer fará a primeira tentativa quando o vídeo ficar visível.
-    if (isInitiallyVisible()) {
-      tryToPlay();
-    }
-    visibilityObserver.observe(video);
-    video.addEventListener("loadedmetadata", tryToPlay, { once: true });
-    video.addEventListener("loadeddata", tryToPlay, { once: true });
-    video.addEventListener("canplay", tryToPlay, { once: true });
-
-    return () => {
-      visibilityObserver.disconnect();
-      video.removeEventListener("loadedmetadata", tryToPlay);
-      video.removeEventListener("loadeddata", tryToPlay);
-      video.removeEventListener("canplay", tryToPlay);
-    };
-  }, [attemptToPlay]);
 
   return (
     <div className="relative">
@@ -79,6 +31,7 @@ function LocalCourseVideo() {
         id="videoCutilagem"
         ref={videoRef}
         className="block aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
+        src={courseVideoUrl}
         autoPlay
         muted
         playsInline
@@ -87,10 +40,6 @@ function LocalCourseVideo() {
         preload="auto"
         aria-label="Aula prática de cutilagem russa"
       >
-        <source
-          src={courseVideoUrl}
-          type="video/mp4"
-        />
       </video>
     </div>
   );
@@ -116,17 +65,13 @@ export default function VideoCourse() {
           </p>
         </motion.div>
 
-        <motion.div
+        <div
           className="mx-auto mt-8 max-w-sm rounded-[1.75rem] bg-gradient-to-br from-[hsl(var(--rose-primary))] via-[#f4729a] to-[#fbcfe8] p-1.5 shadow-[0_18px_45px_rgba(190,24,93,0.18)] sm:mt-10 sm:p-2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
         >
           <div className="overflow-hidden rounded-[1.35rem] bg-white p-1 shadow-inner sm:p-1.5">
             <LocalCourseVideo />
           </div>
-        </motion.div>
+        </div>
 
         <div className="mx-auto mt-8 max-w-3xl rounded-[2rem] bg-[#fff5f8] p-2 sm:mt-10 sm:p-4">
           <div className="grid grid-cols-2 overflow-hidden rounded-[1.75rem] bg-white shadow-[0_12px_30px_rgba(190,24,93,0.12)]">

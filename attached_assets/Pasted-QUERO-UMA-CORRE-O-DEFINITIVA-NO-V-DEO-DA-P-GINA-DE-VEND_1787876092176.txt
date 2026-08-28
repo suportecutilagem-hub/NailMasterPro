@@ -1,0 +1,230 @@
+QUERO UMA CORREÇÃO DEFINITIVA NO VÍDEO DA PÁGINA DE VENDAS.
+
+Não quero mais tentativas ou testes. Faça agora a implementação final e substitua a lógica atual do vídeo por uma implementação HTML5 nativa, simples e robusta, especificamente compatível com Safari/iPhone.
+
+ARQUIVO PRINCIPAL:
+client/src/components/sections/VideoCourse.tsx
+
+VÍDEO:
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+OBJETIVO:
+O vídeo deve iniciar automaticamente, sem som, quando estiver visível na página, inclusive no Safari do iPhone e Chrome Android.
+
+IMPORTANTE:
+Não utilize Bunny, YouTube, Vimeo, Cloudinary ou qualquer serviço externo.
+Continue utilizando diretamente a URL do MP4 acima.
+
+RECONSTRUA O COMPONENTE DO VÍDEO.
+
+1. REMOVA DA LÓGICA DE REPRODUÇÃO:
+- IntersectionObserver
+- Framer Motion relacionado ao vídeo
+- whileInView
+- initial/animate relacionados ao vídeo
+- qualquer botão de Play
+- qualquer overlay de Play
+- qualquer player personalizado
+- qualquer biblioteca de vídeo
+- qualquer lógica que dependa de clique
+- qualquer lógica que dependa de touchstart
+- qualquer lógica que dependa de pointerdown
+- qualquer lógica que dependa de mouseover
+- qualquer chamada a video.pause()
+- qualquer lazy loading do vídeo
+
+O vídeo deve ser um elemento HTML5 <video> nativo.
+
+2. O <video> DEVE SER RENDERIZADO DIRETAMENTE NO LAYOUT VISÍVEL.
+
+Não coloque o elemento video dentro de um container que comece com:
+- opacity: 0
+- visibility: hidden
+- display: none
+
+Não aplique transform ou animações ao próprio elemento video.
+
+O vídeo pode continuar dentro dos containers visuais normais da seção, mas o elemento <video> deve estar imediatamente disponível e visível.
+
+3. USE EXATAMENTE ESTAS PROPRIEDADES:
+
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  src="https://cutilagemrussa.com/video-aulas-praticas.mp4"
+/>
+
+Além disso, defina:
+
+video.muted = true;
+video.defaultMuted = true;
+video.autoplay = true;
+video.loop = true;
+video.playsInline = true;
+
+E mantenha os atributos:
+
+muted
+autoplay
+playsinline
+webkit-playsinline
+
+4. NÃO USE CONTROLES NATIVOS.
+
+Não coloque:
+
+controls
+
+O usuário não deve ver a barra de controles padrão do navegador.
+
+5. NÃO CRIE BOTÃO DE PLAY.
+
+Não quero nenhum botão sobre o vídeo.
+
+O vídeo deve tentar iniciar sozinho.
+
+6. NÃO USE JAVASCRIPT PARA FICAR FORÇANDO PLAY REPETIDAMENTE.
+
+Não faça loops, timers ou setInterval chamando play().
+
+Não tente chamar play() dezenas de vezes.
+
+O autoplay deve ser responsabilidade do próprio HTML5:
+
+autoPlay
+muted
+playsInline
+
+7. PODE USAR UMA ÚNICA TENTATIVA DE FALLBACK NO useEffect APENAS DEPOIS QUE O ELEMENTO ESTIVER MONTADO:
+
+const video = videoRef.current;
+
+if (video) {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.autoplay = true;
+  video.playsInline = true;
+
+  video.play().catch(() => {});
+}
+
+Não utilize eventos de interação do usuário.
+
+8. USE React ref:
+
+const videoRef = useRef<HTMLVideoElement>(null);
+
+E:
+
+<video
+  ref={videoRef}
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  src="https://cutilagemrussa.com/video-aulas-praticas.mp4"
+/>
+
+9. NÃO MODIFIQUE O DESIGN.
+
+Mantenha exatamente:
+- largura atual
+- altura/proporção atual
+- bordas arredondadas
+- sombra
+- espaçamento
+- posição
+- cores
+- título
+- textos
+- seção
+- restante da página
+
+Altere somente a implementação interna do vídeo.
+
+10. O VÍDEO DEVE SER RESPONSIVO:
+
+width: 100%;
+height: auto;
+display: block;
+
+Mantenha o border-radius existente no container/design.
+
+11. COMPATIBILIDADE:
+
+Prioridade máxima:
+- iPhone Safari
+- iPad Safari
+- Android Chrome
+- Chrome desktop
+- Safari desktop
+
+O vídeo deve permanecer inline no celular e nunca abrir automaticamente em tela cheia.
+
+12. PERFORMANCE:
+
+Não recodifique o vídeo.
+
+Não baixe o vídeo através de JavaScript.
+
+Não faça fetch manual do MP4.
+
+O navegador deve carregar diretamente:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+Mantenha:
+
+preload="auto"
+
+13. VERIFIQUE TAMBÉM:
+
+Antes de finalizar, procure no projeto inteiro por qualquer código relacionado ao componente VideoCourse que possa interferir no vídeo.
+
+Procure:
+video.pause
+video.play
+controls
+IntersectionObserver
+whileInView
+onClick
+onTouchStart
+pointerdown
+opacity
+display:none
+visibility:hidden
+lazy
+loading="lazy"
+
+Remova somente as lógicas que interferem na reprodução do vídeo.
+
+14. IMPORTANTE SOBRE AUTOPLAY:
+
+Não tente implementar uma solução que exija que o usuário toque na tela.
+
+Não mostre mensagem como:
+"Toque para reproduzir"
+
+Não mostre botão Play.
+
+A experiência desejada é:
+
+Página carrega
+↓
+Vídeo está visível
+↓
+Vídeo inicia automaticamente sem som
+↓
+Vídeo fica em loop
+↓
+Usuário não precisa tocar em nada
+
+15. NÃO ALTERE NENHUMA OUTRA PARTE DA PÁGINA.
+
+Depois de concluir, revise o componente inteiro e confirme que não existe nenhuma lógica restante que pause o vídeo ou exija interação do usuário.
+
+Faça a alteração agora e me informe quais arquivos foram modificados.
