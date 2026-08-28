@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Container } from "../ui/container";
 import { Star } from "lucide-react";
-import certificateImg from "@assets/certificate_nobg.png";
+import certificateImg from "../../assets/optimized/certificate_nobg.webp";
 
 export default function Certificate() {
   return (

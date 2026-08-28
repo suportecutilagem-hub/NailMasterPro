@@ -5,17 +5,17 @@ import { Container } from "../ui/container";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 
-import t1 from "@assets/image_1782161912299.png";
-import t2 from "@assets/image_1782161926989.png";
-import t3 from "@assets/image_1782161934895.png";
-import t4 from "@assets/image_1782161941264.png";
-import t5 from "@assets/image_1782161957357.png";
-import t6 from "@assets/image_1782161965579.png";
-import t7 from "@assets/image_1782161984636.png";
-import t8 from "@assets/image_1782161990013.png";
-import t9 from "@assets/image_1782162002086.png";
-import t10 from "@assets/image_1782162006780.png";
-import t11 from "@assets/image_1782162017129.png";
+import t1 from "../../assets/optimized/testimonial-1.webp";
+import t2 from "../../assets/optimized/testimonial-2.webp";
+import t3 from "../../assets/optimized/testimonial-3.webp";
+import t4 from "../../assets/optimized/testimonial-4.webp";
+import t5 from "../../assets/optimized/testimonial-5.webp";
+import t6 from "../../assets/optimized/testimonial-6.webp";
+import t7 from "../../assets/optimized/testimonial-7.webp";
+import t8 from "../../assets/optimized/testimonial-8.webp";
+import t9 from "../../assets/optimized/testimonial-9.webp";
+import t10 from "../../assets/optimized/testimonial-10.webp";
+import t11 from "../../assets/optimized/testimonial-11.webp";
 
 const images = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11];
 

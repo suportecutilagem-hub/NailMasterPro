@@ -4,15 +4,40 @@ import { MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/container";
 
 const featureIconSize = "h-6 w-6 sm:h-8 sm:w-8";
-const courseVideoUrl = "https://cutilagemrussa.com/video-aulas-praticas.mp4";
+const courseVideoUrl = "/video-aulas-praticas.mp4";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
   const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+
+  useEffect(() => {
+    const element = videoContainerRef.current;
+    if (!element) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setIsNearViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px 0px", threshold: 0 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !isNearViewport) return;
 
     video.muted = true;
     video.defaultMuted = true;
@@ -31,7 +56,7 @@ function LocalCourseVideo() {
       .catch(() => {
         setAutoplayBlocked(true);
       });
-  }, []);
+  }, [isNearViewport]);
 
   const handleManualPlay = () => {
     const video = videoRef.current;
@@ -49,18 +74,18 @@ function LocalCourseVideo() {
   };
 
   return (
-    <div className="relative">
+    <div ref={videoContainerRef} className="relative">
       <video
         id="videoCutilagem"
         ref={videoRef}
         className="block aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
-        src={courseVideoUrl}
+        src={isNearViewport ? courseVideoUrl : undefined}
         autoPlay
         muted
         playsInline
         webkit-playsinline="true"
         loop
-        preload="auto"
+        preload={isNearViewport ? "metadata" : "none"}
         aria-label="Aula prática de cutilagem russa"
       >
       </video>

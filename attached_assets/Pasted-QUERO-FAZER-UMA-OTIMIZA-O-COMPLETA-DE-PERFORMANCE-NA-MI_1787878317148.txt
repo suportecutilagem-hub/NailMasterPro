@@ -1,0 +1,525 @@
+QUERO FAZER UMA OTIMIZAÇÃO COMPLETA DE PERFORMANCE NA MINHA PÁGINA DE VENDAS.
+
+ATENÇÃO: ESTA É UMA OTIMIZAÇÃO TÉCNICA. NÃO É UM REDESIGN.
+
+==================================================
+REGRA ABSOLUTA — NÃO ALTERAR O DESIGN
+==================================================
+
+NÃO ALTERE ABSOLUTAMENTE NADA NO DESIGN VISUAL ATUAL DA PÁGINA.
+
+A página já está pronta e eu estou satisfeito com o visual.
+
+NÃO alterar:
+
+- cores;
+- fontes;
+- tamanhos de fontes;
+- pesos das fontes;
+- espaçamentos;
+- margens;
+- paddings;
+- bordas;
+- border-radius;
+- sombras;
+- gradientes;
+- ícones;
+- imagens visualmente utilizadas;
+- textos;
+- títulos;
+- subtítulos;
+- botões;
+- CTAs;
+- posições dos elementos;
+- largura das seções;
+- altura das seções;
+- animações;
+- efeitos;
+- depoimentos;
+- bônus;
+- certificados;
+- vídeo;
+- estrutura visual;
+- responsividade visual.
+
+NÃO remover nenhuma seção.
+
+NÃO esconder nenhum conteúdo.
+
+NÃO substituir elementos por versões mais simples.
+
+NÃO fazer redesign.
+
+NÃO deixar a página visualmente diferente para conseguir uma pontuação maior.
+
+O resultado visual deve permanecer o mais próximo possível de 100% idêntico ao atual.
+
+==================================================
+OBJETIVO PRINCIPAL
+==================================================
+
+O objetivo é melhorar a velocidade da página principalmente em:
+
+- celulares;
+- iPhone;
+- Android;
+- Safari;
+- Chrome;
+- Firefox;
+- Edge;
+- redes 3G;
+- redes 4G;
+- redes 5G;
+- Wi-Fi lento;
+- Wi-Fi rápido.
+
+A prioridade máxima é PERFORMANCE MOBILE.
+
+Atualmente o PageSpeed apresenta aproximadamente:
+
+DESKTOP: 92
+CELULAR: 67
+
+Quero melhorar principalmente o desempenho no celular.
+
+As métricas atuais identificadas incluem:
+
+FCP: aproximadamente 3,0 s
+LCP: aproximadamente 8,0 s
+TBT: aproximadamente 90 ms
+CLS: 0
+
+O TBT e o CLS já estão bons.
+
+NÃO fazer alterações desnecessárias que possam piorá-los.
+
+==================================================
+PROBLEMAS IDENTIFICADOS PELO PAGESPEED
+==================================================
+
+O PageSpeed apontou:
+
+- solicitações que bloqueiam a renderização;
+- aproximadamente 1.250 ms de economia potencial;
+- entrega de imagens;
+- aproximadamente 601 KiB de economia potencial;
+- cache;
+- aproximadamente 210 KiB de economia potencial;
+- mais de quatro conexões/preconnect;
+- JavaScript legado;
+- aproximadamente 13 KiB;
+- JavaScript não utilizado;
+- aproximadamente 125 KiB;
+- payloads de rede muito grandes;
+- aproximadamente 7.644 KiB de tamanho total;
+- animação não composta;
+- detalhamento do LCP;
+- recursos de terceiros.
+
+Corrija esses pontos tecnicamente sem alterar o visual.
+
+==================================================
+1. LCP — PRIORIDADE MÁXIMA
+==================================================
+
+Identifique exatamente qual elemento está sendo considerado o LCP.
+
+Descubra se é:
+
+- imagem;
+- texto;
+- bloco;
+- elemento da primeira seção;
+- ou outro recurso.
+
+Depois otimize o carregamento desse elemento.
+
+Se o LCP for uma imagem:
+
+- utilizar formato moderno quando possível;
+- utilizar WebP ou AVIF;
+- manter qualidade visual praticamente idêntica;
+- criar versão responsiva;
+- utilizar srcset;
+- utilizar sizes;
+- carregar somente a resolução necessária para cada dispositivo;
+- não usar lazy loading no elemento LCP;
+- utilizar preload somente se realmente necessário;
+- garantir que o LCP não fique esperando JavaScript;
+- garantir que o CSS necessário para o LCP esteja disponível rapidamente.
+
+NÃO alterar a aparência da imagem.
+
+==================================================
+2. IMAGENS — OTIMIZAÇÃO SEM PERDA VISUAL
+==================================================
+
+O PageSpeed identificou aproximadamente 601 KiB de economia possível em imagens.
+
+Otimizar todas as imagens sem prejudicar a qualidade visual percebida.
+
+Para imagens abaixo da primeira tela:
+
+- utilizar lazy loading;
+- utilizar decoding="async" quando apropriado;
+- utilizar dimensões explícitas;
+- utilizar formatos modernos;
+- utilizar versões responsivas;
+- utilizar srcset e sizes.
+
+No celular:
+
+NÃO carregar uma imagem enorme de desktop se ela estiver sendo exibida pequena.
+
+No desktop:
+
+carregar uma resolução adequada ao espaço disponível.
+
+IMPORTANTE:
+
+Não aplicar compressão agressiva.
+
+Não deixar imagens borradas.
+
+Não alterar visualmente as imagens.
+
+==================================================
+3. VÍDEO
+==================================================
+
+O vídeo da página é:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+O vídeo atualmente possui aproximadamente 3,2 MB.
+
+NÃO recomprimir o vídeo.
+
+NÃO diminuir sua qualidade.
+
+NÃO alterar resolução.
+
+NÃO alterar duração.
+
+NÃO alterar proporção.
+
+NÃO alterar o conteúdo.
+
+NÃO remover:
+
+- autoplay;
+- muted;
+- playsinline;
+- loop.
+
+O autoplay já funciona normalmente quando o navegador permite.
+
+Manter o comportamento atual.
+
+Porém, otimizar o momento de carregamento do vídeo para que ele não prejudique o carregamento inicial da página.
+
+Se tecnicamente apropriado:
+
+- utilizar poster;
+- carregar o vídeo quando estiver próximo da viewport;
+- evitar que o vídeo bloqueie o LCP;
+- evitar download desnecessário antes de o usuário chegar à seção.
+
+IMPORTANTE:
+
+Não transformar o vídeo em um player diferente.
+
+Não adicionar controles.
+
+Não adicionar botão Play permanente.
+
+Não alterar o design da seção.
+
+==================================================
+4. CSS E RECURSOS QUE BLOQUEIAM RENDERIZAÇÃO
+==================================================
+
+O PageSpeed identificou aproximadamente 1.250 ms em solicitações que bloqueiam a renderização.
+
+Otimizar:
+
+- CSS crítico;
+- CSS não crítico;
+- fontes;
+- scripts;
+- recursos externos.
+
+Priorizar o carregamento do conteúdo visível na primeira tela.
+
+Recursos necessários para a primeira renderização devem ter prioridade.
+
+Recursos não críticos devem ser carregados posteriormente.
+
+NÃO remover estilos utilizados pela página.
+
+NÃO alterar o visual.
+
+==================================================
+5. JAVASCRIPT
+==================================================
+
+O PageSpeed identificou aproximadamente:
+
+125 KiB de JavaScript não utilizado.
+
+Também identificou aproximadamente:
+
+13 KiB de JavaScript legado.
+
+Analise todo o JavaScript da aplicação.
+
+Remova somente código que tenha certeza absoluta de que:
+
+- não é utilizado;
+- não participa de nenhuma funcionalidade;
+- não participa de rastreamento;
+- não participa de conversão;
+- não participa de interação da página.
+
+Não remover código apenas porque parece não ser usado.
+
+Manter funcionando:
+
+- Meta Pixel;
+- eventos de conversão;
+- Purchase;
+- rastreamento;
+- CTAs;
+- interações;
+- animações;
+- vídeo;
+- funcionalidades da página.
+
+Sempre priorizar carregamento não bloqueante quando possível.
+
+Utilizar defer/async ou equivalente quando seguro.
+
+==================================================
+6. PAYLOAD INICIAL
+==================================================
+
+O PageSpeed mostrou aproximadamente 7.644 KiB de payload total.
+
+Quero reduzir principalmente o PAYLOAD INICIAL.
+
+Não quero necessariamente remover recursos da página.
+
+Quero que o navegador carregue primeiro o que realmente é necessário para mostrar a primeira tela.
+
+Depois:
+
+- imagens abaixo da dobra;
+- vídeo;
+- seções posteriores;
+- scripts não críticos;
+- recursos secundários
+
+podem ser carregados progressivamente.
+
+A página deve continuar completa.
+
+==================================================
+7. CACHE
+==================================================
+
+O PageSpeed identificou aproximadamente 210 KiB de oportunidade relacionada a cache.
+
+Configure estratégias adequadas de cache para recursos estáticos quando possível.
+
+Priorizar:
+
+- imagens;
+- CSS;
+- JavaScript;
+- fontes;
+- outros arquivos estáticos.
+
+Utilizar cache de navegador/CDN quando disponível.
+
+NÃO criar cache que cause conteúdo antigo ou quebrado.
+
+==================================================
+8. CONEXÕES EXTERNAS
+==================================================
+
+O PageSpeed identificou mais de quatro conexões/preconnect.
+
+Analise todos os domínios externos.
+
+Não remover serviços necessários.
+
+Porém, eliminar preconnects desnecessários.
+
+Manter preconnect somente para origens realmente importantes para a primeira renderização.
+
+Não criar dezenas de conexões antecipadamente.
+
+==================================================
+9. FONTES
+==================================================
+
+Analisar as fontes utilizadas.
+
+Carregar somente:
+
+- famílias realmente utilizadas;
+- pesos realmente utilizados.
+
+Evitar carregar pesos desnecessários.
+
+Otimizar carregamento das fontes sem alterar a aparência tipográfica.
+
+Não substituir a fonte atual por outra.
+
+Não alterar o design.
+
+==================================================
+10. ANIMAÇÕES
+==================================================
+
+O PageSpeed identificou uma animação não composta.
+
+Corrigir tecnicamente a animação para melhorar performance.
+
+NÃO remover a animação.
+
+NÃO alterar o efeito visual.
+
+Priorizar propriedades que tenham melhor performance, como transform e opacity, quando isso puder ser feito sem alterar o resultado visual.
+
+A animação precisa continuar visualmente igual.
+
+==================================================
+11. RESPONSIVIDADE
+==================================================
+
+A otimização deve priorizar TODOS os celulares.
+
+Testar mentalmente/tecnicamente os seguintes cenários:
+
+- iPhone;
+- Android;
+- telas pequenas;
+- telas médias;
+- telas grandes;
+- Safari;
+- Chrome mobile.
+
+Também considerar conexões:
+
+- 3G;
+- 4G;
+- 5G;
+- Wi-Fi lento;
+- Wi-Fi rápido.
+
+Não criar uma versão visual diferente para celulares.
+
+O design atual mobile deve permanecer exatamente como está.
+
+==================================================
+12. PRIMEIRA TELA
+==================================================
+
+A primeira tela deve ser prioridade absoluta.
+
+Quando o usuário abrir a página:
+
+1. HTML deve chegar rapidamente.
+2. CSS essencial deve estar disponível rapidamente.
+3. Elemento LCP deve carregar rapidamente.
+4. Texto principal deve aparecer rapidamente.
+5. CTA deve aparecer rapidamente.
+6. Conteúdo abaixo da dobra pode carregar progressivamente.
+
+Não deixar imagens, vídeo ou scripts secundários atrasarem a primeira tela.
+
+==================================================
+13. RASTREAMENTO
+==================================================
+
+NÃO remover nenhum rastreamento existente.
+
+Manter:
+
+- Meta Pixel;
+- eventos;
+- conversões;
+- Purchase;
+- parâmetros necessários;
+- UTMs;
+- qualquer integração atualmente funcional.
+
+A otimização deve apenas tornar o carregamento desses recursos menos bloqueante quando possível.
+
+==================================================
+14. NÃO FAZER
+==================================================
+
+NÃO:
+
+- redesenhar a página;
+- mudar cores;
+- mudar fontes;
+- mudar textos;
+- remover imagens;
+- remover vídeos;
+- remover depoimentos;
+- remover bônus;
+- remover certificado;
+- remover CTAs;
+- remover animações;
+- remover funcionalidades;
+- reduzir artificialmente o conteúdo;
+- criar versão simplificada;
+- trocar elementos visuais por placeholders;
+- reduzir qualidade perceptível;
+- alterar o layout mobile;
+- alterar o layout desktop.
+
+==================================================
+15. CRITÉRIO DE SUCESSO
+==================================================
+
+A otimização será considerada correta somente se:
+
+- o visual permanecer igual;
+- a página continuar completa;
+- o vídeo continuar funcionando;
+- o autoplay continuar funcionando quando permitido pelo navegador;
+- o rastreamento continuar funcionando;
+- os CTAs continuarem funcionando;
+- as animações continuarem funcionando;
+- CLS continuar próximo de 0;
+- TBT continuar baixo;
+- o carregamento inicial melhorar;
+- FCP melhorar;
+- LCP melhorar;
+- principalmente o desempenho MOBILE melhorar.
+
+==================================================
+16. MUITO IMPORTANTE
+==================================================
+
+Não faça várias mudanças experimentais.
+
+Analise a aplicação primeiro e implemente uma otimização técnica completa e coerente.
+
+Não altere algo visual apenas para conseguir uma pontuação maior no PageSpeed.
+
+A prioridade é:
+
+1. VELOCIDADE MOBILE
+2. EXPERIÊNCIA DO USUÁRIO
+3. MANTER O DESIGN 100% PRESERVADO
+4. MANTER TODAS AS FUNCIONALIDADES
+5. MANTER RASTREAMENTO E CONVERSÕES
+
+O objetivo é fazer a mesma página carregar muito mais rápido, e NÃO criar outra página.
+
+Depois de implementar, faça uma verificação completa para garantir que nenhuma alteração visual ou funcional foi introduzida.

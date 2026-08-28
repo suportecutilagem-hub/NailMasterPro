@@ -2,6 +2,8 @@ import { Container } from "../ui/container";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import manicureProfissionalImage from "../../assets/manicure-profissional.png";
+import manicureProfissionalWebp from "../../assets/optimized/manicure-profissional.webp";
+import manicureProfissionalMobileWebp from "../../assets/optimized/manicure-profissional-mobile.webp";
 
 export default function Hero() {
   
@@ -131,16 +133,23 @@ export default function Hero() {
             <div className="relative group">
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-rose-600">
-                <img
-                  src={manicureProfissionalImage}
-                  alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
-                  width={800}
-                  height={450}
-                  className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
-                  loading="eager"
-                  decoding="async"
-                  ref={(image) => image?.setAttribute("fetchpriority", "high")}
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={`${manicureProfissionalMobileWebp} 640w, ${manicureProfissionalWebp} 800w`}
+                    sizes="(max-width: 1023px) 100vw, 50vw"
+                  />
+                  <img
+                    src={manicureProfissionalImage}
+                    alt="Técnica de Cutilagem Russa sendo aplicada por profissional especializada"
+                    width={800}
+                    height={450}
+                    className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
+                    loading="eager"
+                    decoding="async"
+                    ref={(image) => image?.setAttribute("fetchpriority", "high")}
+                  />
+                </picture>
                 
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

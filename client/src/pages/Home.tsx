@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
-import VideoCourse from "@/components/sections/VideoCourse";
+import DeferredSection from "@/components/DeferredSection";
 
+const VideoCourse = lazy(() => import("@/components/sections/VideoCourse"));
 const loadCourseContent = () => import("@/components/sections/CourseContent");
 const loadBonus = () => import("@/components/sections/Bonus");
 const loadCertificate = () => import("@/components/sections/Certificate");
@@ -18,7 +19,7 @@ const CourseOverview = lazy(loadCourseOverview);
 const FAQ = lazy(loadFAQ);
 
 function SectionFallback() {
-  return <div className="h-32 bg-white" />;
+  return null;
 }
 
 export default function Home() {
@@ -26,27 +27,41 @@ export default function Home() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Suspense fallback={<SectionFallback />}>
-        <VideoCourse />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <CourseContent />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <Testimonials />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <Certificate />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <Bonus />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <CourseOverview />
-      </Suspense>
-      <Suspense fallback={<SectionFallback />}>
-        <FAQ />
-      </Suspense>
+      <DeferredSection fallbackHeight={860} rootMargin="900px 0px">
+        <Suspense fallback={<SectionFallback />}>
+          <VideoCourse />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={980}>
+        <Suspense fallback={<SectionFallback />}>
+          <CourseContent />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={960}>
+        <Suspense fallback={<SectionFallback />}>
+          <Testimonials />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={620}>
+        <Suspense fallback={<SectionFallback />}>
+          <Certificate />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={1250}>
+        <Suspense fallback={<SectionFallback />}>
+          <Bonus />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={680}>
+        <Suspense fallback={<SectionFallback />}>
+          <CourseOverview />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection fallbackHeight={680}>
+        <Suspense fallback={<SectionFallback />}>
+          <FAQ />
+        </Suspense>
+      </DeferredSection>
     </div>
   );
 }

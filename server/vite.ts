@@ -76,7 +76,29 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  app.use(
+    express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (path.basename(filePath) === "index.html") {
+          res.setHeader("Cache-Control", "no-cache");
+          return;
+        }
+
+        const isImmutableAsset =
+          filePath.includes(`${path.sep}assets${path.sep}`) &&
+          /-[A-Za-z0-9_-]{6,}\./.test(path.basename(filePath));
+        const isVideo = /\.(mp4|webm|ogg)$/i.test(filePath);
+
+        if (isImmutableAsset) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (isVideo) {
+          res.setHeader("Cache-Control", "public, max-age=604800");
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=86400");
+        }
+      },
+    }),
+  );
 
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
