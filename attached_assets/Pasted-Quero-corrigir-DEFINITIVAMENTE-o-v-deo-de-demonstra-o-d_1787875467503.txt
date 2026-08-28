@@ -1,0 +1,162 @@
+Quero corrigir DEFINITIVAMENTE o vídeo de demonstração da minha página de vendas.
+
+IMPORTANTE:
+O vídeo está hospedado na minha própria hospedagem e esta URL funciona normalmente no Safari do iPhone e inicia automaticamente quando acessada diretamente:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+Portanto, NÃO troque a hospedagem e NÃO use Bunny, YouTube, Vimeo, Cloudinary ou qualquer serviço externo.
+
+PROBLEMA ATUAL:
+Na página de vendas, o vídeo não inicia automaticamente no Safari do iPhone e fica solicitando que o usuário clique em Play.
+
+OBJETIVO:
+Fazer o vídeo iniciar automaticamente assim que a seção aparecer/carregar na página, principalmente no iPhone Safari e Android Chrome.
+
+CONFIGURAÇÃO OBRIGATÓRIA:
+
+O elemento <video> deve utilizar:
+
+autoplay
+muted
+playsinline
+webkit-playsinline
+loop
+preload="auto"
+
+Use a URL diretamente:
+
+https://cutilagemrussa.com/video-aulas-praticas.mp4
+
+ESTRUTURA:
+
+<video
+  id="videoCutilagem"
+  autoplay
+  muted
+  playsinline
+  webkit-playsinline
+  loop
+  preload="auto"
+>
+  <source
+    src="https://cutilagemrussa.com/video-aulas-praticas.mp4"
+    type="video/mp4"
+  >
+</video>
+
+IMPORTANTE SOBRE O ÁUDIO:
+
+O vídeo deve começar SEM SOM.
+
+Garanta também via JavaScript:
+
+const video = document.getElementById('videoCutilagem');
+
+video.muted = true;
+video.defaultMuted = true;
+video.autoplay = true;
+video.playsInline = true;
+video.setAttribute('muted', '');
+video.setAttribute('playsinline', '');
+video.setAttribute('webkit-playsinline', '');
+
+Tente iniciar:
+
+video.play().catch((error) => {
+  console.log('Autoplay não iniciado:', error);
+});
+
+NÃO coloque um botão de Play sobre o vídeo como comportamento padrão.
+
+NÃO faça o vídeo depender de:
+- clique;
+- toque;
+- touchstart;
+- mouseover;
+- interação do usuário.
+
+O primeiro comportamento deve ser sempre tentar o autoplay.
+
+IMPORTANTE:
+Investigue o código atual antes de alterar.
+
+Procure especificamente por:
+- video.pause()
+- controles personalizados;
+- overlays;
+- botões de play;
+- IntersectionObserver;
+- lazy loading;
+- scripts que aguardam interação;
+- componentes que desmontam/remontam o vídeo;
+- condições que impedem video.play();
+- CSS ou overlays que estejam bloqueando o vídeo.
+
+SE EXISTIR IntersectionObserver:
+Pode utilizá-lo apenas para garantir que o vídeo seja reproduzido quando a seção entrar na viewport, mas NÃO deve exigir clique ou toque.
+
+Exemplo:
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      video.muted = true;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+}, { threshold: 0.1 });
+
+observer.observe(video);
+
+PORÉM:
+Se o vídeo já estiver visível no carregamento inicial, ele deve tentar reproduzir imediatamente.
+
+PLAYER:
+Mantenha exatamente o design visual atual do player da página.
+
+NÃO altere:
+- cores;
+- bordas;
+- tamanho;
+- espaçamento;
+- textos;
+- layout;
+- seção;
+- título;
+- imagem;
+- CTA;
+- outras partes da página.
+
+Altere SOMENTE o funcionamento do vídeo.
+
+MOBILE:
+O vídeo deve:
+- funcionar no iPhone Safari;
+- funcionar no Android Chrome;
+- funcionar no Chrome desktop;
+- funcionar no Safari desktop;
+- permanecer inline no celular;
+- não abrir automaticamente em tela cheia;
+- iniciar sem áudio;
+- ficar em loop.
+
+PERFORMANCE:
+Não recodifique o vídeo.
+Não aumente o tamanho do arquivo.
+Não faça download do vídeo via JavaScript.
+Deixe o navegador carregar o MP4 diretamente da URL.
+
+ANTES DE FINALIZAR:
+Verifique se existe mais de um elemento <video> na página.
+Verifique se algum código está interferindo no autoplay.
+Verifique se o player atual possui um botão/overlay que está aparecendo porque o autoplay falhou.
+Verifique se o vídeo está realmente utilizando a URL acima.
+
+Depois de implementar, me informe:
+1. Qual componente/arquivo controla o vídeo.
+2. Qual era o problema que estava impedindo o autoplay.
+3. Quais arquivos foram alterados.
+4. Confirme que o vídeo está com autoplay + muted + playsinline + loop.

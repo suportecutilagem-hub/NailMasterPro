@@ -4,6 +4,7 @@ import { MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/container";
 
 const featureIconSize = "h-6 w-6 sm:h-8 sm:w-8";
+const courseVideoUrl = "https://cutilagemrussa.com/video-aulas-praticas.mp4";
 
 function LocalCourseVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,7 +27,9 @@ function LocalCourseVideo() {
 
     // O vídeo não tem faixa de áudio e começa silencioso, o cenário mais
     // compatível com autoplay em navegadores móveis.
-    void video.play().catch(() => undefined);
+    void video.play().catch((error) => {
+      console.log("Autoplay não iniciado:", error);
+    });
   }, []);
 
   useEffect(() => {
@@ -51,6 +54,7 @@ function LocalCourseVideo() {
   return (
     <div className="relative">
       <video
+        id="videoCutilagem"
         ref={videoRef}
         className="block aspect-[720/836] w-full rounded-[1rem] bg-[#fff5f8] object-cover"
         autoPlay
@@ -61,9 +65,8 @@ function LocalCourseVideo() {
         preload="auto"
         aria-label="Aula prática de cutilagem russa"
       >
-        {/* Arquivo local: o Vite o copia para a pasta final do cPanel. */}
         <source
-          src={`${import.meta.env.BASE_URL}video-aulas-praticas.mp4`}
+          src={courseVideoUrl}
           type="video/mp4"
         />
       </video>
