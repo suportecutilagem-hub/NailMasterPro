@@ -27,5 +27,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) =>
+          assetInfo.name === "manicure-profissional.png"
+            ? "assets/manicure-profissional-DarxZvP6.png"
+            : "assets/[name]-[hash][extname]",
+      },
+    },
   },
 });

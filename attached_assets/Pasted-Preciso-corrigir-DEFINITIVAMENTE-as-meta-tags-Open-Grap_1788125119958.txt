@@ -1,0 +1,156 @@
+Preciso corrigir DEFINITIVAMENTE as meta tags Open Graph da minha página para que Facebook, Instagram, WhatsApp e outras plataformas consigam identificar corretamente o título, descrição, imagem e URL da página.
+
+IMPORTANTE:
+
+* Meu projeto é hospedado pelo Replit apenas para desenvolvimento.
+* Eu gero a pasta `dist` e depois envio o conteúdo dela para o cPanel do meu domínio.
+* Portanto, a solução PRECISA ser implementada no código-fonte do projeto, de forma que continue funcionando automaticamente sempre que eu gerar uma nova pasta `dist`.
+* NÃO quero uma solução temporária no cPanel.
+* NÃO altere o design, layout, textos, funcionalidades, responsividade ou estrutura visual da página.
+* NÃO remova nenhuma funcionalidade existente.
+* Faça somente os ajustes necessários para SEO/Open Graph e compatibilidade de compartilhamento.
+
+DOMÍNIO PRINCIPAL:
+https://cutilagemrussa.com/
+
+URL canônica principal:
+https://cutilagemrussa.com/
+
+IMAGEM Open Graph:
+https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+Essa imagem já está hospedada publicamente e abre normalmente no navegador.
+
+OBJETIVO:
+
+Quero que o HTML final gerado dentro da pasta `dist` contenha, dentro da seção `<head>`, as seguintes propriedades:
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso de Cutilagem Russa">
+<meta property="og:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta property="og:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+
+Também adicionar:
+
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+E também as tags básicas de SEO:
+
+<link rel="canonical" href="https://cutilagemrussa.com/">
+
+<meta name="description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+
+<meta name="robots" content="index, follow">
+
+Para compatibilidade com Facebook/Meta, adicionar também:
+
+<meta property="fb:app_id" content="">
+
+ATENÇÃO SOBRE fb:app_id:
+Não invente um Facebook App ID.
+Não coloque um número aleatório.
+Se o projeto não possui um Facebook App ID configurado, deixe a propriedade preparada de forma segura ou explique exatamente onde eu devo inserir o ID posteriormente.
+O mais importante é NÃO quebrar o HTML e NÃO inserir um ID falso.
+
+Também quero as tags Twitter/X:
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curso de Cutilagem Russa">
+<meta name="twitter:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta name="twitter:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+
+REQUISITOS IMPORTANTES:
+
+1. Primeiro ANALISE o projeto inteiro para descobrir:
+
+   * qual framework está sendo utilizado;
+   * onde o `<head>` é definido;
+   * qual arquivo controla o HTML inicial;
+   * como o build para `dist` funciona;
+   * se existe Vite, React, Next, Astro ou outro sistema;
+   * se existe algum componente que esteja sobrescrevendo as meta tags.
+
+2. NÃO crie arquivos desnecessários se já existir uma estrutura adequada.
+
+3. Faça a implementação no local CORRETO do projeto para que as tags apareçam também na versão final dentro de `dist`.
+
+4. Se o projeto for SPA, garanta que o HTML inicial gerado pelo build contenha as tags Open Graph no `<head>`.
+
+5. Garanta que NÃO existam várias versões conflitantes de:
+
+   * og:url
+   * og:type
+   * og:title
+   * og:description
+   * og:image
+   * canonical
+   * twitter:title
+   * twitter:description
+   * twitter:image
+
+6. Se já existirem essas tags, NÃO simplesmente duplique. Corrija as existentes.
+
+7. A imagem:
+   https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+   deve ser usada exatamente como `og:image`.
+
+8. NÃO transforme essa URL em caminho relativo.
+
+9. NÃO utilize localhost, URL do Replit, URL de preview ou qualquer domínio temporário.
+
+10. O código final precisa funcionar quando eu copiar a pasta `dist` para o cPanel.
+
+11. Verifique se o build realmente gera as tags no arquivo HTML final.
+
+12. Depois de fazer as alterações, execute o build do projeto.
+
+13. Após o build, abra/inspecione o HTML gerado dentro de `dist` e confirme que todas as tags estão realmente presentes no HTML FINAL, e não apenas no código-fonte.
+
+14. Se houver alguma configuração de Vite/React ou outro framework necessária para garantir isso, faça a configuração corretamente.
+
+15. NÃO altere o conteúdo visual da página.
+
+16. NÃO altere os scripts de Meta Pixel, UTMify, CAPI, checkout, tracking, analytics ou qualquer outro código de conversão existente.
+
+17. NÃO altere links, botões, preços, imagens ou textos da página, exceto as meta tags necessárias.
+
+18. Verifique também se o arquivo da imagem está sendo incluído corretamente na pasta `dist/assets` ou no local correspondente, caso o projeto dependa de assets locais. Como a URL informada já existe no domínio final, não substitua a URL absoluta por uma URL do Replit.
+
+19. Se houver algum sistema de cache ou configuração que possa gerar HTML antigo, identifique isso e explique, mas não altere configurações do cPanel sem necessidade.
+
+20. Quero uma solução definitiva e limpa, pronta para produção.
+
+NO FINAL, me entregue:
+
+A) Lista exata dos arquivos que você modificou.
+
+B) Mostre o trecho final do `<head>` contendo as tags Open Graph.
+
+C) Confirme se o comando de build foi executado com sucesso.
+
+D) Confirme se as tags estão presentes no HTML FINAL dentro da pasta `dist`.
+
+E) Confirme que:
+
+* og:url está correto;
+* og:type está correto;
+* og:title está correto;
+* og:description está correto;
+* og:image está correto;
+* og:image:secure_url está correto;
+* canonical está correto;
+* Twitter Card está correto;
+* não existem tags OG duplicadas.
+
+F) Informe exatamente qual arquivo dentro de `dist` contém essas tags.
+
+G) Se houver qualquer problema que impeça o Facebook/Meta de detectar as tags, NÃO diga apenas que está pronto. Explique o problema e corrija-o antes de finalizar.
+
+IMPORTANTE:
+NÃO quero apenas instruções sobre como fazer.
+QUERO QUE VOCÊ FAÇA AS ALTERAÇÕES NO PROJETO, EXECUTE O BUILD E VERIFIQUE O RESULTADO FINAL.
