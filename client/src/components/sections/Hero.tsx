@@ -52,7 +52,7 @@ export default function Hero() {
               <p className="text-gray-500 text-xs sm:text-sm mb-2">De <span className="line-through text-base">R$197,00</span> por apenas:</p>
               <div className="flex items-center gap-3 mb-3">
                 <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--rose-primary))]">
-                  R$ 19,90
+                  R$ 9,99
                 </div>
                 <div className="bg-green-500 text-white px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold shadow-md">
                   90% OFF

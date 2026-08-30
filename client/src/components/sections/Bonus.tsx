@@ -237,7 +237,7 @@ export default function Bonus() {
             </Button>
           </a>
           <p className="text-sm text-gray-500 mt-3">
-            Pagamento único de R$19,90
+            Pagamento único de R$9,99
           </p>
         </motion.div>
       </Container>
