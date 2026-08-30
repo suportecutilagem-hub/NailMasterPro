@@ -1,0 +1,438 @@
+PRECISO QUE VOCÊ CORRIJA DEFINITIVAMENTE O PROBLEMA DE OPEN GRAPH (OG) DO MEU SITE.
+
+NÃO quero apenas instruções.
+NÃO quero que você me diga onde eu devo colocar o código.
+QUERO QUE VOCÊ ANALISE O PROJETO, FAÇA AS ALTERAÇÕES NECESSÁRIAS, GERE O BUILD E VERIFIQUE O HTML FINAL GERADO.
+
+========================
+CONTEXTO DO MEU PROJETO
+========================
+
+Meu site é desenvolvido neste projeto do Replit.
+
+O fluxo de publicação é:
+
+REPLIT
+↓
+BUILD
+↓
+PASTA DIST
+↓
+ENVIO A DIST PARA O CPANEL
+↓
+DOMÍNIO FINAL:
+https://cutilagemrussa.com/
+
+Portanto, qualquer solução precisa estar implementada NO CÓDIGO-FONTE DO PROJETO e precisa continuar funcionando automaticamente quando eu gerar uma nova pasta dist.
+
+NÃO faça uma correção somente no cPanel.
+
+========================
+PROBLEMA
+========================
+
+A Meta/Facebook está informando que meu site não está fornecendo corretamente as propriedades Open Graph.
+
+As propriedades que precisam ser encontradas pela Meta são:
+
+og:url
+og:type
+og:title
+og:image
+og:description
+fb:app_id
+
+A Meta também informou que essas informações precisam estar presentes na seção <head> do HTML.
+
+========================
+DOMÍNIO
+========================
+
+URL principal:
+
+https://cutilagemrussa.com/
+
+URL canônica:
+
+https://cutilagemrussa.com/
+
+========================
+IMAGEM OG
+========================
+
+Use EXATAMENTE esta imagem como imagem principal do Open Graph:
+
+https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+IMPORTANTE:
+
+Essa imagem já foi testada manualmente e ABRE NORMALMENTE no navegador.
+
+Portanto:
+
+- NÃO substitua essa imagem.
+- NÃO crie outra imagem.
+- NÃO use uma imagem do Replit.
+- NÃO use localhost.
+- NÃO use URL de preview.
+- NÃO use URL relativa.
+- NÃO altere o nome do arquivo.
+- Use a URL HTTPS absoluta exatamente como fornecida acima.
+
+========================
+DADOS OG
+========================
+
+Configure as informações da página desta forma:
+
+og:url
+https://cutilagemrussa.com/
+
+og:type
+website
+
+og:title
+Curso de Cutilagem Russa
+
+og:description
+Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.
+
+og:image
+https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+========================
+TAGS OBRIGATÓRIAS
+========================
+
+O HTML FINAL precisa conter, dentro do <head>, estas informações:
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso de Cutilagem Russa">
+<meta property="og:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta property="og:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+
+Também adicione:
+
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+Adicione também:
+
+<link rel="canonical" href="https://cutilagemrussa.com/">
+
+<meta name="description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+
+<meta name="robots" content="index, follow">
+
+========================
+TWITTER/X
+========================
+
+Adicione também:
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curso de Cutilagem Russa">
+<meta name="twitter:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta name="twitter:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+
+========================
+FB:APP_ID
+========================
+
+IMPORTANTE:
+
+NÃO invente um Facebook App ID.
+
+NÃO coloque números aleatórios.
+
+NÃO use um Pixel ID como fb:app_id.
+
+NÃO use qualquer outro ID como fb:app_id.
+
+Se não existir um Facebook App ID real configurado no projeto, NÃO invente um.
+
+Analise o projeto e, caso exista uma configuração legítima de Facebook App ID, utilize-a corretamente.
+
+Caso NÃO exista um Facebook App ID real, não coloque um valor falso.
+
+A ausência de um App ID real NÃO deve impedir a correção das demais propriedades OG.
+
+========================
+ANÁLISE OBRIGATÓRIA DO PROJETO
+========================
+
+Antes de alterar qualquer coisa, analise a estrutura do projeto e descubra:
+
+1. Qual framework está sendo utilizado.
+2. Se é React, Vite, Next, Astro, HTML puro ou outro.
+3. Qual arquivo gera o HTML inicial.
+4. Onde o <head> é definido.
+5. Como a pasta dist é gerada.
+6. Se existe algum componente ou biblioteca que modifica dinamicamente o <head>.
+7. Se já existem tags Open Graph.
+8. Se existem tags OG duplicadas.
+9. Se existe canonical duplicado.
+10. Se algum plugin, biblioteca ou configuração está sobrescrevendo essas informações.
+
+NÃO faça alterações aleatórias.
+
+Use a estrutura correta do projeto.
+
+========================
+REGRA FUNDAMENTAL
+========================
+
+As tags precisam existir no HTML FINAL que será enviado ao cPanel.
+
+Não basta criar um componente React.
+
+Não basta criar um arquivo que não é utilizado.
+
+Não basta colocar as tags em um arquivo que não participa do build.
+
+Não basta dizer que o código está correto.
+
+O que importa é o HTML FINAL dentro de dist.
+
+========================
+IMPLEMENTAÇÃO
+========================
+
+Faça a implementação da maneira tecnicamente correta para o framework deste projeto.
+
+Se já existirem tags OG:
+
+- NÃO duplique.
+- Corrija as existentes.
+- Mantenha apenas uma versão de cada propriedade.
+
+Se não existirem:
+
+- Adicione corretamente.
+
+Garanta que NÃO existam múltiplas versões conflitantes de:
+
+og:url
+og:type
+og:title
+og:description
+og:image
+og:image:secure_url
+canonical
+twitter:title
+twitter:description
+twitter:image
+
+========================
+NÃO ALTERAR O SITE
+========================
+
+É extremamente importante:
+
+NÃO altere o design.
+
+NÃO altere o layout.
+
+NÃO altere cores.
+
+NÃO altere fontes.
+
+NÃO altere textos visíveis.
+
+NÃO altere botões.
+
+NÃO altere preços.
+
+NÃO altere checkout.
+
+NÃO altere links existentes.
+
+NÃO altere imagens visíveis.
+
+NÃO altere responsividade.
+
+NÃO altere funcionalidades.
+
+NÃO altere Meta Pixel.
+
+NÃO altere UTMify.
+
+NÃO altere CAPI.
+
+NÃO altere analytics.
+
+NÃO altere scripts de rastreamento.
+
+NÃO altere códigos de conversão.
+
+NÃO remova nenhum script existente.
+
+Faça SOMENTE as alterações necessárias para corrigir SEO/Open Graph.
+
+========================
+BUILD
+========================
+
+Depois de fazer as alterações:
+
+1. Execute o comando de build correto do projeto.
+2. Gere uma nova pasta dist.
+3. Localize o HTML final gerado.
+4. Abra o HTML final gerado dentro de dist.
+5. Procure literalmente pelas seguintes strings:
+
+og:url
+og:type
+og:title
+og:description
+og:image
+og:image:secure_url
+canonical
+twitter:card
+twitter:title
+twitter:description
+twitter:image
+
+6. Confirme que elas realmente estão presentes no HTML final.
+
+========================
+TESTE OBRIGATÓRIO
+========================
+
+NÃO considere a tarefa concluída apenas porque o código-fonte foi alterado.
+
+Você precisa verificar o RESULTADO DO BUILD.
+
+Depois do build, faça uma verificação equivalente a:
+
+- localizar dist/index.html ou o HTML final equivalente;
+- ler o conteúdo;
+- confirmar que as tags OG estão presentes;
+- confirmar que os valores estão corretos;
+- confirmar que a URL da imagem é exatamente:
+
+https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+- confirmar que a URL do site é exatamente:
+
+https://cutilagemrussa.com/
+
+- confirmar que não existem tags OG duplicadas.
+
+Se as tags NÃO aparecerem no HTML final, NÃO finalize.
+
+Corrija a implementação e execute o build novamente.
+
+========================
+VERIFICAÇÃO DE CONFLITOS
+========================
+
+Procure no projeto inteiro por:
+
+og:url
+og:type
+og:title
+og:description
+og:image
+fb:app_id
+twitter:card
+canonical
+
+Se encontrar versões antigas ou conflitantes, corrija-as para que a página tenha apenas uma definição correta de cada propriedade.
+
+========================
+IMPORTANTE SOBRE SPA
+========================
+
+Se este projeto for uma SPA (por exemplo React + Vite), NÃO presuma que colocar as tags em um componente será suficiente.
+
+Garanta que o HTML inicial entregue pelo servidor contenha as tags no <head> do documento que será acessado diretamente por:
+
+https://cutilagemrussa.com/
+
+A Meta precisa conseguir encontrar as informações no HTML inicial.
+
+A solução precisa funcionar quando o conteúdo de dist for enviado para o cPanel.
+
+========================
+RESULTADO ESPERADO
+========================
+
+Quero que o HTML final tenha pelo menos:
+
+<head>
+
+<title>Curso de Cutilagem Russa</title>
+
+<link rel="canonical" href="https://cutilagemrussa.com/">
+
+<meta name="description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso de Cutilagem Russa">
+<meta property="og:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta property="og:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+<meta property="og:image:type" content="image/png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curso de Cutilagem Russa">
+<meta name="twitter:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta name="twitter:image" content="https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png">
+
+</head>
+
+Não é necessário que o trecho esteja visualmente idêntico a este exemplo se o framework exigir outra estrutura, mas o HTML FINAL precisa conter as informações equivalentes corretamente.
+
+========================
+RELATÓRIO FINAL OBRIGATÓRIO
+========================
+
+Quando terminar, NÃO responda apenas "feito".
+
+Me entregue um relatório contendo:
+
+1. Framework identificado:
+2. Arquivo onde a correção foi feita:
+3. Arquivos modificados:
+4. Comando de build utilizado:
+5. Resultado do build:
+6. Arquivo HTML final dentro de dist:
+7. Confirmação de que og:url está presente:
+8. Confirmação de que og:type está presente:
+9. Confirmação de que og:title está presente:
+10. Confirmação de que og:description está presente:
+11. Confirmação de que og:image está presente:
+12. Confirmação de que a URL da imagem está exatamente correta:
+13. Confirmação de que canonical está presente:
+14. Confirmação de que Twitter Card está presente:
+15. Confirmação de que não existem tags OG duplicadas:
+16. Confirmação de que nada relacionado ao design, checkout, Pixel, UTMify ou CAPI foi alterado.
+
+E MOSTRE o trecho real do HTML FINAL gerado dentro de dist onde essas tags aparecem.
+
+========================
+REGRA FINAL
+========================
+
+NÃO pare na primeira tentativa.
+
+Se houver qualquer erro no build, corrija.
+
+Se as tags não aparecerem na dist, corrija.
+
+Se houver duplicação, corrija.
+
+Se a URL estiver errada, corrija.
+
+Se a imagem estiver apontando para o Replit, corrija.
+
+Se a solução estiver apenas no código-fonte mas não no HTML final, corrija.
+
+Só considere a tarefa concluída quando o HTML FINAL dentro da pasta dist estiver correto e pronto para eu enviar ao cPanel.
+
+FAÇA AGORA A ANÁLISE, A CORREÇÃO, O BUILD E A VERIFICAÇÃO FINAL.
