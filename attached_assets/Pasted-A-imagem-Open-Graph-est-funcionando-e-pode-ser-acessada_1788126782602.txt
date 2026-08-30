@@ -1,0 +1,82 @@
+A imagem Open Graph está funcionando e pode ser acessada diretamente em:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+Ela abre normalmente no navegador.
+
+NÃO crie outra imagem.
+NÃO altere a imagem.
+NÃO use Imgur ou outro serviço externo.
+
+O problema agora é descobrir por que o crawler da Meta não consegue processar a imagem e/ou as tags Open Graph.
+
+Faça uma auditoria completa da versão FINAL que será publicada.
+
+1. Verifique o HTML final da página inicial.
+
+2. Confirme que dentro do <head> existem EXATAMENTE estas tags:
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso de Cutilagem Russa">
+<meta property="og:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+<meta property="og:image" content="https://cutilagemrussa.com/assets/og-cutilagem-russa.png">
+
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/assets/og-cutilagem-russa.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+3. NÃO duplique nenhuma dessas tags.
+
+4. Verifique se o HTML final possui alguma tag og:image antiga apontando para:
+
+https://cutilagemrussa.com/assets/manicure-profissional-DarxZvP6.png
+
+Se existir e não for necessária, remova a duplicação e deixe somente a nova imagem.
+
+5. Verifique se o arquivo:
+
+/assets/og-cutilagem-russa.png
+
+é realmente um PNG válido.
+
+6. Verifique a dimensão real do arquivo.
+
+Ela deve ser exatamente:
+
+1200 × 630 pixels.
+
+7. Execute o build.
+
+8. Depois do build, abra o HTML REAL dentro da pasta dist e confirme que as tags acima estão presentes.
+
+9. Não considere a tarefa concluída apenas porque o código-fonte está correto. O que importa é o HTML FINAL dentro da dist.
+
+10. Se o projeto for React/Vite ou outra SPA, garanta que essas tags estejam no HTML inicial gerado pelo build, e não apenas em um componente que dependa da execução de JavaScript.
+
+11. Não altere:
+- design
+- layout
+- textos visíveis
+- checkout
+- Meta Pixel
+- UTMify
+- CAPI
+- analytics
+- scripts de conversão
+- funcionalidades existentes
+
+12. NÃO invente fb:app_id.
+Se não houver um Facebook App ID real configurado, não coloque um ID falso.
+
+13. No final, mostre:
+- arquivo modificado;
+- comando de build;
+- resultado do build;
+- caminho do HTML final dentro da dist;
+- trecho REAL do HTML final contendo og:url, og:type, og:title, og:description e og:image;
+- confirmação da dimensão da imagem;
+- confirmação de que não existem tags og:image duplicadas.
+
+Se tudo estiver correto no projeto, diga claramente que a próxima etapa é apenas publicar a dist no cPanel e depois limpar o cache no Facebook Sharing Debugger.
