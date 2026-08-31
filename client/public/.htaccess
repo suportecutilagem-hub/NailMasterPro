@@ -37,13 +37,13 @@ RewriteRule ^ index.html [QR,L]
 # Entrega o novo asset JPEG do Open Graph sempre como arquivo completo.
 # Esta regra também é específica da imagem compartilhada.
 <IfModule mod_mime.c>
-  <Files "og-cutilagem-russa.jpg">
+  <Files "og-cutilagem-russa-v2.jpg">
     ForceType image/jpeg
   </Files>
 </IfModule>
 
 <IfModule mod_headers.c>
-  <Files "og-cutilagem-russa.jpg">
+  <Files "og-cutilagem-russa-v2.jpg">
     RequestHeader unset Range
     Header always set Accept-Ranges none
     Header always unset Content-Range
