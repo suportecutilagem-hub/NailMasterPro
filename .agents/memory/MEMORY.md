@@ -1,0 +1,1 @@
+- [Open Graph cache behavior](open-graph-cache.md) — purge CDN cache after origin rules change, because cached partial responses bypass Apache.

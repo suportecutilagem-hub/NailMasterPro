@@ -1,0 +1,137 @@
+PRECISO RESOLVER DEFINITIVAMENTE O PROBLEMA DO OPEN GRAPH DA META/FACEBOOK NO SITE https://cutilagemrussa.com/
+
+NÃO altere o layout, design, textos visíveis, funcionalidades, JavaScript, tracking, Pixel, CAPI, checkout ou qualquer outra parte do site.
+
+Faça SOMENTE as correções necessárias para Open Graph e compatibilidade com o crawler da Meta.
+
+PROBLEMA ATUAL:
+O Facebook Sharing Debugger consegue ler:
+- og:url
+- og:type
+- og:title
+- og:description
+
+Porém continua informando:
+"Imagem corrompida"
+e a requisição da imagem pelo crawler da Meta está retornando HTTP 206 Partial Content.
+
+A imagem atual:
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+está funcionando normalmente no navegador e retorna HTTP 200 para requisições normais, mas a Meta continua tendo problemas para processá-la.
+
+SOLUÇÃO OBRIGATÓRIA:
+
+1. NÃO reutilize o arquivo PNG atual como og:image.
+
+2. Crie uma NOVA imagem especificamente para Open Graph:
+- formato JPEG
+- exatamente 1200x630 pixels
+- RGB
+- arquivo otimizado para web
+- tamanho preferencialmente abaixo de 500 KB
+- sem transparência
+- imagem visualmente igual à imagem atual
+- não altere o design da imagem
+
+3. Salve essa nova imagem no projeto com este nome:
+client/public/assets/og-cutilagem-russa.jpg
+
+4. Garanta que após o build ela seja copiada para:
+dist-cpanel/assets/og-cutilagem-russa.jpg
+
+5. O endereço público final deverá ser:
+https://cutilagemrussa.com/assets/og-cutilagem-russa.jpg
+
+6. No HTML FINAL que será enviado para produção, dentro de <head>, garanta que exista UMA ÚNICA definição correta de og:image:
+
+<meta property="og:image" content="https://cutilagemrussa.com/assets/og-cutilagem-russa.jpg">
+
+7. Adicione também:
+
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/assets/og-cutilagem-russa.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+8. Garanta também estas tags Open Graph exatamente:
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso de Cutilagem Russa">
+<meta property="og:description" content="Aprenda Cutilagem Russa e aperfeiçoe suas técnicas de manicure profissional.">
+
+9. NÃO coloque URL relativa em nenhuma dessas tags.
+
+10. NÃO use:
+- /assets/...
+- ./assets/...
+- assets/...
+- URLs do Replit
+- URLs do Cloudflare
+- URLs temporárias
+
+Use SEMPRE a URL HTTPS completa do domínio cutilagemrussa.com.
+
+11. Adicione também, SOMENTE SE JÁ EXISTIR UM APP ID REAL E CONFIGURADO NO PROJETO:
+<meta property="fb:app_id" content="APP_ID_REAL">
+
+NÃO invente um fb:app_id.
+NÃO coloque texto fictício.
+NÃO coloque "SEU_APP_ID".
+Se não existir um App ID real disponível, NÃO crie um valor falso.
+
+12. Remova tags OG duplicadas ou conflitantes.
+Quero somente UMA:
+og:url
+og:type
+og:title
+og:description
+og:image
+
+13. Garanta que og:image esteja usando:
+property="og:image"
+e NÃO:
+name="og:image"
+
+14. Verifique o HTML gerado DEPOIS do build, e não somente o código-fonte do projeto.
+
+15. Execute:
+npm run build:cpanel
+
+16. Depois do build, faça uma verificação automática no arquivo final:
+dist-cpanel/index.html
+
+e confirme que ele contém literalmente:
+https://cutilagemrussa.com/assets/og-cutilagem-russa.jpg
+
+17. Confirme também que existe:
+dist-cpanel/assets/og-cutilagem-russa.jpg
+
+18. Mantenha o .htaccess existente e NÃO remova nenhuma regra necessária ao funcionamento atual do site.
+
+19. Se existir uma regra específica para og-cutilagem-russa.png, ela pode permanecer, mas NÃO deve ser aplicada de forma ampla a outras imagens.
+
+20. Crie também, se necessário, uma regra específica no .htaccess para a nova imagem JPEG para evitar respostas parciais/range problemáticas para esse arquivo.
+
+21. A nova imagem precisa ser entregue pelo servidor como:
+Content-Type: image/jpeg
+
+e uma requisição normal precisa retornar:
+HTTP 200
+
+22. Faça testes locais/HTTP após o build, se o ambiente permitir.
+
+23. NÃO altere a imagem visualmente.
+Apenas converta/otimize o arquivo para JPEG 1200x630.
+
+24. NÃO me entregue apenas uma explicação.
+FAÇA AS ALTERAÇÕES NO PROJETO, EXECUTE O BUILD E ME INFORME EXATAMENTE:
+- arquivo HTML alterado
+- arquivo de imagem criado
+- URL final do og:image
+- resultado do build
+- confirmação de que dist-cpanel está pronto para upload no cPanel.
+
+IMPORTANTE:
+O objetivo é que, depois de eu enviar o conteúdo de dist-cpanel para o public_html, o Facebook Sharing Debugger consiga processar a og:image sem retornar "Imagem corrompida".
