@@ -1,0 +1,91 @@
+FAÇA SOMENTE AS ALTERAÇÕES ABAIXO. NÃO MODIFIQUE NENHUMA OUTRA PARTE DO PROJETO.
+
+Objetivo: corrigir os avisos do Facebook/Meta Sharing Debugger relacionados ao Open Graph.
+
+ARQUIVO:
+client/index.html
+
+1. Adicione dentro do <head>, caso ainda não exista, exatamente esta tag:
+
+<meta property="fb:app_id" content="1372516197214925">
+
+Se já existir uma tag fb:app_id, substitua somente o valor pelo ID:
+1372516197214925
+
+2. Altere SOMENTE o twitter:title para ficar exatamente igual ao og:title.
+
+O og:title deve permanecer exatamente:
+
+<meta property="og:title" content="Cutilagem Russa - Aprenda do Zero | Curso Completo">
+
+O twitter:title deve ficar exatamente:
+
+<meta name="twitter:title" content="Cutilagem Russa - Aprenda do Zero | Curso Completo">
+
+3. NÃO faça nenhuma outra alteração.
+
+NÃO alterar:
+- layout
+- design
+- textos visíveis
+- JavaScript
+- CSS
+- Pixel
+- CAPI
+- UTMify
+- tracking
+- checkout
+- URLs
+- redirecionamentos
+- imagens
+- og:image
+- og:image:secure_url
+- og:image:type
+- og:image:width
+- og:image:height
+- og:url
+- og:type
+- og:description
+- qualquer outra tag Open Graph
+- qualquer funcionalidade existente
+- .htaccess
+
+A imagem atual do Open Graph deve continuar sendo exatamente:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa-v2.jpg
+
+NÃO troque a imagem e NÃO crie outra imagem.
+
+4. Depois das alterações, execute o build existente normalmente:
+
+npm run build:cpanel
+
+5. Gere o dist-cpanel normalmente.
+
+6. Antes de finalizar, faça uma verificação automática no client/index.html e no dist-cpanel/index.html.
+
+CONFIRME que existem exatamente estas informações:
+
+<meta property="fb:app_id" content="1372516197214925">
+
+<meta property="og:title" content="Cutilagem Russa - Aprenda do Zero | Curso Completo">
+
+<meta name="twitter:title" content="Cutilagem Russa - Aprenda do Zero | Curso Completo">
+
+E confirme também que a og:image continua apontando para:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa-v2.jpg
+
+IMPORTANTE:
+Não remova nem altere a regra .htaccess existente.
+Não altere nenhum código de tracking.
+Não altere o checkout.
+Não altere o layout.
+Não faça otimizações adicionais.
+Não altere nada além das duas correções solicitadas.
+
+No final, informe:
+1. se as alterações foram feitas;
+2. se o build foi concluído com sucesso;
+3. se o dist-cpanel foi gerado;
+4. mostre as 4 tags/validações finais.
