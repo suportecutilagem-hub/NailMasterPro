@@ -1,0 +1,136 @@
+JÁ IDENTIFICAMOS A CAUSA DO PROBLEMA.
+
+Os testes HTTP mostraram:
+
+1. Requisição normal da imagem:
+HTTP/1.1 200 OK
+Content-Type: image/png
+
+2. Requisição simulando o crawler da Meta com Range:
+HTTP/1.1 206 Partial Content
+
+A imagem está correta.
+As tags Open Graph estão corretas.
+O problema está na resposta HTTP quando a requisição contém o header Range.
+
+Quero corrigir isso DEFINITIVAMENTE.
+
+A imagem problemática é:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+NÃO altere a imagem.
+
+NÃO crie outra imagem.
+
+NÃO altere o HTML Open Graph.
+
+NÃO altere Pixel, UTMify, CAPI, checkout, design ou qualquer outra funcionalidade.
+
+O objetivo é fazer com que essa imagem seja entregue como uma resposta HTTP 200 completa mesmo quando um crawler externo enviar uma requisição com Range.
+
+Analise o .htaccess que está sendo gerado para a pasta dist e implemente uma solução específica para a imagem Open Graph.
+
+A prioridade é fazer com que:
+
+GET /assets/og-cutilagem-russa.png
+
+retorne:
+
+HTTP 200 OK
+Content-Type: image/png
+
+mesmo quando a requisição incluir:
+
+Range: bytes=0-999999
+
+Sempre que tecnicamente possível, remova/ignore o header Range ANTES que o Apache processe o arquivo da imagem.
+
+Use uma configuração compatível com Apache/cPanel, por exemplo utilizando mod_headers para remover o Request Header "Range" para essa URL específica.
+
+IMPORTANTE:
+A regra deve ser aplicada SOMENTE à imagem:
+
+/assets/og-cutilagem-russa.png
+
+Não desative Range para o site inteiro.
+Não prejudique vídeos.
+Não prejudique outros arquivos.
+Não altere o funcionamento de outras imagens.
+
+Se necessário, configure o .htaccess para que somente essa imagem ignore Range.
+
+Depois:
+
+1. Gere novamente a pasta dist.
+2. Confirme que o .htaccess está presente na dist.
+3. Mostre exatamente a regra adicionada.
+4. Confirme que a regra não afeta outros arquivos.
+5. Confirme que o build foi concluído.
+
+IMPORTANTE SOBRE CLOUDFLARE:
+
+Meu domínio usa Cloudflare.
+
+Como o Cloudflare está atualmente respondendo à requisição Range, considere também que o cache do Cloudflare pode estar mantendo a resposta 206 antiga.
+
+Não faça alterações destrutivas no Cloudflare.
+
+Se a correção no .htaccess estiver correta, informe que será necessário fazer PURGE CACHE da URL:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+ou limpar o cache correspondente no Cloudflare depois de publicar a nova dist.
+
+Depois da publicação, os testes que precisam passar são:
+
+Teste 1:
+
+curl -I https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+Esperado:
+
+HTTP 200 OK
+Content-Type: image/png
+
+Teste 2:
+
+curl -I -H "User-Agent: facebookexternalhit/1.1" https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+Esperado:
+
+HTTP 200 OK
+
+Teste 3:
+
+curl -I -H "Range: bytes=0-999999" -H "User-Agent: facebookexternalhit/1.1" https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+O objetivo é que também retorne:
+
+HTTP 200 OK
+
+e não:
+
+HTTP 206 Partial Content.
+
+NÃO considere a tarefa concluída apenas porque o código foi alterado.
+
+Faça o build e mostre o .htaccess final.
+
+Se o Replit não conseguir garantir a alteração porque o HTTP 206 está sendo gerado pelo Cloudflare antes de chegar ao Apache, explique isso claramente e informe exatamente qual configuração do Cloudflare precisa ser alterada.
+
+NÃO invente uma solução.
+
+No relatório final informe:
+
+- causa identificada;
+- arquivo alterado;
+- regra adicionada;
+- resultado do build;
+- como publicar a dist;
+- o que fazer no Cloudflare;
+- testes que precisam retornar 200.
+
+O objetivo final é:
+
+Meta/Facebook → requisição da og:image → Cloudflare → servidor → PNG completo → HTTP 200 OK.
