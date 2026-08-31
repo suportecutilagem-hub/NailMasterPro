@@ -1,0 +1,77 @@
+Analisei o ZIP final da dist-cpanel e encontrei um erro importante.
+
+O dist-cpanel/index.html atualmente contém:
+
+<meta property="og:image" content="https://i.postimg.cc/htwK7Vbj/cutilagem-russa-curso1.jpg" />
+
+NÃO quero mais usar Postimg ou qualquer hospedagem externa.
+
+A própria dist-cpanel já possui:
+
+dist-cpanel/og-image.jpg
+
+Esse arquivo é um JPEG válido, RGB, exatamente 1200x630 e aproximadamente 79 KB.
+
+Quero usar ESSA imagem como a única imagem Open Graph do site.
+
+Faça SOMENTE estas alterações:
+
+1. Altere o index.html para:
+
+<meta property="og:image" content="https://cutilagemrussa.com/og-image.jpg" />
+
+2. Altere também:
+
+<meta property="og:image:secure_url" content="https://cutilagemrussa.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+3. Mantenha:
+
+<meta property="og:url" content="https://cutilagemrussa.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cutilagem Russa - Aprenda do Zero | Curso Completo">
+<meta property="og:description" content="Aprenda a técnica de Cutilagem Russa do zero e ofereça um serviço mais valorizado às suas clientes.">
+
+4. Remova qualquer outra tag og:image duplicada.
+
+5. NÃO use mais:
+- Postimg
+- i.postimg.cc
+- og-cutilagem-russa.png
+- og-cutilagem-russa.jpg
+- og-cutilagem-russa-v2.jpg
+- og-cutilagem-russa-v3.jpg
+
+6. Use EXCLUSIVAMENTE:
+
+https://cutilagemrussa.com/og-image.jpg
+
+7. NÃO altere layout, CSS, JavaScript, Pixel, CAPI, UTMify, checkout ou qualquer funcionalidade do site.
+
+8. NÃO altere o arquivo visualmente. Use o og-image.jpg que já existe.
+
+9. Mantenha o og-image.jpg na raiz do dist-cpanel.
+
+10. Execute npm run build:cpanel.
+
+11. Verifique o index.html FINAL dentro de dist-cpanel.
+
+12. Confirme que o HTML FINAL contém exatamente:
+
+<meta property="og:image" content="https://cutilagemrussa.com/og-image.jpg" />
+
+e que NÃO contém nenhuma outra definição de og:image.
+
+13. Confirme que existe:
+
+dist-cpanel/og-image.jpg
+
+14. NÃO crie outra imagem.
+
+15. NÃO altere o .htaccess neste momento.
+
+No final, mostre o trecho REAL do index.html FINAL contendo todas as tags Open Graph e confirme que a URL usada é:
+
+https://cutilagemrussa.com/og-image.jpg
