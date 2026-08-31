@@ -24,6 +24,16 @@ RewriteRule ^ index.html [QR,L]
   ExpiresDefault "access plus 1 month"
 </FilesMatch>
 
+# Entrega o asset do Open Graph sempre como arquivo completo para crawlers.
+# Esta regra é específica da imagem compartilhada e não altera as imagens visíveis.
+<IfModule mod_headers.c>
+  <Files "og-cutilagem-russa.png">
+    RequestHeader unset Range
+    Header always set Accept-Ranges none
+    Header always unset Content-Range
+  </Files>
+</IfModule>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/plain
   AddOutputFilterByType DEFLATE text/html

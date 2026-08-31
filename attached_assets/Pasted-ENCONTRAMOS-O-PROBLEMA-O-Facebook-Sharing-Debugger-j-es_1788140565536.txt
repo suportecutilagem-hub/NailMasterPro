@@ -1,0 +1,129 @@
+ENCONTRAMOS O PROBLEMA.
+
+O Facebook Sharing Debugger já está encontrando corretamente minhas tags Open Graph.
+
+No teste da Meta aparecem corretamente:
+
+og:url
+og:type
+og:title
+og:description
+og:image
+
+Porém, a Meta está mostrando:
+
+"Não foi possível processar a URL de og:image fornecida como uma imagem. Ela pode estar corrompida ou pode ter um formato inválido."
+
+E, principalmente, o Facebook Sharing Debugger mostra:
+
+CÓDIGO DA RESPOSTA: 206
+
+A URL da imagem é:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+A imagem abre normalmente no navegador.
+
+PORTANTO, NÃO quero trocar a imagem novamente.
+
+O problema agora é investigar por que o servidor está entregando essa imagem como HTTP 206 (Partial Content) para o crawler da Meta.
+
+QUERO QUE VOCÊ FAÇA UMA INVESTIGAÇÃO TÉCNICA COMPLETA.
+
+1. Verifique como o arquivo:
+assets/og-cutilagem-russa.png
+
+está sendo servido.
+
+2. Verifique os headers HTTP da imagem.
+
+3. Verifique especialmente:
+
+HTTP status
+Content-Type
+Content-Length
+Content-Range
+Accept-Ranges
+Cache-Control
+ETag
+Last-Modified
+Content-Encoding
+
+4. A imagem precisa ser entregue como um PNG completo e válido.
+
+5. Verifique se existe alguma configuração fazendo o servidor responder:
+
+206 Partial Content
+
+quando a Meta solicita a imagem.
+
+6. Investigue se o problema pode estar relacionado a:
+
+- Cloudflare
+- cache
+- range requests
+- Accept-Ranges
+- Content-Range
+- compressão
+- Brotli
+- Gzip
+- CDN
+- regras do servidor
+- .htaccess
+- Apache
+- configuração do cPanel
+- cache do navegador
+- cache do Cloudflare
+
+7. NÃO altere o design do site.
+
+8. NÃO altere a imagem.
+
+9. NÃO altere Meta Pixel.
+
+10. NÃO altere UTMify.
+
+11. NÃO altere CAPI.
+
+12. NÃO altere checkout.
+
+13. NÃO altere outras imagens.
+
+14. NÃO altere as tags Open Graph que já estão funcionando.
+
+Apenas corrija a forma como essa imagem é entregue pelo servidor.
+
+IMPORTANTE:
+
+O objetivo é que uma requisição normal à URL:
+
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+
+receba o arquivo PNG completo e válido.
+
+Se o problema não puder ser corrigido dentro do código do Replit porque está acontecendo no Apache/cPanel/Cloudflare, NÃO invente uma solução.
+
+Nesse caso, identifique exatamente qual configuração precisa ser alterada no cPanel ou Cloudflare.
+
+Também verifique se existe algum .htaccess no projeto que possa estar causando o HTTP 206 ou interferindo na entrega dos arquivos PNG.
+
+Depois faça o build novamente se alguma alteração no projeto for necessária.
+
+NO FINAL, me informe:
+
+1. Qual era a causa do HTTP 206.
+2. Qual arquivo/configuração foi alterado.
+3. Se o problema está no Replit, cPanel, Apache ou Cloudflare.
+4. Qual é o status HTTP esperado para a imagem.
+5. Qual é o Content-Type esperado.
+6. Confirme que a imagem continua sendo 1200 × 630.
+7. Confirme que a URL continua sendo:
+https://cutilagemrussa.com/assets/og-cutilagem-russa.png
+8. Confirme que o og:image continua correto.
+9. Faça um teste final da entrega da imagem.
+
+NÃO considere o problema resolvido apenas porque a imagem abre no Chrome.
+
+O teste precisa considerar a forma como um crawler externo, como o Facebook/Meta, recebe a imagem.
+
+A META JÁ ESTÁ ENCONTRANDO O OG:IMAGE. AGORA PRECISAMOS CORRIGIR A RESPOSTA HTTP 206 DA IMAGEM.
